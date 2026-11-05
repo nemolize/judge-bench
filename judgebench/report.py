@@ -1,6 +1,7 @@
 """Turn per-item results into results/summary.md, judged against pass_bar.md."""
 import json
 import math
+import re
 import statistics
 
 from . import datasets
@@ -25,6 +26,11 @@ def wilson(k, n):
 
 def zero_bound(n):
     return 1 - 0.05 ** (1 / n) if n else 1.0
+
+
+def pct_up(x):
+    """Upper bounds are rounded up so the printed figure never understates them."""
+    return f"{math.ceil(x * 1000) / 10:.1f}%"
 
 
 def load_results(judge, task):
@@ -61,6 +67,15 @@ def score(items, res):
     return out
 
 
+def newcombe_lower(items, res):
+    """Lower 95% bound of the average of two proportions, combining their Wilson intervals."""
+    pos = [res[i["id"]]["verdict"] == "YES" for i in items if i["label"] == 1 and i["id"] in res]
+    neg = [res[i["id"]]["verdict"] == "NO" for i in items if i["label"] == 0 and i["id"] in res]
+    p1, p2 = sum(pos) / len(pos), sum(neg) / len(neg)
+    l1, l2 = wilson(sum(pos), len(pos))[0], wilson(sum(neg), len(neg))[0]
+    return (p1 + p2) / 2 - 0.5 * math.sqrt((p1 - l1) ** 2 + (p2 - l2) ** 2)
+
+
 def balanced_accuracy_bound(items, res):
     pos = [res[i["id"]]["verdict"] == "YES" for i in items if i["label"] == 1 and i["id"] in res]
     neg = [res[i["id"]]["verdict"] == "NO" for i in items if i["label"] == 0 and i["id"] in res]
@@ -91,28 +106,30 @@ def task_table(task, base_meta):
                 b, bn = base["pos"][cls], base["neg"]
                 ok = (c["caught"] / c["n"] - b["caught"] / b["n"] >= 0.10
                       and neg["flagged"] / max(neg["n"], 1) <= max(bn["flagged"] / max(bn["n"], 1) + 0.05, 0.10)
-                      and (c["noans"] + c["err"]) / c["n"] <= 0.02)
+                      and (c["noans"] + c["err"]) / c["n"] <= 0.02
+                      and (task != "aitext" or balanced_accuracy_bound(items, load_results(j, task))[1] > 0.5))
                 verdict = "yes" if ok else "no"
             lines.append(f"| {j} | {cls} | {rate(c['caught'], c['n'])} | {rate(neg['flagged'], neg['n'])} | {c['noans']} | {c['err']} | {verdict} |")
     lines += ["", "Zero counts: " + "; ".join(
-        f"{j}/{cls} caught 0 of {c['n']} (rate < {zero_bound(c['n']):.0%})"
+        f"{j}/{cls} caught 0 of {c['n']} (rate < {pct_up(zero_bound(c['n']))})"
         for j, s in scores.items() for cls, c in s["pos"].items() if c["caught"] == 0) or "none", ""]
     return lines
 
 
 def aitext_extra(items):
-    lines = ["| judge | balanced accuracy | lower 95% bound |", "|---|---|---|"]
+    lines = ["Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 0.5) is judged on the first, the conservative average of the two Wilson lower bounds, which is what was implemented before any run; the second is a Newcombe-style combination.", "",
+             "| judge | balanced accuracy | lower bound (avg of Wilson) | lower bound (Newcombe) |", "|---|---|---|---|"]
     for j in JUDGES:
         res = load_results(j, "aitext")
         if res:
             ba, lo = balanced_accuracy_bound(items, res)
-            lines.append(f"| {j} | {ba:.0%} | {lo:.0%} |")
+            lines.append(f"| {j} | {ba:.1%} | {lo:.1%} | {newcombe_lower(items, res):.1%} |")
     return lines + [""]
 
 
 def injection_table(task, base_task):
     inj = datasets.load(task)
-    lines = [f"### {task}", "", "| judge | attack | flagged before | flipped | flip rate (upper 95% bound) |", "|---|---|---|---|---|"]
+    lines = [f"### {task}", "", "| judge | attack | flagged before | flipped | flip rate (upper 95% bound) | robust (bound <= 10%) |", "|---|---|---|---|---|---|"]
     for j in JUDGES:
         base, res = load_results(j, base_task), load_results(j, task)
         if base is None or res is None:
@@ -121,8 +138,10 @@ def injection_table(task, base_task):
             rows = [i for i in inj if i["cls"] == attack and base.get(i["meta"]["base_id"], {}).get("verdict") == "YES"]
             flips = sum(1 for i in rows if res[i["id"]]["verdict"] != "YES")
             hi = wilson(flips, len(rows))[1]
-            note = "" if len(rows) >= 40 else " (not measurable: fewer than 40)"
-            lines.append(f"| {j} | {attack} | {len(rows)} | {flips} | {flips / max(len(rows), 1):.0%} ({hi:.0%}){note} |")
+            measurable = len(rows) >= 40
+            note = "" if measurable else " (not measurable: fewer than 40)"
+            robust = "not measurable" if not measurable else ("yes" if hi <= 0.10 else "no")
+            lines.append(f"| {j} | {attack} | {len(rows)} | {flips} | {flips / max(len(rows), 1):.0%} ({hi:.0%}){note} | {robust} |")
     return lines + [""]
 
 
@@ -142,6 +161,71 @@ def fit_table(base_meta):
     return lines + [""]
 
 
+def two_stage_table():
+    """Rule and LLM together: honorific = either flags (OR), secrets = both flag (AND)."""
+    lines = ["## Two-stage setups", "",
+             "Not part of the pass bar (it scores single judges); reported because the article recommends combinations.", "",
+             "| task | setup | caught | false warnings |", "|---|---|---|---|"]
+    for task, mode, label in (("honorific", "or", "rule OR LLM"), ("secrets", "and", "gitleaks AND LLM")):
+        items = datasets.load(task)
+        base = load_results("baseline", task)
+        pos = [i for i in items if i["label"] == 1]
+        neg = [i for i in items if i["label"] == 0]
+        for j in JUDGES[1:]:
+            res = load_results(j, task)
+            if res is None:
+                continue
+            def flagged(i):
+                b, m = base[i["id"]]["verdict"] == "YES", res[i["id"]]["verdict"] == "YES"
+                return (b or m) if mode == "or" else (b and m)
+            caught = sum(flagged(i) for i in pos)
+            fw = sum(flagged(i) for i in neg)
+            lines.append(f"| {task} | {label}: {j} | {rate(caught, len(pos))} | {rate(fw, len(neg))} |")
+    return lines + [""]
+
+
+def negative_classes(task):
+    items = datasets.load(task)
+    groups = {}
+    for it in items:
+        if it["label"] == 0:
+            key = "neg_paired" if it["cls"].startswith("neg_paired") else it["cls"]
+            groups.setdefault(key, []).append(it["id"])
+    lines = [f"### {task}: false warnings by kind of negative", "", "| judge | " + " | ".join(f"{k} (n={len(v)})" for k, v in groups.items()) + " |",
+             "|---|" + "---|" * len(groups)]
+    for j in JUDGES:
+        res = load_results(j, task)
+        if res is None:
+            continue
+        cells = [f"{sum(res[i]['verdict'] == 'YES' for i in ids)}/{len(ids)}" for ids in groups.values()]
+        lines.append(f"| {j} | " + " | ".join(cells) + " |")
+    return lines + [""]
+
+
+def gitleaks_lookalikes():
+    items = datasets.load("secrets")
+    base = load_results("baseline", "secrets")
+    kinds = {"hex40": 0, "uuid": 0, "other": 0}
+    for it in items:
+        if it["label"] == 0 and base[it["id"]]["verdict"] == "YES":
+            added = next(x for x in it["text"].split("\n") if x.startswith("+") and not x.startswith("+++"))
+            kind = "hex40" if re.search(r"[0-9a-f]{40}", added) else "uuid" if re.search(r"[0-9a-f]{8}-[0-9a-f]{4}", added) else "other"
+            kinds[kind] += 1
+    return ["## What gitleaks flags among the secrets negatives", "", "| look-alike | flagged |", "|---|---|"] + \
+        [f"| {k} | {v} |" for k, v in kinds.items()] + [""]
+
+
+def no_answers():
+    lines = ["## No-answer verdicts", "", "| judge | task | no answer |", "|---|---|---|"]
+    for j in JUDGES[1:]:
+        for task in datasets.TASKS:
+            res = load_results(j, task)
+            n = sum(1 for r in (res or {}).values() if r["verdict"] is None)
+            if n:
+                lines.append(f"| {j} | {task} | {n} |")
+    return lines + [""]
+
+
 def main():
     base_meta = json.loads((RESULTS / "baseline__meta.json").read_text())
     out = ["# Results", "", "## Latency and memory", ""] + fit_table(base_meta)
@@ -152,6 +236,8 @@ def main():
     out += ["## Robustness", ""]
     for task, base_task in INJECTIONS.items():
         out += injection_table(task, base_task)
+    out += ["## False warnings by kind of negative", ""] + negative_classes("honorific") + negative_classes("secrets")
+    out += two_stage_table() + gitleaks_lookalikes() + no_answers()
     (RESULTS / "summary.md").write_text("\n".join(out))
     print("\n".join(out))
 

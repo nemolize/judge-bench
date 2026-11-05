@@ -70,6 +70,10 @@ ESTABLISHED = [
 ]
 
 
+ROLES = ["部長", "取締役", "リーダー"]
+NARU_FRAMES = ["来月から{S}が{R}になられます。", "先月、{S}が{R}になられました。"]
+
+
 def _frames(v):
     if v.endswith("ました") or v.endswith("ましたか"):
         return FRAMES_PAST
@@ -103,4 +107,9 @@ def generate(per_class=45):
             for s in r.sample(OTHERS, 2):
                 n += 1
                 items.append(item("honorific", n, cls, 0, f"{s}が{v}。"))
+    for s in OTHERS:
+        for role in (x for x in ROLES if x != s):
+            for f in NARU_FRAMES:
+                n += 1
+                items.append(item("honorific", n, "neg_naru_honorific", 0, f.format(S=s, R=role)))
     return items
