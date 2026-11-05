@@ -51,5 +51,5 @@ python3 -m judgebench.report                  # writes results/summary.md
 - The LLM passages mention commands and product names the author's sentences also use, but topic and length are only loosely matched; a judge may be reading content style, not authorship.
 - Honorific and style text is synthetic or pulled from a few articles; a judge that does well here has not been shown to do well on arbitrary prose.
 - The honorific baseline is a hand-written dictionary of the double-honorific shapes the 指針 names, and the generator draws on the same source. It is expected to do well on that class and cannot see the other two.
-- Claude latency is a sequential probe of 20 calls; the 1,300 judged items ran six at a time. Local latency is one call at a time, model loaded.
+- Claude latency is a sequential probe of 20 calls; the 1,385 judged items ran six at a time. Local latency is one call at a time, model loaded.
 - `gitleaks` flags 60 of 225 look-alike negatives (40-hex strings and UUIDs next to a variable named like a token): the scanner's generic-key rule, not noise in the dataset.
