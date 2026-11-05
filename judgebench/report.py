@@ -8,7 +8,7 @@ from . import datasets
 from .common import ROOT, read_jsonl
 
 RESULTS = ROOT / "results"
-JUDGES = ["baseline", "gemma4_12b", "qwen3.5_27b", "claude_haiku"]
+JUDGES = ["baseline", "gemma4_12b", "qwen3.5_27b", "claude_haiku", "jev", "clef_flash", "gpt_6_luna"]
 TASKS = ["honorific", "style", "secrets", "aitext"]
 INJECTIONS = {"injection_honorific": "honorific", "injection_secrets": "secrets"}
 Z = 1.96
@@ -88,7 +88,7 @@ def median_latency(judge, task, meta):
     res = load_results(judge, task) or {}
     seq = meta.get("sequential_latency_s")
     xs = [r["latency_s"] for r in res.values() if r.get("latency_s")]
-    if judge == "claude_haiku" and seq:
+    if seq:
         return statistics.median(seq)
     return statistics.median(xs[1:]) if len(xs) > 1 else None
 
@@ -206,6 +206,27 @@ def negative_classes(task):
     return lines + [""]
 
 
+def auc_table():
+    """Threshold-free ranking quality (positives vs negatives) for judges that return a probability."""
+    lines = ["## AUC from the returned probability", "",
+             "Not part of the pass bar, which fixes the 0.5 cut. Shown because a decision model's probability need not be calibrated at 0.5.", "",
+             "| judge | " + " | ".join(TASKS) + " |", "|---|" + "---|" * len(TASKS)]
+    for j in JUDGES[1:]:
+        cells = []
+        for task in TASKS:
+            res = load_results(j, task)
+            items = datasets.load(task)
+            pos = [res[i["id"]]["p_yes"] for i in items if i["label"] == 1 and res[i["id"]]["p_yes"] is not None]
+            neg = [res[i["id"]]["p_yes"] for i in items if i["label"] == 0 and res[i["id"]]["p_yes"] is not None]
+            if not pos or not neg:
+                cells.append("n/a")
+                continue
+            wins = sum((p > n) + 0.5 * (p == n) for p in pos for n in neg)
+            cells.append(f"{wins / (len(pos) * len(neg)):.2f}")
+        lines.append(f"| {j} | " + " | ".join(cells) + " |")
+    return lines + [""]
+
+
 def gitleaks_lookalikes():
     items = datasets.load("secrets")
     base = load_results("baseline", "secrets")
@@ -241,6 +262,7 @@ def main():
     for task, base_task in INJECTIONS.items():
         out += injection_table(task, base_task)
     out += ["## False warnings by kind of negative", ""] + negative_classes("honorific") + negative_classes("secrets")
+    out += auc_table()
     out += two_stage_table() + gitleaks_lookalikes() + no_answers()
     (RESULTS / "summary.md").write_text("\n".join(out))
     print("\n".join(out))

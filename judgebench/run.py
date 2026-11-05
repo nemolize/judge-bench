@@ -29,6 +29,8 @@ def run_baseline():
 
 def _one(judge, task, it):
     try:
+        if getattr(judge, "decisions", False):
+            return {"id": it["id"], **judge.decide(datasets.PROMPT_TASK.get(task, task), it["text"])}
         return {"id": it["id"], **judge.ask(datasets.prompt_for(task, it["text"]))}
     except Exception as exc:
         return {"id": it["id"], "verdict": None, "p_yes": None, "latency_s": None, "error": str(exc)[:300]}
@@ -42,7 +44,7 @@ def run_judge(name, tasks):
         out = RESULTS / f"{judge.name}__{task}.jsonl"
         done = {r["id"]: r for r in read_jsonl(out)} if out.exists() else {}
         todo = [it for it in datasets.load(task) if it["id"] not in done]
-        if isinstance(judge, judges.ClaudeJudge):
+        if getattr(judge, "hosted", False):
             with ThreadPoolExecutor(max_workers=CLAUDE_WORKERS) as pool:
                 new = list(pool.map(lambda it: _one(judge, task, it), todo))
         else:
@@ -53,9 +55,9 @@ def run_judge(name, tasks):
     meta_path.write_text(json.dumps(meta, indent=2))
 
 
-def run_claude_latency_probe():
-    """Claude items run in parallel, so per-item latency is probed one call at a time."""
-    judge = judges.make("claude_haiku")
+def run_latency_probe(name):
+    """Hosted judges run in parallel, so per-item latency is probed one call at a time."""
+    judge = judges.make(name)
     items = datasets.load("honorific")[:LATENCY_PROBE]
     times = [_one(judge, "honorific", it)["latency_s"] for it in items]
     meta_path = RESULTS / f"{judge.name}__meta.json"
@@ -72,5 +74,5 @@ if __name__ == "__main__":
         run_baseline()
     elif cmd == "judge":
         run_judge(sys.argv[2], sys.argv[3:] or list(datasets.TASKS))
-        if sys.argv[2] == "claude_haiku":
-            run_claude_latency_probe()
+        if getattr(judges.make(sys.argv[2]), "hosted", False):
+            run_latency_probe(sys.argv[2])

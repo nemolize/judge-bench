@@ -2,7 +2,7 @@
 
 Reproducible comparison of judge models on five tasks whose correct answer is built mechanically: honorific errors, "AI-sounding" Japanese, style and notation drift, secrets in a diff, and robustness against an instruction aimed at the judge.
 
-Judges: `gemma4:12b` and `qwen3.5:27b` through Ollama (YES/NO read from the first-token logprobs), `claude-haiku-5-5` through `claude -p` (YES/NO as text, no logprobs), and a rule-based baseline per task. `pass_bar.md` fixes what counts as beating the baseline; it was committed before any results file. `results/summary.md` is the outcome.
+Judges: `gemma4:12b` and `qwen3.5:27b` through Ollama (YES/NO read from the first-token logprobs), `claude-haiku-5-5` through `claude -p` (YES/NO as text, no logprobs), three decision models called through a decisions API that returns the probability of yes (`jev-1.14.0` from TypeSafe, `clef-flash` served by Ollama, `gpt-6-luna` from OpenAI; YES when the probability is at least 0.5), and a rule-based baseline per task. `pass_bar.md` fixes what counts as beating the baseline; it was committed before any results file. The three decision models were added after the first four judges had been run, under the same bar. `results/summary.md` is the outcome.
 
 ## Rerun
 
@@ -17,6 +17,9 @@ python3 -m judgebench.run baseline
 python3 -m judgebench.run judge gemma4:12b
 python3 -m judgebench.run judge qwen3.5:27b
 python3 -m judgebench.run judge claude_haiku
+python3 -m judgebench.run judge clef_flash                   # Ollama, model clef-flash
+TYPESAFE_API_KEY=... python3 -m judgebench.run judge jev     # a TypeSafe API key
+OPENAI_API_KEY=... python3 -m judgebench.run judge gpt_6_luna
 python3 -m judgebench.report                  # writes results/summary.md
 ```
 
@@ -58,3 +61,6 @@ python3 -m judgebench.report                  # writes results/summary.md
 - The bar's balanced-accuracy condition was implemented as the average of the two Wilson lower bounds, which is conservative. `results/summary.md` also prints a Newcombe-style bound; for `claude_haiku` on the "AI-sounding" task the two sit on either side of 0.5 (49.9% and 52.9%), so that verdict depends on the method.
 - The loaded size Ollama reports varies between runs of the same model (`gemma4:12b` read 21.0 GB in the first run and 12.6 GB in the rerun; `qwen3.5:27b` 28.4 and 28.3 GB). `results/` keeps the last reading.
 - The two honorific classes that `claude_haiku` passes depend on the added negatives. On the first 175 negatives its false warnings were 38/175 (22%), above the limit of 10%, so neither class passed. After the 34 additions the baseline's own false warnings are 34/209 (16.3%), which loosens condition 2 to 21.3%, and `claude_haiku` at 42/209 (20.1%) fits by 1.2 points.
+- The decision models are asked the question as an instruction with true/false criteria (`prompts/decisions.json`), not the YES/NO prompt the other judges get, and the text goes in as the input. The 0.5 cut is the pass bar's, not tuned per model; `results/summary.md` adds a threshold-free AUC from the returned probability, which can differ a lot from the 0.5 result (a judge with a high AUC and low recall at 0.5 ranks well but is not calibrated for this question).
+- `clef-flash` is the small Clef variant installed locally; the larger `clef` was not run.
+- `gpt-6-luna` returned no answer for one injected secrets item (counted as not flagged).

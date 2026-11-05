@@ -1,9 +1,13 @@
 """LLM judges. A verdict is exactly "YES" or "NO"; anything else is None (no answer)."""
 import json
 import math
+import os
 import subprocess
 import time
+import urllib.error
 import urllib.request
+
+from .common import ROOT
 
 OLLAMA = "http://localhost:11434"
 CLAUDE_MODEL = "claude-haiku-5-5"
@@ -51,6 +55,7 @@ def _post_get(path):
 
 class ClaudeJudge:
     name = "claude_haiku"
+    hosted = True
 
     def ask(self, prompt):
         t0 = time.perf_counter()
@@ -65,5 +70,68 @@ class ClaudeJudge:
         return None
 
 
+QUESTIONS = json.loads((ROOT / "prompts" / "decisions.json").read_text(encoding="utf-8"))
+RETRIES = 3
+
+
+def _decide_request(url, key, payload):
+    headers = {"Content-Type": "application/json"}
+    if key:
+        headers["Authorization"] = f"Bearer {key}"
+    for attempt in range(RETRIES):
+        req = urllib.request.Request(url, json.dumps(payload).encode(), headers)
+        try:
+            with urllib.request.urlopen(req, timeout=300) as res:
+                return json.load(res)
+        except urllib.error.HTTPError as exc:
+            if exc.code != 429 or attempt == RETRIES - 1:
+                raise
+            time.sleep(2 ** (attempt + 1))
+
+
+class DecisionsJudge:
+    """A decision model asked one yes/no question about the text; YES when its probability is at least 0.5."""
+
+    decisions = True
+
+    def __init__(self, name, model, url, key_env, kind, hosted):
+        self.name, self.model, self.url, self.key_env, self.kind, self.hosted = name, model, url, key_env, kind, hosted
+
+    def _payload(self, q, text):
+        if self.kind == "predicate":
+            instructions = f"{q['instructions']}（はい: {q['true']}／いいえ: {q['false']}）"
+            return {"model": self.model, "input": text,
+                    "questions": [{"type": "predicate", "name": "q", "instructions": instructions}]}
+        return {"model": self.model, "state": text, "questions": {"q": {
+            "type": "noul", "instructions": q["instructions"], "criteria": {"true": q["true"], "false": q["false"]}}}}
+
+    def decide(self, task, text):
+        t0 = time.perf_counter()
+        res = _decide_request(self.url, os.environ.get(self.key_env), self._payload(QUESTIONS[task], text))
+        dt = time.perf_counter() - t0
+        answers = res["answers"]
+        ans = answers[0] if isinstance(answers, list) else answers["q"]
+        p = ans.get("probability", ans.get("noul"))
+        return {"verdict": None if p is None else ("YES" if p >= 0.5 else "NO"), "p_yes": p, "latency_s": dt}
+
+    def loaded_bytes(self):
+        if self.hosted:
+            return None
+        for m in _post_get("/api/ps").get("models", []):
+            if m["name"].startswith(self.model):
+                return m["size"]
+        return None
+
+
+DECISION_JUDGES = {
+    "jev": ("jev-1.14.0", "https://api.typesafe.ai/v1/systemone", "TYPESAFE_API_KEY", "noul", True),
+    "clef_flash": ("clef-flash", OLLAMA + "/v1/systemone", "", "noul", False),
+    "gpt_6_luna": ("gpt-6-luna", "https://api.openai.com/v1/decisions", "OPENAI_API_KEY", "predicate", True),
+}
+
+
 def make(name):
+    if name in DECISION_JUDGES:
+        model, url, key_env, kind, hosted = DECISION_JUDGES[name]
+        return DecisionsJudge(name, model, url, key_env, kind, hosted)
     return ClaudeJudge() if name == "claude_haiku" else OllamaJudge(name)
