@@ -112,9 +112,11 @@ def task_table(task, base_meta):
                       and (task != "aitext" or balanced_accuracy_bound(items, load_results(j, task))[1] > 0.5))
                 verdict = "yes" if ok else "no"
             lines.append(f"| {j} | {cls} | {rate(c['caught'], c['n'])} | {rate(neg['flagged'], neg['n'])} | {c['noans']} | {c['err']} | {verdict} |")
-    lines += ["", "Zero counts: " + "; ".join(
-        f"{j}/{cls} caught 0 of {c['n']} (rate < {pct_up(zero_bound(c['n']))})"
-        for j, s in scores.items() for cls, c in s["pos"].items() if c["caught"] == 0) or "none", ""]
+    zeros = [f"{j}/{cls} caught 0 of {c['n']} (rate < {pct_up(zero_bound(c['n']))})"
+             for j, s in scores.items() for cls, c in s["pos"].items() if c["caught"] == 0]
+    zeros += [f"{j} false warnings 0 of {s['neg']['n']} (rate < {pct_up(zero_bound(s['neg']['n']))})"
+              for j, s in scores.items() if s["neg"]["flagged"] == 0 and s["neg"]["n"]]
+    lines += ["", "Zero counts: " + ("; ".join(zeros) or "none"), ""]
     return lines
 
 

@@ -84,7 +84,7 @@ Zero counts: baseline/term_variant caught 0 of 45 (rate < 6.5%)
 | claude_haiku | gcp_api_key | 45/45 = 100% [92%-100%] | 69/225 = 31% [25%-37%] | 0 | 0 | no |
 | claude_haiku | (all positives) | 225/225 = 100% [98%-100%] | 69/225 = 31% [25%-37%] | 0 | 0 | no |
 
-Zero counts: 
+Zero counts: none
 
 ### aitext
 
@@ -99,7 +99,7 @@ Zero counts:
 | claude_haiku | llm | 13/60 = 22% [13%-34%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
 | claude_haiku | (all positives) | 13/60 = 22% [13%-34%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
 
-Zero counts: qwen3.5_27b/llm caught 0 of 60 (rate < 4.9%)
+Zero counts: qwen3.5_27b/llm caught 0 of 60 (rate < 4.9%); qwen3.5_27b false warnings 0 of 25 (rate < 11.3%); claude_haiku false warnings 0 of 25 (rate < 11.3%)
 
 Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 0.5) is judged on the first, the conservative average of the two Wilson lower bounds, which is what was implemented before any run; the second is a Newcombe-style combination.
 
