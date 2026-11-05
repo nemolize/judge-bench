@@ -2,6 +2,8 @@
 
 Reproducible comparison of judge models on five tasks whose correct answer is built mechanically: honorific errors, "AI-sounding" Japanese, style and notation drift, secrets in a diff, and robustness against an instruction aimed at the judge.
 
+Not related to [JudgeBench](https://github.com/ScalerLab/JudgeBench) (ICLR 2025), which scores LLM judges on English response-pair preferences; this repository compares rule-based, LLM and decision-model judges on Japanese judgement tasks.
+
 Judges: `gemma4:12b` and `qwen3.5:27b` through Ollama (YES/NO read from the first-token logprobs), `claude-haiku-5-5` through `claude -p` (YES/NO as text, no logprobs), three decision models called through a decisions API that returns the probability of yes (`jev-1.14.0` from TypeSafe, `clef-flash` served by Ollama, `gpt-6-luna` from OpenAI; YES when the probability is at least 0.5), and a rule-based baseline per task. `pass_bar.md` fixes what counts as beating the baseline; it was committed before any results file. The three decision models were added after the first four judges had been run, under the same bar. `results/summary.md` is the outcome.
 
 ## Rerun
