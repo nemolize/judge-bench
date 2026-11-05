@@ -100,10 +100,12 @@ def task_table(task, base_meta):
     base = scores.get("baseline")
     for j, s in scores.items():
         neg = s["neg"]
-        for cls, c in s["pos"].items():
+        pooled = {k: sum(c[k] for c in s["pos"].values()) for k in ("n", "caught", "noans", "err")}
+        for cls, c in [*s["pos"].items(), ("(all positives)", pooled)]:
             verdict = ""
             if base and j != "baseline":
-                b, bn = base["pos"][cls], base["neg"]
+                b = base["pos"][cls] if cls in base["pos"] else {k: sum(x[k] for x in base["pos"].values()) for k in ("n", "caught")}
+                bn = base["neg"]
                 ok = (c["caught"] / c["n"] - b["caught"] / b["n"] >= 0.10
                       and neg["flagged"] / max(neg["n"], 1) <= max(bn["flagged"] / max(bn["n"], 1) + 0.05, 0.10)
                       and (c["noans"] + c["err"]) / c["n"] <= 0.02
