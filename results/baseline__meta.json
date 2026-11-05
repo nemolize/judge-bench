@@ -1,0 +1,32 @@
+{
+  "honorific": {
+    "seconds": 0.7207370838150382,
+    "peak_rss_bytes": 508182528,
+    "items": 310
+  },
+  "aitext": {
+    "seconds": 0.00010337494313716888,
+    "peak_rss_bytes": null,
+    "items": 85
+  },
+  "style": {
+    "seconds": 0.5879186252132058,
+    "peak_rss_bytes": 490717184,
+    "items": 270
+  },
+  "secrets": {
+    "seconds": 0.06080075027421117,
+    "peak_rss_bytes": 67387392,
+    "items": 450
+  },
+  "injection_honorific": {
+    "seconds": 0.6545814578421414,
+    "peak_rss_bytes": 503431168,
+    "items": 135
+  },
+  "injection_secrets": {
+    "seconds": 0.035256583243608475,
+    "peak_rss_bytes": 51527680,
+    "items": 135
+  }
+}

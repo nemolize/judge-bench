@@ -1,0 +1,55 @@
+# judge-bench
+
+Reproducible comparison of judge models on five tasks whose correct answer is built mechanically: honorific errors, "AI-sounding" Japanese, style and notation drift, secrets in a diff, and robustness against an instruction aimed at the judge.
+
+Judges: `gemma4:12b` and `qwen3.5:27b` through Ollama (YES/NO read from the first-token logprobs), `claude-haiku-5-5` through `claude -p` (YES/NO as text, no logprobs), and a rule-based baseline per task. `pass_bar.md` fixes what counts as beating the baseline; it was committed before any results file. `results/summary.md` is the outcome.
+
+## Rerun
+
+Needs Python 3.13, Node with pnpm, [Ollama](https://ollama.com), [gitleaks](https://github.com/gitleaks/gitleaks) and, for the Claude judge, the `claude` CLI.
+
+```sh
+pnpm install                                  # textlint and its rules
+ollama pull gemma4:12b && ollama pull qwen3.5:27b
+python3 -m unittest discover -s tests         # generators are deterministic, 40+ positives per class, baselines flag a known-bad example
+python3 -m judgebench.run build               # (re)generate every dataset from the seed
+python3 -m judgebench.run baseline
+python3 -m judgebench.run judge gemma4:12b
+python3 -m judgebench.run judge qwen3.5:27b
+python3 -m judgebench.run judge claude_haiku
+python3 -m judgebench.report                  # writes results/summary.md
+```
+
+`data/secrets.jsonl` and `data/injection_secrets.jsonl` are rebuilt from the seed and not committed: random strings in the shape of real tokens trip secret scanners and push protection. Everything in this repository is dummy data; no live credential is in it.
+
+## Baselines
+
+| Task | Baseline | What it is |
+|---|---|---|
+| Honorific errors | `textlint` with `textlint-rule-ja-no-abusage` and `textlint-rule-prh` using `baselines/prh-honorific.yml` | No honorific rule exists on npm (searched `keigo`, `honorific`, `二重敬語`), so the dictionary lists the double-honorific shapes named in 文化庁「敬語の指針」 (`になられ`, `おっしゃられ`, `いらっしゃられ`, `召し上がられ`). It cannot see role swaps. |
+| Style and notation drift | `textlint` with `no-mix-dearu-desumasu`, `ja-no-orthographic-variants` and a `prh` rule for full-width Latin and digits | |
+| Secrets in a diff | `gitleaks detect --no-git` over each diff as a plain file | |
+| "AI-sounding" Japanese | A fixed list of stock phrases (`judgebench/baselines.py`) | Hand-written before any run, never tuned; no off-the-shelf detector is claimed. |
+
+`tests/test_baselines.py` shows each baseline flagging a known-bad example and passing a known-good one.
+
+## Ground truth
+
+- **Honorific errors:** error types follow the Agency for Cultural Affairs' [敬語の指針](https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/hokoku/pdf/keigo_tosin.pdf) (二重敬語, 尊敬語と謙譲語の取り違え). Each positive has a paired correct sentence; 敬語連結 (`お読みになっていらっしゃる`) and established forms (`お召し上がりになる`, `お見えになる`) are extra negatives the 指針 allows.
+- **"AI-sounding":** negatives are the author's own sentences from Zenn articles published before 2022-11-30 (`data/human_prose.jsonl`, dates from the Zenn API); positives are `claude -p` passages on the same topics (`data/llm_passages.jsonl`, cached so a rerun does not regenerate them).
+- **Style:** clean passages from the author's prose and the LLM passages not used above, plus synthetic sentence pairs; drift is injected.
+- **Secrets:** random strings in the shape of AWS, GitHub, Slack, Stripe and Google keys planted in unified diffs; negatives carry placeholders, hashes, UUIDs and truncated look-alikes in the same place.
+- **Robustness:** three instructions aimed at the judge appended to honorific and secrets positives.
+
+## Spot-check
+
+`python3 -m judgebench.spotcheck` writes `spotcheck.md`: 10 random items per dataset (60 in all, secret-shaped values masked). All 60 were read by hand. Labels held in every case: each positive carries the planted defect, each negative is the correct paired form or a placeholder, hash or UUID. One item reads oddly without being wrong (`午後に課長が明日こちらにいらっしゃいます。`, two time words from the frame and the entry); it is a correct honorific sentence and stays a negative.
+
+## Known limits
+
+- The human class of the "AI-sounding" task has 25 sentences, not 40: the author's pre-ChatGPT articles hold no more prose. The 40-item floor applies to positives (60 LLM passages); the false-warning rate there carries a wide interval.
+- The LLM passages mention commands and product names the author's sentences also use, but topic and length are only loosely matched; a judge may be reading content style, not authorship.
+- Honorific and style text is synthetic or pulled from a few articles; a judge that does well here has not been shown to do well on arbitrary prose.
+- The honorific baseline is a hand-written dictionary of the double-honorific shapes the 指針 names, and the generator draws on the same source. It is expected to do well on that class and cannot see the other two.
+- Claude latency is a sequential probe of 20 calls; the 1,300 judged items ran six at a time. Local latency is one call at a time, model loaded.
+- `gitleaks` flags 60 of 225 look-alike negatives (40-hex strings and UUIDs next to a variable named like a token): the scanner's generic-key rule, not noise in the dataset.
