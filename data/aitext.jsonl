@@ -1,0 +1,85 @@
+{"cls": "llm", "id": "aitext-0001", "label": 1, "meta": {"topic": "nvidia-kernel"}, "task": "aitext", "text": "更新直後にだけ起きる問題なら、古いカーネルで起動して安定した状態に戻す方法もあります。GRUB の詳細オプションから旧カーネルを選べます。"}
+{"cls": "llm", "id": "aitext-0002", "label": 1, "meta": {"topic": "docker-rootless"}, "task": "aitext", "text": "開発用途であれば、Rootless モードはホスト環境を保護しつつ安全に検証できる選択肢になります。一方で本番環境では、運用要件と照らし合わせて導入を判断することをおすすめします。"}
+{"cls": "llm", "id": "aitext-0003", "label": 1, "meta": {"topic": "aws-vault"}, "task": "aitext", "text": "セッションの有効時間は --duration オプションで調整できます。短く設定するほど、漏えい時のリスクを抑えられます。"}
+{"cls": "llm", "id": "aitext-0004", "label": 1, "meta": {"topic": "aws-vault"}, "task": "aitext", "text": "作業を終えたら aws-vault clear でキャッシュを消去しておくと、残った認証情報を整理できて安心です。"}
+{"cls": "llm", "id": "aitext-0005", "label": 1, "meta": {"topic": "aws-vault"}, "task": "aitext", "text": "aws-vault は取得したセッションをキャッシュします。そのため、同じプロファイルを続けて使っても毎回 MFA コードを求められるわけではありません。"}
+{"cls": "llm", "id": "aitext-0006", "label": 1, "meta": {"topic": "docker-rootless"}, "task": "aitext", "text": "Docker を Rootless モードで使うと、デーモンを一般ユーザー権限で動かせるため、root 権限の悪用による被害を抑えられます。まずは利用環境が要件を満たしているかを確認しましょう。"}
+{"cls": "llm", "id": "aitext-0007", "label": 1, "meta": {"topic": "nvidia-kernel"}, "task": "aitext", "text": "同じ問題を防ぐには、カーネルとドライバを同時に更新しないことが有効です。更新の前に、ドライバがどのカーネルに対応しているかを確認しておきましょう。"}
+{"cls": "llm", "id": "aitext-0008", "label": 1, "meta": {"topic": "display-manager"}, "task": "aitext", "text": "systemctl status lightdm で終了コードを確認し、失敗理由を特定してください。"}
+{"cls": "llm", "id": "aitext-0009", "label": 1, "meta": {"topic": "docker-rootless"}, "task": "aitext", "text": "ストレージドライバーは、カーネルと環境に応じて overlay2 や fuse-overlayfs などが選ばれます。ドライバーによって性能や対応機能が異なるため、docker info で現在の設定を確認しましょう。"}
+{"cls": "llm", "id": "aitext-0010", "label": 1, "meta": {"topic": "manjaro-notes"}, "task": "aitext", "text": "Manjaroではカーネルを複数インストールできるため、mhwd-kernel -l で利用可能な一覧を確認しておくと便利です。安定版と新しい版を使い分けると、トラブル時の切り戻しも容易になります。"}
+{"cls": "llm", "id": "aitext-0011", "label": 1, "meta": {"topic": "display-manager"}, "task": "aitext", "text": "ログイン後に即座に画面が切り替わる場合は、ユーザーの ~/.xsession-errors を確認すると手がかりが得られます。"}
+{"cls": "llm", "id": "aitext-0012", "label": 1, "meta": {"topic": "display-manager"}, "task": "aitext", "text": "lightdm --test-mode --debug を実行すると、サービスを止めずにセッション起動の挙動を確認できます。"}
+{"cls": "llm", "id": "aitext-0013", "label": 1, "meta": {"topic": "manjaro-notes"}, "task": "aitext", "text": "SSDを使っている場合は、fstrim.timerを有効にしておくと、書き込み性能の低下を抑えやすくなります。"}
+{"cls": "llm", "id": "aitext-0014", "label": 1, "meta": {"topic": "display-manager"}, "task": "aitext", "text": "ライトディスプレイマネージャーが起動しない原因は、ドライバーの不一致、設定ファイルの破損、グラフィックスサーバーの異常など多岐にわたります。"}
+{"cls": "llm", "id": "aitext-0015", "label": 1, "meta": {"topic": "gpg-email"}, "task": "aitext", "text": "revuid を実行すると失効理由を選ぶ画面が表示され、選んだ内容が失効証明に記録されます。"}
+{"cls": "llm", "id": "aitext-0016", "label": 1, "meta": {"topic": "aws-vault"}, "task": "aitext", "text": "利用するにはまず aws-vault add コマンドで、プロファイルごとにアクセスキーを登録します。登録後はキーの値を画面に表示せずに済みます。"}
+{"cls": "llm", "id": "aitext-0017", "label": 1, "meta": {"topic": "wine-fonts"}, "task": "aitext", "text": "Wine で日本語が文字化けする場合、原因の多くは日本語フォントが見つからないことにあります。まずは環境を確認しましょう。"}
+{"cls": "llm", "id": "aitext-0018", "label": 1, "meta": {"topic": "gpg-email"}, "task": "aitext", "text": "公開鍵サーバーに送信済みの UID は、削除しただけでは消えないため注意が必要です。"}
+{"cls": "llm", "id": "aitext-0019", "label": 1, "meta": {"topic": "docker-rootless"}, "task": "aitext", "text": "ネットワークには、既定で RootlessKit が提供する slirp4netns などのユーザー空間ネットワークが使われます。性能が必要な場合は、vpnkit や pasta などの代替手段を検討してください。"}
+{"cls": "llm", "id": "aitext-0020", "label": 1, "meta": {"topic": "macos-ime"}, "task": "aitext", "text": "本記事の内容が、快適な入力環境を整える一助になれば幸いです。"}
+{"cls": "llm", "id": "aitext-0021", "label": 1, "meta": {"topic": "aws-vault"}, "task": "aitext", "text": "AWS マネジメントコンソールを開きたい場合は aws-vault login プロファイル名 を使うと、一時認証情報でブラウザにサインインできます。"}
+{"cls": "llm", "id": "aitext-0022", "label": 1, "meta": {"topic": "wine-fonts"}, "task": "aitext", "text": "設定を変更した後は、Wine を再起動して反映されているかを実際のアプリで確認することが大切です。"}
+{"cls": "llm", "id": "aitext-0023", "label": 1, "meta": {"topic": "docker-rootless"}, "task": "aitext", "text": "Rootless モードでは、cgroup の制御に制限があるため、リソース制限の一部が効かない場合があります。CPU やメモリの上限を設定する前に、その環境で機能するかを必ず検証してください。"}
+{"cls": "llm", "id": "aitext-0024", "label": 1, "meta": {"topic": "nvidia-kernel"}, "task": "aitext", "text": "よくある原因の一つは、カーネルのヘッダーがインストールされていないことです。`linux-headers-$(uname -r)` のようなパッケージが必要になります。"}
+{"cls": "llm", "id": "aitext-0025", "label": 1, "meta": {"topic": "display-manager"}, "task": "aitext", "text": "ログイン画面が表示されずに黒い画面で止まる場合は、ランレベルやsystemd のターゲット設定を見直してください。"}
+{"cls": "llm", "id": "aitext-0026", "label": 1, "meta": {"topic": "aws-vault"}, "task": "aitext", "text": "この設定があると、aws-vault exec の実行時に MFA のワンタイムコードを入力するプロンプトが表示されます。"}
+{"cls": "llm", "id": "aitext-0027", "label": 1, "meta": {"topic": "nvidia-kernel"}, "task": "aitext", "text": "ログは `/var/lib/dkms/nvidia/<バージョン>/build/make.log` に出力されています。ここにはコンパイラのエラーが記録されているので、最初に確認すべき場所です。"}
+{"cls": "llm", "id": "aitext-0028", "label": 1, "meta": {"topic": "aws-vault"}, "task": "aitext", "text": "MFA を有効にしているアカウントでは、~/.aws/config の mfa_serial に MFA デバイスの ARN を指定します。"}
+{"cls": "llm", "id": "aitext-0029", "label": 1, "meta": {"topic": "manjaro-notes"}, "task": "aitext", "text": "日本語入力にはfcitx5とMozcの組み合わせを使うことが多いです。環境変数の設定を忘れると変換候補が出ないため、ログアウト後の再確認が欠かせません。"}
+{"cls": "llm", "id": "aitext-0030", "label": 1, "meta": {"topic": "gpg-email"}, "task": "aitext", "text": "編集モードで adduid と入力すると、氏名、メールアドレス、コメントを順に尋ねられます。"}
+{"cls": "llm", "id": "aitext-0031", "label": 1, "meta": {"topic": "macos-ime"}, "task": "aitext", "text": "設定を反映させるために、アプリを一度終了してから再度起動すると確実です。"}
+{"cls": "llm", "id": "aitext-0032", "label": 1, "meta": {"topic": "macos-ime"}, "task": "aitext", "text": "変更後も表示が残る場合は、別のアプリで同じ現象が起きるかを確かめてください。"}
+{"cls": "llm", "id": "aitext-0033", "label": 1, "meta": {"topic": "aws-vault"}, "task": "aitext", "text": "aws-vault は、AWS のアクセスキーを ~/.aws/credentials に平文で残さず、macOS のキーチェーンなど OS の保管領域に格納するツールです。"}
+{"cls": "llm", "id": "aitext-0034", "label": 1, "meta": {"topic": "macos-ime"}, "task": "aitext", "text": "表示に関する項目が見つかったら、オフに切り替えてインジケータの表示を止めます。"}
+{"cls": "llm", "id": "aitext-0035", "label": 1, "meta": {"topic": "macos-ime"}, "task": "aitext", "text": "このインジケータは、日本語IMEなど一部の入力ソースがカーソル位置に表示する仕組みです。"}
+{"cls": "llm", "id": "aitext-0036", "label": 1, "meta": {"topic": "aws-vault"}, "task": "aitext", "text": "~/.aws/config にはリージョンや MFA デバイスの情報を書くだけで、秘密鍵は書かずに済みます。"}
+{"cls": "llm", "id": "aitext-0037", "label": 1, "meta": {"topic": "nvidia-kernel"}, "task": "aitext", "text": "`modprobe nvidia` でエラーが出るときは、`dmesg` の出力も合わせて見てください。署名の検証エラーが出ていれば、Secure Boot が原因かもしれません。"}
+{"cls": "llm", "id": "aitext-0038", "label": 1, "meta": {"topic": "wine-fonts"}, "task": "aitext", "text": "同じプレフィックスを複数のアプリで共有している場合は、影響範囲を理解したうえで変更を加えるようにしましょう。"}
+{"cls": "llm", "id": "aitext-0039", "label": 1, "meta": {"topic": "docker-rootless"}, "task": "aitext", "text": "/etc/subuid と /etc/subgid には、そのユーザーに割り当てる UID と GID の範囲を記述します。範囲が重複すると、コンテナーの動作が不安定になるおそれがあります。"}
+{"cls": "llm", "id": "aitext-0040", "label": 1, "meta": {"topic": "nvidia-kernel"}, "task": "aitext", "text": "Secure Boot が有効な環境では、ビルドしたモジュールに署名しなければ読み込めません。MOK（Machine Owner Key）を登録して署名する手順が必要になります。"}
+{"cls": "llm", "id": "aitext-0041", "label": 1, "meta": {"topic": "docker-rootless"}, "task": "aitext", "text": "Rootless モードには、ポート番号 1024 未満のバインドや一部のネットワーク機能に制限があります。利用前に、自分の用途で支障がないかを確認しておくことが大切です。"}
+{"cls": "llm", "id": "aitext-0042", "label": 1, "meta": {"topic": "manjaro-notes"}, "task": "aitext", "text": "タイムゾーンは timedatectl set-timezone Asia/Tokyo で設定します。Windowsと時刻を共有するデュアルブート環境では、RTCの扱いも合わせて確認してください。"}
+{"cls": "llm", "id": "aitext-0043", "label": 1, "meta": {"topic": "manjaro-notes"}, "task": "aitext", "text": "Manjaroを日常利用する前に、まずシステムを最新の状態に更新しておくと、後のトラブルを減らせます。"}
+{"cls": "llm", "id": "aitext-0044", "label": 1, "meta": {"topic": "gpg-email"}, "task": "aitext", "text": "削除の確認を求められたら y で応答し、save を入力して変更を確定します。"}
+{"cls": "llm", "id": "aitext-0045", "label": 1, "meta": {"topic": "docker-rootless"}, "task": "aitext", "text": "スクリプトを実行する前に、一般ユーザーで sudo を使わずに実行できるかを確認してください。管理者権限が必要な箇所は、事前にシステム管理者へ依頼する形になります。"}
+{"cls": "llm", "id": "aitext-0046", "label": 1, "meta": {"topic": "docker-rootless"}, "task": "aitext", "text": "起動できたら、docker run --rm hello-world で動作を確認しましょう。エラーが出た場合は、ログを journalctl --user -u docker で確認すると原因を特定しやすくなります。"}
+{"cls": "llm", "id": "aitext-0047", "label": 1, "meta": {"topic": "manjaro-notes"}, "task": "aitext", "text": "Timeshiftでスナップショットを取得しておけば、更新で不具合が出た場合にも前の状態へ戻せるため、安心して作業を進められます。"}
+{"cls": "llm", "id": "aitext-0048", "label": 1, "meta": {"topic": "macos-ime"}, "task": "aitext", "text": "最初に、システム設定を開き、「キーボード」の項目を選択します。"}
+{"cls": "llm", "id": "aitext-0049", "label": 1, "meta": {"topic": "manjaro-notes"}, "task": "aitext", "text": "孤立したパッケージは pacman -Qdtq で一覧できます。不要なものを確認してから削除すると、ディスク容量を無駄なく整理できます。"}
+{"cls": "llm", "id": "aitext-0050", "label": 1, "meta": {"topic": "display-manager"}, "task": "aitext", "text": "Xorg のログは /var/log/Xorg.0.log に出力されるため、EE で始まる行を探すと失敗箇所が分かります。"}
+{"cls": "llm", "id": "aitext-0051", "label": 1, "meta": {"topic": "display-manager"}, "task": "aitext", "text": "権限が誤って root 所有になっている場合は、chown で所有者を元のユーザーに戻してください。"}
+{"cls": "llm", "id": "aitext-0052", "label": 1, "meta": {"topic": "nvidia-kernel"}, "task": "aitext", "text": "別の原因として、ドライバのバージョンが新しいカーネルに対応していないケースもあります。この場合は、ドライバを更新するしかありません。"}
+{"cls": "llm", "id": "aitext-0053", "label": 1, "meta": {"topic": "wine-fonts"}, "task": "aitext", "text": "ロケールが C や en_US のままだと、アプリケーションが日本語を正しく扱えないことがあります。"}
+{"cls": "llm", "id": "aitext-0054", "label": 1, "meta": {"topic": "display-manager"}, "task": "aitext", "text": "ディスプレイマネージャーを別のもの（GDM や SDDM など）に切り替えて起動するかを確認すると、LightDM 固有の問題かどうかを切り分けられます。"}
+{"cls": "llm", "id": "aitext-0055", "label": 1, "meta": {"topic": "gpg-email"}, "task": "aitext", "text": "既定で使うアドレスを変えたい場合は、uid N で対象を選んでから primary を実行します。"}
+{"cls": "llm", "id": "aitext-0056", "label": 1, "meta": {"topic": "docker-rootless"}, "task": "aitext", "text": "Rootless モードの導入後も、Docker 本体やランタイムのアップデートを定期的に適用してください。セキュリティ修正を取り込むことが、環境全体の安全性を保つ近道になります。"}
+{"cls": "llm", "id": "aitext-0057", "label": 1, "meta": {"topic": "manjaro-notes"}, "task": "aitext", "text": "ミラーサーバーは pacman-mirrors -g で国内のサーバーに切り替えられます。ダウンロード速度が大きく改善することがあるので、初期設定で試してみてください。"}
+{"cls": "llm", "id": "aitext-0058", "label": 1, "meta": {"topic": "macos-ime"}, "task": "aitext", "text": "それでも改善しない場合は、macOSを最新バージョンに更新することで解消することもあります。"}
+{"cls": "llm", "id": "aitext-0059", "label": 1, "meta": {"topic": "wine-fonts"}, "task": "aitext", "text": "winecfg の「グラフィックス」タブで DPI を調整すると、フォントの大きさや見た目が改善する場合があります。"}
+{"cls": "llm", "id": "aitext-0060", "label": 1, "meta": {"topic": "display-manager"}, "task": "aitext", "text": "ユーザーのホームディレクトリ内の .Xauthority が壊れていると、ログイン直後に画面が戻ることがあります。"}
+{"cls": "neg_human", "id": "aitext-0061", "label": 0, "meta": {"slug": "141a5ca670acfc"}, "task": "aitext", "text": "カーネルオプションにibt=offを追加することでこのエラーは解決します。"}
+{"cls": "neg_human", "id": "aitext-0062", "label": 0, "meta": {"slug": "141a5ca670acfc"}, "task": "aitext", "text": "ちなみにIndirect Branch Trackingはjmp/call命令にまつわるセキュリティ機能だそうです。"}
+{"cls": "neg_human", "id": "aitext-0063", "label": 0, "meta": {"slug": "3a5d03a7974eea"}, "task": "aitext", "text": "aws-vaultを利用するとMFA認証をラップしてくれてシークレットもセキュアに保存できるので試してみた。"}
+{"cls": "neg_human", "id": "aitext-0064", "label": 0, "meta": {"slug": "3a5d03a7974eea"}, "task": "aitext", "text": "筆者は最近MacよりUbuntuを使うことが多いが、導入手順はMacOSとほとんど差異はなさそう。"}
+{"cls": "neg_human", "id": "aitext-0065", "label": 0, "meta": {"slug": "3a5d03a7974eea"}, "task": "aitext", "text": "初回だとバックエンドのキーストア(Ubuntuだとseahorse)のマスターパスワードの設定も求められる。"}
+{"cls": "neg_human", "id": "aitext-0066", "label": 0, "meta": {"slug": "3a5d03a7974eea"}, "task": "aitext", "text": "※事前にAWSコンソールにて、Yubikeyを仮想MFAデバイスとして追加しておいてください。"}
+{"cls": "neg_human", "id": "aitext-0067", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": "LinuxのDockerはDocker DesktopやRancher Desktopと違い、デフォルトではrootユーザーとしてコンテナが実行されます。"}
+{"cls": "neg_human", "id": "aitext-0068", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": "の実行が必要になるという問題があります。"}
+{"cls": "neg_human", "id": "aitext-0069", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": "今回はこれを解消するRootlessモードの導入手順を紹介します。"}
+{"cls": "neg_human", "id": "aitext-0070", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": "基本的には公式の手順で問題ないと思いますが、ユーザー名前空間の設定手順が公式ページでは割愛されているようなので、そちらの手順を加えています。"}
+{"cls": "neg_human", "id": "aitext-0071", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": "環境はManjaro Linuxを想定していますが、Ubuntuでも基本は同じだと思います。"}
+{"cls": "neg_human", "id": "aitext-0072", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": "Rootlessモードにおいて肝になるユーザー名前空間の設定です。"}
+{"cls": "neg_human", "id": "aitext-0073", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": "ユーザーごとにdocker.sockが作られるので、下記のように環境変数DOCKER_HOSTをセットします。"}
+{"cls": "neg_human", "id": "aitext-0074", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": ".zshrc等に記述すると良いでしょう。"}
+{"cls": "neg_human", "id": "aitext-0075", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "Manjaro Linuxを起動すると、Failed to Start Light Display Managerが発生してXが立ち上がらなくなりました。"}
+{"cls": "neg_human", "id": "aitext-0076", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "このメッセージで検索すると、lightdm関連のパッケージが壊れているといったものから、X関連のパッケージやGPUのドライバが適切にインストールされていない場合にも発生するなど様々な情報が出てきます。"}
+{"cls": "neg_human", "id": "aitext-0077", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "Xが立ち上がらないのは結構消耗するので、また同じ問題を踏んでしまった時に役立つよう備忘録を残しておきます。"}
+{"cls": "neg_human", "id": "aitext-0078", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "※ログは/var/log/lightdm/lightdm.logにも記録されますが、前回起動時も含まれてごちゃごちゃするので、デバッグモードの起動がオススメです。"}
+{"cls": "neg_human", "id": "aitext-0079", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "関連するものとして/var/log/Xorg.0.logも見るといいでしょう。"}
+{"cls": "neg_human", "id": "aitext-0080", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "startxを実行して出力を確認するのもオススメです。"}
+{"cls": "neg_human", "id": "aitext-0081", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "→今回はno screens found(EE)と出ていました。"}
+{"cls": "neg_human", "id": "aitext-0082", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "video-hybrid-intel-nvidia-primeがインストールされている場合、一度手動でアンインストールする必要がありました。"}
+{"cls": "neg_human", "id": "aitext-0083", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "今度はstartxの実行時にversion 'GLIBC_x.xx' not foundが発生するようになりました。"}
+{"cls": "neg_human", "id": "aitext-0084", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "ドライバの入れ替えをしたりlightdmの再インストールをしていた関係でX関連のパッケージの整合性が取れなくなった可能性もありますが、ひとまず下記で依存関係を再インストールしたところ無事lightdmが起動しました。"}
+{"cls": "neg_human", "id": "aitext-0085", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "ドライバ絡みをいじる時は気をつけたほうがいいですね。"}

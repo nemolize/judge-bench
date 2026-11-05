@@ -1,0 +1,116 @@
+{"text": "カーネルを更新したあと、NVIDIA ドライバのカーネルモジュールが読み込めなくなることがあります。原因の多くは、新しいカーネル向けにモジュールがビルドされていないことです。", "topic": "nvidia-kernel"}
+{"text": "DKMS を使っている環境では、更新時に自動で再ビルドされるはずです。しかし、ビルドが途中で失敗していると、モジュールは生成されません。", "topic": "nvidia-kernel"}
+{"text": "まず `dkms status` を実行して、現在のカーネルに対するモジュールの状態を確認しましょう。`installed` と表示されていれば、ビルド自体は成功しています。", "topic": "nvidia-kernel"}
+{"text": "状態が `built` のまま `installed` になっていない場合は、インストールの段階で問題が起きています。その場合は、ログを読んで原因を特定します。", "topic": "nvidia-kernel"}
+{"text": "ログは `/var/lib/dkms/nvidia/<バージョン>/build/make.log` に出力されています。ここにはコンパイラのエラーが記録されているので、最初に確認すべき場所です。", "topic": "nvidia-kernel"}
+{"text": "よくある原因の一つは、カーネルのヘッダーがインストールされていないことです。`linux-headers-$(uname -r)` のようなパッケージが必要になります。", "topic": "nvidia-kernel"}
+{"text": "別の原因として、ドライバのバージョンが新しいカーネルに対応していないケースもあります。この場合は、ドライバを更新するしかありません。", "topic": "nvidia-kernel"}
+{"text": "更新直後にだけ起きる問題なら、古いカーネルで起動して安定した状態に戻す方法もあります。GRUB の詳細オプションから旧カーネルを選べます。", "topic": "nvidia-kernel"}
+{"text": "`modprobe nvidia` でエラーが出るときは、`dmesg` の出力も合わせて見てください。署名の検証エラーが出ていれば、Secure Boot が原因かもしれません。", "topic": "nvidia-kernel"}
+{"text": "Secure Boot が有効な環境では、ビルドしたモジュールに署名しなければ読み込めません。MOK（Machine Owner Key）を登録して署名する手順が必要になります。", "topic": "nvidia-kernel"}
+{"text": "署名の登録は `mokutil --import` で行い、再起動後に表示される画面で鍵を承認します。この操作を忘れると、次回の起動でも同じ問題が起きます。", "topic": "nvidia-kernel"}
+{"text": "ディストリビューションによっては、カーネル更新時に NVIDIA ドライバを自動で再インストールする仕組みが用意されています。その設定が有効になっているかを確認してください。", "topic": "nvidia-kernel"}
+{"text": "ドライバを削除して再インストールすると、多くの場合で問題は解消します。ただし、作業前に設定ファイルやバックアップを取っておくと安心です。", "topic": "nvidia-kernel"}
+{"text": "同じ問題を防ぐには、カーネルとドライバを同時に更新しないことが有効です。更新の前に、ドライバがどのカーネルに対応しているかを確認しておきましょう。", "topic": "nvidia-kernel"}
+{"text": "カーネル更新後の不具合は、原因を順番に切り分けると解決しやすくなります。ログ、DKMS の状態、署名の順に確認するのが効率的です。", "topic": "nvidia-kernel"}
+{"text": "Manjaroを日常利用する前に、まずシステムを最新の状態に更新しておくと、後のトラブルを減らせます。", "topic": "manjaro-notes"}
+{"text": "更新前には公式のお知らせを確認するのが基本です。Arch由来の仕様変更が含まれることがあるため、特にメジャーな変更の告知は必ず読んでおきましょう。", "topic": "manjaro-notes"}
+{"text": "ミラーサーバーは pacman-mirrors -g で国内のサーバーに切り替えられます。ダウンロード速度が大きく改善することがあるので、初期設定で試してみてください。", "topic": "manjaro-notes"}
+{"text": "Manjaroではカーネルを複数インストールできるため、mhwd-kernel -l で利用可能な一覧を確認しておくと便利です。安定版と新しい版を使い分けると、トラブル時の切り戻しも容易になります。", "topic": "manjaro-notes"}
+{"text": "タイムゾーンは timedatectl set-timezone Asia/Tokyo で設定します。Windowsと時刻を共有するデュアルブート環境では、RTCの扱いも合わせて確認してください。", "topic": "manjaro-notes"}
+{"text": "日本語入力にはfcitx5とMozcの組み合わせを使うことが多いです。環境変数の設定を忘れると変換候補が出ないため、ログアウト後の再確認が欠かせません。", "topic": "manjaro-notes"}
+{"text": "AURのパッケージはyayやpamacで導入できますが、ビルドスクリプトの中身を確認しないままインストールすることは避けるべきです。", "topic": "manjaro-notes"}
+{"text": "Timeshiftでスナップショットを取得しておけば、更新で不具合が出た場合にも前の状態へ戻せるため、安心して作業を進められます。", "topic": "manjaro-notes"}
+{"text": "SSDを使っている場合は、fstrim.timerを有効にしておくと、書き込み性能の低下を抑えやすくなります。", "topic": "manjaro-notes"}
+{"text": "孤立したパッケージは pacman -Qdtq で一覧できます。不要なものを確認してから削除すると、ディスク容量を無駄なく整理できます。", "topic": "manjaro-notes"}
+{"text": "パッケージキャッシュは pacman -Sc で整理できますが、古いバージョンへのダウングレードに備えるなら、直近数世代分は残しておくと安心です。", "topic": "manjaro-notes"}
+{"text": "ランチャーのアイコンが表示されない場合は、デスクトップ環境を再読み込みするか、アイコンのキャッシュを更新すると改善することがあります。", "topic": "manjaro-notes"}
+{"text": "部分更新、つまり pacman -Sy だけで済ませる運用は依存関係の不整合を招くため、必ず -Syu でまとめて更新する習慣をつけてください。", "topic": "manjaro-notes"}
+{"text": "更新履歴は /var/log/pacman.log に残るため、トラブルの原因を追うときにはまずこのログを確認すると効率的です。", "topic": "manjaro-notes"}
+{"text": "Wine で日本語が文字化けする場合、原因の多くは日本語フォントが見つからないことにあります。まずは環境を確認しましょう。", "topic": "wine-fonts"}
+{"text": "Linux 側に Noto CJK などの日本語フォントを導入しておくと、Wine は対応するフォントを利用できるようになります。", "topic": "wine-fonts"}
+{"text": "Debian 系なら fonts-noto-cjk パッケージを apt でインストールするのが手軽な方法です。", "topic": "wine-fonts"}
+{"text": "Fedora では google-noto-sans-cjk-jp-fonts を用意すると、同様に日本語を描画できます。", "topic": "wine-fonts"}
+{"text": "次に、Wine の実行環境で言語が日本語に設定されているかを LANG や LC_ALL の値で確認してください。", "topic": "wine-fonts"}
+{"text": "ロケールが C や en_US のままだと、アプリケーションが日本語を正しく扱えないことがあります。", "topic": "wine-fonts"}
+{"text": "winecfg の「グラフィックス」タブで DPI を調整すると、フォントの大きさや見た目が改善する場合があります。", "topic": "wine-fonts"}
+{"text": "特定のアプリが MS ゴシックや MS 明朝を要求する場合は、フォント置換の設定で代替フォントを割り当てます。", "topic": "wine-fonts"}
+{"text": "レジストリの FontSubstitutes や FontLink の項目を編集すると、英字フォントに日本語フォントを連結できます。", "topic": "wine-fonts"}
+{"text": "ただし、レジストリを直接編集する前には、必ずプレフィックスのバックアップを取っておいてください。", "topic": "wine-fonts"}
+{"text": "winetricks を使えば cjkfonts などのフォントを手軽にインストールでき、手作業の設定を減らせます。", "topic": "wine-fonts"}
+{"text": "設定を変更した後は、Wine を再起動して反映されているかを実際のアプリで確認することが大切です。", "topic": "wine-fonts"}
+{"text": "文字の輪郭がぼやける場合は、フォントのアンチエイリアス設定や DPI の値をあわせて見直してください。", "topic": "wine-fonts"}
+{"text": "同じプレフィックスを複数のアプリで共有している場合は、影響範囲を理解したうえで変更を加えるようにしましょう。", "topic": "wine-fonts"}
+{"text": "aws-vault は、AWS のアクセスキーを ~/.aws/credentials に平文で残さず、macOS のキーチェーンなど OS の保管領域に格納するツールです。", "topic": "aws-vault"}
+{"text": "利用するにはまず aws-vault add コマンドで、プロファイルごとにアクセスキーを登録します。登録後はキーの値を画面に表示せずに済みます。", "topic": "aws-vault"}
+{"text": "~/.aws/config にはリージョンや MFA デバイスの情報を書くだけで、秘密鍵は書かずに済みます。", "topic": "aws-vault"}
+{"text": "作業するときは aws-vault exec プロファイル名 -- コマンド の形で実行します。このとき一時的な認証情報が環境変数として渡されます。", "topic": "aws-vault"}
+{"text": "aws-vault exec は、指定したコマンドにだけ一時認証情報を渡します。そのため、シェル全体に長期のキーが残りません。", "topic": "aws-vault"}
+{"text": "MFA を有効にしているアカウントでは、~/.aws/config の mfa_serial に MFA デバイスの ARN を指定します。", "topic": "aws-vault"}
+{"text": "この設定があると、aws-vault exec の実行時に MFA のワンタイムコードを入力するプロンプトが表示されます。", "topic": "aws-vault"}
+{"text": "セッションの有効時間は --duration オプションで調整できます。短く設定するほど、漏えい時のリスクを抑えられます。", "topic": "aws-vault"}
+{"text": "aws-vault は取得したセッションをキャッシュします。そのため、同じプロファイルを続けて使っても毎回 MFA コードを求められるわけではありません。", "topic": "aws-vault"}
+{"text": "作業を終えたら aws-vault clear でキャッシュを消去しておくと、残った認証情報を整理できて安心です。", "topic": "aws-vault"}
+{"text": "AWS マネジメントコンソールを開きたい場合は aws-vault login プロファイル名 を使うと、一時認証情報でブラウザにサインインできます。", "topic": "aws-vault"}
+{"text": "CI やスクリプトで使う場合も、長期のアクセスキーを環境変数に直接書くより、ロールの切り替えを前提にする方が安全です。", "topic": "aws-vault"}
+{"text": "キーチェーンのアクセス許可を広く設定すると他のアプリからも参照できてしまうため、許可の範囲は必要最小限にしてください。", "topic": "aws-vault"}
+{"text": "本記事では、aws-vault の導入から MFA 付きプロファイルの設定、日常的な利用方法までを順に説明します。", "topic": "aws-vault"}
+{"text": "ユーザーは本文のみの出力を求めているため、以下に14段落を記載します。", "topic": "docker-rootless"}
+{"text": "Docker を Rootless モードで使うと、デーモンを一般ユーザー権限で動かせるため、root 権限の悪用による被害を抑えられます。まずは利用環境が要件を満たしているかを確認しましょう。", "topic": "docker-rootless"}
+{"text": "Rootless モードを使うには、newuidmap と newgidmap、そして /etc/subuid と /etc/subgid への設定が必要です。これらは多くの Linux ディストリビューションで標準的に用意されています。", "topic": "docker-rootless"}
+{"text": "設定の前に、現在のカーネルが user namespace に対応しているかを確認してください。対応していない環境では、Rootless モードは正しく動作しません。", "topic": "docker-rootless"}
+{"text": "Docker 公式が提供する dockerd-rootless-setuptool.sh を使うと、インストールから初期設定までをまとめて進められます。手作業で構成する場合に比べて、手順の抜けを防ぎやすくなります。", "topic": "docker-rootless"}
+{"text": "スクリプトを実行する前に、一般ユーザーで sudo を使わずに実行できるかを確認してください。管理者権限が必要な箇所は、事前にシステム管理者へ依頼する形になります。", "topic": "docker-rootless"}
+{"text": "/etc/subuid と /etc/subgid には、そのユーザーに割り当てる UID と GID の範囲を記述します。範囲が重複すると、コンテナーの動作が不安定になるおそれがあります。", "topic": "docker-rootless"}
+{"text": "設定が完了したら、systemctl --user start docker でユーザー単位のデーモンを起動します。起動後は docker context の設定も確認してください。", "topic": "docker-rootless"}
+{"text": "環境変数 DOCKER_HOST には、ユーザー用のソケットパスを指定します。通常は unix:///run/user/1000/docker.sock のように、ユーザー ID に応じたパスになります。", "topic": "docker-rootless"}
+{"text": "起動できたら、docker run --rm hello-world で動作を確認しましょう。エラーが出た場合は、ログを journalctl --user -u docker で確認すると原因を特定しやすくなります。", "topic": "docker-rootless"}
+{"text": "Rootless モードには、ポート番号 1024 未満のバインドや一部のネットワーク機能に制限があります。利用前に、自分の用途で支障がないかを確認しておくことが大切です。", "topic": "docker-rootless"}
+{"text": "ネットワークには、既定で RootlessKit が提供する slirp4netns などのユーザー空間ネットワークが使われます。性能が必要な場合は、vpnkit や pasta などの代替手段を検討してください。", "topic": "docker-rootless"}
+{"text": "ストレージドライバーは、カーネルと環境に応じて overlay2 や fuse-overlayfs などが選ばれます。ドライバーによって性能や対応機能が異なるため、docker info で現在の設定を確認しましょう。", "topic": "docker-rootless"}
+{"text": "Rootless モードでは、cgroup の制御に制限があるため、リソース制限の一部が効かない場合があります。CPU やメモリの上限を設定する前に、その環境で機能するかを必ず検証してください。", "topic": "docker-rootless"}
+{"text": "開発用途であれば、Rootless モードはホスト環境を保護しつつ安全に検証できる選択肢になります。一方で本番環境では、運用要件と照らし合わせて導入を判断することをおすすめします。", "topic": "docker-rootless"}
+{"text": "Rootless モードの導入後も、Docker 本体やランタイムのアップデートを定期的に適用してください。セキュリティ修正を取り込むことが、環境全体の安全性を保つ近道になります。", "topic": "docker-rootless"}
+{"text": "GPG キーに新しいメールアドレスを追加するには、まず gpg --edit-key にキーIDを指定して編集モードに入ります。", "topic": "gpg-email"}
+{"text": "編集モードで adduid と入力すると、氏名、メールアドレス、コメントを順に尋ねられます。", "topic": "gpg-email"}
+{"text": "氏名を既存の UID と揃えておくと、どちらのアドレスでも同じ人物として扱いやすくなります。", "topic": "gpg-email"}
+{"text": "追加後に list と入力すると、キーに紐づく UID を一覧で確認できます。", "topic": "gpg-email"}
+{"text": "既定で使うアドレスを変えたい場合は、uid N で対象を選んでから primary を実行します。", "topic": "gpg-email"}
+{"text": "変更内容は save で保存するまで反映されないので、作業の最後に必ず保存してください。", "topic": "gpg-email"}
+{"text": "不要になったメールアドレスを削除するには、編集モードで uid N を選択してから deluid を実行します。", "topic": "gpg-email"}
+{"text": "削除の確認を求められたら y で応答し、save を入力して変更を確定します。", "topic": "gpg-email"}
+{"text": "削除前に残すUIDを primary で設定しておくと、既定のアドレスを確実に制御できます。", "topic": "gpg-email"}
+{"text": "公開鍵サーバーに送信済みの UID は、削除しただけでは消えないため注意が必要です。", "topic": "gpg-email"}
+{"text": "その場合は revuid で UID を失効させ、失効証明を含む鍵を公開し直す必要があります。", "topic": "gpg-email"}
+{"text": "revuid を実行すると失効理由を選ぶ画面が表示され、選んだ内容が失効証明に記録されます。", "topic": "gpg-email"}
+{"text": "失効後は gpg --keyserver と --send-key を使って鍵を送信し直すと、公開側にも変更が伝わります。", "topic": "gpg-email"}
+{"text": "作業前に gpg --export-secret-keys で秘密鍵をバックアップしておくと、誤操作があっても復旧しやすくなります。", "topic": "gpg-email"}
+{"text": "ライトディスプレイマネージャーが起動しない原因は、ドライバーの不一致、設定ファイルの破損、グラフィックスサーバーの異常など多岐にわたります。", "topic": "display-manager"}
+{"text": "まずは journalctl で直前のエラーログを確認するのが、原因を絞り込む最短の方法です。", "topic": "display-manager"}
+{"text": "ログイン画面が表示されずに黒い画面で止まる場合は、ランレベルやsystemd のターゲット設定を見直してください。", "topic": "display-manager"}
+{"text": "グラフィックカードのドライバーを更新した直後に症状が出たなら、そのドライバーを旧バージョンに戻して切り分けるのが有効です。", "topic": "display-manager"}
+{"text": "Xorg のログは /var/log/Xorg.0.log に出力されるため、EE で始まる行を探すと失敗箇所が分かります。", "topic": "display-manager"}
+{"text": "ディスプレイマネージャーの設定ファイルは /etc/lightdm/lightdm.conf にあり、構文の誤りがあるとサービスは起動に失敗します。", "topic": "display-manager"}
+{"text": "設定ファイルを編集する前には、必ずバックアップを作成しておくと安心です。", "topic": "display-manager"}
+{"text": "lightdm --test-mode --debug を実行すると、サービスを止めずにセッション起動の挙動を確認できます。", "topic": "display-manager"}
+{"text": "ユーザーのホームディレクトリ内の .Xauthority が壊れていると、ログイン直後に画面が戻ることがあります。", "topic": "display-manager"}
+{"text": "権限が誤って root 所有になっている場合は、chown で所有者を元のユーザーに戻してください。", "topic": "display-manager"}
+{"text": "ディスプレイマネージャーを別のもの（GDM や SDDM など）に切り替えて起動するかを確認すると、LightDM 固有の問題かどうかを切り分けられます。", "topic": "display-manager"}
+{"text": "systemctl status lightdm で終了コードを確認し、失敗理由を特定してください。", "topic": "display-manager"}
+{"text": "ログイン後に即座に画面が切り替わる場合は、ユーザーの ~/.xsession-errors を確認すると手がかりが得られます。", "topic": "display-manager"}
+{"text": "複数の環境で同じ症状が出ている場合は、更新で入ったパッケージの変更履歴を確認するのが近道です。", "topic": "display-manager"}
+{"text": "問題を解決したら、原因と対処を記録しておくと次回の障害対応が格段に速くなります。", "topic": "display-manager"}
+{"text": "macOSでは、テキストカーソルの横に入力モードを示す小さなインジケータが表示されることがあります。", "topic": "macos-ime"}
+{"text": "文字を入力するたびに視界に入るため、作業の集中を妨げると感じる方もいるでしょう。", "topic": "macos-ime"}
+{"text": "本記事では、そのインジケータを非表示にする方法を手順に沿って紹介します。", "topic": "macos-ime"}
+{"text": "まずは、インジケータが表示される原因を簡単に確認しておきましょう。", "topic": "macos-ime"}
+{"text": "このインジケータは、日本語IMEなど一部の入力ソースがカーソル位置に表示する仕組みです。", "topic": "macos-ime"}
+{"text": "アプリによっては表示されないこともあり、挙動に差が出る点に注意が必要です。", "topic": "macos-ime"}
+{"text": "設定を変更する前に、使用している入力ソースとアプリの組み合わせを確認してください。", "topic": "macos-ime"}
+{"text": "最初に、システム設定を開き、「キーボード」の項目を選択します。", "topic": "macos-ime"}
+{"text": "次に「入力ソース」の設定画面を開き、現在の入力メソッドの設定内容を確認します。", "topic": "macos-ime"}
+{"text": "表示に関する項目が見つかったら、オフに切り替えてインジケータの表示を止めます。", "topic": "macos-ime"}
+{"text": "設定を反映させるために、アプリを一度終了してから再度起動すると確実です。", "topic": "macos-ime"}
+{"text": "変更後も表示が残る場合は、別のアプリで同じ現象が起きるかを確かめてください。", "topic": "macos-ime"}
+{"text": "それでも改善しない場合は、macOSを最新バージョンに更新することで解消することもあります。", "topic": "macos-ime"}
+{"text": "本記事の内容が、快適な入力環境を整える一助になれば幸いです。", "topic": "macos-ime"}

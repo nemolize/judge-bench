@@ -1,0 +1,270 @@
+{"cls": "mixed_register", "id": "style-0001", "label": 1, "meta": {"base": "カーネル更新後の不具合は、原因を順番に切り分けると解決しやすくなります。ログ、DKMS の状態、署名の順に確認するのが効率的です。"}, "task": "style", "text": "カーネル更新後の不具合は、原因を順番に切り分けると解決しやすくなります。ログ、DKMS の状態、署名の順に確認するのが効率的である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0002", "label": 0, "meta": {}, "task": "style", "text": "カーネル更新後の不具合は、原因を順番に切り分けると解決しやすくなります。ログ、DKMS の状態、署名の順に確認するのが効率的です。"}
+{"cls": "mixed_register", "id": "style-0003", "label": 1, "meta": {"base": "ドライバを削除して再インストールすると、多くの場合で問題は解消します。ただし、作業前に設定ファイルやバックアップを取っておくと安心です。"}, "task": "style", "text": "ドライバを削除して再インストールすると、多くの場合で問題は解消します。ただし、作業前に設定ファイルやバックアップを取っておくと安心である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0004", "label": 0, "meta": {}, "task": "style", "text": "ドライバを削除して再インストールすると、多くの場合で問題は解消します。ただし、作業前に設定ファイルやバックアップを取っておくと安心です。"}
+{"cls": "mixed_register", "id": "style-0005", "label": 1, "meta": {"base": "Rootless モードを使うには、newuidmap と newgidmap、そして /etc/subuid と /etc/subgid への設定が必要です。これらは多くの Linux ディストリビューションで標準的に用意されています。"}, "task": "style", "text": "Rootless モードを使うには、newuidmap と newgidmap、そして /etc/subuid と /etc/subgid への設定が必要である。これらは多くの Linux ディストリビューションで標準的に用意されています。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0006", "label": 0, "meta": {}, "task": "style", "text": "Rootless モードを使うには、newuidmap と newgidmap、そして /etc/subuid と /etc/subgid への設定が必要です。これらは多くの Linux ディストリビューションで標準的に用意されています。"}
+{"cls": "mixed_register", "id": "style-0007", "label": 1, "meta": {"base": "カーネルオプションにibt=offを追加することでこのエラーは解決します。ちなみにIndirect Branch Trackingはjmp/call命令にまつわるセキュリティ機能だそうです。"}, "task": "style", "text": "カーネルオプションにibt=offを追加することでこのエラーは解決します。ちなみにIndirect Branch Trackingはjmp/call命令にまつわるセキュリティ機能だそうである。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0008", "label": 0, "meta": {}, "task": "style", "text": "カーネルオプションにibt=offを追加することでこのエラーは解決します。ちなみにIndirect Branch Trackingはjmp/call命令にまつわるセキュリティ機能だそうです。"}
+{"cls": "mixed_register", "id": "style-0009", "label": 1, "meta": {"base": "環境はManjaro Linuxを想定していますが、Ubuntuでも基本は同じだと思います。Rootlessモードにおいて肝になるユーザー名前空間の設定です。"}, "task": "style", "text": "環境はManjaro Linuxを想定していますが、Ubuntuでも基本は同じだと思います。Rootlessモードにおいて肝になるユーザー名前空間の設定である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0010", "label": 0, "meta": {}, "task": "style", "text": "環境はManjaro Linuxを想定していますが、Ubuntuでも基本は同じだと思います。Rootlessモードにおいて肝になるユーザー名前空間の設定です。"}
+{"cls": "mixed_register", "id": "style-0011", "label": 1, "meta": {"base": "次に、下記の手順でGitHubに登録します。というエラーになるため、事前の削除が必要です。"}, "task": "style", "text": "次に、下記の手順でGitHubに登録します。というエラーになるため、事前の削除が必要である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0012", "label": 0, "meta": {}, "task": "style", "text": "次に、下記の手順でGitHubに登録します。というエラーになるため、事前の削除が必要です。"}
+{"cls": "mixed_register", "id": "style-0013", "label": 1, "meta": {"base": "カーネルを更新したあと、NVIDIA ドライバのカーネルモジュールが読み込めなくなることがあります。原因の多くは、新しいカーネル向けにモジュールがビルドされていないことです。"}, "task": "style", "text": "カーネルを更新したあと、NVIDIA ドライバのカーネルモジュールが読み込めなくなることがあります。原因の多くは、新しいカーネル向けにモジュールがビルドされていないことである。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0014", "label": 0, "meta": {}, "task": "style", "text": "カーネルを更新したあと、NVIDIA ドライバのカーネルモジュールが読み込めなくなることがあります。原因の多くは、新しいカーネル向けにモジュールがビルドされていないことです。"}
+{"cls": "mixed_register", "id": "style-0015", "label": 1, "meta": {"base": "まず、Winetricksをインストールします。Winetricksは、Wine上で動作するアプリケーションの設定を簡単に行うためのスクリプトです。"}, "task": "style", "text": "まず、Winetricksをインストールします。Winetricksは、Wine上で動作するアプリケーションの設定を簡単に行うためのスクリプトである。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0016", "label": 0, "meta": {}, "task": "style", "text": "まず、Winetricksをインストールします。Winetricksは、Wine上で動作するアプリケーションの設定を簡単に行うためのスクリプトです。"}
+{"cls": "width", "id": "style-0017", "label": 1, "meta": {"base": "まずは journalctl で直前のエラーログを確認するのが、原因を絞り込む最短の方法です。"}, "task": "style", "text": "まずは ｊｏｕｒｎａｌｃｔｌ で直前のエラーログを確認するのが、原因を絞り込む最短の方法です。"}
+{"cls": "neg_paired_width", "id": "style-0018", "label": 0, "meta": {}, "task": "style", "text": "まずは journalctl で直前のエラーログを確認するのが、原因を絞り込む最短の方法です。"}
+{"cls": "width", "id": "style-0019", "label": 1, "meta": {"base": "ドライバの入れ替えをしたりlightdmの再インストールをしていた関係でX関連のパッケージの整合性が取れなくなった可能性もありますが、ひとまず下記で依存関係を再インストールしたところ無事lightdmが起動しました。ドライバ絡みをいじる時は気をつけたほうがいいですね。"}, "task": "style", "text": "ドライバの入れ替えをしたりｌｉｇｈｔｄｍの再インストールをしていた関係でX関連のパッケージの整合性が取れなくなった可能性もありますが、ひとまず下記で依存関係を再インストールしたところ無事lightdmが起動しました。ドライバ絡みをいじる時は気をつけたほうがいいですね。"}
+{"cls": "neg_paired_width", "id": "style-0020", "label": 0, "meta": {}, "task": "style", "text": "ドライバの入れ替えをしたりlightdmの再インストールをしていた関係でX関連のパッケージの整合性が取れなくなった可能性もありますが、ひとまず下記で依存関係を再インストールしたところ無事lightdmが起動しました。ドライバ絡みをいじる時は気をつけたほうがいいですね。"}
+{"cls": "width", "id": "style-0021", "label": 1, "meta": {"base": "作業前に gpg --export-secret-keys で秘密鍵をバックアップしておくと、誤操作があっても復旧しやすくなります。"}, "task": "style", "text": "作業前に ｇｐｇ --export-secret-keys で秘密鍵をバックアップしておくと、誤操作があっても復旧しやすくなります。"}
+{"cls": "neg_paired_width", "id": "style-0022", "label": 0, "meta": {}, "task": "style", "text": "作業前に gpg --export-secret-keys で秘密鍵をバックアップしておくと、誤操作があっても復旧しやすくなります。"}
+{"cls": "width", "id": "style-0023", "label": 1, "meta": {"base": "カーネル更新後の不具合は、原因を順番に切り分けると解決しやすくなります。ログ、DKMS の状態、署名の順に確認するのが効率的です。"}, "task": "style", "text": "カーネル更新後の不具合は、原因を順番に切り分けると解決しやすくなります。ログ、ＤＫＭＳ の状態、署名の順に確認するのが効率的です。"}
+{"cls": "neg_paired_width", "id": "style-0024", "label": 0, "meta": {}, "task": "style", "text": "カーネル更新後の不具合は、原因を順番に切り分けると解決しやすくなります。ログ、DKMS の状態、署名の順に確認するのが効率的です。"}
+{"cls": "width", "id": "style-0025", "label": 1, "meta": {"base": "まず `dkms status` を実行して、現在のカーネルに対するモジュールの状態を確認しましょう。`installed` と表示されていれば、ビルド自体は成功しています。"}, "task": "style", "text": "まず `ｄｋｍｓ status` を実行して、現在のカーネルに対するモジュールの状態を確認しましょう。`installed` と表示されていれば、ビルド自体は成功しています。"}
+{"cls": "neg_paired_width", "id": "style-0026", "label": 0, "meta": {}, "task": "style", "text": "まず `dkms status` を実行して、現在のカーネルに対するモジュールの状態を確認しましょう。`installed` と表示されていれば、ビルド自体は成功しています。"}
+{"cls": "width", "id": "style-0027", "label": 1, "meta": {"base": "設定が完了したら、systemctl --user start docker でユーザー単位のデーモンを起動します。起動後は docker context の設定も確認してください。"}, "task": "style", "text": "設定が完了したら、ｓｙｓｔｅｍｃｔｌ --user start docker でユーザー単位のデーモンを起動します。起動後は docker context の設定も確認してください。"}
+{"cls": "neg_paired_width", "id": "style-0028", "label": 0, "meta": {}, "task": "style", "text": "設定が完了したら、systemctl --user start docker でユーザー単位のデーモンを起動します。起動後は docker context の設定も確認してください。"}
+{"cls": "width", "id": "style-0029", "label": 1, "meta": {"base": "startxを実行して出力を確認するのもオススメです。→今回はno screens found(EE)と出ていました。"}, "task": "style", "text": "ｓｔａｒｔｘを実行して出力を確認するのもオススメです。→今回はno screens found(EE)と出ていました。"}
+{"cls": "neg_paired_width", "id": "style-0030", "label": 0, "meta": {}, "task": "style", "text": "startxを実行して出力を確認するのもオススメです。→今回はno screens found(EE)と出ていました。"}
+{"cls": "width", "id": "style-0031", "label": 1, "meta": {"base": "削除前に残すUIDを primary で設定しておくと、既定のアドレスを確実に制御できます。"}, "task": "style", "text": "削除前に残すＵＩＤを primary で設定しておくと、既定のアドレスを確実に制御できます。"}
+{"cls": "neg_paired_width", "id": "style-0032", "label": 0, "meta": {}, "task": "style", "text": "削除前に残すUIDを primary で設定しておくと、既定のアドレスを確実に制御できます。"}
+{"cls": "width", "id": "style-0033", "label": 1, "meta": {"base": "追加後に list と入力すると、キーに紐づく UID を一覧で確認できます。"}, "task": "style", "text": "追加後に ｌｉｓｔ と入力すると、キーに紐づく UID を一覧で確認できます。"}
+{"cls": "neg_paired_width", "id": "style-0034", "label": 0, "meta": {}, "task": "style", "text": "追加後に list と入力すると、キーに紐づく UID を一覧で確認できます。"}
+{"cls": "width", "id": "style-0035", "label": 1, "meta": {"base": "LinuxのDockerはDocker DesktopやRancher Desktopと違い、デフォルトではrootユーザーとしてコンテナが実行されます。の実行が必要になるという問題があります。"}, "task": "style", "text": "ＬｉｎｕｘのDockerはDocker DesktopやRancher Desktopと違い、デフォルトではrootユーザーとしてコンテナが実行されます。の実行が必要になるという問題があります。"}
+{"cls": "neg_paired_width", "id": "style-0036", "label": 0, "meta": {}, "task": "style", "text": "LinuxのDockerはDocker DesktopやRancher Desktopと違い、デフォルトではrootユーザーとしてコンテナが実行されます。の実行が必要になるという問題があります。"}
+{"cls": "width", "id": "style-0037", "label": 1, "meta": {"base": "削除に当たり、まず対象のメールアドレス（ユーザー）を選択する必要があります。[ultimate] (1). yourname <yourname-old@users.noreply.github.com>を選択するには下記のようにカッコの中の番号1を指定します。"}, "task": "style", "text": "削除に当たり、まず対象のメールアドレス（ユーザー）を選択する必要があります。[ｕｌｔｉｍａｔｅ] (1). yourname <yourname-old@users.noreply.github.com>を選択するには下記のようにカッコの中の番号1を指定します。"}
+{"cls": "neg_paired_width", "id": "style-0038", "label": 0, "meta": {}, "task": "style", "text": "削除に当たり、まず対象のメールアドレス（ユーザー）を選択する必要があります。[ultimate] (1). yourname <yourname-old@users.noreply.github.com>を選択するには下記のようにカッコの中の番号1を指定します。"}
+{"cls": "width", "id": "style-0039", "label": 1, "meta": {"base": "macOS Sonomaでは、テキストカーソル横にAやあのようなインジケータが出るようになりました。設定画面にはこれをオフにする設定はないようで、気になっている方もいるのではないでしょうか。"}, "task": "style", "text": "ｍａｃＯＳ Sonomaでは、テキストカーソル横にAやあのようなインジケータが出るようになりました。設定画面にはこれをオフにする設定はないようで、気になっている方もいるのではないでしょうか。"}
+{"cls": "neg_paired_width", "id": "style-0040", "label": 0, "meta": {}, "task": "style", "text": "macOS Sonomaでは、テキストカーソル横にAやあのようなインジケータが出るようになりました。設定画面にはこれをオフにする設定はないようで、気になっている方もいるのではないでしょうか。"}
+{"cls": "width", "id": "style-0041", "label": 1, "meta": {"base": "不要になったメールアドレスを削除するには、編集モードで uid N を選択してから deluid を実行します。"}, "task": "style", "text": "不要になったメールアドレスを削除するには、編集モードで ｕｉｄ N を選択してから deluid を実行します。"}
+{"cls": "neg_paired_width", "id": "style-0042", "label": 0, "meta": {}, "task": "style", "text": "不要になったメールアドレスを削除するには、編集モードで uid N を選択してから deluid を実行します。"}
+{"cls": "width", "id": "style-0043", "label": 1, "meta": {"base": "ディストリビューションによっては、カーネル更新時に NVIDIA ドライバを自動で再インストールする仕組みが用意されています。その設定が有効になっているかを確認してください。"}, "task": "style", "text": "ディストリビューションによっては、カーネル更新時に ＮＶＩＤＩＡ ドライバを自動で再インストールする仕組みが用意されています。その設定が有効になっているかを確認してください。"}
+{"cls": "neg_paired_width", "id": "style-0044", "label": 0, "meta": {}, "task": "style", "text": "ディストリビューションによっては、カーネル更新時に NVIDIA ドライバを自動で再インストールする仕組みが用意されています。その設定が有効になっているかを確認してください。"}
+{"cls": "width", "id": "style-0045", "label": 1, "meta": {"base": "環境変数 DOCKER_HOST には、ユーザー用のソケットパスを指定します。通常は unix:///run/user/1000/docker.sock のように、ユーザー ID に応じたパスになります。"}, "task": "style", "text": "環境変数 ＤＯＣＫＥＲ_HOST には、ユーザー用のソケットパスを指定します。通常は unix:///run/user/1000/docker.sock のように、ユーザー ID に応じたパスになります。"}
+{"cls": "neg_paired_width", "id": "style-0046", "label": 0, "meta": {}, "task": "style", "text": "環境変数 DOCKER_HOST には、ユーザー用のソケットパスを指定します。通常は unix:///run/user/1000/docker.sock のように、ユーザー ID に応じたパスになります。"}
+{"cls": "width", "id": "style-0047", "label": 1, "meta": {"base": "失効後は gpg --keyserver と --send-key を使って鍵を送信し直すと、公開側にも変更が伝わります。"}, "task": "style", "text": "失効後は ｇｐｇ --keyserver と --send-key を使って鍵を送信し直すと、公開側にも変更が伝わります。"}
+{"cls": "neg_paired_width", "id": "style-0048", "label": 0, "meta": {}, "task": "style", "text": "失効後は gpg --keyserver と --send-key を使って鍵を送信し直すと、公開側にも変更が伝わります。"}
+{"cls": "width", "id": "style-0049", "label": 1, "meta": {"base": "Docker 公式が提供する dockerd-rootless-setuptool.sh を使うと、インストールから初期設定までをまとめて進められます。手作業で構成する場合に比べて、手順の抜けを防ぎやすくなります。"}, "task": "style", "text": "Ｄｏｃｋｅｒ 公式が提供する dockerd-rootless-setuptool.sh を使うと、インストールから初期設定までをまとめて進められます。手作業で構成する場合に比べて、手順の抜けを防ぎやすくなります。"}
+{"cls": "neg_paired_width", "id": "style-0050", "label": 0, "meta": {}, "task": "style", "text": "Docker 公式が提供する dockerd-rootless-setuptool.sh を使うと、インストールから初期設定までをまとめて進められます。手作業で構成する場合に比べて、手順の抜けを防ぎやすくなります。"}
+{"cls": "width", "id": "style-0051", "label": 1, "meta": {"base": "これでユーザーが選択されるので、下記のように削除して保存します。まず下記で、新たにメールアドレスの追加削除を行ったGPG公開鍵をダンプできます。"}, "task": "style", "text": "これでユーザーが選択されるので、下記のように削除して保存します。まず下記で、新たにメールアドレスの追加削除を行ったＧＰＧ公開鍵をダンプできます。"}
+{"cls": "neg_paired_width", "id": "style-0052", "label": 0, "meta": {}, "task": "style", "text": "これでユーザーが選択されるので、下記のように削除して保存します。まず下記で、新たにメールアドレスの追加削除を行ったGPG公開鍵をダンプできます。"}
+{"cls": "width", "id": "style-0053", "label": 1, "meta": {"base": "ディスプレイマネージャーの設定ファイルは /etc/lightdm/lightdm.conf にあり、構文の誤りがあるとサービスは起動に失敗します。"}, "task": "style", "text": "ディスプレイマネージャーの設定ファイルは /ｅｔｃ/lightdm/lightdm.conf にあり、構文の誤りがあるとサービスは起動に失敗します。"}
+{"cls": "neg_paired_width", "id": "style-0054", "label": 0, "meta": {}, "task": "style", "text": "ディスプレイマネージャーの設定ファイルは /etc/lightdm/lightdm.conf にあり、構文の誤りがあるとサービスは起動に失敗します。"}
+{"cls": "width", "id": "style-0055", "label": 1, "meta": {"base": "Debian 系なら fonts-noto-cjk パッケージを apt でインストールするのが手軽な方法です。"}, "task": "style", "text": "Ｄｅｂｉａｎ 系なら fonts-noto-cjk パッケージを apt でインストールするのが手軽な方法です。"}
+{"cls": "neg_paired_width", "id": "style-0056", "label": 0, "meta": {}, "task": "style", "text": "Debian 系なら fonts-noto-cjk パッケージを apt でインストールするのが手軽な方法です。"}
+{"cls": "width", "id": "style-0057", "label": 1, "meta": {"base": "Wineで日本語フォントが正しく表示されない問題は、Winetricksを使用してCJKフォントをインストールすることで簡単に解決できます。上記の手順を参考にして、快適なWine環境を整えてください。"}, "task": "style", "text": "Ｗｉｎｅで日本語フォントが正しく表示されない問題は、Winetricksを使用してCJKフォントをインストールすることで簡単に解決できます。上記の手順を参考にして、快適なWine環境を整えてください。"}
+{"cls": "neg_paired_width", "id": "style-0058", "label": 0, "meta": {}, "task": "style", "text": "Wineで日本語フォントが正しく表示されない問題は、Winetricksを使用してCJKフォントをインストールすることで簡単に解決できます。上記の手順を参考にして、快適なWine環境を整えてください。"}
+{"cls": "width", "id": "style-0059", "label": 1, "meta": {"base": "以下のコマンドを実行することで、日本語フォントの表示問題を解決することができます。※既にWineがインストールされていることを前提にします。"}, "task": "style", "text": "以下のコマンドを実行することで、日本語フォントの表示問題を解決することができます。※既にＷｉｎｅがインストールされていることを前提にします。"}
+{"cls": "neg_paired_width", "id": "style-0060", "label": 0, "meta": {}, "task": "style", "text": "以下のコマンドを実行することで、日本語フォントの表示問題を解決することができます。※既にWineがインストールされていることを前提にします。"}
+{"cls": "width", "id": "style-0061", "label": 1, "meta": {"base": "Winetricksを使用して、CJK（中国語、日本語、韓国語）フォントをインストールします。最後に、Wineを再起動して変更を適用します。"}, "task": "style", "text": "Ｗｉｎｅｔｒｉｃｋｓを使用して、CJK（中国語、日本語、韓国語）フォントをインストールします。最後に、Wineを再起動して変更を適用します。"}
+{"cls": "neg_paired_width", "id": "style-0062", "label": 0, "meta": {}, "task": "style", "text": "Winetricksを使用して、CJK（中国語、日本語、韓国語）フォントをインストールします。最後に、Wineを再起動して変更を適用します。"}
+{"cls": "width", "id": "style-0063", "label": 1, "meta": {"base": "このメッセージで検索すると、lightdm関連のパッケージが壊れているといったものから、X関連のパッケージやGPUのドライバが適切にインストールされていない場合にも発生するなど様々な情報が出てきます。Xが立ち上がらないのは結構消耗するので、また同じ問題を踏んでしまった時に役立つよう備忘録を残しておきます。"}, "task": "style", "text": "このメッセージで検索すると、ｌｉｇｈｔｄｍ関連のパッケージが壊れているといったものから、X関連のパッケージやGPUのドライバが適切にインストールされていない場合にも発生するなど様々な情報が出てきます。Xが立ち上がらないのは結構消耗するので、また同じ問題を踏んでしまった時に役立つよう備忘録を残しておきます。"}
+{"cls": "neg_paired_width", "id": "style-0064", "label": 0, "meta": {}, "task": "style", "text": "このメッセージで検索すると、lightdm関連のパッケージが壊れているといったものから、X関連のパッケージやGPUのドライバが適切にインストールされていない場合にも発生するなど様々な情報が出てきます。Xが立ち上がらないのは結構消耗するので、また同じ問題を踏んでしまった時に役立つよう備忘録を残しておきます。"}
+{"cls": "width", "id": "style-0065", "label": 1, "meta": {"base": "更新前には公式のお知らせを確認するのが基本です。Arch由来の仕様変更が含まれることがあるため、特にメジャーな変更の告知は必ず読んでおきましょう。"}, "task": "style", "text": "更新前には公式のお知らせを確認するのが基本です。Ａｒｃｈ由来の仕様変更が含まれることがあるため、特にメジャーな変更の告知は必ず読んでおきましょう。"}
+{"cls": "neg_paired_width", "id": "style-0066", "label": 0, "meta": {}, "task": "style", "text": "更新前には公式のお知らせを確認するのが基本です。Arch由来の仕様変更が含まれることがあるため、特にメジャーな変更の告知は必ず読んでおきましょう。"}
+{"cls": "width", "id": "style-0067", "label": 1, "meta": {"base": "pamacでEdit build filesを選択。Wineを使用していると、日本語フォントが正しく表示されないことがあります。"}, "task": "style", "text": "ｐａｍａｃでEdit build filesを選択。Wineを使用していると、日本語フォントが正しく表示されないことがあります。"}
+{"cls": "neg_paired_width", "id": "style-0068", "label": 0, "meta": {}, "task": "style", "text": "pamacでEdit build filesを選択。Wineを使用していると、日本語フォントが正しく表示されないことがあります。"}
+{"cls": "width", "id": "style-0069", "label": 1, "meta": {"base": "GPG キーに新しいメールアドレスを追加するには、まず gpg --edit-key にキーIDを指定して編集モードに入ります。"}, "task": "style", "text": "ＧＰＧ キーに新しいメールアドレスを追加するには、まず gpg --edit-key にキーIDを指定して編集モードに入ります。"}
+{"cls": "neg_paired_width", "id": "style-0070", "label": 0, "meta": {}, "task": "style", "text": "GPG キーに新しいメールアドレスを追加するには、まず gpg --edit-key にキーIDを指定して編集モードに入ります。"}
+{"cls": "width", "id": "style-0071", "label": 1, "meta": {"base": "パッケージキャッシュは pacman -Sc で整理できますが、古いバージョンへのダウングレードに備えるなら、直近数世代分は残しておくと安心です。"}, "task": "style", "text": "パッケージキャッシュは ｐａｃｍａｎ -Sc で整理できますが、古いバージョンへのダウングレードに備えるなら、直近数世代分は残しておくと安心です。"}
+{"cls": "neg_paired_width", "id": "style-0072", "label": 0, "meta": {}, "task": "style", "text": "パッケージキャッシュは pacman -Sc で整理できますが、古いバージョンへのダウングレードに備えるなら、直近数世代分は残しておくと安心です。"}
+{"cls": "width", "id": "style-0073", "label": 1, "meta": {"base": "レジストリの FontSubstitutes や FontLink の項目を編集すると、英字フォントに日本語フォントを連結できます。"}, "task": "style", "text": "レジストリの ＦｏｎｔＳｕｂｓｔｉｔｕｔｅｓ や FontLink の項目を編集すると、英字フォントに日本語フォントを連結できます。"}
+{"cls": "neg_paired_width", "id": "style-0074", "label": 0, "meta": {}, "task": "style", "text": "レジストリの FontSubstitutes や FontLink の項目を編集すると、英字フォントに日本語フォントを連結できます。"}
+{"cls": "width", "id": "style-0075", "label": 1, "meta": {"base": "Fedora では google-noto-sans-cjk-jp-fonts を用意すると、同様に日本語を描画できます。"}, "task": "style", "text": "Ｆｅｄｏｒａ では google-noto-sans-cjk-jp-fonts を用意すると、同様に日本語を描画できます。"}
+{"cls": "neg_paired_width", "id": "style-0076", "label": 0, "meta": {}, "task": "style", "text": "Fedora では google-noto-sans-cjk-jp-fonts を用意すると、同様に日本語を描画できます。"}
+{"cls": "width", "id": "style-0077", "label": 1, "meta": {"base": "video-hybrid-intel-nvidia-primeがインストールされている場合、一度手動でアンインストールする必要がありました。今度はstartxの実行時にversion 'GLIBC_x.xx' not foundが発生するようになりました。"}, "task": "style", "text": "ｖｉｄｅｏ-hybrid-intel-nvidia-primeがインストールされている場合、一度手動でアンインストールする必要がありました。今度はstartxの実行時にversion 'GLIBC_x.xx' not foundが発生するようになりました。"}
+{"cls": "neg_paired_width", "id": "style-0078", "label": 0, "meta": {}, "task": "style", "text": "video-hybrid-intel-nvidia-primeがインストールされている場合、一度手動でアンインストールする必要がありました。今度はstartxの実行時にversion 'GLIBC_x.xx' not foundが発生するようになりました。"}
+{"cls": "width", "id": "style-0079", "label": 1, "meta": {"base": "そのGPGですが、一つの公開鍵に、複数のメールアドレスを後から紐付けたり、削除することができることをご存知ですか？仕事の都合で、これまでと別のメールアドレスを使わなければならないとか、プライベートと業務用のメールアドレスを分けたいといった場面はよくあると思います。"}, "task": "style", "text": "そのＧＰＧですが、一つの公開鍵に、複数のメールアドレスを後から紐付けたり、削除することができることをご存知ですか？仕事の都合で、これまでと別のメールアドレスを使わなければならないとか、プライベートと業務用のメールアドレスを分けたいといった場面はよくあると思います。"}
+{"cls": "neg_paired_width", "id": "style-0080", "label": 0, "meta": {}, "task": "style", "text": "そのGPGですが、一つの公開鍵に、複数のメールアドレスを後から紐付けたり、削除することができることをご存知ですか？仕事の都合で、これまでと別のメールアドレスを使わなければならないとか、プライベートと業務用のメールアドレスを分けたいといった場面はよくあると思います。"}
+{"cls": "width", "id": "style-0081", "label": 1, "meta": {"base": "皆さんはGitHubにGPG公開鍵を登録していますか？コミットにGPGキーでの署名を付加することで、GitHub上ではVerifiedと表示され、同一人物のコミットであることが確認しやすくなります。"}, "task": "style", "text": "皆さんはＧｉｔＨｕｂにGPG公開鍵を登録していますか？コミットにGPGキーでの署名を付加することで、GitHub上ではVerifiedと表示され、同一人物のコミットであることが確認しやすくなります。"}
+{"cls": "neg_paired_width", "id": "style-0082", "label": 0, "meta": {}, "task": "style", "text": "皆さんはGitHubにGPG公開鍵を登録していますか？コミットにGPGキーでの署名を付加することで、GitHub上ではVerifiedと表示され、同一人物のコミットであることが確認しやすくなります。"}
+{"cls": "width", "id": "style-0083", "label": 1, "meta": {"base": "Rootless モードを使うには、newuidmap と newgidmap、そして /etc/subuid と /etc/subgid への設定が必要です。これらは多くの Linux ディストリビューションで標準的に用意されています。"}, "task": "style", "text": "Ｒｏｏｔｌｅｓｓ モードを使うには、newuidmap と newgidmap、そして /etc/subuid と /etc/subgid への設定が必要です。これらは多くの Linux ディストリビューションで標準的に用意されています。"}
+{"cls": "neg_paired_width", "id": "style-0084", "label": 0, "meta": {}, "task": "style", "text": "Rootless モードを使うには、newuidmap と newgidmap、そして /etc/subuid と /etc/subgid への設定が必要です。これらは多くの Linux ディストリビューションで標準的に用意されています。"}
+{"cls": "width", "id": "style-0085", "label": 1, "meta": {"base": "更新履歴は /var/log/pacman.log に残るため、トラブルの原因を追うときにはまずこのログを確認すると効率的です。"}, "task": "style", "text": "更新履歴は /ｖａｒ/log/pacman.log に残るため、トラブルの原因を追うときにはまずこのログを確認すると効率的です。"}
+{"cls": "neg_paired_width", "id": "style-0086", "label": 0, "meta": {}, "task": "style", "text": "更新履歴は /var/log/pacman.log に残るため、トラブルの原因を追うときにはまずこのログを確認すると効率的です。"}
+{"cls": "width", "id": "style-0087", "label": 1, "meta": {"base": "削除するとこれまでVerifiedだったコミットがUnverifiedになりますが、アップロードすればVerifiedに戻ります。Manjaro Linuxを起動すると、Failed to Start Light Display Managerが発生してXが立ち上がらなくなりました。"}, "task": "style", "text": "削除するとこれまでＶｅｒｉｆｉｅｄだったコミットがUnverifiedになりますが、アップロードすればVerifiedに戻ります。Manjaro Linuxを起動すると、Failed to Start Light Display Managerが発生してXが立ち上がらなくなりました。"}
+{"cls": "neg_paired_width", "id": "style-0088", "label": 0, "meta": {}, "task": "style", "text": "削除するとこれまでVerifiedだったコミットがUnverifiedになりますが、アップロードすればVerifiedに戻ります。Manjaro Linuxを起動すると、Failed to Start Light Display Managerが発生してXが立ち上がらなくなりました。"}
+{"cls": "width", "id": "style-0089", "label": 1, "meta": {"base": "Linux 側に Noto CJK などの日本語フォントを導入しておくと、Wine は対応するフォントを利用できるようになります。"}, "task": "style", "text": "Ｌｉｎｕｘ 側に Noto CJK などの日本語フォントを導入しておくと、Wine は対応するフォントを利用できるようになります。"}
+{"cls": "neg_paired_width", "id": "style-0090", "label": 0, "meta": {}, "task": "style", "text": "Linux 側に Noto CJK などの日本語フォントを導入しておくと、Wine は対応するフォントを利用できるようになります。"}
+{"cls": "width", "id": "style-0091", "label": 1, "meta": {"base": "カーネルオプションにibt=offを追加することでこのエラーは解決します。ちなみにIndirect Branch Trackingはjmp/call命令にまつわるセキュリティ機能だそうです。"}, "task": "style", "text": "カーネルオプションにｉｂｔ=offを追加することでこのエラーは解決します。ちなみにIndirect Branch Trackingはjmp/call命令にまつわるセキュリティ機能だそうです。"}
+{"cls": "neg_paired_width", "id": "style-0092", "label": 0, "meta": {}, "task": "style", "text": "カーネルオプションにibt=offを追加することでこのエラーは解決します。ちなみにIndirect Branch Trackingはjmp/call命令にまつわるセキュリティ機能だそうです。"}
+{"cls": "width", "id": "style-0093", "label": 1, "meta": {"base": "環境はManjaro Linuxを想定していますが、Ubuntuでも基本は同じだと思います。Rootlessモードにおいて肝になるユーザー名前空間の設定です。"}, "task": "style", "text": "環境はＭａｎｊａｒｏ Linuxを想定していますが、Ubuntuでも基本は同じだと思います。Rootlessモードにおいて肝になるユーザー名前空間の設定です。"}
+{"cls": "neg_paired_width", "id": "style-0094", "label": 0, "meta": {}, "task": "style", "text": "環境はManjaro Linuxを想定していますが、Ubuntuでも基本は同じだと思います。Rootlessモードにおいて肝になるユーザー名前空間の設定です。"}
+{"cls": "width", "id": "style-0095", "label": 1, "meta": {"base": "しかし、**同じGPG公開鍵をそれらの複数のメールアドレスで使いたい**、というケースは少なからずあるのではないでしょうか。今回は、そんなケースのためのGPGへのメールアドレスの追加/削除の手順をご紹介します。"}, "task": "style", "text": "しかし、**同じＧＰＧ公開鍵をそれらの複数のメールアドレスで使いたい**、というケースは少なからずあるのではないでしょうか。今回は、そんなケースのためのGPGへのメールアドレスの追加/削除の手順をご紹介します。"}
+{"cls": "neg_paired_width", "id": "style-0096", "label": 0, "meta": {}, "task": "style", "text": "しかし、**同じGPG公開鍵をそれらの複数のメールアドレスで使いたい**、というケースは少なからずあるのではないでしょうか。今回は、そんなケースのためのGPGへのメールアドレスの追加/削除の手順をご紹介します。"}
+{"cls": "width", "id": "style-0097", "label": 1, "meta": {"base": "AURのパッケージはyayやpamacで導入できますが、ビルドスクリプトの中身を確認しないままインストールすることは避けるべきです。"}, "task": "style", "text": "ＡＵＲのパッケージはyayやpamacで導入できますが、ビルドスクリプトの中身を確認しないままインストールすることは避けるべきです。"}
+{"cls": "neg_paired_width", "id": "style-0098", "label": 0, "meta": {}, "task": "style", "text": "AURのパッケージはyayやpamacで導入できますが、ビルドスクリプトの中身を確認しないままインストールすることは避けるべきです。"}
+{"cls": "width", "id": "style-0099", "label": 1, "meta": {"base": "winetricks を使えば cjkfonts などのフォントを手軽にインストールでき、手作業の設定を減らせます。"}, "task": "style", "text": "ｗｉｎｅｔｒｉｃｋｓ を使えば cjkfonts などのフォントを手軽にインストールでき、手作業の設定を減らせます。"}
+{"cls": "neg_paired_width", "id": "style-0100", "label": 0, "meta": {}, "task": "style", "text": "winetricks を使えば cjkfonts などのフォントを手軽にインストールでき、手作業の設定を減らせます。"}
+{"cls": "width", "id": "style-0101", "label": 1, "meta": {"base": "※ログは/var/log/lightdm/lightdm.logにも記録されますが、前回起動時も含まれてごちゃごちゃするので、デバッグモードの起動がオススメです。関連するものとして/var/log/Xorg.0.logも見るといいでしょう。"}, "task": "style", "text": "※ログは/ｖａｒ/log/lightdm/lightdm.logにも記録されますが、前回起動時も含まれてごちゃごちゃするので、デバッグモードの起動がオススメです。関連するものとして/var/log/Xorg.0.logも見るといいでしょう。"}
+{"cls": "neg_paired_width", "id": "style-0102", "label": 0, "meta": {}, "task": "style", "text": "※ログは/var/log/lightdm/lightdm.logにも記録されますが、前回起動時も含まれてごちゃごちゃするので、デバッグモードの起動がオススメです。関連するものとして/var/log/Xorg.0.logも見るといいでしょう。"}
+{"cls": "width", "id": "style-0103", "label": 1, "meta": {"base": "氏名を既存の UID と揃えておくと、どちらのアドレスでも同じ人物として扱いやすくなります。"}, "task": "style", "text": "氏名を既存の ＵＩＤ と揃えておくと、どちらのアドレスでも同じ人物として扱いやすくなります。"}
+{"cls": "neg_paired_width", "id": "style-0104", "label": 0, "meta": {}, "task": "style", "text": "氏名を既存の UID と揃えておくと、どちらのアドレスでも同じ人物として扱いやすくなります。"}
+{"cls": "width", "id": "style-0105", "label": 1, "meta": {"base": "署名の登録は `mokutil --import` で行い、再起動後に表示される画面で鍵を承認します。この操作を忘れると、次回の起動でも同じ問題が起きます。"}, "task": "style", "text": "署名の登録は `ｍｏｋｕｔｉｌ --import` で行い、再起動後に表示される画面で鍵を承認します。この操作を忘れると、次回の起動でも同じ問題が起きます。"}
+{"cls": "neg_paired_width", "id": "style-0106", "label": 0, "meta": {}, "task": "style", "text": "署名の登録は `mokutil --import` で行い、再起動後に表示される画面で鍵を承認します。この操作を忘れると、次回の起動でも同じ問題が起きます。"}
+{"cls": "mixed_register", "id": "style-0107", "label": 1, "meta": {}, "task": "style", "text": "ユーザーにログインします。ユーザーの更新は毎週である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0108", "label": 0, "meta": {}, "task": "style", "text": "ユーザーにログインします。ユーザーの更新は毎週です。"}
+{"cls": "mixed_register", "id": "style-0109", "label": 1, "meta": {}, "task": "style", "text": "ブラウザーの設定を確認します。ブラウザーは再起動が必要である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0110", "label": 0, "meta": {}, "task": "style", "text": "ブラウザーの設定を確認します。ブラウザーは再起動が必要です。"}
+{"cls": "mixed_register", "id": "style-0111", "label": 1, "meta": {}, "task": "style", "text": "メモリーへ接続します。接続の確認は必須である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0112", "label": 0, "meta": {}, "task": "style", "text": "メモリーへ接続します。接続の確認は必須です。"}
+{"cls": "mixed_register", "id": "style-0113", "label": 1, "meta": {}, "task": "style", "text": "コンピューターにログインします。コンピューターの更新は毎週である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0114", "label": 0, "meta": {}, "task": "style", "text": "コンピューターにログインします。コンピューターの更新は毎週です。"}
+{"cls": "mixed_register", "id": "style-0115", "label": 1, "meta": {}, "task": "style", "text": "ブラウザーのログを開きます。原因はブラウザーの設定である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0116", "label": 0, "meta": {}, "task": "style", "text": "ブラウザーのログを開きます。原因はブラウザーの設定です。"}
+{"cls": "mixed_register", "id": "style-0117", "label": 1, "meta": {}, "task": "style", "text": "ユーザーの状態を保存します。保存先は共有ディレクトリである。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0118", "label": 0, "meta": {}, "task": "style", "text": "ユーザーの状態を保存します。保存先は共有ディレクトリです。"}
+{"cls": "mixed_register", "id": "style-0119", "label": 1, "meta": {}, "task": "style", "text": "ディレクトリーにログインします。ディレクトリーの更新は毎週である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0120", "label": 0, "meta": {}, "task": "style", "text": "ディレクトリーにログインします。ディレクトリーの更新は毎週です。"}
+{"cls": "mixed_register", "id": "style-0121", "label": 1, "meta": {}, "task": "style", "text": "コンピューターへ接続します。接続の確認は必須である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0122", "label": 0, "meta": {}, "task": "style", "text": "コンピューターへ接続します。接続の確認は必須です。"}
+{"cls": "mixed_register", "id": "style-0123", "label": 1, "meta": {}, "task": "style", "text": "ブラウザーを停止します。停止の影響は小さい。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0124", "label": 0, "meta": {}, "task": "style", "text": "ブラウザーを停止します。停止の影響は小さいです。"}
+{"cls": "mixed_register", "id": "style-0125", "label": 1, "meta": {}, "task": "style", "text": "メモリーを停止します。停止の影響は小さい。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0126", "label": 0, "meta": {}, "task": "style", "text": "メモリーを停止します。停止の影響は小さいです。"}
+{"cls": "mixed_register", "id": "style-0127", "label": 1, "meta": {}, "task": "style", "text": "ディレクトリーの設定を確認します。ディレクトリーは再起動が必要である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0128", "label": 0, "meta": {}, "task": "style", "text": "ディレクトリーの設定を確認します。ディレクトリーは再起動が必要です。"}
+{"cls": "mixed_register", "id": "style-0129", "label": 1, "meta": {}, "task": "style", "text": "ブラウザーへ接続します。接続の確認は必須である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0130", "label": 0, "meta": {}, "task": "style", "text": "ブラウザーへ接続します。接続の確認は必須です。"}
+{"cls": "mixed_register", "id": "style-0131", "label": 1, "meta": {}, "task": "style", "text": "サーバーを停止します。停止の影響は小さい。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0132", "label": 0, "meta": {}, "task": "style", "text": "サーバーを停止します。停止の影響は小さいです。"}
+{"cls": "mixed_register", "id": "style-0133", "label": 1, "meta": {}, "task": "style", "text": "サーバーにログインします。サーバーの更新は毎週である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0134", "label": 0, "meta": {}, "task": "style", "text": "サーバーにログインします。サーバーの更新は毎週です。"}
+{"cls": "mixed_register", "id": "style-0135", "label": 1, "meta": {}, "task": "style", "text": "ドライバーのログを開きます。原因はドライバーの設定である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0136", "label": 0, "meta": {}, "task": "style", "text": "ドライバーのログを開きます。原因はドライバーの設定です。"}
+{"cls": "mixed_register", "id": "style-0137", "label": 1, "meta": {}, "task": "style", "text": "ドライバーの状態を保存します。保存先は共有ディレクトリである。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0138", "label": 0, "meta": {}, "task": "style", "text": "ドライバーの状態を保存します。保存先は共有ディレクトリです。"}
+{"cls": "mixed_register", "id": "style-0139", "label": 1, "meta": {}, "task": "style", "text": "ドライバーへ接続します。接続の確認は必須である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0140", "label": 0, "meta": {}, "task": "style", "text": "ドライバーへ接続します。接続の確認は必須です。"}
+{"cls": "mixed_register", "id": "style-0141", "label": 1, "meta": {}, "task": "style", "text": "プリンターの設定を確認します。プリンターは再起動が必要である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0142", "label": 0, "meta": {}, "task": "style", "text": "プリンターの設定を確認します。プリンターは再起動が必要です。"}
+{"cls": "mixed_register", "id": "style-0143", "label": 1, "meta": {}, "task": "style", "text": "ドライバーの設定を確認します。ドライバーは再起動が必要である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0144", "label": 0, "meta": {}, "task": "style", "text": "ドライバーの設定を確認します。ドライバーは再起動が必要です。"}
+{"cls": "mixed_register", "id": "style-0145", "label": 1, "meta": {}, "task": "style", "text": "プリンターを停止します。停止の影響は小さい。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0146", "label": 0, "meta": {}, "task": "style", "text": "プリンターを停止します。停止の影響は小さいです。"}
+{"cls": "mixed_register", "id": "style-0147", "label": 1, "meta": {}, "task": "style", "text": "コンピューターの設定を確認します。コンピューターは再起動が必要である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0148", "label": 0, "meta": {}, "task": "style", "text": "コンピューターの設定を確認します。コンピューターは再起動が必要です。"}
+{"cls": "mixed_register", "id": "style-0149", "label": 1, "meta": {}, "task": "style", "text": "ディレクトリーの状態を保存します。保存先は共有ディレクトリである。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0150", "label": 0, "meta": {}, "task": "style", "text": "ディレクトリーの状態を保存します。保存先は共有ディレクトリです。"}
+{"cls": "mixed_register", "id": "style-0151", "label": 1, "meta": {}, "task": "style", "text": "ドライバーにログインします。ドライバーの更新は毎週である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0152", "label": 0, "meta": {}, "task": "style", "text": "ドライバーにログインします。ドライバーの更新は毎週です。"}
+{"cls": "mixed_register", "id": "style-0153", "label": 1, "meta": {}, "task": "style", "text": "ユーザーへ接続します。接続の確認は必須である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0154", "label": 0, "meta": {}, "task": "style", "text": "ユーザーへ接続します。接続の確認は必須です。"}
+{"cls": "mixed_register", "id": "style-0155", "label": 1, "meta": {}, "task": "style", "text": "ユーザーの設定を確認します。ユーザーは再起動が必要である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0156", "label": 0, "meta": {}, "task": "style", "text": "ユーザーの設定を確認します。ユーザーは再起動が必要です。"}
+{"cls": "mixed_register", "id": "style-0157", "label": 1, "meta": {}, "task": "style", "text": "ディレクトリーを停止します。停止の影響は小さい。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0158", "label": 0, "meta": {}, "task": "style", "text": "ディレクトリーを停止します。停止の影響は小さいです。"}
+{"cls": "mixed_register", "id": "style-0159", "label": 1, "meta": {}, "task": "style", "text": "プリンターへ接続します。接続の確認は必須である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0160", "label": 0, "meta": {}, "task": "style", "text": "プリンターへ接続します。接続の確認は必須です。"}
+{"cls": "mixed_register", "id": "style-0161", "label": 1, "meta": {}, "task": "style", "text": "サーバーの状態を保存します。保存先は共有ディレクトリである。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0162", "label": 0, "meta": {}, "task": "style", "text": "サーバーの状態を保存します。保存先は共有ディレクトリです。"}
+{"cls": "mixed_register", "id": "style-0163", "label": 1, "meta": {}, "task": "style", "text": "メモリーにログインします。メモリーの更新は毎週である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0164", "label": 0, "meta": {}, "task": "style", "text": "メモリーにログインします。メモリーの更新は毎週です。"}
+{"cls": "mixed_register", "id": "style-0165", "label": 1, "meta": {}, "task": "style", "text": "コンピューターの状態を保存します。保存先は共有ディレクトリである。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0166", "label": 0, "meta": {}, "task": "style", "text": "コンピューターの状態を保存します。保存先は共有ディレクトリです。"}
+{"cls": "mixed_register", "id": "style-0167", "label": 1, "meta": {}, "task": "style", "text": "サーバーの設定を確認します。サーバーは再起動が必要である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0168", "label": 0, "meta": {}, "task": "style", "text": "サーバーの設定を確認します。サーバーは再起動が必要です。"}
+{"cls": "mixed_register", "id": "style-0169", "label": 1, "meta": {}, "task": "style", "text": "メモリーのログを開きます。原因はメモリーの設定である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0170", "label": 0, "meta": {}, "task": "style", "text": "メモリーのログを開きます。原因はメモリーの設定です。"}
+{"cls": "mixed_register", "id": "style-0171", "label": 1, "meta": {}, "task": "style", "text": "ユーザーを停止します。停止の影響は小さい。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0172", "label": 0, "meta": {}, "task": "style", "text": "ユーザーを停止します。停止の影響は小さいです。"}
+{"cls": "mixed_register", "id": "style-0173", "label": 1, "meta": {}, "task": "style", "text": "ブラウザーにログインします。ブラウザーの更新は毎週である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0174", "label": 0, "meta": {}, "task": "style", "text": "ブラウザーにログインします。ブラウザーの更新は毎週です。"}
+{"cls": "mixed_register", "id": "style-0175", "label": 1, "meta": {}, "task": "style", "text": "メモリーの状態を保存します。保存先は共有ディレクトリである。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0176", "label": 0, "meta": {}, "task": "style", "text": "メモリーの状態を保存します。保存先は共有ディレクトリです。"}
+{"cls": "mixed_register", "id": "style-0177", "label": 1, "meta": {}, "task": "style", "text": "プリンターのログを開きます。原因はプリンターの設定である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0178", "label": 0, "meta": {}, "task": "style", "text": "プリンターのログを開きます。原因はプリンターの設定です。"}
+{"cls": "mixed_register", "id": "style-0179", "label": 1, "meta": {}, "task": "style", "text": "ディレクトリーのログを開きます。原因はディレクトリーの設定である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0180", "label": 0, "meta": {}, "task": "style", "text": "ディレクトリーのログを開きます。原因はディレクトリーの設定です。"}
+{"cls": "term_variant", "id": "style-0181", "label": 1, "meta": {"terms": ["ディレクトリー", "ディレクトリ"]}, "task": "style", "text": "ディレクトリーの更新が終わるまで待ちます。最後にディレクトリの状態を保存します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0182", "label": 0, "meta": {}, "task": "style", "text": "ディレクトリーの更新が終わるまで待ちます。最後にディレクトリーの状態を保存します。"}
+{"cls": "term_variant", "id": "style-0183", "label": 1, "meta": {"terms": ["メモリー", "メモリ"]}, "task": "style", "text": "メモリーの更新が終わるまで待ちます。メモリのログを開いて原因を調べます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0184", "label": 0, "meta": {}, "task": "style", "text": "メモリーの更新が終わるまで待ちます。メモリーのログを開いて原因を調べます。"}
+{"cls": "term_variant", "id": "style-0185", "label": 1, "meta": {"terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "その後、ユーザーを再起動します。最後にユーザの状態を保存します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0186", "label": 0, "meta": {}, "task": "style", "text": "その後、ユーザーを再起動します。最後にユーザーの状態を保存します。"}
+{"cls": "term_variant", "id": "style-0187", "label": 1, "meta": {"terms": ["ディレクトリー", "ディレクトリ"]}, "task": "style", "text": "ディレクトリーの設定を確認します。その後、ディレクトリを再起動します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0188", "label": 0, "meta": {}, "task": "style", "text": "ディレクトリーの設定を確認します。その後、ディレクトリーを再起動します。"}
+{"cls": "term_variant", "id": "style-0189", "label": 1, "meta": {"terms": ["プリンター", "プリンタ"]}, "task": "style", "text": "プリンターの設定を確認します。最後にプリンタの状態を保存します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0190", "label": 0, "meta": {}, "task": "style", "text": "プリンターの設定を確認します。最後にプリンターの状態を保存します。"}
+{"cls": "term_variant", "id": "style-0191", "label": 1, "meta": {"terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "その後、ユーザーを再起動します。ユーザの更新が終わるまで待ちます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0192", "label": 0, "meta": {}, "task": "style", "text": "その後、ユーザーを再起動します。ユーザーの更新が終わるまで待ちます。"}
+{"cls": "term_variant", "id": "style-0193", "label": 1, "meta": {"terms": ["ドライバー", "ドライバ"]}, "task": "style", "text": "最後にドライバーの状態を保存します。ドライバのログを開いて原因を調べます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0194", "label": 0, "meta": {}, "task": "style", "text": "最後にドライバーの状態を保存します。ドライバーのログを開いて原因を調べます。"}
+{"cls": "term_variant", "id": "style-0195", "label": 1, "meta": {"terms": ["メモリー", "メモリ"]}, "task": "style", "text": "その後、メモリーを再起動します。メモリの更新が終わるまで待ちます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0196", "label": 0, "meta": {}, "task": "style", "text": "その後、メモリーを再起動します。メモリーの更新が終わるまで待ちます。"}
+{"cls": "term_variant", "id": "style-0197", "label": 1, "meta": {"terms": ["サーバー", "サーバ"]}, "task": "style", "text": "最後にサーバーの状態を保存します。サーバの更新が終わるまで待ちます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0198", "label": 0, "meta": {}, "task": "style", "text": "最後にサーバーの状態を保存します。サーバーの更新が終わるまで待ちます。"}
+{"cls": "term_variant", "id": "style-0199", "label": 1, "meta": {"terms": ["コンピューター", "コンピュータ"]}, "task": "style", "text": "コンピューターの設定を確認します。コンピュータに接続できることを確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0200", "label": 0, "meta": {}, "task": "style", "text": "コンピューターの設定を確認します。コンピューターに接続できることを確認します。"}
+{"cls": "term_variant", "id": "style-0201", "label": 1, "meta": {"terms": ["サーバー", "サーバ"]}, "task": "style", "text": "サーバーのログを開いて原因を調べます。サーバの設定を確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0202", "label": 0, "meta": {}, "task": "style", "text": "サーバーのログを開いて原因を調べます。サーバーの設定を確認します。"}
+{"cls": "term_variant", "id": "style-0203", "label": 1, "meta": {"terms": ["ドライバー", "ドライバ"]}, "task": "style", "text": "ドライバーの設定を確認します。最後にドライバの状態を保存します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0204", "label": 0, "meta": {}, "task": "style", "text": "ドライバーの設定を確認します。最後にドライバーの状態を保存します。"}
+{"cls": "term_variant", "id": "style-0205", "label": 1, "meta": {"terms": ["ブラウザー", "ブラウザ"]}, "task": "style", "text": "最後にブラウザーの状態を保存します。ブラウザの設定を確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0206", "label": 0, "meta": {}, "task": "style", "text": "最後にブラウザーの状態を保存します。ブラウザーの設定を確認します。"}
+{"cls": "term_variant", "id": "style-0207", "label": 1, "meta": {"terms": ["メモリー", "メモリ"]}, "task": "style", "text": "最後にメモリーの状態を保存します。メモリに接続できることを確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0208", "label": 0, "meta": {}, "task": "style", "text": "最後にメモリーの状態を保存します。メモリーに接続できることを確認します。"}
+{"cls": "term_variant", "id": "style-0209", "label": 1, "meta": {"terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "ユーザーに接続できることを確認します。その後、ユーザを再起動します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0210", "label": 0, "meta": {}, "task": "style", "text": "ユーザーに接続できることを確認します。その後、ユーザーを再起動します。"}
+{"cls": "term_variant", "id": "style-0211", "label": 1, "meta": {"terms": ["サーバー", "サーバ"]}, "task": "style", "text": "サーバーの設定を確認します。サーバのログを開いて原因を調べます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0212", "label": 0, "meta": {}, "task": "style", "text": "サーバーの設定を確認します。サーバーのログを開いて原因を調べます。"}
+{"cls": "term_variant", "id": "style-0213", "label": 1, "meta": {"terms": ["ディレクトリー", "ディレクトリ"]}, "task": "style", "text": "最後にディレクトリーの状態を保存します。ディレクトリの更新が終わるまで待ちます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0214", "label": 0, "meta": {}, "task": "style", "text": "最後にディレクトリーの状態を保存します。ディレクトリーの更新が終わるまで待ちます。"}
+{"cls": "term_variant", "id": "style-0215", "label": 1, "meta": {"terms": ["プリンター", "プリンタ"]}, "task": "style", "text": "プリンターに接続できることを確認します。その後、プリンタを再起動します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0216", "label": 0, "meta": {}, "task": "style", "text": "プリンターに接続できることを確認します。その後、プリンターを再起動します。"}
+{"cls": "term_variant", "id": "style-0217", "label": 1, "meta": {"terms": ["ディレクトリー", "ディレクトリ"]}, "task": "style", "text": "最後にディレクトリーの状態を保存します。ディレクトリのログを開いて原因を調べます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0218", "label": 0, "meta": {}, "task": "style", "text": "最後にディレクトリーの状態を保存します。ディレクトリーのログを開いて原因を調べます。"}
+{"cls": "term_variant", "id": "style-0219", "label": 1, "meta": {"terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "最後にユーザーの状態を保存します。ユーザのログを開いて原因を調べます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0220", "label": 0, "meta": {}, "task": "style", "text": "最後にユーザーの状態を保存します。ユーザーのログを開いて原因を調べます。"}
+{"cls": "term_variant", "id": "style-0221", "label": 1, "meta": {"terms": ["コンピューター", "コンピュータ"]}, "task": "style", "text": "コンピューターの更新が終わるまで待ちます。コンピュータのログを開いて原因を調べます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0222", "label": 0, "meta": {}, "task": "style", "text": "コンピューターの更新が終わるまで待ちます。コンピューターのログを開いて原因を調べます。"}
+{"cls": "term_variant", "id": "style-0223", "label": 1, "meta": {"terms": ["ドライバー", "ドライバ"]}, "task": "style", "text": "ドライバーの設定を確認します。その後、ドライバを再起動します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0224", "label": 0, "meta": {}, "task": "style", "text": "ドライバーの設定を確認します。その後、ドライバーを再起動します。"}
+{"cls": "term_variant", "id": "style-0225", "label": 1, "meta": {"terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "ユーザーの更新が終わるまで待ちます。その後、ユーザを再起動します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0226", "label": 0, "meta": {}, "task": "style", "text": "ユーザーの更新が終わるまで待ちます。その後、ユーザーを再起動します。"}
+{"cls": "term_variant", "id": "style-0227", "label": 1, "meta": {"terms": ["ブラウザー", "ブラウザ"]}, "task": "style", "text": "その後、ブラウザーを再起動します。ブラウザの設定を確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0228", "label": 0, "meta": {}, "task": "style", "text": "その後、ブラウザーを再起動します。ブラウザーの設定を確認します。"}
+{"cls": "term_variant", "id": "style-0229", "label": 1, "meta": {"terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "ユーザーの更新が終わるまで待ちます。ユーザのログを開いて原因を調べます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0230", "label": 0, "meta": {}, "task": "style", "text": "ユーザーの更新が終わるまで待ちます。ユーザーのログを開いて原因を調べます。"}
+{"cls": "term_variant", "id": "style-0231", "label": 1, "meta": {"terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "最後にユーザーの状態を保存します。ユーザに接続できることを確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0232", "label": 0, "meta": {}, "task": "style", "text": "最後にユーザーの状態を保存します。ユーザーに接続できることを確認します。"}
+{"cls": "term_variant", "id": "style-0233", "label": 1, "meta": {"terms": ["コンピューター", "コンピュータ"]}, "task": "style", "text": "コンピューターのログを開いて原因を調べます。コンピュータの設定を確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0234", "label": 0, "meta": {}, "task": "style", "text": "コンピューターのログを開いて原因を調べます。コンピューターの設定を確認します。"}
+{"cls": "term_variant", "id": "style-0235", "label": 1, "meta": {"terms": ["メモリー", "メモリ"]}, "task": "style", "text": "メモリーのログを開いて原因を調べます。メモリに接続できることを確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0236", "label": 0, "meta": {}, "task": "style", "text": "メモリーのログを開いて原因を調べます。メモリーに接続できることを確認します。"}
+{"cls": "term_variant", "id": "style-0237", "label": 1, "meta": {"terms": ["プリンター", "プリンタ"]}, "task": "style", "text": "その後、プリンターを再起動します。プリンタのログを開いて原因を調べます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0238", "label": 0, "meta": {}, "task": "style", "text": "その後、プリンターを再起動します。プリンターのログを開いて原因を調べます。"}
+{"cls": "term_variant", "id": "style-0239", "label": 1, "meta": {"terms": ["コンピューター", "コンピュータ"]}, "task": "style", "text": "コンピューターのログを開いて原因を調べます。最後にコンピュータの状態を保存します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0240", "label": 0, "meta": {}, "task": "style", "text": "コンピューターのログを開いて原因を調べます。最後にコンピューターの状態を保存します。"}
+{"cls": "term_variant", "id": "style-0241", "label": 1, "meta": {"terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "その後、ユーザーを再起動します。ユーザのログを開いて原因を調べます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0242", "label": 0, "meta": {}, "task": "style", "text": "その後、ユーザーを再起動します。ユーザーのログを開いて原因を調べます。"}
+{"cls": "term_variant", "id": "style-0243", "label": 1, "meta": {"terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "その後、ユーザーを再起動します。ユーザに接続できることを確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0244", "label": 0, "meta": {}, "task": "style", "text": "その後、ユーザーを再起動します。ユーザーに接続できることを確認します。"}
+{"cls": "term_variant", "id": "style-0245", "label": 1, "meta": {"terms": ["メモリー", "メモリ"]}, "task": "style", "text": "最後にメモリーの状態を保存します。メモリの設定を確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0246", "label": 0, "meta": {}, "task": "style", "text": "最後にメモリーの状態を保存します。メモリーの設定を確認します。"}
+{"cls": "term_variant", "id": "style-0247", "label": 1, "meta": {"terms": ["プリンター", "プリンタ"]}, "task": "style", "text": "その後、プリンターを再起動します。最後にプリンタの状態を保存します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0248", "label": 0, "meta": {}, "task": "style", "text": "その後、プリンターを再起動します。最後にプリンターの状態を保存します。"}
+{"cls": "term_variant", "id": "style-0249", "label": 1, "meta": {"terms": ["プリンター", "プリンタ"]}, "task": "style", "text": "その後、プリンターを再起動します。プリンタに接続できることを確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0250", "label": 0, "meta": {}, "task": "style", "text": "その後、プリンターを再起動します。プリンターに接続できることを確認します。"}
+{"cls": "term_variant", "id": "style-0251", "label": 1, "meta": {"terms": ["ブラウザー", "ブラウザ"]}, "task": "style", "text": "ブラウザーのログを開いて原因を調べます。ブラウザの設定を確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0252", "label": 0, "meta": {}, "task": "style", "text": "ブラウザーのログを開いて原因を調べます。ブラウザーの設定を確認します。"}
+{"cls": "term_variant", "id": "style-0253", "label": 1, "meta": {"terms": ["コンピューター", "コンピュータ"]}, "task": "style", "text": "最後にコンピューターの状態を保存します。コンピュータに接続できることを確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0254", "label": 0, "meta": {}, "task": "style", "text": "最後にコンピューターの状態を保存します。コンピューターに接続できることを確認します。"}
+{"cls": "term_variant", "id": "style-0255", "label": 1, "meta": {"terms": ["ディレクトリー", "ディレクトリ"]}, "task": "style", "text": "その後、ディレクトリーを再起動します。ディレクトリの設定を確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0256", "label": 0, "meta": {}, "task": "style", "text": "その後、ディレクトリーを再起動します。ディレクトリーの設定を確認します。"}
+{"cls": "term_variant", "id": "style-0257", "label": 1, "meta": {"terms": ["サーバー", "サーバ"]}, "task": "style", "text": "サーバーのログを開いて原因を調べます。最後にサーバの状態を保存します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0258", "label": 0, "meta": {}, "task": "style", "text": "サーバーのログを開いて原因を調べます。最後にサーバーの状態を保存します。"}
+{"cls": "term_variant", "id": "style-0259", "label": 1, "meta": {"terms": ["プリンター", "プリンタ"]}, "task": "style", "text": "プリンターのログを開いて原因を調べます。プリンタに接続できることを確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0260", "label": 0, "meta": {}, "task": "style", "text": "プリンターのログを開いて原因を調べます。プリンターに接続できることを確認します。"}
+{"cls": "term_variant", "id": "style-0261", "label": 1, "meta": {"terms": ["メモリー", "メモリ"]}, "task": "style", "text": "その後、メモリーを再起動します。メモリのログを開いて原因を調べます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0262", "label": 0, "meta": {}, "task": "style", "text": "その後、メモリーを再起動します。メモリーのログを開いて原因を調べます。"}
+{"cls": "term_variant", "id": "style-0263", "label": 1, "meta": {"terms": ["ブラウザー", "ブラウザ"]}, "task": "style", "text": "最後にブラウザーの状態を保存します。その後、ブラウザを再起動します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0264", "label": 0, "meta": {}, "task": "style", "text": "最後にブラウザーの状態を保存します。その後、ブラウザーを再起動します。"}
+{"cls": "term_variant", "id": "style-0265", "label": 1, "meta": {"terms": ["ディレクトリー", "ディレクトリ"]}, "task": "style", "text": "ディレクトリーに接続できることを確認します。ディレクトリの設定を確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0266", "label": 0, "meta": {}, "task": "style", "text": "ディレクトリーに接続できることを確認します。ディレクトリーの設定を確認します。"}
+{"cls": "term_variant", "id": "style-0267", "label": 1, "meta": {"terms": ["ブラウザー", "ブラウザ"]}, "task": "style", "text": "ブラウザーの更新が終わるまで待ちます。最後にブラウザの状態を保存します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0268", "label": 0, "meta": {}, "task": "style", "text": "ブラウザーの更新が終わるまで待ちます。最後にブラウザーの状態を保存します。"}
+{"cls": "term_variant", "id": "style-0269", "label": 1, "meta": {"terms": ["ドライバー", "ドライバ"]}, "task": "style", "text": "ドライバーの更新が終わるまで待ちます。ドライバに接続できることを確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0270", "label": 0, "meta": {}, "task": "style", "text": "ドライバーの更新が終わるまで待ちます。ドライバーに接続できることを確認します。"}

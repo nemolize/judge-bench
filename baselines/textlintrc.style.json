@@ -1,0 +1,7 @@
+{
+  "rules": {
+    "no-mix-dearu-desumasu": true,
+    "ja-no-orthographic-variants": true,
+    "prh": { "rulePaths": ["./prh-width.yml"] }
+  }
+}

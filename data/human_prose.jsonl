@@ -1,0 +1,60 @@
+{"pre_ai": true, "published": "2022-08-02", "slug": "141a5ca670acfc", "text": "カーネルオプションにibt=offを追加することでこのエラーは解決します。"}
+{"pre_ai": true, "published": "2022-08-02", "slug": "141a5ca670acfc", "text": "ちなみにIndirect Branch Trackingはjmp/call命令にまつわるセキュリティ機能だそうです。"}
+{"pre_ai": false, "published": "2023-11-14", "slug": "19718ac32dd084", "text": "Arch Linuxのパッケージマネージャ pacmanのオプションは大文字やシーケンスをまとめて指定できる。"}
+{"pre_ai": false, "published": "2023-11-14", "slug": "19718ac32dd084", "text": "下記はどれも等価である。"}
+{"pre_ai": false, "published": "2023-11-14", "slug": "19718ac32dd084", "text": "pamacでEdit build filesを選択。"}
+{"pre_ai": false, "published": "2024-08-04", "slug": "26c21148286705", "text": "Wineを使用していると、日本語フォントが正しく表示されないことがあります。"}
+{"pre_ai": false, "published": "2024-08-04", "slug": "26c21148286705", "text": "以下の手順を実行することで、この問題を解決できます。"}
+{"pre_ai": false, "published": "2024-08-04", "slug": "26c21148286705", "text": "まず、最初に結論を示します。"}
+{"pre_ai": false, "published": "2024-08-04", "slug": "26c21148286705", "text": "以下のコマンドを実行することで、日本語フォントの表示問題を解決することができます。"}
+{"pre_ai": false, "published": "2024-08-04", "slug": "26c21148286705", "text": "※既にWineがインストールされていることを前提にします。"}
+{"pre_ai": false, "published": "2024-08-04", "slug": "26c21148286705", "text": "まず、Winetricksをインストールします。"}
+{"pre_ai": false, "published": "2024-08-04", "slug": "26c21148286705", "text": "Winetricksは、Wine上で動作するアプリケーションの設定を簡単に行うためのスクリプトです。"}
+{"pre_ai": false, "published": "2024-08-04", "slug": "26c21148286705", "text": "Winetricksを使用して、CJK（中国語、日本語、韓国語）フォントをインストールします。"}
+{"pre_ai": false, "published": "2024-08-04", "slug": "26c21148286705", "text": "最後に、Wineを再起動して変更を適用します。"}
+{"pre_ai": false, "published": "2024-08-04", "slug": "26c21148286705", "text": "Wineを使用しているアプリケーションを一旦終了し、再度起動してください。"}
+{"pre_ai": false, "published": "2024-08-04", "slug": "26c21148286705", "text": "他にも問題がある場合は、Wineの公式ドキュメントやフォーラムで解決策を探してみてください。"}
+{"pre_ai": false, "published": "2024-08-04", "slug": "26c21148286705", "text": "Wineで日本語フォントが正しく表示されない問題は、Winetricksを使用してCJKフォントをインストールすることで簡単に解決できます。"}
+{"pre_ai": false, "published": "2024-08-04", "slug": "26c21148286705", "text": "上記の手順を参考にして、快適なWine環境を整えてください。"}
+{"pre_ai": true, "published": "2021-07-30", "slug": "3a5d03a7974eea", "text": "aws-vaultを利用するとMFA認証をラップしてくれてシークレットもセキュアに保存できるので試してみた。"}
+{"pre_ai": true, "published": "2021-07-30", "slug": "3a5d03a7974eea", "text": "筆者は最近MacよりUbuntuを使うことが多いが、導入手順はMacOSとほとんど差異はなさそう。"}
+{"pre_ai": true, "published": "2021-07-30", "slug": "3a5d03a7974eea", "text": "初回だとバックエンドのキーストア(Ubuntuだとseahorse)のマスターパスワードの設定も求められる。"}
+{"pre_ai": true, "published": "2021-07-30", "slug": "3a5d03a7974eea", "text": "※事前にAWSコンソールにて、Yubikeyを仮想MFAデバイスとして追加しておいてください。"}
+{"pre_ai": true, "published": "2022-07-25", "slug": "3cec197e5f5ec8", "text": "LinuxのDockerはDocker DesktopやRancher Desktopと違い、デフォルトではrootユーザーとしてコンテナが実行されます。"}
+{"pre_ai": true, "published": "2022-07-25", "slug": "3cec197e5f5ec8", "text": "の実行が必要になるという問題があります。"}
+{"pre_ai": true, "published": "2022-07-25", "slug": "3cec197e5f5ec8", "text": "今回はこれを解消するRootlessモードの導入手順を紹介します。"}
+{"pre_ai": true, "published": "2022-07-25", "slug": "3cec197e5f5ec8", "text": "基本的には公式の手順で問題ないと思いますが、ユーザー名前空間の設定手順が公式ページでは割愛されているようなので、そちらの手順を加えています。"}
+{"pre_ai": true, "published": "2022-07-25", "slug": "3cec197e5f5ec8", "text": "環境はManjaro Linuxを想定していますが、Ubuntuでも基本は同じだと思います。"}
+{"pre_ai": true, "published": "2022-07-25", "slug": "3cec197e5f5ec8", "text": "Rootlessモードにおいて肝になるユーザー名前空間の設定です。"}
+{"pre_ai": true, "published": "2022-07-25", "slug": "3cec197e5f5ec8", "text": "ユーザーごとにdocker.sockが作られるので、下記のように環境変数DOCKER_HOSTをセットします。"}
+{"pre_ai": true, "published": "2022-07-25", "slug": "3cec197e5f5ec8", "text": ".zshrc等に記述すると良いでしょう。"}
+{"pre_ai": false, "published": "2023-06-01", "slug": "5d6d2c8c3930b2", "text": "皆さんはGitHubにGPG公開鍵を登録していますか？"}
+{"pre_ai": false, "published": "2023-06-01", "slug": "5d6d2c8c3930b2", "text": "コミットにGPGキーでの署名を付加することで、GitHub上ではVerifiedと表示され、同一人物のコミットであることが確認しやすくなります。"}
+{"pre_ai": false, "published": "2023-06-01", "slug": "5d6d2c8c3930b2", "text": "そのGPGですが、一つの公開鍵に、複数のメールアドレスを後から紐付けたり、削除することができることをご存知ですか？"}
+{"pre_ai": false, "published": "2023-06-01", "slug": "5d6d2c8c3930b2", "text": "仕事の都合で、これまでと別のメールアドレスを使わなければならないとか、プライベートと業務用のメールアドレスを分けたいといった場面はよくあると思います。"}
+{"pre_ai": false, "published": "2023-06-01", "slug": "5d6d2c8c3930b2", "text": "しかし、**同じGPG公開鍵をそれらの複数のメールアドレスで使いたい**、というケースは少なからずあるのではないでしょうか。"}
+{"pre_ai": false, "published": "2023-06-01", "slug": "5d6d2c8c3930b2", "text": "今回は、そんなケースのためのGPGへのメールアドレスの追加/削除の手順をご紹介します。"}
+{"pre_ai": false, "published": "2023-06-01", "slug": "5d6d2c8c3930b2", "text": "名前とメールアドレスを尋ねられるので任意の値を入力してください。"}
+{"pre_ai": false, "published": "2023-06-01", "slug": "5d6d2c8c3930b2", "text": "入力が済んだら保存して終了します。"}
+{"pre_ai": false, "published": "2023-06-01", "slug": "5d6d2c8c3930b2", "text": "削除に当たり、まず対象のメールアドレス（ユーザー）を選択する必要があります。"}
+{"pre_ai": false, "published": "2023-06-01", "slug": "5d6d2c8c3930b2", "text": "[ultimate] (1). yourname <yourname-old@users.noreply.github.com>を選択するには下記のようにカッコの中の番号1を指定します。"}
+{"pre_ai": false, "published": "2023-06-01", "slug": "5d6d2c8c3930b2", "text": "これでユーザーが選択されるので、下記のように削除して保存します。"}
+{"pre_ai": false, "published": "2023-06-01", "slug": "5d6d2c8c3930b2", "text": "まず下記で、新たにメールアドレスの追加削除を行ったGPG公開鍵をダンプできます。"}
+{"pre_ai": false, "published": "2023-06-01", "slug": "5d6d2c8c3930b2", "text": "次に、下記の手順でGitHubに登録します。"}
+{"pre_ai": false, "published": "2023-06-01", "slug": "5d6d2c8c3930b2", "text": "というエラーになるため、事前の削除が必要です。"}
+{"pre_ai": false, "published": "2023-06-01", "slug": "5d6d2c8c3930b2", "text": "削除するとこれまでVerifiedだったコミットがUnverifiedになりますが、アップロードすればVerifiedに戻ります。"}
+{"pre_ai": true, "published": "2022-02-27", "slug": "7b5cc21852d76c", "text": "Manjaro Linuxを起動すると、Failed to Start Light Display Managerが発生してXが立ち上がらなくなりました。"}
+{"pre_ai": true, "published": "2022-02-27", "slug": "7b5cc21852d76c", "text": "このメッセージで検索すると、lightdm関連のパッケージが壊れているといったものから、X関連のパッケージやGPUのドライバが適切にインストールされていない場合にも発生するなど様々な情報が出てきます。"}
+{"pre_ai": true, "published": "2022-02-27", "slug": "7b5cc21852d76c", "text": "Xが立ち上がらないのは結構消耗するので、また同じ問題を踏んでしまった時に役立つよう備忘録を残しておきます。"}
+{"pre_ai": true, "published": "2022-02-27", "slug": "7b5cc21852d76c", "text": "※ログは/var/log/lightdm/lightdm.logにも記録されますが、前回起動時も含まれてごちゃごちゃするので、デバッグモードの起動がオススメです。"}
+{"pre_ai": true, "published": "2022-02-27", "slug": "7b5cc21852d76c", "text": "関連するものとして/var/log/Xorg.0.logも見るといいでしょう。"}
+{"pre_ai": true, "published": "2022-02-27", "slug": "7b5cc21852d76c", "text": "startxを実行して出力を確認するのもオススメです。"}
+{"pre_ai": true, "published": "2022-02-27", "slug": "7b5cc21852d76c", "text": "→今回はno screens found(EE)と出ていました。"}
+{"pre_ai": true, "published": "2022-02-27", "slug": "7b5cc21852d76c", "text": "video-hybrid-intel-nvidia-primeがインストールされている場合、一度手動でアンインストールする必要がありました。"}
+{"pre_ai": true, "published": "2022-02-27", "slug": "7b5cc21852d76c", "text": "今度はstartxの実行時にversion 'GLIBC_x.xx' not foundが発生するようになりました。"}
+{"pre_ai": true, "published": "2022-02-27", "slug": "7b5cc21852d76c", "text": "ドライバの入れ替えをしたりlightdmの再インストールをしていた関係でX関連のパッケージの整合性が取れなくなった可能性もありますが、ひとまず下記で依存関係を再インストールしたところ無事lightdmが起動しました。"}
+{"pre_ai": true, "published": "2022-02-27", "slug": "7b5cc21852d76c", "text": "ドライバ絡みをいじる時は気をつけたほうがいいですね。"}
+{"pre_ai": false, "published": "2023-10-27", "slug": "a6ee70078051e3", "text": "macOS Sonomaでは、テキストカーソル横にAやあのようなインジケータが出るようになりました。"}
+{"pre_ai": false, "published": "2023-10-27", "slug": "a6ee70078051e3", "text": "設定画面にはこれをオフにする設定はないようで、気になっている方もいるのではないでしょうか。"}
+{"pre_ai": false, "published": "2023-10-27", "slug": "a6ee70078051e3", "text": "このページでは、これを非表示にする方法を説明します。"}
+{"pre_ai": false, "published": "2023-10-27", "slug": "a6ee70078051e3", "text": "方法は簡単、下記のコマンドを実行して再起動すれば出なくなります。"}

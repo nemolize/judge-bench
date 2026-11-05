@@ -1,0 +1,6 @@
+{
+  "rules": {
+    "ja-no-abusage": true,
+    "prh": { "rulePaths": ["./prh-honorific.yml"] }
+  }
+}

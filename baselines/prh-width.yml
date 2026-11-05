@@ -1,0 +1,4 @@
+version: 1
+rules:
+  - expected: 半角で書く
+    pattern: /[Ａ-Ｚａ-ｚ０-９]+/
