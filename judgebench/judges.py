@@ -12,6 +12,8 @@ from .common import ROOT
 OLLAMA = "http://localhost:11434"
 CLAUDE_MODEL = "claude-haiku-5-5"
 CLAUDE_SYSTEM = "You are a strict classifier. Output exactly one word: YES or NO."
+GEMINI_MODEL = "gemini-3.7-flash"
+GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/" + GEMINI_MODEL + ":generateContent"
 
 
 def _post(path, payload, timeout=300):
@@ -74,14 +76,35 @@ class ClaudeJudge:
         return None
 
 
+class GeminiJudge:
+    """Gemini returns no logprobs for this model, so the verdict is the first line of the reply, as for Claude."""
+
+    name = "gemini_flash"
+    hosted = True
+
+    def ask(self, prompt):
+        t0 = time.perf_counter()
+        body = {"contents": [{"role": "user", "parts": [{"text": prompt}]}],
+                "systemInstruction": {"parts": [{"text": CLAUDE_SYSTEM}]},
+                "generationConfig": {"temperature": 0, "maxOutputTokens": 1024, "thinkingConfig": {"thinkingLevel": "low"}}}
+        res = _decide_request(GEMINI_URL, os.environ.get("GEMINI_API_KEY"), body, key_header="x-goog-api-key")
+        parts = (res["candidates"][0].get("content") or {}).get("parts") or [{}]
+        lines = (parts[0].get("text") or "").strip().splitlines()
+        first = lines[0].strip() if lines else ""
+        return {"verdict": first if first in ("YES", "NO") else None, "p_yes": None, "latency_s": time.perf_counter() - t0}
+
+    def loaded_bytes(self):
+        return None
+
+
 QUESTIONS = json.loads((ROOT / "prompts" / "decisions.json").read_text(encoding="utf-8"))
 RETRIES = 4
 
 
-def _decide_request(url, key, payload):
+def _decide_request(url, key, payload, key_header=None):
     headers = {"Content-Type": "application/json"}
     if key:
-        headers["Authorization"] = f"Bearer {key}"
+        headers.update({key_header: key} if key_header else {"Authorization": f"Bearer {key}"})
     for attempt in range(RETRIES):
         req = urllib.request.Request(url, json.dumps(payload).encode(), headers)
         try:
@@ -143,4 +166,6 @@ def make(name):
     if name in DECISION_JUDGES:
         model, url, key_env, kind, hosted = DECISION_JUDGES[name]
         return DecisionsJudge(name, model, url, key_env, kind, hosted)
-    return ClaudeJudge() if name == "claude_haiku" else OllamaJudge(name)
+    if name == "claude_haiku":
+        return ClaudeJudge()
+    return GeminiJudge() if name == "gemini_flash" else OllamaJudge(name)
