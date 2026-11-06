@@ -19,6 +19,7 @@ python3 -m judgebench.run baseline
 python3 -m judgebench.run judge gemma4:12b
 python3 -m judgebench.run judge qwen3.5:27b
 python3 -m judgebench.run judge claude_haiku
+GEMINI_API_KEY=... python3 -m judgebench.run judge gemini_flash   # gemini-3.7-flash; no logprobs, so the first line of the reply decides
 python3 -m judgebench.run judge clef_flash                   # Ollama, model clef-flash
 TYPESAFE_API_KEY=... python3 -m judgebench.run judge jev     # a TypeSafe API key
 CLOUDFLARE_ACCOUNT_ID=... CLOUDFLARE_API_TOKEN=... python3 -m judgebench.run judge clef   # Workers AI Read

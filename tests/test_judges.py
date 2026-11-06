@@ -36,5 +36,23 @@ class DecisionsJudgeTests(unittest.TestCase):
         self.assertIn(q["false"], predicate["questions"][0]["instructions"])
 
 
+class GeminiJudgeTests(unittest.TestCase):
+    def ask(self, text):
+        res = {"candidates": [{"content": {"parts": [{"text": text}]}}]}
+        with mock.patch.object(judges, "_decide_request", return_value=res):
+            return judges.make("gemini_flash").ask("q")
+
+    def test_first_line_yes_or_no_is_the_verdict(self):
+        self.assertEqual(self.ask("YES\nbecause")["verdict"], "YES")
+        self.assertEqual(self.ask("NO")["verdict"], "NO")
+
+    def test_anything_else_is_no_answer(self):
+        self.assertIsNone(self.ask("Maybe")["verdict"])
+
+    def test_empty_candidate_is_no_answer(self):
+        with mock.patch.object(judges, "_decide_request", return_value={"candidates": [{"finishReason": "MAX_TOKENS"}]}):
+            self.assertIsNone(judges.make("gemini_flash").ask("q")["verdict"])
+
+
 if __name__ == "__main__":
     unittest.main()
