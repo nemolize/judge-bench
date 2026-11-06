@@ -5,7 +5,7 @@ import re
 import statistics
 
 from . import datasets
-from .common import ROOT, read_jsonl
+from .common import ROOT, read_jsonl, rng
 
 RESULTS = ROOT / "results"
 JUDGES = ["baseline", "gemma4_12b", "qwen3.5_27b", "claude_haiku", "jev", "clef_flash", "gpt_6_luna"]
@@ -241,7 +241,12 @@ def confound_checks():
              "Not judges: a threshold-free AUC of a trivial feature, so a reader can see how much length or sentence count alone explains.", "",
              "| feature | AUC |", "|---|---|",
              f"| character count | {_auc([len(t) for t in pos], [len(t) for t in neg]):.2f} |",
-             f"| number of sentences | {_auc([sents(t) for t in pos], [sents(t) for t in neg]):.2f} |", ""]
+             f"| number of sentences | {_auc([sents(t) for t in pos], [sents(t) for t in neg]):.2f} |"]
+    lines += ["", "| generator | AUC of character count (AI vs human) |", "|---|---|"]
+    for g in sorted({i["meta"]["generator"] for i in items if i["label"] == 1}):
+        gp = [len(i["text"]) for i in items if i["label"] == 1 and i["meta"]["generator"] == g]
+        lines.append(f"| {g} | {_auc(gp, [len(t) for t in neg]):.2f} |")
+    lines.append("")
     by_gen = {}
     for i in items:
         if i["label"] == 1:
@@ -252,11 +257,18 @@ def confound_checks():
 
 
 def _split(items):
-    """Deterministic halves, alternating within each class so both halves hold every class."""
-    dev, ev, seen = [], [], {}
+    """Seeded halves: shuffled within each (class, file type, decoy kind) so no half holds a whole format."""
+    groups = {}
     for it in sorted(items, key=lambda i: i["id"]):
-        k = seen[it["cls"]] = seen.get(it["cls"], -1) + 1
-        (dev if k % 2 == 0 else ev).append(it)
+        key = (it["cls"], it["meta"].get("lang"), it["meta"].get("decoy"))
+        groups.setdefault(key, []).append(it)
+    r = rng("split")
+    dev, ev = [], []
+    for key in sorted(groups, key=str):
+        members = groups[key]
+        r.shuffle(members)
+        for k, it in enumerate(members):
+            (dev if k % 2 == 0 else ev).append(it)
     return dev, ev
 
 

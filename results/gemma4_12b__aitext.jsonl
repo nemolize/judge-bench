@@ -23,7 +23,7 @@
 {"id": "aitext-0023", "latency_s": 0.5051867919974029, "p_yes": 0.029312227677479034, "verdict": "NO"}
 {"id": "aitext-0024", "latency_s": 0.5091167078353465, "p_yes": 0.005220125060010651, "verdict": "NO"}
 {"id": "aitext-0025", "latency_s": 0.5037442501634359, "p_yes": 4.006367778937586e-05, "verdict": "NO"}
-{"id": "aitext-0026", "latency_s": 0.5073063340969384, "p_yes": 0.5, "verdict": "NO"}
+{"id": "aitext-0026", "latency_s": 0.5073063340969384, "p_yes": 0.5, "verdict": "YES"}
 {"id": "aitext-0027", "latency_s": 0.5138410837389529, "p_yes": 0.8175744761936437, "verdict": "YES"}
 {"id": "aitext-0028", "latency_s": 0.5196149996481836, "p_yes": 0.06754668410060376, "verdict": "NO"}
 {"id": "aitext-0029", "latency_s": 0.5122949169017375, "p_yes": 0.6791787056691698, "verdict": "YES"}
@@ -37,7 +37,7 @@
 {"id": "aitext-0037", "latency_s": 0.552693541161716, "p_yes": 0.00014883844485744758, "verdict": "NO"}
 {"id": "aitext-0038", "latency_s": 0.7062538750469685, "p_yes": 0.320821300824607, "verdict": "NO"}
 {"id": "aitext-0039", "latency_s": 0.5238468749448657, "p_yes": 0.0005527786099107413, "verdict": "NO"}
-{"id": "aitext-0040", "latency_s": 0.8247833750210702, "p_yes": 0.5, "verdict": "NO"}
+{"id": "aitext-0040", "latency_s": 0.8247833750210702, "p_yes": 0.5, "verdict": "YES"}
 {"id": "aitext-0041", "latency_s": 0.6482293750159442, "p_yes": 0.00857748624529999, "verdict": "NO"}
 {"id": "aitext-0042", "latency_s": 0.5036520417779684, "p_yes": 0.5621765008857981, "verdict": "YES"}
 {"id": "aitext-0043", "latency_s": 0.5473137921653688, "p_yes": 0.46879062662624377, "verdict": "NO"}

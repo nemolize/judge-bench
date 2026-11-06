@@ -1,93 +1,93 @@
-{"cls": "double_honorific", "id": "honorific-0001", "label": 1, "meta": {"pair": "資料をお読みになりました"}, "task": "honorific", "text": "昨日、先生が資料をお読みになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0002", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、先生が資料をお読みになりました。"}
-{"cls": "double_honorific", "id": "honorific-0003", "label": 1, "meta": {"pair": "本社にいらっしゃいました"}, "task": "honorific", "text": "先ほど社長が本社にいらっしゃられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0004", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど社長が本社にいらっしゃいました。"}
-{"cls": "double_honorific", "id": "honorific-0005", "label": 1, "meta": {"pair": "今後の方針をお考えになりました"}, "task": "honorific", "text": "部長が今後の方針をお考えになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0006", "label": 0, "meta": {}, "task": "honorific", "text": "部長が今後の方針をお考えになりました。"}
-{"cls": "double_honorific", "id": "honorific-0007", "label": 1, "meta": {"pair": "明日からお休みになります"}, "task": "honorific", "text": "課長が明日からお休みになられます。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0008", "label": 0, "meta": {}, "task": "honorific", "text": "課長が明日からお休みになります。"}
-{"cls": "double_honorific", "id": "honorific-0009", "label": 1, "meta": {"pair": "見積書をご覧になりました"}, "task": "honorific", "text": "昨日、先生が見積書をご覧になられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0010", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、先生が見積書をご覧になりました。"}
-{"cls": "double_honorific", "id": "honorific-0011", "label": 1, "meta": {"pair": "今後の方針をお考えになりました"}, "task": "honorific", "text": "取引先の担当の方が今後の方針をお考えになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0012", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方が今後の方針をお考えになりました。"}
-{"cls": "double_honorific", "id": "honorific-0013", "label": 1, "meta": {"pair": "窓際の席にお座りになりました"}, "task": "honorific", "text": "先ほどお客様が窓際の席にお座りになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0014", "label": 0, "meta": {}, "task": "honorific", "text": "先ほどお客様が窓際の席にお座りになりました。"}
-{"cls": "double_honorific", "id": "honorific-0015", "label": 1, "meta": {"pair": "入口でお待ちになりました"}, "task": "honorific", "text": "先ほど取引先の担当の方が入口でお待ちになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0016", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の担当の方が入口でお待ちになりました。"}
-{"cls": "double_honorific", "id": "honorific-0017", "label": 1, "meta": {"pair": "出張にお出かけになりました"}, "task": "honorific", "text": "昨日、社長が出張にお出かけになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0018", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、社長が出張にお出かけになりました。"}
-{"cls": "double_honorific", "id": "honorific-0019", "label": 1, "meta": {"pair": "新しい端末をお使いになりました"}, "task": "honorific", "text": "部長が新しい端末をお使いになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0020", "label": 0, "meta": {}, "task": "honorific", "text": "部長が新しい端末をお使いになりました。"}
-{"cls": "double_honorific", "id": "honorific-0021", "label": 1, "meta": {"pair": "入口でお待ちになりました"}, "task": "honorific", "text": "先ほど部長が入口でお待ちになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0022", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど部長が入口でお待ちになりました。"}
-{"cls": "double_honorific", "id": "honorific-0023", "label": 1, "meta": {"pair": "九時に会社へお戻りになりました"}, "task": "honorific", "text": "昨日、社長が九時に会社へお戻りになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0024", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、社長が九時に会社へお戻りになりました。"}
-{"cls": "double_honorific", "id": "honorific-0025", "label": 1, "meta": {"pair": "見積書をご覧になりました"}, "task": "honorific", "text": "先ほど社長が見積書をご覧になられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0026", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど社長が見積書をご覧になりました。"}
-{"cls": "double_honorific", "id": "honorific-0027", "label": 1, "meta": {"pair": "九時に会社へお戻りになりました"}, "task": "honorific", "text": "取引先の担当の方が九時に会社へお戻りになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0028", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方が九時に会社へお戻りになりました。"}
-{"cls": "double_honorific", "id": "honorific-0029", "label": 1, "meta": {"pair": "九時に会社へお戻りになりました"}, "task": "honorific", "text": "先ほど課長が九時に会社へお戻りになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0030", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど課長が九時に会社へお戻りになりました。"}
-{"cls": "double_honorific", "id": "honorific-0031", "label": 1, "meta": {"pair": "明日からお休みになります"}, "task": "honorific", "text": "午後に課長が明日からお休みになられます。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0032", "label": 0, "meta": {}, "task": "honorific", "text": "午後に課長が明日からお休みになります。"}
-{"cls": "double_honorific", "id": "honorific-0033", "label": 1, "meta": {"pair": "今後の方針をお考えになりました"}, "task": "honorific", "text": "昨日、課長が今後の方針をお考えになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0034", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、課長が今後の方針をお考えになりました。"}
-{"cls": "double_honorific", "id": "honorific-0035", "label": 1, "meta": {"pair": "本社にいらっしゃいました"}, "task": "honorific", "text": "昨日、部長が本社にいらっしゃられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0036", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、部長が本社にいらっしゃいました。"}
-{"cls": "double_honorific", "id": "honorific-0037", "label": 1, "meta": {"pair": "本社にいらっしゃいました"}, "task": "honorific", "text": "昨日、お客様が本社にいらっしゃられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0038", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、お客様が本社にいらっしゃいました。"}
-{"cls": "double_honorific", "id": "honorific-0039", "label": 1, "meta": {"pair": "本社にいらっしゃいました"}, "task": "honorific", "text": "お客様が本社にいらっしゃられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0040", "label": 0, "meta": {}, "task": "honorific", "text": "お客様が本社にいらっしゃいました。"}
-{"cls": "double_honorific", "id": "honorific-0041", "label": 1, "meta": {"pair": "日程をお決めになりました"}, "task": "honorific", "text": "先ほどお客様が日程をお決めになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0042", "label": 0, "meta": {}, "task": "honorific", "text": "先ほどお客様が日程をお決めになりました。"}
-{"cls": "double_honorific", "id": "honorific-0043", "label": 1, "meta": {"pair": "明日からお休みになります"}, "task": "honorific", "text": "社長が明日からお休みになられます。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0044", "label": 0, "meta": {}, "task": "honorific", "text": "社長が明日からお休みになります。"}
-{"cls": "double_honorific", "id": "honorific-0045", "label": 1, "meta": {"pair": "出張にお出かけになりました"}, "task": "honorific", "text": "先ほど取引先の担当の方が出張にお出かけになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0046", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の担当の方が出張にお出かけになりました。"}
-{"cls": "double_honorific", "id": "honorific-0047", "label": 1, "meta": {"pair": "本社にいらっしゃいました"}, "task": "honorific", "text": "先ほど課長が本社にいらっしゃられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0048", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど課長が本社にいらっしゃいました。"}
-{"cls": "double_honorific", "id": "honorific-0049", "label": 1, "meta": {"pair": "プランをお選びになりました"}, "task": "honorific", "text": "昨日、先生がプランをお選びになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0050", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、先生がプランをお選びになりました。"}
-{"cls": "double_honorific", "id": "honorific-0051", "label": 1, "meta": {"pair": "窓際の席にお座りになりました"}, "task": "honorific", "text": "先ほど課長が窓際の席にお座りになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0052", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど課長が窓際の席にお座りになりました。"}
-{"cls": "double_honorific", "id": "honorific-0053", "label": 1, "meta": {"pair": "資料をお読みになりました"}, "task": "honorific", "text": "昨日、部長が資料をお読みになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0054", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、部長が資料をお読みになりました。"}
-{"cls": "double_honorific", "id": "honorific-0055", "label": 1, "meta": {"pair": "明日からお休みになります"}, "task": "honorific", "text": "先生が明日からお休みになられます。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0056", "label": 0, "meta": {}, "task": "honorific", "text": "先生が明日からお休みになります。"}
-{"cls": "double_honorific", "id": "honorific-0057", "label": 1, "meta": {"pair": "その件をおっしゃいました"}, "task": "honorific", "text": "先ほど取引先の担当の方がその件をおっしゃられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0058", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の担当の方がその件をおっしゃいました。"}
-{"cls": "double_honorific", "id": "honorific-0059", "label": 1, "meta": {"pair": "出張にお出かけになりました"}, "task": "honorific", "text": "先ほど先生が出張にお出かけになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0060", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど先生が出張にお出かけになりました。"}
-{"cls": "double_honorific", "id": "honorific-0061", "label": 1, "meta": {"pair": "見積書をご覧になりました"}, "task": "honorific", "text": "先ほどお客様が見積書をご覧になられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0062", "label": 0, "meta": {}, "task": "honorific", "text": "先ほどお客様が見積書をご覧になりました。"}
-{"cls": "double_honorific", "id": "honorific-0063", "label": 1, "meta": {"pair": "急いでお帰りになります"}, "task": "honorific", "text": "明日、お客様が急いでお帰りになられます。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0064", "label": 0, "meta": {}, "task": "honorific", "text": "明日、お客様が急いでお帰りになります。"}
-{"cls": "double_honorific", "id": "honorific-0065", "label": 1, "meta": {"pair": "返信をお書きになりました"}, "task": "honorific", "text": "先ほど社長が返信をお書きになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0066", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど社長が返信をお書きになりました。"}
-{"cls": "double_honorific", "id": "honorific-0067", "label": 1, "meta": {"pair": "プランをお選びになりました"}, "task": "honorific", "text": "先ほど社長がプランをお選びになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0068", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど社長がプランをお選びになりました。"}
-{"cls": "double_honorific", "id": "honorific-0069", "label": 1, "meta": {"pair": "急いでお帰りになります"}, "task": "honorific", "text": "お客様が急いでお帰りになられます。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0070", "label": 0, "meta": {}, "task": "honorific", "text": "お客様が急いでお帰りになります。"}
-{"cls": "double_honorific", "id": "honorific-0071", "label": 1, "meta": {"pair": "明日からお休みになります"}, "task": "honorific", "text": "明日、お客様が明日からお休みになられます。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0072", "label": 0, "meta": {}, "task": "honorific", "text": "明日、お客様が明日からお休みになります。"}
-{"cls": "double_honorific", "id": "honorific-0073", "label": 1, "meta": {"pair": "日程をお決めになりました"}, "task": "honorific", "text": "昨日、社長が日程をお決めになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0074", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、社長が日程をお決めになりました。"}
-{"cls": "double_honorific", "id": "honorific-0075", "label": 1, "meta": {"pair": "プランをお選びになりました"}, "task": "honorific", "text": "先ほどお客様がプランをお選びになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0076", "label": 0, "meta": {}, "task": "honorific", "text": "先ほどお客様がプランをお選びになりました。"}
-{"cls": "double_honorific", "id": "honorific-0077", "label": 1, "meta": {"pair": "明日からお休みになります"}, "task": "honorific", "text": "お客様が明日からお休みになられます。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0078", "label": 0, "meta": {}, "task": "honorific", "text": "お客様が明日からお休みになります。"}
-{"cls": "double_honorific", "id": "honorific-0079", "label": 1, "meta": {"pair": "早めにお帰りになりました"}, "task": "honorific", "text": "先ほど社長が早めにお帰りになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0080", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど社長が早めにお帰りになりました。"}
-{"cls": "double_honorific", "id": "honorific-0081", "label": 1, "meta": {"pair": "出張にお出かけになりました"}, "task": "honorific", "text": "取引先の担当の方が出張にお出かけになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0082", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方が出張にお出かけになりました。"}
-{"cls": "double_honorific", "id": "honorific-0083", "label": 1, "meta": {"pair": "その件をおっしゃいました"}, "task": "honorific", "text": "先ほど社長がその件をおっしゃられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0084", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど社長がその件をおっしゃいました。"}
-{"cls": "double_honorific", "id": "honorific-0085", "label": 1, "meta": {"pair": "早めにお帰りになりました"}, "task": "honorific", "text": "課長が早めにお帰りになられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0086", "label": 0, "meta": {}, "task": "honorific", "text": "課長が早めにお帰りになりました。"}
-{"cls": "double_honorific", "id": "honorific-0087", "label": 1, "meta": {"pair": "急いでお帰りになります"}, "task": "honorific", "text": "午後に社長が急いでお帰りになられます。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0088", "label": 0, "meta": {}, "task": "honorific", "text": "午後に社長が急いでお帰りになります。"}
-{"cls": "double_honorific", "id": "honorific-0089", "label": 1, "meta": {"pair": "昼食を召し上がりました"}, "task": "honorific", "text": "先ほど社長が昼食を召し上がられました。"}
-{"cls": "neg_paired_double_honorific", "id": "honorific-0090", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど社長が昼食を召し上がりました。"}
+{"cls": "double_honorific", "id": "honorific-0001", "label": 1, "meta": {"pair": "資料をお読みになりました"}, "task": "honorific", "text": "昨日、お客様が資料をお読みになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0002", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、お客様が資料をお読みになりました。"}
+{"cls": "double_honorific", "id": "honorific-0003", "label": 1, "meta": {"pair": "本社にいらっしゃいました"}, "task": "honorific", "text": "先ほど取引先の部長が本社にいらっしゃられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0004", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の部長が本社にいらっしゃいました。"}
+{"cls": "double_honorific", "id": "honorific-0005", "label": 1, "meta": {"pair": "今後の方針をお考えになりました"}, "task": "honorific", "text": "先生が今後の方針をお考えになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0006", "label": 0, "meta": {}, "task": "honorific", "text": "先生が今後の方針をお考えになりました。"}
+{"cls": "double_honorific", "id": "honorific-0007", "label": 1, "meta": {"pair": "明日からお休みになります"}, "task": "honorific", "text": "取引先の社長が明日からお休みになられます。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0008", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の社長が明日からお休みになります。"}
+{"cls": "double_honorific", "id": "honorific-0009", "label": 1, "meta": {"pair": "見積書をご覧になりました"}, "task": "honorific", "text": "昨日、お客様が見積書をご覧になられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0010", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、お客様が見積書をご覧になりました。"}
+{"cls": "double_honorific", "id": "honorific-0011", "label": 1, "meta": {"pair": "今後の方針をお考えになりました"}, "task": "honorific", "text": "ご来訪の方が今後の方針をお考えになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0012", "label": 0, "meta": {}, "task": "honorific", "text": "ご来訪の方が今後の方針をお考えになりました。"}
+{"cls": "double_honorific", "id": "honorific-0013", "label": 1, "meta": {"pair": "窓際の席にお座りになりました"}, "task": "honorific", "text": "先ほど取引先の担当の方が窓際の席にお座りになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0014", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の担当の方が窓際の席にお座りになりました。"}
+{"cls": "double_honorific", "id": "honorific-0015", "label": 1, "meta": {"pair": "入口でお待ちになりました"}, "task": "honorific", "text": "先ほどご来訪の方が入口でお待ちになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0016", "label": 0, "meta": {}, "task": "honorific", "text": "先ほどご来訪の方が入口でお待ちになりました。"}
+{"cls": "double_honorific", "id": "honorific-0017", "label": 1, "meta": {"pair": "出張にお出かけになりました"}, "task": "honorific", "text": "昨日、取引先の部長が出張にお出かけになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0018", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、取引先の部長が出張にお出かけになりました。"}
+{"cls": "double_honorific", "id": "honorific-0019", "label": 1, "meta": {"pair": "新しい端末をお使いになりました"}, "task": "honorific", "text": "先生が新しい端末をお使いになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0020", "label": 0, "meta": {}, "task": "honorific", "text": "先生が新しい端末をお使いになりました。"}
+{"cls": "double_honorific", "id": "honorific-0021", "label": 1, "meta": {"pair": "入口でお待ちになりました"}, "task": "honorific", "text": "先ほど先生が入口でお待ちになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0022", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど先生が入口でお待ちになりました。"}
+{"cls": "double_honorific", "id": "honorific-0023", "label": 1, "meta": {"pair": "九時に会社へお戻りになりました"}, "task": "honorific", "text": "昨日、取引先の部長が九時に会社へお戻りになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0024", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、取引先の部長が九時に会社へお戻りになりました。"}
+{"cls": "double_honorific", "id": "honorific-0025", "label": 1, "meta": {"pair": "見積書をご覧になりました"}, "task": "honorific", "text": "先ほど取引先の部長が見積書をご覧になられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0026", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の部長が見積書をご覧になりました。"}
+{"cls": "double_honorific", "id": "honorific-0027", "label": 1, "meta": {"pair": "九時に会社へお戻りになりました"}, "task": "honorific", "text": "ご来訪の方が九時に会社へお戻りになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0028", "label": 0, "meta": {}, "task": "honorific", "text": "ご来訪の方が九時に会社へお戻りになりました。"}
+{"cls": "double_honorific", "id": "honorific-0029", "label": 1, "meta": {"pair": "九時に会社へお戻りになりました"}, "task": "honorific", "text": "先ほど取引先の社長が九時に会社へお戻りになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0030", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の社長が九時に会社へお戻りになりました。"}
+{"cls": "double_honorific", "id": "honorific-0031", "label": 1, "meta": {"pair": "明日からお休みになります"}, "task": "honorific", "text": "午後に取引先の社長が明日からお休みになられます。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0032", "label": 0, "meta": {}, "task": "honorific", "text": "午後に取引先の社長が明日からお休みになります。"}
+{"cls": "double_honorific", "id": "honorific-0033", "label": 1, "meta": {"pair": "今後の方針をお考えになりました"}, "task": "honorific", "text": "昨日、取引先の社長が今後の方針をお考えになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0034", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、取引先の社長が今後の方針をお考えになりました。"}
+{"cls": "double_honorific", "id": "honorific-0035", "label": 1, "meta": {"pair": "本社にいらっしゃいました"}, "task": "honorific", "text": "昨日、先生が本社にいらっしゃられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0036", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、先生が本社にいらっしゃいました。"}
+{"cls": "double_honorific", "id": "honorific-0037", "label": 1, "meta": {"pair": "本社にいらっしゃいました"}, "task": "honorific", "text": "昨日、取引先の担当の方が本社にいらっしゃられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0038", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、取引先の担当の方が本社にいらっしゃいました。"}
+{"cls": "double_honorific", "id": "honorific-0039", "label": 1, "meta": {"pair": "本社にいらっしゃいました"}, "task": "honorific", "text": "取引先の担当の方が本社にいらっしゃられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0040", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方が本社にいらっしゃいました。"}
+{"cls": "double_honorific", "id": "honorific-0041", "label": 1, "meta": {"pair": "日程をお決めになりました"}, "task": "honorific", "text": "先ほど取引先の担当の方が日程をお決めになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0042", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の担当の方が日程をお決めになりました。"}
+{"cls": "double_honorific", "id": "honorific-0043", "label": 1, "meta": {"pair": "明日からお休みになります"}, "task": "honorific", "text": "取引先の部長が明日からお休みになられます。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0044", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の部長が明日からお休みになります。"}
+{"cls": "double_honorific", "id": "honorific-0045", "label": 1, "meta": {"pair": "出張にお出かけになりました"}, "task": "honorific", "text": "先ほどご来訪の方が出張にお出かけになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0046", "label": 0, "meta": {}, "task": "honorific", "text": "先ほどご来訪の方が出張にお出かけになりました。"}
+{"cls": "double_honorific", "id": "honorific-0047", "label": 1, "meta": {"pair": "本社にいらっしゃいました"}, "task": "honorific", "text": "先ほど取引先の社長が本社にいらっしゃられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0048", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の社長が本社にいらっしゃいました。"}
+{"cls": "double_honorific", "id": "honorific-0049", "label": 1, "meta": {"pair": "プランをお選びになりました"}, "task": "honorific", "text": "昨日、お客様がプランをお選びになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0050", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、お客様がプランをお選びになりました。"}
+{"cls": "double_honorific", "id": "honorific-0051", "label": 1, "meta": {"pair": "窓際の席にお座りになりました"}, "task": "honorific", "text": "先ほど取引先の社長が窓際の席にお座りになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0052", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の社長が窓際の席にお座りになりました。"}
+{"cls": "double_honorific", "id": "honorific-0053", "label": 1, "meta": {"pair": "資料をお読みになりました"}, "task": "honorific", "text": "昨日、先生が資料をお読みになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0054", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、先生が資料をお読みになりました。"}
+{"cls": "double_honorific", "id": "honorific-0055", "label": 1, "meta": {"pair": "明日からお休みになります"}, "task": "honorific", "text": "お客様が明日からお休みになられます。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0056", "label": 0, "meta": {}, "task": "honorific", "text": "お客様が明日からお休みになります。"}
+{"cls": "double_honorific", "id": "honorific-0057", "label": 1, "meta": {"pair": "その件をおっしゃいました"}, "task": "honorific", "text": "先ほどご来訪の方がその件をおっしゃられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0058", "label": 0, "meta": {}, "task": "honorific", "text": "先ほどご来訪の方がその件をおっしゃいました。"}
+{"cls": "double_honorific", "id": "honorific-0059", "label": 1, "meta": {"pair": "出張にお出かけになりました"}, "task": "honorific", "text": "先ほどお客様が出張にお出かけになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0060", "label": 0, "meta": {}, "task": "honorific", "text": "先ほどお客様が出張にお出かけになりました。"}
+{"cls": "double_honorific", "id": "honorific-0061", "label": 1, "meta": {"pair": "見積書をご覧になりました"}, "task": "honorific", "text": "先ほど取引先の担当の方が見積書をご覧になられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0062", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の担当の方が見積書をご覧になりました。"}
+{"cls": "double_honorific", "id": "honorific-0063", "label": 1, "meta": {"pair": "急いでお帰りになります"}, "task": "honorific", "text": "明日、取引先の担当の方が急いでお帰りになられます。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0064", "label": 0, "meta": {}, "task": "honorific", "text": "明日、取引先の担当の方が急いでお帰りになります。"}
+{"cls": "double_honorific", "id": "honorific-0065", "label": 1, "meta": {"pair": "返信をお書きになりました"}, "task": "honorific", "text": "先ほど取引先の部長が返信をお書きになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0066", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の部長が返信をお書きになりました。"}
+{"cls": "double_honorific", "id": "honorific-0067", "label": 1, "meta": {"pair": "プランをお選びになりました"}, "task": "honorific", "text": "先ほど取引先の部長がプランをお選びになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0068", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の部長がプランをお選びになりました。"}
+{"cls": "double_honorific", "id": "honorific-0069", "label": 1, "meta": {"pair": "急いでお帰りになります"}, "task": "honorific", "text": "取引先の担当の方が急いでお帰りになられます。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0070", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方が急いでお帰りになります。"}
+{"cls": "double_honorific", "id": "honorific-0071", "label": 1, "meta": {"pair": "明日からお休みになります"}, "task": "honorific", "text": "明日、取引先の担当の方が明日からお休みになられます。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0072", "label": 0, "meta": {}, "task": "honorific", "text": "明日、取引先の担当の方が明日からお休みになります。"}
+{"cls": "double_honorific", "id": "honorific-0073", "label": 1, "meta": {"pair": "日程をお決めになりました"}, "task": "honorific", "text": "昨日、取引先の部長が日程をお決めになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0074", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、取引先の部長が日程をお決めになりました。"}
+{"cls": "double_honorific", "id": "honorific-0075", "label": 1, "meta": {"pair": "プランをお選びになりました"}, "task": "honorific", "text": "先ほど取引先の担当の方がプランをお選びになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0076", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の担当の方がプランをお選びになりました。"}
+{"cls": "double_honorific", "id": "honorific-0077", "label": 1, "meta": {"pair": "明日からお休みになります"}, "task": "honorific", "text": "取引先の担当の方が明日からお休みになられます。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0078", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方が明日からお休みになります。"}
+{"cls": "double_honorific", "id": "honorific-0079", "label": 1, "meta": {"pair": "早めにお帰りになりました"}, "task": "honorific", "text": "先ほど取引先の部長が早めにお帰りになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0080", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の部長が早めにお帰りになりました。"}
+{"cls": "double_honorific", "id": "honorific-0081", "label": 1, "meta": {"pair": "出張にお出かけになりました"}, "task": "honorific", "text": "ご来訪の方が出張にお出かけになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0082", "label": 0, "meta": {}, "task": "honorific", "text": "ご来訪の方が出張にお出かけになりました。"}
+{"cls": "double_honorific", "id": "honorific-0083", "label": 1, "meta": {"pair": "その件をおっしゃいました"}, "task": "honorific", "text": "先ほど取引先の部長がその件をおっしゃられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0084", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の部長がその件をおっしゃいました。"}
+{"cls": "double_honorific", "id": "honorific-0085", "label": 1, "meta": {"pair": "早めにお帰りになりました"}, "task": "honorific", "text": "取引先の社長が早めにお帰りになられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0086", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の社長が早めにお帰りになりました。"}
+{"cls": "double_honorific", "id": "honorific-0087", "label": 1, "meta": {"pair": "急いでお帰りになります"}, "task": "honorific", "text": "午後に取引先の部長が急いでお帰りになられます。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0088", "label": 0, "meta": {}, "task": "honorific", "text": "午後に取引先の部長が急いでお帰りになります。"}
+{"cls": "double_honorific", "id": "honorific-0089", "label": 1, "meta": {"pair": "昼食を召し上がりました"}, "task": "honorific", "text": "先ほど取引先の部長が昼食を召し上がられました。"}
+{"cls": "neg_paired_double_honorific", "id": "honorific-0090", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の部長が昼食を召し上がりました。"}
 {"cls": "humble_for_other", "id": "honorific-0091", "label": 1, "meta": {"pair": "料理を召し上がりました"}, "task": "honorific", "text": "ご来訪の方が料理をいただきました。"}
 {"cls": "neg_paired_humble_for_other", "id": "honorific-0092", "label": 0, "meta": {}, "task": "honorific", "text": "ご来訪の方が料理を召し上がりました。"}
 {"cls": "humble_for_other", "id": "honorific-0093", "label": 1, "meta": {"pair": "料理を召し上がりました"}, "task": "honorific", "text": "取引先の担当の方が料理をいただきました。"}
@@ -268,77 +268,77 @@
 {"cls": "neg_paired_honorific_for_self", "id": "honorific-0268", "label": 0, "meta": {}, "task": "honorific", "text": "午後にわたくしが資料を拝見します。"}
 {"cls": "honorific_for_self", "id": "honorific-0269", "label": 1, "meta": {"pair": "昨日お話をうかがいました"}, "task": "honorific", "text": "昨日、わたくしが昨日お話をお聞きになりました。"}
 {"cls": "neg_paired_honorific_for_self", "id": "honorific-0270", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、わたくしが昨日お話をうかがいました。"}
-{"cls": "neg_connected", "id": "honorific-0271", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方がお読みになっていらっしゃいます。"}
-{"cls": "neg_connected", "id": "honorific-0272", "label": 0, "meta": {}, "task": "honorific", "text": "部長がお読みになっていらっしゃいます。"}
-{"cls": "neg_connected", "id": "honorific-0273", "label": 0, "meta": {}, "task": "honorific", "text": "部長がお書きになっていらっしゃいました。"}
-{"cls": "neg_connected", "id": "honorific-0274", "label": 0, "meta": {}, "task": "honorific", "text": "先生がお書きになっていらっしゃいました。"}
-{"cls": "neg_connected", "id": "honorific-0275", "label": 0, "meta": {}, "task": "honorific", "text": "先生がお使いになっていらっしゃいます。"}
-{"cls": "neg_connected", "id": "honorific-0276", "label": 0, "meta": {}, "task": "honorific", "text": "お客様がお使いになっていらっしゃいます。"}
-{"cls": "neg_connected", "id": "honorific-0277", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方がお待ちになっていらっしゃいました。"}
-{"cls": "neg_connected", "id": "honorific-0278", "label": 0, "meta": {}, "task": "honorific", "text": "社長がお待ちになっていらっしゃいました。"}
-{"cls": "neg_connected", "id": "honorific-0279", "label": 0, "meta": {}, "task": "honorific", "text": "社長がお考えになっていらっしゃいます。"}
-{"cls": "neg_connected", "id": "honorific-0280", "label": 0, "meta": {}, "task": "honorific", "text": "先生がお考えになっていらっしゃいます。"}
-{"cls": "neg_connected", "id": "honorific-0281", "label": 0, "meta": {}, "task": "honorific", "text": "部長がご覧になっていらっしゃいました。"}
-{"cls": "neg_connected", "id": "honorific-0282", "label": 0, "meta": {}, "task": "honorific", "text": "先生がご覧になっていらっしゃいました。"}
-{"cls": "neg_connected", "id": "honorific-0283", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方がお話しになっていらっしゃいます。"}
-{"cls": "neg_connected", "id": "honorific-0284", "label": 0, "meta": {}, "task": "honorific", "text": "先生がお話しになっていらっしゃいます。"}
-{"cls": "neg_connected", "id": "honorific-0285", "label": 0, "meta": {}, "task": "honorific", "text": "先生がお決めになっていらっしゃいました。"}
-{"cls": "neg_connected", "id": "honorific-0286", "label": 0, "meta": {}, "task": "honorific", "text": "課長がお決めになっていらっしゃいました。"}
-{"cls": "neg_connected", "id": "honorific-0287", "label": 0, "meta": {}, "task": "honorific", "text": "先生がお選びになっていらっしゃいます。"}
-{"cls": "neg_connected", "id": "honorific-0288", "label": 0, "meta": {}, "task": "honorific", "text": "部長がお選びになっていらっしゃいます。"}
-{"cls": "neg_connected", "id": "honorific-0289", "label": 0, "meta": {}, "task": "honorific", "text": "お客様がお聞きになっていらっしゃいました。"}
-{"cls": "neg_connected", "id": "honorific-0290", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方がお聞きになっていらっしゃいました。"}
-{"cls": "neg_established", "id": "honorific-0291", "label": 0, "meta": {}, "task": "honorific", "text": "先生がお召し上がりになりました。"}
-{"cls": "neg_established", "id": "honorific-0292", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方がお召し上がりになりました。"}
-{"cls": "neg_established", "id": "honorific-0293", "label": 0, "meta": {}, "task": "honorific", "text": "社長がお見えになりました。"}
-{"cls": "neg_established", "id": "honorific-0294", "label": 0, "meta": {}, "task": "honorific", "text": "課長がお見えになりました。"}
-{"cls": "neg_established", "id": "honorific-0295", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方がお召し上がりになります。"}
-{"cls": "neg_established", "id": "honorific-0296", "label": 0, "meta": {}, "task": "honorific", "text": "部長がお召し上がりになります。"}
-{"cls": "neg_established", "id": "honorific-0297", "label": 0, "meta": {}, "task": "honorific", "text": "社長がお見えになります。"}
-{"cls": "neg_established", "id": "honorific-0298", "label": 0, "meta": {}, "task": "honorific", "text": "課長がお見えになります。"}
-{"cls": "neg_established", "id": "honorific-0299", "label": 0, "meta": {}, "task": "honorific", "text": "社長がお召しになりました。"}
-{"cls": "neg_established", "id": "honorific-0300", "label": 0, "meta": {}, "task": "honorific", "text": "部長がお召しになりました。"}
-{"cls": "neg_established", "id": "honorific-0301", "label": 0, "meta": {}, "task": "honorific", "text": "お客様がお出でになりました。"}
-{"cls": "neg_established", "id": "honorific-0302", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方がお出でになりました。"}
-{"cls": "neg_established", "id": "honorific-0303", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方がお召し上がりになりましたか。"}
-{"cls": "neg_established", "id": "honorific-0304", "label": 0, "meta": {}, "task": "honorific", "text": "部長がお召し上がりになりましたか。"}
-{"cls": "neg_established", "id": "honorific-0305", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方がお見えになりましたか。"}
-{"cls": "neg_established", "id": "honorific-0306", "label": 0, "meta": {}, "task": "honorific", "text": "部長がお見えになりましたか。"}
-{"cls": "neg_established", "id": "honorific-0307", "label": 0, "meta": {}, "task": "honorific", "text": "先生がお出でになります。"}
-{"cls": "neg_established", "id": "honorific-0308", "label": 0, "meta": {}, "task": "honorific", "text": "部長がお出でになります。"}
-{"cls": "neg_established", "id": "honorific-0309", "label": 0, "meta": {}, "task": "honorific", "text": "部長がお召しになります。"}
-{"cls": "neg_established", "id": "honorific-0310", "label": 0, "meta": {}, "task": "honorific", "text": "お客様がお召しになります。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0311", "label": 0, "meta": {}, "task": "honorific", "text": "来月から部長が取締役になられます。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0312", "label": 0, "meta": {}, "task": "honorific", "text": "先月、部長が取締役になられました。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0313", "label": 0, "meta": {}, "task": "honorific", "text": "来月から部長がリーダーになられます。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0314", "label": 0, "meta": {}, "task": "honorific", "text": "先月、部長がリーダーになられました。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0315", "label": 0, "meta": {}, "task": "honorific", "text": "来月から先生が部長になられます。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0316", "label": 0, "meta": {}, "task": "honorific", "text": "先月、先生が部長になられました。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0317", "label": 0, "meta": {}, "task": "honorific", "text": "来月から先生が取締役になられます。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0318", "label": 0, "meta": {}, "task": "honorific", "text": "先月、先生が取締役になられました。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0319", "label": 0, "meta": {}, "task": "honorific", "text": "来月から先生がリーダーになられます。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0320", "label": 0, "meta": {}, "task": "honorific", "text": "先月、先生がリーダーになられました。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0321", "label": 0, "meta": {}, "task": "honorific", "text": "来月からお客様が部長になられます。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0322", "label": 0, "meta": {}, "task": "honorific", "text": "先月、お客様が部長になられました。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0323", "label": 0, "meta": {}, "task": "honorific", "text": "来月からお客様が取締役になられます。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0324", "label": 0, "meta": {}, "task": "honorific", "text": "先月、お客様が取締役になられました。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0325", "label": 0, "meta": {}, "task": "honorific", "text": "来月からお客様がリーダーになられます。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0326", "label": 0, "meta": {}, "task": "honorific", "text": "先月、お客様がリーダーになられました。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0327", "label": 0, "meta": {}, "task": "honorific", "text": "来月から社長が部長になられます。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0328", "label": 0, "meta": {}, "task": "honorific", "text": "先月、社長が部長になられました。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0329", "label": 0, "meta": {}, "task": "honorific", "text": "来月から社長が取締役になられます。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0330", "label": 0, "meta": {}, "task": "honorific", "text": "先月、社長が取締役になられました。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0331", "label": 0, "meta": {}, "task": "honorific", "text": "来月から社長がリーダーになられます。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0332", "label": 0, "meta": {}, "task": "honorific", "text": "先月、社長がリーダーになられました。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0333", "label": 0, "meta": {}, "task": "honorific", "text": "来月から課長が部長になられます。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0334", "label": 0, "meta": {}, "task": "honorific", "text": "先月、課長が部長になられました。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0335", "label": 0, "meta": {}, "task": "honorific", "text": "来月から課長が取締役になられます。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0336", "label": 0, "meta": {}, "task": "honorific", "text": "先月、課長が取締役になられました。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0337", "label": 0, "meta": {}, "task": "honorific", "text": "来月から課長がリーダーになられます。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0338", "label": 0, "meta": {}, "task": "honorific", "text": "先月、課長がリーダーになられました。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0339", "label": 0, "meta": {}, "task": "honorific", "text": "来月から取引先の担当の方が部長になられます。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0340", "label": 0, "meta": {}, "task": "honorific", "text": "先月、取引先の担当の方が部長になられました。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0341", "label": 0, "meta": {}, "task": "honorific", "text": "来月から取引先の担当の方が取締役になられます。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0342", "label": 0, "meta": {}, "task": "honorific", "text": "先月、取引先の担当の方が取締役になられました。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0343", "label": 0, "meta": {}, "task": "honorific", "text": "来月から取引先の担当の方がリーダーになられます。"}
-{"cls": "neg_naru_honorific", "id": "honorific-0344", "label": 0, "meta": {}, "task": "honorific", "text": "先月、取引先の担当の方がリーダーになられました。"}
+{"cls": "neg_connected", "id": "honorific-0271", "label": 0, "meta": {}, "task": "honorific", "text": "ご来訪の方がお読みになっていらっしゃいます。"}
+{"cls": "neg_connected", "id": "honorific-0272", "label": 0, "meta": {}, "task": "honorific", "text": "先生がお読みになっていらっしゃいます。"}
+{"cls": "neg_connected", "id": "honorific-0273", "label": 0, "meta": {}, "task": "honorific", "text": "先生がお書きになっていらっしゃいました。"}
+{"cls": "neg_connected", "id": "honorific-0274", "label": 0, "meta": {}, "task": "honorific", "text": "お客様がお書きになっていらっしゃいました。"}
+{"cls": "neg_connected", "id": "honorific-0275", "label": 0, "meta": {}, "task": "honorific", "text": "お客様がお使いになっていらっしゃいます。"}
+{"cls": "neg_connected", "id": "honorific-0276", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方がお使いになっていらっしゃいます。"}
+{"cls": "neg_connected", "id": "honorific-0277", "label": 0, "meta": {}, "task": "honorific", "text": "ご来訪の方がお待ちになっていらっしゃいました。"}
+{"cls": "neg_connected", "id": "honorific-0278", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の部長がお待ちになっていらっしゃいました。"}
+{"cls": "neg_connected", "id": "honorific-0279", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の部長がお考えになっていらっしゃいます。"}
+{"cls": "neg_connected", "id": "honorific-0280", "label": 0, "meta": {}, "task": "honorific", "text": "お客様がお考えになっていらっしゃいます。"}
+{"cls": "neg_connected", "id": "honorific-0281", "label": 0, "meta": {}, "task": "honorific", "text": "先生がご覧になっていらっしゃいました。"}
+{"cls": "neg_connected", "id": "honorific-0282", "label": 0, "meta": {}, "task": "honorific", "text": "お客様がご覧になっていらっしゃいました。"}
+{"cls": "neg_connected", "id": "honorific-0283", "label": 0, "meta": {}, "task": "honorific", "text": "ご来訪の方がお話しになっていらっしゃいます。"}
+{"cls": "neg_connected", "id": "honorific-0284", "label": 0, "meta": {}, "task": "honorific", "text": "お客様がお話しになっていらっしゃいます。"}
+{"cls": "neg_connected", "id": "honorific-0285", "label": 0, "meta": {}, "task": "honorific", "text": "お客様がお決めになっていらっしゃいました。"}
+{"cls": "neg_connected", "id": "honorific-0286", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の社長がお決めになっていらっしゃいました。"}
+{"cls": "neg_connected", "id": "honorific-0287", "label": 0, "meta": {}, "task": "honorific", "text": "お客様がお選びになっていらっしゃいます。"}
+{"cls": "neg_connected", "id": "honorific-0288", "label": 0, "meta": {}, "task": "honorific", "text": "先生がお選びになっていらっしゃいます。"}
+{"cls": "neg_connected", "id": "honorific-0289", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方がお聞きになっていらっしゃいました。"}
+{"cls": "neg_connected", "id": "honorific-0290", "label": 0, "meta": {}, "task": "honorific", "text": "ご来訪の方がお聞きになっていらっしゃいました。"}
+{"cls": "neg_established", "id": "honorific-0291", "label": 0, "meta": {}, "task": "honorific", "text": "お客様がお召し上がりになりました。"}
+{"cls": "neg_established", "id": "honorific-0292", "label": 0, "meta": {}, "task": "honorific", "text": "ご来訪の方がお召し上がりになりました。"}
+{"cls": "neg_established", "id": "honorific-0293", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の部長がお見えになりました。"}
+{"cls": "neg_established", "id": "honorific-0294", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の社長がお見えになりました。"}
+{"cls": "neg_established", "id": "honorific-0295", "label": 0, "meta": {}, "task": "honorific", "text": "ご来訪の方がお召し上がりになります。"}
+{"cls": "neg_established", "id": "honorific-0296", "label": 0, "meta": {}, "task": "honorific", "text": "先生がお召し上がりになります。"}
+{"cls": "neg_established", "id": "honorific-0297", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の部長がお見えになります。"}
+{"cls": "neg_established", "id": "honorific-0298", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の社長がお見えになります。"}
+{"cls": "neg_established", "id": "honorific-0299", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の部長がお召しになりました。"}
+{"cls": "neg_established", "id": "honorific-0300", "label": 0, "meta": {}, "task": "honorific", "text": "先生がお召しになりました。"}
+{"cls": "neg_established", "id": "honorific-0301", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方がお出でになりました。"}
+{"cls": "neg_established", "id": "honorific-0302", "label": 0, "meta": {}, "task": "honorific", "text": "ご来訪の方がお出でになりました。"}
+{"cls": "neg_established", "id": "honorific-0303", "label": 0, "meta": {}, "task": "honorific", "text": "ご来訪の方がお召し上がりになりましたか。"}
+{"cls": "neg_established", "id": "honorific-0304", "label": 0, "meta": {}, "task": "honorific", "text": "先生がお召し上がりになりましたか。"}
+{"cls": "neg_established", "id": "honorific-0305", "label": 0, "meta": {}, "task": "honorific", "text": "ご来訪の方がお見えになりましたか。"}
+{"cls": "neg_established", "id": "honorific-0306", "label": 0, "meta": {}, "task": "honorific", "text": "先生がお見えになりましたか。"}
+{"cls": "neg_established", "id": "honorific-0307", "label": 0, "meta": {}, "task": "honorific", "text": "お客様がお出でになります。"}
+{"cls": "neg_established", "id": "honorific-0308", "label": 0, "meta": {}, "task": "honorific", "text": "先生がお出でになります。"}
+{"cls": "neg_established", "id": "honorific-0309", "label": 0, "meta": {}, "task": "honorific", "text": "先生がお召しになります。"}
+{"cls": "neg_established", "id": "honorific-0310", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方がお召しになります。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0311", "label": 0, "meta": {}, "task": "honorific", "text": "来月から先生が部長になられます。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0312", "label": 0, "meta": {}, "task": "honorific", "text": "先月、先生が部長になられました。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0313", "label": 0, "meta": {}, "task": "honorific", "text": "来月から先生が取締役になられます。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0314", "label": 0, "meta": {}, "task": "honorific", "text": "先月、先生が取締役になられました。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0315", "label": 0, "meta": {}, "task": "honorific", "text": "来月から先生がリーダーになられます。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0316", "label": 0, "meta": {}, "task": "honorific", "text": "先月、先生がリーダーになられました。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0317", "label": 0, "meta": {}, "task": "honorific", "text": "来月からお客様が部長になられます。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0318", "label": 0, "meta": {}, "task": "honorific", "text": "先月、お客様が部長になられました。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0319", "label": 0, "meta": {}, "task": "honorific", "text": "来月からお客様が取締役になられます。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0320", "label": 0, "meta": {}, "task": "honorific", "text": "先月、お客様が取締役になられました。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0321", "label": 0, "meta": {}, "task": "honorific", "text": "来月からお客様がリーダーになられます。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0322", "label": 0, "meta": {}, "task": "honorific", "text": "先月、お客様がリーダーになられました。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0323", "label": 0, "meta": {}, "task": "honorific", "text": "来月から取引先の担当の方が部長になられます。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0324", "label": 0, "meta": {}, "task": "honorific", "text": "先月、取引先の担当の方が部長になられました。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0325", "label": 0, "meta": {}, "task": "honorific", "text": "来月から取引先の担当の方が取締役になられます。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0326", "label": 0, "meta": {}, "task": "honorific", "text": "先月、取引先の担当の方が取締役になられました。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0327", "label": 0, "meta": {}, "task": "honorific", "text": "来月から取引先の担当の方がリーダーになられます。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0328", "label": 0, "meta": {}, "task": "honorific", "text": "先月、取引先の担当の方がリーダーになられました。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0329", "label": 0, "meta": {}, "task": "honorific", "text": "来月から取引先の部長が取締役になられます。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0330", "label": 0, "meta": {}, "task": "honorific", "text": "先月、取引先の部長が取締役になられました。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0331", "label": 0, "meta": {}, "task": "honorific", "text": "来月から取引先の部長がリーダーになられます。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0332", "label": 0, "meta": {}, "task": "honorific", "text": "先月、取引先の部長がリーダーになられました。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0333", "label": 0, "meta": {}, "task": "honorific", "text": "来月から取引先の社長が部長になられます。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0334", "label": 0, "meta": {}, "task": "honorific", "text": "先月、取引先の社長が部長になられました。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0335", "label": 0, "meta": {}, "task": "honorific", "text": "来月から取引先の社長が取締役になられます。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0336", "label": 0, "meta": {}, "task": "honorific", "text": "先月、取引先の社長が取締役になられました。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0337", "label": 0, "meta": {}, "task": "honorific", "text": "来月から取引先の社長がリーダーになられます。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0338", "label": 0, "meta": {}, "task": "honorific", "text": "先月、取引先の社長がリーダーになられました。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0339", "label": 0, "meta": {}, "task": "honorific", "text": "来月からご来訪の方が部長になられます。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0340", "label": 0, "meta": {}, "task": "honorific", "text": "先月、ご来訪の方が部長になられました。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0341", "label": 0, "meta": {}, "task": "honorific", "text": "来月からご来訪の方が取締役になられます。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0342", "label": 0, "meta": {}, "task": "honorific", "text": "先月、ご来訪の方が取締役になられました。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0343", "label": 0, "meta": {}, "task": "honorific", "text": "来月からご来訪の方がリーダーになられます。"}
+{"cls": "neg_naru_honorific", "id": "honorific-0344", "label": 0, "meta": {}, "task": "honorific", "text": "先月、ご来訪の方がリーダーになられました。"}

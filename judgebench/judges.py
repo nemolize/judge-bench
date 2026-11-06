@@ -20,6 +20,14 @@ def _post(path, payload, timeout=300):
         return json.load(res)
 
 
+def verdict_from(sampled, logprobs):
+    """YES when its probability beats NO's; the sampled token only decides when one of the two is missing."""
+    if "YES" in logprobs and "NO" in logprobs:
+        p_yes = 1 / (1 + math.exp(logprobs["NO"] - logprobs["YES"]))
+        return {"verdict": "YES" if p_yes >= 0.5 else "NO", "p_yes": p_yes}
+    return {"verdict": sampled if sampled in ("YES", "NO") else None, "p_yes": None}
+
+
 class OllamaJudge:
     def __init__(self, model):
         self.model = model
@@ -34,12 +42,8 @@ class OllamaJudge:
         })
         dt = time.perf_counter() - t0
         first = res["logprobs"][0]
-        verdict = first["token"] if first["token"] in ("YES", "NO") else None
         lp = {c["token"]: c["logprob"] for c in first["top_logprobs"]}
-        p_yes = None
-        if "YES" in lp and "NO" in lp:
-            p_yes = 1 / (1 + math.exp(lp["NO"] - lp["YES"]))
-        return {"verdict": verdict, "p_yes": p_yes, "latency_s": dt}
+        return {**verdict_from(first["token"], lp), "latency_s": dt}
 
     def loaded_bytes(self):
         for m in _post_get("/api/ps").get("models", []):

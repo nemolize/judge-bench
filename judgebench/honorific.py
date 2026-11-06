@@ -9,7 +9,6 @@ established forms such as お召し上がりになる / お見えになる.
 """
 from .common import item, rng
 
-OTHERS = ["部長", "先生", "お客様", "社長", "課長", "取引先の担当の方"]
 OUTSIDERS = ["先生", "お客様", "取引先の担当の方", "取引先の部長", "取引先の社長", "ご来訪の方"]
 SELVES = ["私", "わたくし", "私ども", "弊社の担当", "当方"]
 
@@ -93,7 +92,7 @@ def generate(per_class=45):
     r = rng("honorific")
     items, n = [], 0
     specs = [
-        ("double_honorific", DOUBLE, OTHERS),
+        ("double_honorific", DOUBLE, OUTSIDERS),
         ("humble_for_other", HUMBLE_FOR_OTHER, OUTSIDERS),
         ("honorific_for_self", HONORIFIC_FOR_SELF, SELVES),
     ]
@@ -105,11 +104,11 @@ def generate(per_class=45):
             items.append(item("honorific", n, f"neg_paired_{cls}", 0, f.format(S=s, V=ok)))
     for cls, forms in (("neg_connected", CONNECTED), ("neg_established", ESTABLISHED)):
         for v in forms:
-            for s in r.sample(OTHERS, 2):
+            for s in r.sample(OUTSIDERS, 2):
                 n += 1
                 items.append(item("honorific", n, cls, 0, f"{s}が{v}。"))
-    for s in OTHERS:
-        for role in (x for x in ROLES if x != s):
+    for s in OUTSIDERS:
+        for role in (x for x in ROLES if x not in s):
             for f in NARU_FRAMES:
                 n += 1
                 items.append(item("honorific", n, "neg_naru_honorific", 0, f.format(S=s, R=role)))

@@ -70,8 +70,8 @@ def generate(per_class=PER_CLASS):
             lang, name = langs[i % len(langs)], r.choice(names)
             value = make(r)
             n += 1
-            items.append(item("secrets", n, cls, 1, _diff(r, lang, name, value), format=cls))
+            items.append(item("secrets", n, cls, 1, _diff(r, lang, name, value), format=cls, lang=lang))
             decoy = DECOYS[i % len(DECOYS)](r, value[:4])
             n += 1
-            items.append(item("secrets", n, f"neg_paired_{cls}", 0, _diff(r, lang, name, decoy), format=cls))
+            items.append(item("secrets", n, f"neg_paired_{cls}", 0, _diff(r, lang, name, decoy), format=cls, lang=lang, decoy=i % len(DECOYS)))
     return items

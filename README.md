@@ -4,7 +4,7 @@ Reproducible comparison of judge models on five tasks whose correct answer is bu
 
 Not related to [JudgeBench](https://github.com/ScalerLab/JudgeBench) (ICLR 2025), which scores LLM judges on English response-pair preferences; this repository compares rule-based, LLM and decision-model judges on Japanese judgement tasks.
 
-Judges: `gemma4:12b` and `qwen3.5:27b` through Ollama (YES/NO read from the first-token logprobs), `claude-haiku-5-5` through `claude -p` (YES/NO as text, no logprobs), three decision models called through a decisions API that returns the probability of yes (`jev-1.14.0` from TypeSafe, `clef-flash` served by Ollama, `gpt-6-luna` from OpenAI; YES when the probability is at least 0.5), and a rule-based baseline per task. `pass_bar.md` fixes what counts as beating the baseline; it was committed before any results file. The three decision models were added after the first four judges had been run, under the same bar. `results/summary.md` is the outcome.
+Judges: `gemma4:12b` and `qwen3.5:27b` through Ollama (YES when the first-token probability of `YES` is at least that of `NO`), `claude-haiku-5-5` through `claude -p` (YES/NO as text, no logprobs), three decision models called through a decisions API that returns the probability of yes (`jev-1.14.0` from TypeSafe, `clef-flash` served by Ollama, `gpt-6-luna` from OpenAI; YES when the probability is at least 0.5), and a rule-based baseline per task. `pass_bar.md` fixes what counts as beating the baseline; it was committed before any results file. The three decision models were added after the first four judges had been run, under the same bar. `results/summary.md` is the outcome.
 
 ## Rerun
 
@@ -58,6 +58,9 @@ The first full run was reviewed before publication and several design problems w
 - The secrets prompt asked for "usable credentials" while every positive was an invalid random string. The prompt now asks for a value matching a key format and says validity is not judged.
 - Some honorific positives were only wrong if the subject was outside the company. The prompt now states the setting and the swap classes use unambiguous subjects.
 - The honorific dictionary also matches correct `〜になられる`; 34 such negatives were added before this rerun.
+- A second review found that the honorific setting ("speaking to someone outside the company") made `部長が本社にいらっしゃいました` wrong, yet unaffiliated `部長` / `課長` / `社長` subjects were still used in the double-honorific and negative sets (58 negatives; `claude_haiku` flagged 54 of them). Every honorific sentence now uses a subject that is unambiguously outside the company or the speaker; honorific and injection results were rerun.
+- For the Ollama LLMs, the sampled first token and the returned probabilities disagreed (23 of 1,494 results for `gemma4_12b`, 224 for `qwen3.5_27b`: at temperature 0 the sampled token is not always the more probable one). The verdict is now decided by the probability, as it is for the decision models; stored results were rederived with `python3 -m judgebench.run rederive <judge>`, and the honorific results were rerun.
+- The threshold analysis split each task into alternating halves by id, which put whole file types and whole decoy kinds in one half. The halves are now seeded shuffles within each class, file type and decoy kind.
 
 ## Known limits
 

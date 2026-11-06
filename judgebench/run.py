@@ -55,6 +55,16 @@ def run_judge(name, tasks):
     meta_path.write_text(json.dumps(meta, indent=2))
 
 
+def rederive(name):
+    """Recompute verdicts of stored Ollama results from their probability (no model call)."""
+    for path in RESULTS.glob(f"{name}__*.jsonl"):
+        rows = read_jsonl(path)
+        for r in rows:
+            if r.get("p_yes") is not None and not r.get("error"):
+                r["verdict"] = "YES" if r["p_yes"] >= 0.5 else "NO"
+        write_jsonl(path, rows)
+
+
 def run_latency_probe(name):
     """Hosted judges run in parallel, so per-item latency is probed one call at a time."""
     judge = judges.make(name)
@@ -72,6 +82,8 @@ if __name__ == "__main__":
         print(json.dumps(datasets.manifest(), indent=2))
     elif cmd == "baseline":
         run_baseline()
+    elif cmd == "rederive":
+        rederive(sys.argv[2])
     elif cmd == "judge":
         run_judge(sys.argv[2], sys.argv[3:] or list(datasets.TASKS))
         if getattr(judges.make(sys.argv[2]), "hosted", False):

@@ -179,7 +179,7 @@
 {"id": "style-0179", "latency_s": 0.8749465001747012, "p_yes": 0.999999995787274, "verdict": "YES"}
 {"id": "style-0180", "latency_s": 0.5488393330015242, "p_yes": 0.9914225142932523, "verdict": "YES"}
 {"id": "style-0181", "latency_s": 0.6182694998569787, "p_yes": 0.99999966403226, "verdict": "YES"}
-{"id": "style-0182", "latency_s": 0.4426527083851397, "p_yes": 0.5, "verdict": "NO"}
+{"id": "style-0182", "latency_s": 0.4426527083851397, "p_yes": 0.5, "verdict": "YES"}
 {"id": "style-0183", "latency_s": 0.8261757916770875, "p_yes": 0.9999984942980952, "verdict": "YES"}
 {"id": "style-0184", "latency_s": 0.6567963329143822, "p_yes": 1.9333579975780026e-06, "verdict": "NO"}
 {"id": "style-0185", "latency_s": 0.8328981245867908, "p_yes": 0.999997876622044, "verdict": "YES"}
