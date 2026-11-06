@@ -104,167 +104,167 @@
 {"cls": "neg_paired_width", "id": "style-0104", "label": 0, "meta": {}, "task": "style", "text": "氏名を既存の UID と揃えておくと、どちらのアドレスでも同じ人物として扱いやすくなります。"}
 {"cls": "width", "id": "style-0105", "label": 1, "meta": {"base": "署名の登録は `mokutil --import` で行い、再起動後に表示される画面で鍵を承認します。この操作を忘れると、次回の起動でも同じ問題が起きます。"}, "task": "style", "text": "署名の登録は `ｍｏｋｕｔｉｌ --import` で行い、再起動後に表示される画面で鍵を承認します。この操作を忘れると、次回の起動でも同じ問題が起きます。"}
 {"cls": "neg_paired_width", "id": "style-0106", "label": 0, "meta": {}, "task": "style", "text": "署名の登録は `mokutil --import` で行い、再起動後に表示される画面で鍵を承認します。この操作を忘れると、次回の起動でも同じ問題が起きます。"}
-{"cls": "mixed_register", "id": "style-0107", "label": 1, "meta": {}, "task": "style", "text": "ユーザーにログインします。ユーザーの更新は毎週である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0108", "label": 0, "meta": {}, "task": "style", "text": "ユーザーにログインします。ユーザーの更新は毎週です。"}
-{"cls": "mixed_register", "id": "style-0109", "label": 1, "meta": {}, "task": "style", "text": "ブラウザーの設定を確認します。ブラウザーは再起動が必要である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0110", "label": 0, "meta": {}, "task": "style", "text": "ブラウザーの設定を確認します。ブラウザーは再起動が必要です。"}
-{"cls": "mixed_register", "id": "style-0111", "label": 1, "meta": {}, "task": "style", "text": "メモリーへ接続します。接続の確認は必須である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0112", "label": 0, "meta": {}, "task": "style", "text": "メモリーへ接続します。接続の確認は必須です。"}
-{"cls": "mixed_register", "id": "style-0113", "label": 1, "meta": {}, "task": "style", "text": "コンピューターにログインします。コンピューターの更新は毎週である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0114", "label": 0, "meta": {}, "task": "style", "text": "コンピューターにログインします。コンピューターの更新は毎週です。"}
-{"cls": "mixed_register", "id": "style-0115", "label": 1, "meta": {}, "task": "style", "text": "ブラウザーのログを開きます。原因はブラウザーの設定である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0116", "label": 0, "meta": {}, "task": "style", "text": "ブラウザーのログを開きます。原因はブラウザーの設定です。"}
-{"cls": "mixed_register", "id": "style-0117", "label": 1, "meta": {}, "task": "style", "text": "ユーザーの状態を保存します。保存先は共有ディレクトリである。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0118", "label": 0, "meta": {}, "task": "style", "text": "ユーザーの状態を保存します。保存先は共有ディレクトリです。"}
-{"cls": "mixed_register", "id": "style-0119", "label": 1, "meta": {}, "task": "style", "text": "ディレクトリーにログインします。ディレクトリーの更新は毎週である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0120", "label": 0, "meta": {}, "task": "style", "text": "ディレクトリーにログインします。ディレクトリーの更新は毎週です。"}
-{"cls": "mixed_register", "id": "style-0121", "label": 1, "meta": {}, "task": "style", "text": "コンピューターへ接続します。接続の確認は必須である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0122", "label": 0, "meta": {}, "task": "style", "text": "コンピューターへ接続します。接続の確認は必須です。"}
-{"cls": "mixed_register", "id": "style-0123", "label": 1, "meta": {}, "task": "style", "text": "ブラウザーを停止します。停止の影響は小さい。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0124", "label": 0, "meta": {}, "task": "style", "text": "ブラウザーを停止します。停止の影響は小さいです。"}
-{"cls": "mixed_register", "id": "style-0125", "label": 1, "meta": {}, "task": "style", "text": "メモリーを停止します。停止の影響は小さい。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0126", "label": 0, "meta": {}, "task": "style", "text": "メモリーを停止します。停止の影響は小さいです。"}
-{"cls": "mixed_register", "id": "style-0127", "label": 1, "meta": {}, "task": "style", "text": "ディレクトリーの設定を確認します。ディレクトリーは再起動が必要である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0128", "label": 0, "meta": {}, "task": "style", "text": "ディレクトリーの設定を確認します。ディレクトリーは再起動が必要です。"}
-{"cls": "mixed_register", "id": "style-0129", "label": 1, "meta": {}, "task": "style", "text": "ブラウザーへ接続します。接続の確認は必須である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0130", "label": 0, "meta": {}, "task": "style", "text": "ブラウザーへ接続します。接続の確認は必須です。"}
-{"cls": "mixed_register", "id": "style-0131", "label": 1, "meta": {}, "task": "style", "text": "サーバーを停止します。停止の影響は小さい。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0132", "label": 0, "meta": {}, "task": "style", "text": "サーバーを停止します。停止の影響は小さいです。"}
-{"cls": "mixed_register", "id": "style-0133", "label": 1, "meta": {}, "task": "style", "text": "サーバーにログインします。サーバーの更新は毎週である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0134", "label": 0, "meta": {}, "task": "style", "text": "サーバーにログインします。サーバーの更新は毎週です。"}
-{"cls": "mixed_register", "id": "style-0135", "label": 1, "meta": {}, "task": "style", "text": "ドライバーのログを開きます。原因はドライバーの設定である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0136", "label": 0, "meta": {}, "task": "style", "text": "ドライバーのログを開きます。原因はドライバーの設定です。"}
-{"cls": "mixed_register", "id": "style-0137", "label": 1, "meta": {}, "task": "style", "text": "ドライバーの状態を保存します。保存先は共有ディレクトリである。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0138", "label": 0, "meta": {}, "task": "style", "text": "ドライバーの状態を保存します。保存先は共有ディレクトリです。"}
-{"cls": "mixed_register", "id": "style-0139", "label": 1, "meta": {}, "task": "style", "text": "ドライバーへ接続します。接続の確認は必須である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0140", "label": 0, "meta": {}, "task": "style", "text": "ドライバーへ接続します。接続の確認は必須です。"}
-{"cls": "mixed_register", "id": "style-0141", "label": 1, "meta": {}, "task": "style", "text": "プリンターの設定を確認します。プリンターは再起動が必要である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0142", "label": 0, "meta": {}, "task": "style", "text": "プリンターの設定を確認します。プリンターは再起動が必要です。"}
-{"cls": "mixed_register", "id": "style-0143", "label": 1, "meta": {}, "task": "style", "text": "ドライバーの設定を確認します。ドライバーは再起動が必要である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0144", "label": 0, "meta": {}, "task": "style", "text": "ドライバーの設定を確認します。ドライバーは再起動が必要です。"}
-{"cls": "mixed_register", "id": "style-0145", "label": 1, "meta": {}, "task": "style", "text": "プリンターを停止します。停止の影響は小さい。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0146", "label": 0, "meta": {}, "task": "style", "text": "プリンターを停止します。停止の影響は小さいです。"}
-{"cls": "mixed_register", "id": "style-0147", "label": 1, "meta": {}, "task": "style", "text": "コンピューターの設定を確認します。コンピューターは再起動が必要である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0148", "label": 0, "meta": {}, "task": "style", "text": "コンピューターの設定を確認します。コンピューターは再起動が必要です。"}
-{"cls": "mixed_register", "id": "style-0149", "label": 1, "meta": {}, "task": "style", "text": "ディレクトリーの状態を保存します。保存先は共有ディレクトリである。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0150", "label": 0, "meta": {}, "task": "style", "text": "ディレクトリーの状態を保存します。保存先は共有ディレクトリです。"}
-{"cls": "mixed_register", "id": "style-0151", "label": 1, "meta": {}, "task": "style", "text": "ドライバーにログインします。ドライバーの更新は毎週である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0152", "label": 0, "meta": {}, "task": "style", "text": "ドライバーにログインします。ドライバーの更新は毎週です。"}
-{"cls": "mixed_register", "id": "style-0153", "label": 1, "meta": {}, "task": "style", "text": "ユーザーへ接続します。接続の確認は必須である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0154", "label": 0, "meta": {}, "task": "style", "text": "ユーザーへ接続します。接続の確認は必須です。"}
-{"cls": "mixed_register", "id": "style-0155", "label": 1, "meta": {}, "task": "style", "text": "ユーザーの設定を確認します。ユーザーは再起動が必要である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0156", "label": 0, "meta": {}, "task": "style", "text": "ユーザーの設定を確認します。ユーザーは再起動が必要です。"}
-{"cls": "mixed_register", "id": "style-0157", "label": 1, "meta": {}, "task": "style", "text": "ディレクトリーを停止します。停止の影響は小さい。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0158", "label": 0, "meta": {}, "task": "style", "text": "ディレクトリーを停止します。停止の影響は小さいです。"}
-{"cls": "mixed_register", "id": "style-0159", "label": 1, "meta": {}, "task": "style", "text": "プリンターへ接続します。接続の確認は必須である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0160", "label": 0, "meta": {}, "task": "style", "text": "プリンターへ接続します。接続の確認は必須です。"}
-{"cls": "mixed_register", "id": "style-0161", "label": 1, "meta": {}, "task": "style", "text": "サーバーの状態を保存します。保存先は共有ディレクトリである。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0162", "label": 0, "meta": {}, "task": "style", "text": "サーバーの状態を保存します。保存先は共有ディレクトリです。"}
-{"cls": "mixed_register", "id": "style-0163", "label": 1, "meta": {}, "task": "style", "text": "メモリーにログインします。メモリーの更新は毎週である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0164", "label": 0, "meta": {}, "task": "style", "text": "メモリーにログインします。メモリーの更新は毎週です。"}
-{"cls": "mixed_register", "id": "style-0165", "label": 1, "meta": {}, "task": "style", "text": "コンピューターの状態を保存します。保存先は共有ディレクトリである。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0166", "label": 0, "meta": {}, "task": "style", "text": "コンピューターの状態を保存します。保存先は共有ディレクトリです。"}
-{"cls": "mixed_register", "id": "style-0167", "label": 1, "meta": {}, "task": "style", "text": "サーバーの設定を確認します。サーバーは再起動が必要である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0168", "label": 0, "meta": {}, "task": "style", "text": "サーバーの設定を確認します。サーバーは再起動が必要です。"}
-{"cls": "mixed_register", "id": "style-0169", "label": 1, "meta": {}, "task": "style", "text": "メモリーのログを開きます。原因はメモリーの設定である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0170", "label": 0, "meta": {}, "task": "style", "text": "メモリーのログを開きます。原因はメモリーの設定です。"}
-{"cls": "mixed_register", "id": "style-0171", "label": 1, "meta": {}, "task": "style", "text": "ユーザーを停止します。停止の影響は小さい。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0172", "label": 0, "meta": {}, "task": "style", "text": "ユーザーを停止します。停止の影響は小さいです。"}
-{"cls": "mixed_register", "id": "style-0173", "label": 1, "meta": {}, "task": "style", "text": "ブラウザーにログインします。ブラウザーの更新は毎週である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0174", "label": 0, "meta": {}, "task": "style", "text": "ブラウザーにログインします。ブラウザーの更新は毎週です。"}
-{"cls": "mixed_register", "id": "style-0175", "label": 1, "meta": {}, "task": "style", "text": "メモリーの状態を保存します。保存先は共有ディレクトリである。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0176", "label": 0, "meta": {}, "task": "style", "text": "メモリーの状態を保存します。保存先は共有ディレクトリです。"}
-{"cls": "mixed_register", "id": "style-0177", "label": 1, "meta": {}, "task": "style", "text": "プリンターのログを開きます。原因はプリンターの設定である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0178", "label": 0, "meta": {}, "task": "style", "text": "プリンターのログを開きます。原因はプリンターの設定です。"}
-{"cls": "mixed_register", "id": "style-0179", "label": 1, "meta": {}, "task": "style", "text": "ディレクトリーのログを開きます。原因はディレクトリーの設定である。"}
-{"cls": "neg_paired_mixed_register", "id": "style-0180", "label": 0, "meta": {}, "task": "style", "text": "ディレクトリーのログを開きます。原因はディレクトリーの設定です。"}
-{"cls": "term_variant", "id": "style-0181", "label": 1, "meta": {"terms": ["ディレクトリー", "ディレクトリ"]}, "task": "style", "text": "ディレクトリーの更新が終わるまで待ちます。最後にディレクトリの状態を保存します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0182", "label": 0, "meta": {}, "task": "style", "text": "ディレクトリーの更新が終わるまで待ちます。最後にディレクトリーの状態を保存します。"}
-{"cls": "term_variant", "id": "style-0183", "label": 1, "meta": {"terms": ["メモリー", "メモリ"]}, "task": "style", "text": "メモリーの更新が終わるまで待ちます。メモリのログを開いて原因を調べます。"}
-{"cls": "neg_paired_term_variant", "id": "style-0184", "label": 0, "meta": {}, "task": "style", "text": "メモリーの更新が終わるまで待ちます。メモリーのログを開いて原因を調べます。"}
-{"cls": "term_variant", "id": "style-0185", "label": 1, "meta": {"terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "その後、ユーザーを再起動します。最後にユーザの状態を保存します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0186", "label": 0, "meta": {}, "task": "style", "text": "その後、ユーザーを再起動します。最後にユーザーの状態を保存します。"}
-{"cls": "term_variant", "id": "style-0187", "label": 1, "meta": {"terms": ["ディレクトリー", "ディレクトリ"]}, "task": "style", "text": "ディレクトリーの設定を確認します。その後、ディレクトリを再起動します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0188", "label": 0, "meta": {}, "task": "style", "text": "ディレクトリーの設定を確認します。その後、ディレクトリーを再起動します。"}
-{"cls": "term_variant", "id": "style-0189", "label": 1, "meta": {"terms": ["プリンター", "プリンタ"]}, "task": "style", "text": "プリンターの設定を確認します。最後にプリンタの状態を保存します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0190", "label": 0, "meta": {}, "task": "style", "text": "プリンターの設定を確認します。最後にプリンターの状態を保存します。"}
-{"cls": "term_variant", "id": "style-0191", "label": 1, "meta": {"terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "その後、ユーザーを再起動します。ユーザの更新が終わるまで待ちます。"}
-{"cls": "neg_paired_term_variant", "id": "style-0192", "label": 0, "meta": {}, "task": "style", "text": "その後、ユーザーを再起動します。ユーザーの更新が終わるまで待ちます。"}
-{"cls": "term_variant", "id": "style-0193", "label": 1, "meta": {"terms": ["ドライバー", "ドライバ"]}, "task": "style", "text": "最後にドライバーの状態を保存します。ドライバのログを開いて原因を調べます。"}
-{"cls": "neg_paired_term_variant", "id": "style-0194", "label": 0, "meta": {}, "task": "style", "text": "最後にドライバーの状態を保存します。ドライバーのログを開いて原因を調べます。"}
-{"cls": "term_variant", "id": "style-0195", "label": 1, "meta": {"terms": ["メモリー", "メモリ"]}, "task": "style", "text": "その後、メモリーを再起動します。メモリの更新が終わるまで待ちます。"}
-{"cls": "neg_paired_term_variant", "id": "style-0196", "label": 0, "meta": {}, "task": "style", "text": "その後、メモリーを再起動します。メモリーの更新が終わるまで待ちます。"}
-{"cls": "term_variant", "id": "style-0197", "label": 1, "meta": {"terms": ["サーバー", "サーバ"]}, "task": "style", "text": "最後にサーバーの状態を保存します。サーバの更新が終わるまで待ちます。"}
-{"cls": "neg_paired_term_variant", "id": "style-0198", "label": 0, "meta": {}, "task": "style", "text": "最後にサーバーの状態を保存します。サーバーの更新が終わるまで待ちます。"}
-{"cls": "term_variant", "id": "style-0199", "label": 1, "meta": {"terms": ["コンピューター", "コンピュータ"]}, "task": "style", "text": "コンピューターの設定を確認します。コンピュータに接続できることを確認します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0200", "label": 0, "meta": {}, "task": "style", "text": "コンピューターの設定を確認します。コンピューターに接続できることを確認します。"}
-{"cls": "term_variant", "id": "style-0201", "label": 1, "meta": {"terms": ["サーバー", "サーバ"]}, "task": "style", "text": "サーバーのログを開いて原因を調べます。サーバの設定を確認します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0202", "label": 0, "meta": {}, "task": "style", "text": "サーバーのログを開いて原因を調べます。サーバーの設定を確認します。"}
-{"cls": "term_variant", "id": "style-0203", "label": 1, "meta": {"terms": ["ドライバー", "ドライバ"]}, "task": "style", "text": "ドライバーの設定を確認します。最後にドライバの状態を保存します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0204", "label": 0, "meta": {}, "task": "style", "text": "ドライバーの設定を確認します。最後にドライバーの状態を保存します。"}
-{"cls": "term_variant", "id": "style-0205", "label": 1, "meta": {"terms": ["ブラウザー", "ブラウザ"]}, "task": "style", "text": "最後にブラウザーの状態を保存します。ブラウザの設定を確認します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0206", "label": 0, "meta": {}, "task": "style", "text": "最後にブラウザーの状態を保存します。ブラウザーの設定を確認します。"}
-{"cls": "term_variant", "id": "style-0207", "label": 1, "meta": {"terms": ["メモリー", "メモリ"]}, "task": "style", "text": "最後にメモリーの状態を保存します。メモリに接続できることを確認します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0208", "label": 0, "meta": {}, "task": "style", "text": "最後にメモリーの状態を保存します。メモリーに接続できることを確認します。"}
-{"cls": "term_variant", "id": "style-0209", "label": 1, "meta": {"terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "ユーザーに接続できることを確認します。その後、ユーザを再起動します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0210", "label": 0, "meta": {}, "task": "style", "text": "ユーザーに接続できることを確認します。その後、ユーザーを再起動します。"}
-{"cls": "term_variant", "id": "style-0211", "label": 1, "meta": {"terms": ["サーバー", "サーバ"]}, "task": "style", "text": "サーバーの設定を確認します。サーバのログを開いて原因を調べます。"}
-{"cls": "neg_paired_term_variant", "id": "style-0212", "label": 0, "meta": {}, "task": "style", "text": "サーバーの設定を確認します。サーバーのログを開いて原因を調べます。"}
-{"cls": "term_variant", "id": "style-0213", "label": 1, "meta": {"terms": ["ディレクトリー", "ディレクトリ"]}, "task": "style", "text": "最後にディレクトリーの状態を保存します。ディレクトリの更新が終わるまで待ちます。"}
-{"cls": "neg_paired_term_variant", "id": "style-0214", "label": 0, "meta": {}, "task": "style", "text": "最後にディレクトリーの状態を保存します。ディレクトリーの更新が終わるまで待ちます。"}
-{"cls": "term_variant", "id": "style-0215", "label": 1, "meta": {"terms": ["プリンター", "プリンタ"]}, "task": "style", "text": "プリンターに接続できることを確認します。その後、プリンタを再起動します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0216", "label": 0, "meta": {}, "task": "style", "text": "プリンターに接続できることを確認します。その後、プリンターを再起動します。"}
-{"cls": "term_variant", "id": "style-0217", "label": 1, "meta": {"terms": ["ディレクトリー", "ディレクトリ"]}, "task": "style", "text": "最後にディレクトリーの状態を保存します。ディレクトリのログを開いて原因を調べます。"}
-{"cls": "neg_paired_term_variant", "id": "style-0218", "label": 0, "meta": {}, "task": "style", "text": "最後にディレクトリーの状態を保存します。ディレクトリーのログを開いて原因を調べます。"}
-{"cls": "term_variant", "id": "style-0219", "label": 1, "meta": {"terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "最後にユーザーの状態を保存します。ユーザのログを開いて原因を調べます。"}
-{"cls": "neg_paired_term_variant", "id": "style-0220", "label": 0, "meta": {}, "task": "style", "text": "最後にユーザーの状態を保存します。ユーザーのログを開いて原因を調べます。"}
-{"cls": "term_variant", "id": "style-0221", "label": 1, "meta": {"terms": ["コンピューター", "コンピュータ"]}, "task": "style", "text": "コンピューターの更新が終わるまで待ちます。コンピュータのログを開いて原因を調べます。"}
-{"cls": "neg_paired_term_variant", "id": "style-0222", "label": 0, "meta": {}, "task": "style", "text": "コンピューターの更新が終わるまで待ちます。コンピューターのログを開いて原因を調べます。"}
-{"cls": "term_variant", "id": "style-0223", "label": 1, "meta": {"terms": ["ドライバー", "ドライバ"]}, "task": "style", "text": "ドライバーの設定を確認します。その後、ドライバを再起動します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0224", "label": 0, "meta": {}, "task": "style", "text": "ドライバーの設定を確認します。その後、ドライバーを再起動します。"}
-{"cls": "term_variant", "id": "style-0225", "label": 1, "meta": {"terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "ユーザーの更新が終わるまで待ちます。その後、ユーザを再起動します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0226", "label": 0, "meta": {}, "task": "style", "text": "ユーザーの更新が終わるまで待ちます。その後、ユーザーを再起動します。"}
-{"cls": "term_variant", "id": "style-0227", "label": 1, "meta": {"terms": ["ブラウザー", "ブラウザ"]}, "task": "style", "text": "その後、ブラウザーを再起動します。ブラウザの設定を確認します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0228", "label": 0, "meta": {}, "task": "style", "text": "その後、ブラウザーを再起動します。ブラウザーの設定を確認します。"}
-{"cls": "term_variant", "id": "style-0229", "label": 1, "meta": {"terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "ユーザーの更新が終わるまで待ちます。ユーザのログを開いて原因を調べます。"}
-{"cls": "neg_paired_term_variant", "id": "style-0230", "label": 0, "meta": {}, "task": "style", "text": "ユーザーの更新が終わるまで待ちます。ユーザーのログを開いて原因を調べます。"}
-{"cls": "term_variant", "id": "style-0231", "label": 1, "meta": {"terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "最後にユーザーの状態を保存します。ユーザに接続できることを確認します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0232", "label": 0, "meta": {}, "task": "style", "text": "最後にユーザーの状態を保存します。ユーザーに接続できることを確認します。"}
-{"cls": "term_variant", "id": "style-0233", "label": 1, "meta": {"terms": ["コンピューター", "コンピュータ"]}, "task": "style", "text": "コンピューターのログを開いて原因を調べます。コンピュータの設定を確認します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0234", "label": 0, "meta": {}, "task": "style", "text": "コンピューターのログを開いて原因を調べます。コンピューターの設定を確認します。"}
-{"cls": "term_variant", "id": "style-0235", "label": 1, "meta": {"terms": ["メモリー", "メモリ"]}, "task": "style", "text": "メモリーのログを開いて原因を調べます。メモリに接続できることを確認します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0236", "label": 0, "meta": {}, "task": "style", "text": "メモリーのログを開いて原因を調べます。メモリーに接続できることを確認します。"}
-{"cls": "term_variant", "id": "style-0237", "label": 1, "meta": {"terms": ["プリンター", "プリンタ"]}, "task": "style", "text": "その後、プリンターを再起動します。プリンタのログを開いて原因を調べます。"}
-{"cls": "neg_paired_term_variant", "id": "style-0238", "label": 0, "meta": {}, "task": "style", "text": "その後、プリンターを再起動します。プリンターのログを開いて原因を調べます。"}
-{"cls": "term_variant", "id": "style-0239", "label": 1, "meta": {"terms": ["コンピューター", "コンピュータ"]}, "task": "style", "text": "コンピューターのログを開いて原因を調べます。最後にコンピュータの状態を保存します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0240", "label": 0, "meta": {}, "task": "style", "text": "コンピューターのログを開いて原因を調べます。最後にコンピューターの状態を保存します。"}
-{"cls": "term_variant", "id": "style-0241", "label": 1, "meta": {"terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "その後、ユーザーを再起動します。ユーザのログを開いて原因を調べます。"}
-{"cls": "neg_paired_term_variant", "id": "style-0242", "label": 0, "meta": {}, "task": "style", "text": "その後、ユーザーを再起動します。ユーザーのログを開いて原因を調べます。"}
-{"cls": "term_variant", "id": "style-0243", "label": 1, "meta": {"terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "その後、ユーザーを再起動します。ユーザに接続できることを確認します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0244", "label": 0, "meta": {}, "task": "style", "text": "その後、ユーザーを再起動します。ユーザーに接続できることを確認します。"}
-{"cls": "term_variant", "id": "style-0245", "label": 1, "meta": {"terms": ["メモリー", "メモリ"]}, "task": "style", "text": "最後にメモリーの状態を保存します。メモリの設定を確認します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0246", "label": 0, "meta": {}, "task": "style", "text": "最後にメモリーの状態を保存します。メモリーの設定を確認します。"}
-{"cls": "term_variant", "id": "style-0247", "label": 1, "meta": {"terms": ["プリンター", "プリンタ"]}, "task": "style", "text": "その後、プリンターを再起動します。最後にプリンタの状態を保存します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0248", "label": 0, "meta": {}, "task": "style", "text": "その後、プリンターを再起動します。最後にプリンターの状態を保存します。"}
-{"cls": "term_variant", "id": "style-0249", "label": 1, "meta": {"terms": ["プリンター", "プリンタ"]}, "task": "style", "text": "その後、プリンターを再起動します。プリンタに接続できることを確認します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0250", "label": 0, "meta": {}, "task": "style", "text": "その後、プリンターを再起動します。プリンターに接続できることを確認します。"}
-{"cls": "term_variant", "id": "style-0251", "label": 1, "meta": {"terms": ["ブラウザー", "ブラウザ"]}, "task": "style", "text": "ブラウザーのログを開いて原因を調べます。ブラウザの設定を確認します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0252", "label": 0, "meta": {}, "task": "style", "text": "ブラウザーのログを開いて原因を調べます。ブラウザーの設定を確認します。"}
-{"cls": "term_variant", "id": "style-0253", "label": 1, "meta": {"terms": ["コンピューター", "コンピュータ"]}, "task": "style", "text": "最後にコンピューターの状態を保存します。コンピュータに接続できることを確認します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0254", "label": 0, "meta": {}, "task": "style", "text": "最後にコンピューターの状態を保存します。コンピューターに接続できることを確認します。"}
-{"cls": "term_variant", "id": "style-0255", "label": 1, "meta": {"terms": ["ディレクトリー", "ディレクトリ"]}, "task": "style", "text": "その後、ディレクトリーを再起動します。ディレクトリの設定を確認します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0256", "label": 0, "meta": {}, "task": "style", "text": "その後、ディレクトリーを再起動します。ディレクトリーの設定を確認します。"}
-{"cls": "term_variant", "id": "style-0257", "label": 1, "meta": {"terms": ["サーバー", "サーバ"]}, "task": "style", "text": "サーバーのログを開いて原因を調べます。最後にサーバの状態を保存します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0258", "label": 0, "meta": {}, "task": "style", "text": "サーバーのログを開いて原因を調べます。最後にサーバーの状態を保存します。"}
-{"cls": "term_variant", "id": "style-0259", "label": 1, "meta": {"terms": ["プリンター", "プリンタ"]}, "task": "style", "text": "プリンターのログを開いて原因を調べます。プリンタに接続できることを確認します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0260", "label": 0, "meta": {}, "task": "style", "text": "プリンターのログを開いて原因を調べます。プリンターに接続できることを確認します。"}
-{"cls": "term_variant", "id": "style-0261", "label": 1, "meta": {"terms": ["メモリー", "メモリ"]}, "task": "style", "text": "その後、メモリーを再起動します。メモリのログを開いて原因を調べます。"}
-{"cls": "neg_paired_term_variant", "id": "style-0262", "label": 0, "meta": {}, "task": "style", "text": "その後、メモリーを再起動します。メモリーのログを開いて原因を調べます。"}
-{"cls": "term_variant", "id": "style-0263", "label": 1, "meta": {"terms": ["ブラウザー", "ブラウザ"]}, "task": "style", "text": "最後にブラウザーの状態を保存します。その後、ブラウザを再起動します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0264", "label": 0, "meta": {}, "task": "style", "text": "最後にブラウザーの状態を保存します。その後、ブラウザーを再起動します。"}
-{"cls": "term_variant", "id": "style-0265", "label": 1, "meta": {"terms": ["ディレクトリー", "ディレクトリ"]}, "task": "style", "text": "ディレクトリーに接続できることを確認します。ディレクトリの設定を確認します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0266", "label": 0, "meta": {}, "task": "style", "text": "ディレクトリーに接続できることを確認します。ディレクトリーの設定を確認します。"}
-{"cls": "term_variant", "id": "style-0267", "label": 1, "meta": {"terms": ["ブラウザー", "ブラウザ"]}, "task": "style", "text": "ブラウザーの更新が終わるまで待ちます。最後にブラウザの状態を保存します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0268", "label": 0, "meta": {}, "task": "style", "text": "ブラウザーの更新が終わるまで待ちます。最後にブラウザーの状態を保存します。"}
-{"cls": "term_variant", "id": "style-0269", "label": 1, "meta": {"terms": ["ドライバー", "ドライバ"]}, "task": "style", "text": "ドライバーの更新が終わるまで待ちます。ドライバに接続できることを確認します。"}
-{"cls": "neg_paired_term_variant", "id": "style-0270", "label": 0, "meta": {}, "task": "style", "text": "ドライバーの更新が終わるまで待ちます。ドライバーに接続できることを確認します。"}
+{"cls": "mixed_register", "id": "style-0107", "label": 1, "meta": {"pair_id": "reg-107"}, "task": "style", "text": "ユーザーにログインします。ユーザーの更新は毎週である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0108", "label": 0, "meta": {"pair_id": "reg-107"}, "task": "style", "text": "ユーザーにログインします。ユーザーの更新は毎週です。"}
+{"cls": "mixed_register", "id": "style-0109", "label": 1, "meta": {"pair_id": "reg-109"}, "task": "style", "text": "ブラウザーの設定を確認します。ブラウザーは再起動が必要である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0110", "label": 0, "meta": {"pair_id": "reg-109"}, "task": "style", "text": "ブラウザーの設定を確認します。ブラウザーは再起動が必要です。"}
+{"cls": "mixed_register", "id": "style-0111", "label": 1, "meta": {"pair_id": "reg-111"}, "task": "style", "text": "メモリーへ接続します。接続の確認は必須である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0112", "label": 0, "meta": {"pair_id": "reg-111"}, "task": "style", "text": "メモリーへ接続します。接続の確認は必須です。"}
+{"cls": "mixed_register", "id": "style-0113", "label": 1, "meta": {"pair_id": "reg-113"}, "task": "style", "text": "コンピューターにログインします。コンピューターの更新は毎週である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0114", "label": 0, "meta": {"pair_id": "reg-113"}, "task": "style", "text": "コンピューターにログインします。コンピューターの更新は毎週です。"}
+{"cls": "mixed_register", "id": "style-0115", "label": 1, "meta": {"pair_id": "reg-115"}, "task": "style", "text": "ブラウザーのログを開きます。原因はブラウザーの設定である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0116", "label": 0, "meta": {"pair_id": "reg-115"}, "task": "style", "text": "ブラウザーのログを開きます。原因はブラウザーの設定です。"}
+{"cls": "mixed_register", "id": "style-0117", "label": 1, "meta": {"pair_id": "reg-117"}, "task": "style", "text": "ユーザーの状態を保存します。保存先は共有ディレクトリである。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0118", "label": 0, "meta": {"pair_id": "reg-117"}, "task": "style", "text": "ユーザーの状態を保存します。保存先は共有ディレクトリです。"}
+{"cls": "mixed_register", "id": "style-0119", "label": 1, "meta": {"pair_id": "reg-119"}, "task": "style", "text": "ディレクトリーにログインします。ディレクトリーの更新は毎週である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0120", "label": 0, "meta": {"pair_id": "reg-119"}, "task": "style", "text": "ディレクトリーにログインします。ディレクトリーの更新は毎週です。"}
+{"cls": "mixed_register", "id": "style-0121", "label": 1, "meta": {"pair_id": "reg-121"}, "task": "style", "text": "コンピューターへ接続します。接続の確認は必須である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0122", "label": 0, "meta": {"pair_id": "reg-121"}, "task": "style", "text": "コンピューターへ接続します。接続の確認は必須です。"}
+{"cls": "mixed_register", "id": "style-0123", "label": 1, "meta": {"pair_id": "reg-123"}, "task": "style", "text": "ブラウザーを停止します。停止の影響は小さい。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0124", "label": 0, "meta": {"pair_id": "reg-123"}, "task": "style", "text": "ブラウザーを停止します。停止の影響は小さいです。"}
+{"cls": "mixed_register", "id": "style-0125", "label": 1, "meta": {"pair_id": "reg-125"}, "task": "style", "text": "メモリーを停止します。停止の影響は小さい。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0126", "label": 0, "meta": {"pair_id": "reg-125"}, "task": "style", "text": "メモリーを停止します。停止の影響は小さいです。"}
+{"cls": "mixed_register", "id": "style-0127", "label": 1, "meta": {"pair_id": "reg-127"}, "task": "style", "text": "ディレクトリーの設定を確認します。ディレクトリーは再起動が必要である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0128", "label": 0, "meta": {"pair_id": "reg-127"}, "task": "style", "text": "ディレクトリーの設定を確認します。ディレクトリーは再起動が必要です。"}
+{"cls": "mixed_register", "id": "style-0129", "label": 1, "meta": {"pair_id": "reg-129"}, "task": "style", "text": "ブラウザーへ接続します。接続の確認は必須である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0130", "label": 0, "meta": {"pair_id": "reg-129"}, "task": "style", "text": "ブラウザーへ接続します。接続の確認は必須です。"}
+{"cls": "mixed_register", "id": "style-0131", "label": 1, "meta": {"pair_id": "reg-131"}, "task": "style", "text": "サーバーを停止します。停止の影響は小さい。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0132", "label": 0, "meta": {"pair_id": "reg-131"}, "task": "style", "text": "サーバーを停止します。停止の影響は小さいです。"}
+{"cls": "mixed_register", "id": "style-0133", "label": 1, "meta": {"pair_id": "reg-133"}, "task": "style", "text": "サーバーにログインします。サーバーの更新は毎週である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0134", "label": 0, "meta": {"pair_id": "reg-133"}, "task": "style", "text": "サーバーにログインします。サーバーの更新は毎週です。"}
+{"cls": "mixed_register", "id": "style-0135", "label": 1, "meta": {"pair_id": "reg-135"}, "task": "style", "text": "ドライバーのログを開きます。原因はドライバーの設定である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0136", "label": 0, "meta": {"pair_id": "reg-135"}, "task": "style", "text": "ドライバーのログを開きます。原因はドライバーの設定です。"}
+{"cls": "mixed_register", "id": "style-0137", "label": 1, "meta": {"pair_id": "reg-137"}, "task": "style", "text": "ドライバーの状態を保存します。保存先は共有ディレクトリである。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0138", "label": 0, "meta": {"pair_id": "reg-137"}, "task": "style", "text": "ドライバーの状態を保存します。保存先は共有ディレクトリです。"}
+{"cls": "mixed_register", "id": "style-0139", "label": 1, "meta": {"pair_id": "reg-139"}, "task": "style", "text": "ドライバーへ接続します。接続の確認は必須である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0140", "label": 0, "meta": {"pair_id": "reg-139"}, "task": "style", "text": "ドライバーへ接続します。接続の確認は必須です。"}
+{"cls": "mixed_register", "id": "style-0141", "label": 1, "meta": {"pair_id": "reg-141"}, "task": "style", "text": "プリンターの設定を確認します。プリンターは再起動が必要である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0142", "label": 0, "meta": {"pair_id": "reg-141"}, "task": "style", "text": "プリンターの設定を確認します。プリンターは再起動が必要です。"}
+{"cls": "mixed_register", "id": "style-0143", "label": 1, "meta": {"pair_id": "reg-143"}, "task": "style", "text": "ドライバーの設定を確認します。ドライバーは再起動が必要である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0144", "label": 0, "meta": {"pair_id": "reg-143"}, "task": "style", "text": "ドライバーの設定を確認します。ドライバーは再起動が必要です。"}
+{"cls": "mixed_register", "id": "style-0145", "label": 1, "meta": {"pair_id": "reg-145"}, "task": "style", "text": "プリンターを停止します。停止の影響は小さい。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0146", "label": 0, "meta": {"pair_id": "reg-145"}, "task": "style", "text": "プリンターを停止します。停止の影響は小さいです。"}
+{"cls": "mixed_register", "id": "style-0147", "label": 1, "meta": {"pair_id": "reg-147"}, "task": "style", "text": "コンピューターの設定を確認します。コンピューターは再起動が必要である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0148", "label": 0, "meta": {"pair_id": "reg-147"}, "task": "style", "text": "コンピューターの設定を確認します。コンピューターは再起動が必要です。"}
+{"cls": "mixed_register", "id": "style-0149", "label": 1, "meta": {"pair_id": "reg-149"}, "task": "style", "text": "ディレクトリーの状態を保存します。保存先は共有ディレクトリである。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0150", "label": 0, "meta": {"pair_id": "reg-149"}, "task": "style", "text": "ディレクトリーの状態を保存します。保存先は共有ディレクトリです。"}
+{"cls": "mixed_register", "id": "style-0151", "label": 1, "meta": {"pair_id": "reg-151"}, "task": "style", "text": "ドライバーにログインします。ドライバーの更新は毎週である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0152", "label": 0, "meta": {"pair_id": "reg-151"}, "task": "style", "text": "ドライバーにログインします。ドライバーの更新は毎週です。"}
+{"cls": "mixed_register", "id": "style-0153", "label": 1, "meta": {"pair_id": "reg-153"}, "task": "style", "text": "ユーザーへ接続します。接続の確認は必須である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0154", "label": 0, "meta": {"pair_id": "reg-153"}, "task": "style", "text": "ユーザーへ接続します。接続の確認は必須です。"}
+{"cls": "mixed_register", "id": "style-0155", "label": 1, "meta": {"pair_id": "reg-155"}, "task": "style", "text": "ユーザーの設定を確認します。ユーザーは再起動が必要である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0156", "label": 0, "meta": {"pair_id": "reg-155"}, "task": "style", "text": "ユーザーの設定を確認します。ユーザーは再起動が必要です。"}
+{"cls": "mixed_register", "id": "style-0157", "label": 1, "meta": {"pair_id": "reg-157"}, "task": "style", "text": "ディレクトリーを停止します。停止の影響は小さい。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0158", "label": 0, "meta": {"pair_id": "reg-157"}, "task": "style", "text": "ディレクトリーを停止します。停止の影響は小さいです。"}
+{"cls": "mixed_register", "id": "style-0159", "label": 1, "meta": {"pair_id": "reg-159"}, "task": "style", "text": "プリンターへ接続します。接続の確認は必須である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0160", "label": 0, "meta": {"pair_id": "reg-159"}, "task": "style", "text": "プリンターへ接続します。接続の確認は必須です。"}
+{"cls": "mixed_register", "id": "style-0161", "label": 1, "meta": {"pair_id": "reg-161"}, "task": "style", "text": "サーバーの状態を保存します。保存先は共有ディレクトリである。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0162", "label": 0, "meta": {"pair_id": "reg-161"}, "task": "style", "text": "サーバーの状態を保存します。保存先は共有ディレクトリです。"}
+{"cls": "mixed_register", "id": "style-0163", "label": 1, "meta": {"pair_id": "reg-163"}, "task": "style", "text": "メモリーにログインします。メモリーの更新は毎週である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0164", "label": 0, "meta": {"pair_id": "reg-163"}, "task": "style", "text": "メモリーにログインします。メモリーの更新は毎週です。"}
+{"cls": "mixed_register", "id": "style-0165", "label": 1, "meta": {"pair_id": "reg-165"}, "task": "style", "text": "コンピューターの状態を保存します。保存先は共有ディレクトリである。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0166", "label": 0, "meta": {"pair_id": "reg-165"}, "task": "style", "text": "コンピューターの状態を保存します。保存先は共有ディレクトリです。"}
+{"cls": "mixed_register", "id": "style-0167", "label": 1, "meta": {"pair_id": "reg-167"}, "task": "style", "text": "サーバーの設定を確認します。サーバーは再起動が必要である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0168", "label": 0, "meta": {"pair_id": "reg-167"}, "task": "style", "text": "サーバーの設定を確認します。サーバーは再起動が必要です。"}
+{"cls": "mixed_register", "id": "style-0169", "label": 1, "meta": {"pair_id": "reg-169"}, "task": "style", "text": "メモリーのログを開きます。原因はメモリーの設定である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0170", "label": 0, "meta": {"pair_id": "reg-169"}, "task": "style", "text": "メモリーのログを開きます。原因はメモリーの設定です。"}
+{"cls": "mixed_register", "id": "style-0171", "label": 1, "meta": {"pair_id": "reg-171"}, "task": "style", "text": "ユーザーを停止します。停止の影響は小さい。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0172", "label": 0, "meta": {"pair_id": "reg-171"}, "task": "style", "text": "ユーザーを停止します。停止の影響は小さいです。"}
+{"cls": "mixed_register", "id": "style-0173", "label": 1, "meta": {"pair_id": "reg-173"}, "task": "style", "text": "ブラウザーにログインします。ブラウザーの更新は毎週である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0174", "label": 0, "meta": {"pair_id": "reg-173"}, "task": "style", "text": "ブラウザーにログインします。ブラウザーの更新は毎週です。"}
+{"cls": "mixed_register", "id": "style-0175", "label": 1, "meta": {"pair_id": "reg-175"}, "task": "style", "text": "メモリーの状態を保存します。保存先は共有ディレクトリである。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0176", "label": 0, "meta": {"pair_id": "reg-175"}, "task": "style", "text": "メモリーの状態を保存します。保存先は共有ディレクトリです。"}
+{"cls": "mixed_register", "id": "style-0177", "label": 1, "meta": {"pair_id": "reg-177"}, "task": "style", "text": "プリンターのログを開きます。原因はプリンターの設定である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0178", "label": 0, "meta": {"pair_id": "reg-177"}, "task": "style", "text": "プリンターのログを開きます。原因はプリンターの設定です。"}
+{"cls": "mixed_register", "id": "style-0179", "label": 1, "meta": {"pair_id": "reg-179"}, "task": "style", "text": "ディレクトリーのログを開きます。原因はディレクトリーの設定である。"}
+{"cls": "neg_paired_mixed_register", "id": "style-0180", "label": 0, "meta": {"pair_id": "reg-179"}, "task": "style", "text": "ディレクトリーのログを開きます。原因はディレクトリーの設定です。"}
+{"cls": "term_variant", "id": "style-0181", "label": 1, "meta": {"pair_id": "term-181", "terms": ["ディレクトリー", "ディレクトリ"]}, "task": "style", "text": "ディレクトリーの更新が終わるまで待ちます。最後にディレクトリの状態を保存します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0182", "label": 0, "meta": {"pair_id": "term-181"}, "task": "style", "text": "ディレクトリーの更新が終わるまで待ちます。最後にディレクトリーの状態を保存します。"}
+{"cls": "term_variant", "id": "style-0183", "label": 1, "meta": {"pair_id": "term-183", "terms": ["メモリー", "メモリ"]}, "task": "style", "text": "メモリーの更新が終わるまで待ちます。メモリのログを開いて原因を調べます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0184", "label": 0, "meta": {"pair_id": "term-183"}, "task": "style", "text": "メモリーの更新が終わるまで待ちます。メモリーのログを開いて原因を調べます。"}
+{"cls": "term_variant", "id": "style-0185", "label": 1, "meta": {"pair_id": "term-185", "terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "その後、ユーザーを再起動します。最後にユーザの状態を保存します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0186", "label": 0, "meta": {"pair_id": "term-185"}, "task": "style", "text": "その後、ユーザーを再起動します。最後にユーザーの状態を保存します。"}
+{"cls": "term_variant", "id": "style-0187", "label": 1, "meta": {"pair_id": "term-187", "terms": ["ディレクトリー", "ディレクトリ"]}, "task": "style", "text": "ディレクトリーの設定を確認します。その後、ディレクトリを再起動します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0188", "label": 0, "meta": {"pair_id": "term-187"}, "task": "style", "text": "ディレクトリーの設定を確認します。その後、ディレクトリーを再起動します。"}
+{"cls": "term_variant", "id": "style-0189", "label": 1, "meta": {"pair_id": "term-189", "terms": ["プリンター", "プリンタ"]}, "task": "style", "text": "プリンターの設定を確認します。最後にプリンタの状態を保存します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0190", "label": 0, "meta": {"pair_id": "term-189"}, "task": "style", "text": "プリンターの設定を確認します。最後にプリンターの状態を保存します。"}
+{"cls": "term_variant", "id": "style-0191", "label": 1, "meta": {"pair_id": "term-191", "terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "その後、ユーザーを再起動します。ユーザの更新が終わるまで待ちます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0192", "label": 0, "meta": {"pair_id": "term-191"}, "task": "style", "text": "その後、ユーザーを再起動します。ユーザーの更新が終わるまで待ちます。"}
+{"cls": "term_variant", "id": "style-0193", "label": 1, "meta": {"pair_id": "term-193", "terms": ["ドライバー", "ドライバ"]}, "task": "style", "text": "最後にドライバーの状態を保存します。ドライバのログを開いて原因を調べます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0194", "label": 0, "meta": {"pair_id": "term-193"}, "task": "style", "text": "最後にドライバーの状態を保存します。ドライバーのログを開いて原因を調べます。"}
+{"cls": "term_variant", "id": "style-0195", "label": 1, "meta": {"pair_id": "term-195", "terms": ["メモリー", "メモリ"]}, "task": "style", "text": "その後、メモリーを再起動します。メモリの更新が終わるまで待ちます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0196", "label": 0, "meta": {"pair_id": "term-195"}, "task": "style", "text": "その後、メモリーを再起動します。メモリーの更新が終わるまで待ちます。"}
+{"cls": "term_variant", "id": "style-0197", "label": 1, "meta": {"pair_id": "term-197", "terms": ["サーバー", "サーバ"]}, "task": "style", "text": "最後にサーバーの状態を保存します。サーバの更新が終わるまで待ちます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0198", "label": 0, "meta": {"pair_id": "term-197"}, "task": "style", "text": "最後にサーバーの状態を保存します。サーバーの更新が終わるまで待ちます。"}
+{"cls": "term_variant", "id": "style-0199", "label": 1, "meta": {"pair_id": "term-199", "terms": ["コンピューター", "コンピュータ"]}, "task": "style", "text": "コンピューターの設定を確認します。コンピュータに接続できることを確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0200", "label": 0, "meta": {"pair_id": "term-199"}, "task": "style", "text": "コンピューターの設定を確認します。コンピューターに接続できることを確認します。"}
+{"cls": "term_variant", "id": "style-0201", "label": 1, "meta": {"pair_id": "term-201", "terms": ["サーバー", "サーバ"]}, "task": "style", "text": "サーバーのログを開いて原因を調べます。サーバの設定を確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0202", "label": 0, "meta": {"pair_id": "term-201"}, "task": "style", "text": "サーバーのログを開いて原因を調べます。サーバーの設定を確認します。"}
+{"cls": "term_variant", "id": "style-0203", "label": 1, "meta": {"pair_id": "term-203", "terms": ["ドライバー", "ドライバ"]}, "task": "style", "text": "ドライバーの設定を確認します。最後にドライバの状態を保存します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0204", "label": 0, "meta": {"pair_id": "term-203"}, "task": "style", "text": "ドライバーの設定を確認します。最後にドライバーの状態を保存します。"}
+{"cls": "term_variant", "id": "style-0205", "label": 1, "meta": {"pair_id": "term-205", "terms": ["ブラウザー", "ブラウザ"]}, "task": "style", "text": "最後にブラウザーの状態を保存します。ブラウザの設定を確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0206", "label": 0, "meta": {"pair_id": "term-205"}, "task": "style", "text": "最後にブラウザーの状態を保存します。ブラウザーの設定を確認します。"}
+{"cls": "term_variant", "id": "style-0207", "label": 1, "meta": {"pair_id": "term-207", "terms": ["メモリー", "メモリ"]}, "task": "style", "text": "最後にメモリーの状態を保存します。メモリに接続できることを確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0208", "label": 0, "meta": {"pair_id": "term-207"}, "task": "style", "text": "最後にメモリーの状態を保存します。メモリーに接続できることを確認します。"}
+{"cls": "term_variant", "id": "style-0209", "label": 1, "meta": {"pair_id": "term-209", "terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "ユーザーに接続できることを確認します。その後、ユーザを再起動します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0210", "label": 0, "meta": {"pair_id": "term-209"}, "task": "style", "text": "ユーザーに接続できることを確認します。その後、ユーザーを再起動します。"}
+{"cls": "term_variant", "id": "style-0211", "label": 1, "meta": {"pair_id": "term-211", "terms": ["サーバー", "サーバ"]}, "task": "style", "text": "サーバーの設定を確認します。サーバのログを開いて原因を調べます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0212", "label": 0, "meta": {"pair_id": "term-211"}, "task": "style", "text": "サーバーの設定を確認します。サーバーのログを開いて原因を調べます。"}
+{"cls": "term_variant", "id": "style-0213", "label": 1, "meta": {"pair_id": "term-213", "terms": ["ディレクトリー", "ディレクトリ"]}, "task": "style", "text": "最後にディレクトリーの状態を保存します。ディレクトリの更新が終わるまで待ちます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0214", "label": 0, "meta": {"pair_id": "term-213"}, "task": "style", "text": "最後にディレクトリーの状態を保存します。ディレクトリーの更新が終わるまで待ちます。"}
+{"cls": "term_variant", "id": "style-0215", "label": 1, "meta": {"pair_id": "term-215", "terms": ["プリンター", "プリンタ"]}, "task": "style", "text": "プリンターに接続できることを確認します。その後、プリンタを再起動します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0216", "label": 0, "meta": {"pair_id": "term-215"}, "task": "style", "text": "プリンターに接続できることを確認します。その後、プリンターを再起動します。"}
+{"cls": "term_variant", "id": "style-0217", "label": 1, "meta": {"pair_id": "term-217", "terms": ["ディレクトリー", "ディレクトリ"]}, "task": "style", "text": "最後にディレクトリーの状態を保存します。ディレクトリのログを開いて原因を調べます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0218", "label": 0, "meta": {"pair_id": "term-217"}, "task": "style", "text": "最後にディレクトリーの状態を保存します。ディレクトリーのログを開いて原因を調べます。"}
+{"cls": "term_variant", "id": "style-0219", "label": 1, "meta": {"pair_id": "term-219", "terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "最後にユーザーの状態を保存します。ユーザのログを開いて原因を調べます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0220", "label": 0, "meta": {"pair_id": "term-219"}, "task": "style", "text": "最後にユーザーの状態を保存します。ユーザーのログを開いて原因を調べます。"}
+{"cls": "term_variant", "id": "style-0221", "label": 1, "meta": {"pair_id": "term-221", "terms": ["コンピューター", "コンピュータ"]}, "task": "style", "text": "コンピューターの更新が終わるまで待ちます。コンピュータのログを開いて原因を調べます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0222", "label": 0, "meta": {"pair_id": "term-221"}, "task": "style", "text": "コンピューターの更新が終わるまで待ちます。コンピューターのログを開いて原因を調べます。"}
+{"cls": "term_variant", "id": "style-0223", "label": 1, "meta": {"pair_id": "term-223", "terms": ["ドライバー", "ドライバ"]}, "task": "style", "text": "ドライバーの設定を確認します。その後、ドライバを再起動します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0224", "label": 0, "meta": {"pair_id": "term-223"}, "task": "style", "text": "ドライバーの設定を確認します。その後、ドライバーを再起動します。"}
+{"cls": "term_variant", "id": "style-0225", "label": 1, "meta": {"pair_id": "term-225", "terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "ユーザーの更新が終わるまで待ちます。その後、ユーザを再起動します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0226", "label": 0, "meta": {"pair_id": "term-225"}, "task": "style", "text": "ユーザーの更新が終わるまで待ちます。その後、ユーザーを再起動します。"}
+{"cls": "term_variant", "id": "style-0227", "label": 1, "meta": {"pair_id": "term-227", "terms": ["ブラウザー", "ブラウザ"]}, "task": "style", "text": "その後、ブラウザーを再起動します。ブラウザの設定を確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0228", "label": 0, "meta": {"pair_id": "term-227"}, "task": "style", "text": "その後、ブラウザーを再起動します。ブラウザーの設定を確認します。"}
+{"cls": "term_variant", "id": "style-0229", "label": 1, "meta": {"pair_id": "term-229", "terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "ユーザーの更新が終わるまで待ちます。ユーザのログを開いて原因を調べます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0230", "label": 0, "meta": {"pair_id": "term-229"}, "task": "style", "text": "ユーザーの更新が終わるまで待ちます。ユーザーのログを開いて原因を調べます。"}
+{"cls": "term_variant", "id": "style-0231", "label": 1, "meta": {"pair_id": "term-231", "terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "最後にユーザーの状態を保存します。ユーザに接続できることを確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0232", "label": 0, "meta": {"pair_id": "term-231"}, "task": "style", "text": "最後にユーザーの状態を保存します。ユーザーに接続できることを確認します。"}
+{"cls": "term_variant", "id": "style-0233", "label": 1, "meta": {"pair_id": "term-233", "terms": ["コンピューター", "コンピュータ"]}, "task": "style", "text": "コンピューターのログを開いて原因を調べます。コンピュータの設定を確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0234", "label": 0, "meta": {"pair_id": "term-233"}, "task": "style", "text": "コンピューターのログを開いて原因を調べます。コンピューターの設定を確認します。"}
+{"cls": "term_variant", "id": "style-0235", "label": 1, "meta": {"pair_id": "term-235", "terms": ["メモリー", "メモリ"]}, "task": "style", "text": "メモリーのログを開いて原因を調べます。メモリに接続できることを確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0236", "label": 0, "meta": {"pair_id": "term-235"}, "task": "style", "text": "メモリーのログを開いて原因を調べます。メモリーに接続できることを確認します。"}
+{"cls": "term_variant", "id": "style-0237", "label": 1, "meta": {"pair_id": "term-237", "terms": ["プリンター", "プリンタ"]}, "task": "style", "text": "その後、プリンターを再起動します。プリンタのログを開いて原因を調べます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0238", "label": 0, "meta": {"pair_id": "term-237"}, "task": "style", "text": "その後、プリンターを再起動します。プリンターのログを開いて原因を調べます。"}
+{"cls": "term_variant", "id": "style-0239", "label": 1, "meta": {"pair_id": "term-239", "terms": ["コンピューター", "コンピュータ"]}, "task": "style", "text": "コンピューターのログを開いて原因を調べます。最後にコンピュータの状態を保存します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0240", "label": 0, "meta": {"pair_id": "term-239"}, "task": "style", "text": "コンピューターのログを開いて原因を調べます。最後にコンピューターの状態を保存します。"}
+{"cls": "term_variant", "id": "style-0241", "label": 1, "meta": {"pair_id": "term-241", "terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "その後、ユーザーを再起動します。ユーザのログを開いて原因を調べます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0242", "label": 0, "meta": {"pair_id": "term-241"}, "task": "style", "text": "その後、ユーザーを再起動します。ユーザーのログを開いて原因を調べます。"}
+{"cls": "term_variant", "id": "style-0243", "label": 1, "meta": {"pair_id": "term-243", "terms": ["ユーザー", "ユーザ"]}, "task": "style", "text": "その後、ユーザーを再起動します。ユーザに接続できることを確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0244", "label": 0, "meta": {"pair_id": "term-243"}, "task": "style", "text": "その後、ユーザーを再起動します。ユーザーに接続できることを確認します。"}
+{"cls": "term_variant", "id": "style-0245", "label": 1, "meta": {"pair_id": "term-245", "terms": ["メモリー", "メモリ"]}, "task": "style", "text": "最後にメモリーの状態を保存します。メモリの設定を確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0246", "label": 0, "meta": {"pair_id": "term-245"}, "task": "style", "text": "最後にメモリーの状態を保存します。メモリーの設定を確認します。"}
+{"cls": "term_variant", "id": "style-0247", "label": 1, "meta": {"pair_id": "term-247", "terms": ["プリンター", "プリンタ"]}, "task": "style", "text": "その後、プリンターを再起動します。最後にプリンタの状態を保存します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0248", "label": 0, "meta": {"pair_id": "term-247"}, "task": "style", "text": "その後、プリンターを再起動します。最後にプリンターの状態を保存します。"}
+{"cls": "term_variant", "id": "style-0249", "label": 1, "meta": {"pair_id": "term-249", "terms": ["プリンター", "プリンタ"]}, "task": "style", "text": "その後、プリンターを再起動します。プリンタに接続できることを確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0250", "label": 0, "meta": {"pair_id": "term-249"}, "task": "style", "text": "その後、プリンターを再起動します。プリンターに接続できることを確認します。"}
+{"cls": "term_variant", "id": "style-0251", "label": 1, "meta": {"pair_id": "term-251", "terms": ["ブラウザー", "ブラウザ"]}, "task": "style", "text": "ブラウザーのログを開いて原因を調べます。ブラウザの設定を確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0252", "label": 0, "meta": {"pair_id": "term-251"}, "task": "style", "text": "ブラウザーのログを開いて原因を調べます。ブラウザーの設定を確認します。"}
+{"cls": "term_variant", "id": "style-0253", "label": 1, "meta": {"pair_id": "term-253", "terms": ["コンピューター", "コンピュータ"]}, "task": "style", "text": "最後にコンピューターの状態を保存します。コンピュータに接続できることを確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0254", "label": 0, "meta": {"pair_id": "term-253"}, "task": "style", "text": "最後にコンピューターの状態を保存します。コンピューターに接続できることを確認します。"}
+{"cls": "term_variant", "id": "style-0255", "label": 1, "meta": {"pair_id": "term-255", "terms": ["ディレクトリー", "ディレクトリ"]}, "task": "style", "text": "その後、ディレクトリーを再起動します。ディレクトリの設定を確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0256", "label": 0, "meta": {"pair_id": "term-255"}, "task": "style", "text": "その後、ディレクトリーを再起動します。ディレクトリーの設定を確認します。"}
+{"cls": "term_variant", "id": "style-0257", "label": 1, "meta": {"pair_id": "term-257", "terms": ["サーバー", "サーバ"]}, "task": "style", "text": "サーバーのログを開いて原因を調べます。最後にサーバの状態を保存します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0258", "label": 0, "meta": {"pair_id": "term-257"}, "task": "style", "text": "サーバーのログを開いて原因を調べます。最後にサーバーの状態を保存します。"}
+{"cls": "term_variant", "id": "style-0259", "label": 1, "meta": {"pair_id": "term-259", "terms": ["プリンター", "プリンタ"]}, "task": "style", "text": "プリンターのログを開いて原因を調べます。プリンタに接続できることを確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0260", "label": 0, "meta": {"pair_id": "term-259"}, "task": "style", "text": "プリンターのログを開いて原因を調べます。プリンターに接続できることを確認します。"}
+{"cls": "term_variant", "id": "style-0261", "label": 1, "meta": {"pair_id": "term-261", "terms": ["メモリー", "メモリ"]}, "task": "style", "text": "その後、メモリーを再起動します。メモリのログを開いて原因を調べます。"}
+{"cls": "neg_paired_term_variant", "id": "style-0262", "label": 0, "meta": {"pair_id": "term-261"}, "task": "style", "text": "その後、メモリーを再起動します。メモリーのログを開いて原因を調べます。"}
+{"cls": "term_variant", "id": "style-0263", "label": 1, "meta": {"pair_id": "term-263", "terms": ["ブラウザー", "ブラウザ"]}, "task": "style", "text": "最後にブラウザーの状態を保存します。その後、ブラウザを再起動します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0264", "label": 0, "meta": {"pair_id": "term-263"}, "task": "style", "text": "最後にブラウザーの状態を保存します。その後、ブラウザーを再起動します。"}
+{"cls": "term_variant", "id": "style-0265", "label": 1, "meta": {"pair_id": "term-265", "terms": ["ディレクトリー", "ディレクトリ"]}, "task": "style", "text": "ディレクトリーに接続できることを確認します。ディレクトリの設定を確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0266", "label": 0, "meta": {"pair_id": "term-265"}, "task": "style", "text": "ディレクトリーに接続できることを確認します。ディレクトリーの設定を確認します。"}
+{"cls": "term_variant", "id": "style-0267", "label": 1, "meta": {"pair_id": "term-267", "terms": ["ブラウザー", "ブラウザ"]}, "task": "style", "text": "ブラウザーの更新が終わるまで待ちます。最後にブラウザの状態を保存します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0268", "label": 0, "meta": {"pair_id": "term-267"}, "task": "style", "text": "ブラウザーの更新が終わるまで待ちます。最後にブラウザーの状態を保存します。"}
+{"cls": "term_variant", "id": "style-0269", "label": 1, "meta": {"pair_id": "term-269", "terms": ["ドライバー", "ドライバ"]}, "task": "style", "text": "ドライバーの更新が終わるまで待ちます。ドライバに接続できることを確認します。"}
+{"cls": "neg_paired_term_variant", "id": "style-0270", "label": 0, "meta": {"pair_id": "term-269"}, "task": "style", "text": "ドライバーの更新が終わるまで待ちます。ドライバーに接続できることを確認します。"}

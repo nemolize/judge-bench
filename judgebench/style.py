@@ -75,14 +75,14 @@ def generate():
     r.shuffle(reg)
     for long, a, ok, bad in reg[: PER_CLASS - sum(1 for i in items if i["cls"] == "mixed_register")]:
         n += 1
-        items.append(item("style", n, "mixed_register", 1, a.format(T=long) + bad.format(T=long)))
+        items.append(item("style", n, "mixed_register", 1, a.format(T=long) + bad.format(T=long), pair_id=f"reg-{n}"))
         n += 1
-        items.append(item("style", n, "neg_paired_mixed_register", 0, a.format(T=long) + ok.format(T=long)))
+        items.append(item("style", n, "neg_paired_mixed_register", 0, a.format(T=long) + ok.format(T=long), pair_id=f"reg-{n - 1}"))
     combos = [(v, t1, t2) for v in VARIANTS for t1 in TEMPLATES for t2 in TEMPLATES if t1 != t2]
     r.shuffle(combos)
     for (long, short), t1, t2 in combos[:PER_CLASS]:
         n += 1
-        items.append(item("style", n, "term_variant", 1, t1.format(T=long) + t2.format(T=short), terms=[long, short]))
+        items.append(item("style", n, "term_variant", 1, t1.format(T=long) + t2.format(T=short), terms=[long, short], pair_id=f"term-{n}"))
         n += 1
-        items.append(item("style", n, "neg_paired_term_variant", 0, t1.format(T=long) + t2.format(T=long)))
+        items.append(item("style", n, "neg_paired_term_variant", 0, t1.format(T=long) + t2.format(T=long), pair_id=f"term-{n - 1}"))
     return items

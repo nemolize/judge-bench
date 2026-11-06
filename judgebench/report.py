@@ -261,7 +261,7 @@ def _split(items):
     each (class, file type, decoy kind) so no half holds a whole format."""
     by_key = {}
     for it in sorted(items, key=lambda i: i["id"]):
-        by_key.setdefault(it["meta"].get("base") or it["text"], []).append(it)
+        by_key.setdefault(it["meta"].get("pair_id") or it["meta"].get("base") or it["text"], []).append(it)
     strata = {}
     for group in by_key.values():
         head = group[0]

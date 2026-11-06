@@ -111,11 +111,11 @@ def generate(per_class=45):
         ("honorific_for_self", HONORIFIC_FOR_SELF, SELVES),
     ]
     for cls, entries, subjects in specs:
-        for s, (ok, bad), f in _combos(entries, subjects, r, per_class):
+        for k, (s, (ok, bad), f) in enumerate(_combos(entries, subjects, r, per_class)):
             n += 1
-            items.append(item("honorific", n, cls, 1, f.format(S=s, V=bad), pair=ok))
+            items.append(item("honorific", n, cls, 1, f.format(S=s, V=bad), pair=ok, pair_id=f"{cls}-{k}"))
             n += 1
-            items.append(item("honorific", n, f"neg_paired_{cls}", 0, f.format(S=s, V=ok)))
+            items.append(item("honorific", n, f"neg_paired_{cls}", 0, f.format(S=s, V=ok), pair_id=f"{cls}-{k}"))
     for cls, forms in (("neg_connected", CONNECTED), ("neg_established", ESTABLISHED)):
         for v in forms:
             for s in r.sample(OUTSIDERS, 2):
