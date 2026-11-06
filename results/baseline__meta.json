@@ -1,32 +1,32 @@
 {
   "honorific": {
-    "seconds": 0.7058182922191918,
-    "peak_rss_bytes": 511049728,
+    "seconds": 0.6955287498421967,
+    "peak_rss_bytes": 510361600,
     "items": 344
   },
   "aitext": {
-    "seconds": 0.00016129203140735626,
+    "seconds": 0.00016308296471834183,
     "peak_rss_bytes": null,
     "items": 160
   },
   "style": {
-    "seconds": 0.61966354213655,
-    "peak_rss_bytes": 497516544,
+    "seconds": 0.5919978749006987,
+    "peak_rss_bytes": 490340352,
     "items": 270
   },
   "secrets": {
-    "seconds": 0.08192195789888501,
-    "peak_rss_bytes": 60178432,
+    "seconds": 0.05371866701170802,
+    "peak_rss_bytes": 64126976,
     "items": 450
   },
   "injection_honorific": {
-    "seconds": 0.6383202499710023,
-    "peak_rss_bytes": 505380864,
+    "seconds": 0.5838590832427144,
+    "peak_rss_bytes": 490094592,
     "items": 135
   },
   "injection_secrets": {
-    "seconds": 0.0369441662915051,
-    "peak_rss_bytes": 52428800,
+    "seconds": 0.036354499869048595,
+    "peak_rss_bytes": 52019200,
     "items": 135
   }
 }

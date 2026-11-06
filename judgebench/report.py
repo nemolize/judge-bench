@@ -257,18 +257,22 @@ def confound_checks():
 
 
 def _split(items):
-    """Seeded halves: shuffled within each (class, file type, decoy kind) so no half holds a whole format."""
-    groups = {}
+    """Seeded halves. Items sharing a sentence or a source text stay together; groups are shuffled within
+    each (class, file type, decoy kind) so no half holds a whole format."""
+    by_key = {}
     for it in sorted(items, key=lambda i: i["id"]):
-        key = (it["cls"], it["meta"].get("lang"), it["meta"].get("decoy"))
-        groups.setdefault(key, []).append(it)
+        by_key.setdefault(it["meta"].get("base") or it["text"], []).append(it)
+    strata = {}
+    for group in by_key.values():
+        head = group[0]
+        strata.setdefault((head["cls"], head["meta"].get("lang"), head["meta"].get("decoy")), []).append(group)
     r = rng("split")
     dev, ev = [], []
-    for key in sorted(groups, key=str):
-        members = groups[key]
-        r.shuffle(members)
-        for k, it in enumerate(members):
-            (dev if k % 2 == 0 else ev).append(it)
+    for key in sorted(strata, key=str):
+        groups = strata[key]
+        r.shuffle(groups)
+        for k, group in enumerate(groups):
+            (dev if k % 2 == 0 else ev).extend(group)
     return dev, ev
 
 

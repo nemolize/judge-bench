@@ -34,14 +34,14 @@ DOUBLE = [
 ]
 HUMBLE_FOR_OTHER = [
     ("おっしゃいました", "申しました"),
+    ("そのようにおっしゃいました", "そのように申しました"),
     ("本社にいらっしゃいました", "本社に参りました"),
-    ("昨日こちらにいらっしゃいました", "昨日こちらに伺いました"),
-    ("お茶を召し上がりました", "お茶をいただきました"),
-    ("資料をご覧になりました", "資料を拝見しました"),
+    ("会議室にいらっしゃいました", "会議室に参りました"),
+    ("受付にいらっしゃいました", "受付に参りました"),
+    ("オフィスにいらっしゃいます", "オフィスに参ります"),
+    ("そうおっしゃいます", "そう申します"),
     ("その件をご存じです", "その件を存じています"),
-    ("お話をお聞きになりました", "お話をうかがいました"),
-    ("明日こちらにいらっしゃいます", "明日こちらに参ります"),
-    ("料理を召し上がりました", "料理をいただきました"),
+    ("その話をご存じです", "その話を存じています"),
 ]
 HONORIFIC_FOR_SELF = [
     ("そのように申します", "そのようにおっしゃいます"),
@@ -74,7 +74,15 @@ ROLES = ["部長", "取締役", "リーダー"]
 NARU_FRAMES = ["来月から{S}が{R}になられます。", "先月、{S}が{R}になられました。"]
 
 
+TIME_WORDS = ("昨日", "明日", "後ほど", "先ほど", "九時", "午後", "来月", "先月", "早めに", "急いで")
+
+
 def _frames(v):
+    frames = _frames_by_tense(v)
+    return frames[:1] if any(w in v for w in TIME_WORDS) else frames
+
+
+def _frames_by_tense(v):
     if v.endswith("ました") or v.endswith("ましたか"):
         return FRAMES_PAST
     if v.endswith("ます"):
@@ -85,7 +93,13 @@ def _frames(v):
 def _combos(entries, subjects, r, n):
     pool = [(s, e, f) for s in subjects for e in entries for f in _frames(e[0])]
     r.shuffle(pool)
-    return pool[:n]
+    seen, out = set(), []
+    for s, e, f in pool:
+        text = f.format(S=s, V=e[1])
+        if text not in seen:
+            seen.add(text)
+            out.append((s, e, f))
+    return out[:n]
 
 
 def generate(per_class=45):
