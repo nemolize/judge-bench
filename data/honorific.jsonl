@@ -88,96 +88,96 @@
 {"cls": "neg_paired_double_honorific", "id": "honorific-0088", "label": 0, "meta": {}, "task": "honorific", "text": "午後に社長が急いでお帰りになります。"}
 {"cls": "double_honorific", "id": "honorific-0089", "label": 1, "meta": {"pair": "昼食を召し上がりました"}, "task": "honorific", "text": "先ほど社長が昼食を召し上がられました。"}
 {"cls": "neg_paired_double_honorific", "id": "honorific-0090", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど社長が昼食を召し上がりました。"}
-{"cls": "humble_for_other", "id": "honorific-0091", "label": 1, "meta": {"pair": "料理を召し上がりました"}, "task": "honorific", "text": "取引先の担当の方が料理をいただきました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0092", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方が料理を召し上がりました。"}
-{"cls": "humble_for_other", "id": "honorific-0093", "label": 1, "meta": {"pair": "料理を召し上がりました"}, "task": "honorific", "text": "お客様が料理をいただきました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0094", "label": 0, "meta": {}, "task": "honorific", "text": "お客様が料理を召し上がりました。"}
-{"cls": "humble_for_other", "id": "honorific-0095", "label": 1, "meta": {"pair": "お話をお聞きになりました"}, "task": "honorific", "text": "昨日、取引先の担当の方がお話をうかがいました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0096", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、取引先の担当の方がお話をお聞きになりました。"}
-{"cls": "humble_for_other", "id": "honorific-0097", "label": 1, "meta": {"pair": "お茶を召し上がりました"}, "task": "honorific", "text": "昨日、課長がお茶をいただきました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0098", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、課長がお茶を召し上がりました。"}
-{"cls": "humble_for_other", "id": "honorific-0099", "label": 1, "meta": {"pair": "その件をご存じです"}, "task": "honorific", "text": "課長はその件を存じています。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0100", "label": 0, "meta": {}, "task": "honorific", "text": "課長はその件をご存じです。"}
-{"cls": "humble_for_other", "id": "honorific-0101", "label": 1, "meta": {"pair": "昨日こちらにいらっしゃいました"}, "task": "honorific", "text": "取引先の担当の方が昨日こちらに伺いました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0102", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方が昨日こちらにいらっしゃいました。"}
-{"cls": "humble_for_other", "id": "honorific-0103", "label": 1, "meta": {"pair": "お話をお聞きになりました"}, "task": "honorific", "text": "お客様がお話をうかがいました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0104", "label": 0, "meta": {}, "task": "honorific", "text": "お客様がお話をお聞きになりました。"}
-{"cls": "humble_for_other", "id": "honorific-0105", "label": 1, "meta": {"pair": "昨日こちらにいらっしゃいました"}, "task": "honorific", "text": "昨日、部長が昨日こちらに伺いました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0106", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、部長が昨日こちらにいらっしゃいました。"}
-{"cls": "humble_for_other", "id": "honorific-0107", "label": 1, "meta": {"pair": "資料をご覧になりました"}, "task": "honorific", "text": "先生が資料を拝見しました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0108", "label": 0, "meta": {}, "task": "honorific", "text": "先生が資料をご覧になりました。"}
-{"cls": "humble_for_other", "id": "honorific-0109", "label": 1, "meta": {"pair": "その件をご存じです"}, "task": "honorific", "text": "取引先の担当の方はその件を存じています。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0110", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方はその件をご存じです。"}
-{"cls": "humble_for_other", "id": "honorific-0111", "label": 1, "meta": {"pair": "明日こちらにいらっしゃいます"}, "task": "honorific", "text": "お客様が明日こちらに参ります。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0112", "label": 0, "meta": {}, "task": "honorific", "text": "お客様が明日こちらにいらっしゃいます。"}
-{"cls": "humble_for_other", "id": "honorific-0113", "label": 1, "meta": {"pair": "お茶を召し上がりました"}, "task": "honorific", "text": "先ほど取引先の担当の方がお茶をいただきました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0114", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の担当の方がお茶を召し上がりました。"}
-{"cls": "humble_for_other", "id": "honorific-0115", "label": 1, "meta": {"pair": "資料をご覧になりました"}, "task": "honorific", "text": "先ほど社長が資料を拝見しました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0116", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど社長が資料をご覧になりました。"}
-{"cls": "humble_for_other", "id": "honorific-0117", "label": 1, "meta": {"pair": "明日こちらにいらっしゃいます"}, "task": "honorific", "text": "午後に課長が明日こちらに参ります。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0118", "label": 0, "meta": {}, "task": "honorific", "text": "午後に課長が明日こちらにいらっしゃいます。"}
-{"cls": "humble_for_other", "id": "honorific-0119", "label": 1, "meta": {"pair": "昨日こちらにいらっしゃいました"}, "task": "honorific", "text": "社長が昨日こちらに伺いました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0120", "label": 0, "meta": {}, "task": "honorific", "text": "社長が昨日こちらにいらっしゃいました。"}
-{"cls": "humble_for_other", "id": "honorific-0121", "label": 1, "meta": {"pair": "お話をお聞きになりました"}, "task": "honorific", "text": "部長がお話をうかがいました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0122", "label": 0, "meta": {}, "task": "honorific", "text": "部長がお話をお聞きになりました。"}
-{"cls": "humble_for_other", "id": "honorific-0123", "label": 1, "meta": {"pair": "資料をご覧になりました"}, "task": "honorific", "text": "お客様が資料を拝見しました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0124", "label": 0, "meta": {}, "task": "honorific", "text": "お客様が資料をご覧になりました。"}
-{"cls": "humble_for_other", "id": "honorific-0125", "label": 1, "meta": {"pair": "その件をご存じです"}, "task": "honorific", "text": "社長はその件を存じています。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0126", "label": 0, "meta": {}, "task": "honorific", "text": "社長はその件をご存じです。"}
-{"cls": "humble_for_other", "id": "honorific-0127", "label": 1, "meta": {"pair": "明日こちらにいらっしゃいます"}, "task": "honorific", "text": "社長が明日こちらに参ります。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0128", "label": 0, "meta": {}, "task": "honorific", "text": "社長が明日こちらにいらっしゃいます。"}
-{"cls": "humble_for_other", "id": "honorific-0129", "label": 1, "meta": {"pair": "おっしゃいました"}, "task": "honorific", "text": "昨日、お客様が申しました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0130", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、お客様がおっしゃいました。"}
-{"cls": "humble_for_other", "id": "honorific-0131", "label": 1, "meta": {"pair": "お茶を召し上がりました"}, "task": "honorific", "text": "昨日、社長がお茶をいただきました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0132", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、社長がお茶を召し上がりました。"}
-{"cls": "humble_for_other", "id": "honorific-0133", "label": 1, "meta": {"pair": "料理を召し上がりました"}, "task": "honorific", "text": "昨日、課長が料理をいただきました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0134", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、課長が料理を召し上がりました。"}
-{"cls": "humble_for_other", "id": "honorific-0135", "label": 1, "meta": {"pair": "お話をお聞きになりました"}, "task": "honorific", "text": "社長がお話をうかがいました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0136", "label": 0, "meta": {}, "task": "honorific", "text": "社長がお話をお聞きになりました。"}
-{"cls": "humble_for_other", "id": "honorific-0137", "label": 1, "meta": {"pair": "お話をお聞きになりました"}, "task": "honorific", "text": "昨日、お客様がお話をうかがいました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0138", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、お客様がお話をお聞きになりました。"}
-{"cls": "humble_for_other", "id": "honorific-0139", "label": 1, "meta": {"pair": "明日こちらにいらっしゃいます"}, "task": "honorific", "text": "午後に取引先の担当の方が明日こちらに参ります。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0140", "label": 0, "meta": {}, "task": "honorific", "text": "午後に取引先の担当の方が明日こちらにいらっしゃいます。"}
-{"cls": "humble_for_other", "id": "honorific-0141", "label": 1, "meta": {"pair": "料理を召し上がりました"}, "task": "honorific", "text": "課長が料理をいただきました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0142", "label": 0, "meta": {}, "task": "honorific", "text": "課長が料理を召し上がりました。"}
-{"cls": "humble_for_other", "id": "honorific-0143", "label": 1, "meta": {"pair": "昨日こちらにいらっしゃいました"}, "task": "honorific", "text": "先ほど社長が昨日こちらに伺いました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0144", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど社長が昨日こちらにいらっしゃいました。"}
-{"cls": "humble_for_other", "id": "honorific-0145", "label": 1, "meta": {"pair": "料理を召し上がりました"}, "task": "honorific", "text": "先ほど課長が料理をいただきました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0146", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど課長が料理を召し上がりました。"}
-{"cls": "humble_for_other", "id": "honorific-0147", "label": 1, "meta": {"pair": "お話をお聞きになりました"}, "task": "honorific", "text": "先ほどお客様がお話をうかがいました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0148", "label": 0, "meta": {}, "task": "honorific", "text": "先ほどお客様がお話をお聞きになりました。"}
-{"cls": "humble_for_other", "id": "honorific-0149", "label": 1, "meta": {"pair": "お茶を召し上がりました"}, "task": "honorific", "text": "先ほど課長がお茶をいただきました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0150", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど課長がお茶を召し上がりました。"}
-{"cls": "humble_for_other", "id": "honorific-0151", "label": 1, "meta": {"pair": "料理を召し上がりました"}, "task": "honorific", "text": "昨日、取引先の担当の方が料理をいただきました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0152", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、取引先の担当の方が料理を召し上がりました。"}
-{"cls": "humble_for_other", "id": "honorific-0153", "label": 1, "meta": {"pair": "本社にいらっしゃいました"}, "task": "honorific", "text": "昨日、部長が本社に参りました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0154", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、部長が本社にいらっしゃいました。"}
-{"cls": "humble_for_other", "id": "honorific-0155", "label": 1, "meta": {"pair": "明日こちらにいらっしゃいます"}, "task": "honorific", "text": "明日、部長が明日こちらに参ります。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0156", "label": 0, "meta": {}, "task": "honorific", "text": "明日、部長が明日こちらにいらっしゃいます。"}
-{"cls": "humble_for_other", "id": "honorific-0157", "label": 1, "meta": {"pair": "本社にいらっしゃいました"}, "task": "honorific", "text": "部長が本社に参りました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0158", "label": 0, "meta": {}, "task": "honorific", "text": "部長が本社にいらっしゃいました。"}
-{"cls": "humble_for_other", "id": "honorific-0159", "label": 1, "meta": {"pair": "資料をご覧になりました"}, "task": "honorific", "text": "取引先の担当の方が資料を拝見しました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0160", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方が資料をご覧になりました。"}
-{"cls": "humble_for_other", "id": "honorific-0161", "label": 1, "meta": {"pair": "お話をお聞きになりました"}, "task": "honorific", "text": "先ほど社長がお話をうかがいました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0162", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど社長がお話をお聞きになりました。"}
-{"cls": "humble_for_other", "id": "honorific-0163", "label": 1, "meta": {"pair": "お茶を召し上がりました"}, "task": "honorific", "text": "社長がお茶をいただきました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0164", "label": 0, "meta": {}, "task": "honorific", "text": "社長がお茶を召し上がりました。"}
-{"cls": "humble_for_other", "id": "honorific-0165", "label": 1, "meta": {"pair": "本社にいらっしゃいました"}, "task": "honorific", "text": "昨日、お客様が本社に参りました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0166", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、お客様が本社にいらっしゃいました。"}
-{"cls": "humble_for_other", "id": "honorific-0167", "label": 1, "meta": {"pair": "明日こちらにいらっしゃいます"}, "task": "honorific", "text": "取引先の担当の方が明日こちらに参ります。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0168", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方が明日こちらにいらっしゃいます。"}
-{"cls": "humble_for_other", "id": "honorific-0169", "label": 1, "meta": {"pair": "資料をご覧になりました"}, "task": "honorific", "text": "先ほど課長が資料を拝見しました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0170", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど課長が資料をご覧になりました。"}
-{"cls": "humble_for_other", "id": "honorific-0171", "label": 1, "meta": {"pair": "おっしゃいました"}, "task": "honorific", "text": "先ほど課長が申しました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0172", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど課長がおっしゃいました。"}
-{"cls": "humble_for_other", "id": "honorific-0173", "label": 1, "meta": {"pair": "おっしゃいました"}, "task": "honorific", "text": "昨日、取引先の担当の方が申しました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0174", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、取引先の担当の方がおっしゃいました。"}
-{"cls": "humble_for_other", "id": "honorific-0175", "label": 1, "meta": {"pair": "資料をご覧になりました"}, "task": "honorific", "text": "昨日、社長が資料を拝見しました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0176", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、社長が資料をご覧になりました。"}
-{"cls": "humble_for_other", "id": "honorific-0177", "label": 1, "meta": {"pair": "おっしゃいました"}, "task": "honorific", "text": "先ほど先生が申しました。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0178", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど先生がおっしゃいました。"}
-{"cls": "humble_for_other", "id": "honorific-0179", "label": 1, "meta": {"pair": "明日こちらにいらっしゃいます"}, "task": "honorific", "text": "課長が明日こちらに参ります。"}
-{"cls": "neg_paired_humble_for_other", "id": "honorific-0180", "label": 0, "meta": {}, "task": "honorific", "text": "課長が明日こちらにいらっしゃいます。"}
+{"cls": "humble_for_other", "id": "honorific-0091", "label": 1, "meta": {"pair": "料理を召し上がりました"}, "task": "honorific", "text": "ご来訪の方が料理をいただきました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0092", "label": 0, "meta": {}, "task": "honorific", "text": "ご来訪の方が料理を召し上がりました。"}
+{"cls": "humble_for_other", "id": "honorific-0093", "label": 1, "meta": {"pair": "料理を召し上がりました"}, "task": "honorific", "text": "取引先の担当の方が料理をいただきました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0094", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方が料理を召し上がりました。"}
+{"cls": "humble_for_other", "id": "honorific-0095", "label": 1, "meta": {"pair": "お話をお聞きになりました"}, "task": "honorific", "text": "昨日、ご来訪の方がお話をうかがいました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0096", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、ご来訪の方がお話をお聞きになりました。"}
+{"cls": "humble_for_other", "id": "honorific-0097", "label": 1, "meta": {"pair": "お茶を召し上がりました"}, "task": "honorific", "text": "昨日、取引先の社長がお茶をいただきました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0098", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、取引先の社長がお茶を召し上がりました。"}
+{"cls": "humble_for_other", "id": "honorific-0099", "label": 1, "meta": {"pair": "その件をご存じです"}, "task": "honorific", "text": "取引先の社長はその件を存じています。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0100", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の社長はその件をご存じです。"}
+{"cls": "humble_for_other", "id": "honorific-0101", "label": 1, "meta": {"pair": "昨日こちらにいらっしゃいました"}, "task": "honorific", "text": "ご来訪の方が昨日こちらに伺いました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0102", "label": 0, "meta": {}, "task": "honorific", "text": "ご来訪の方が昨日こちらにいらっしゃいました。"}
+{"cls": "humble_for_other", "id": "honorific-0103", "label": 1, "meta": {"pair": "お話をお聞きになりました"}, "task": "honorific", "text": "取引先の担当の方がお話をうかがいました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0104", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方がお話をお聞きになりました。"}
+{"cls": "humble_for_other", "id": "honorific-0105", "label": 1, "meta": {"pair": "昨日こちらにいらっしゃいました"}, "task": "honorific", "text": "昨日、先生が昨日こちらに伺いました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0106", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、先生が昨日こちらにいらっしゃいました。"}
+{"cls": "humble_for_other", "id": "honorific-0107", "label": 1, "meta": {"pair": "資料をご覧になりました"}, "task": "honorific", "text": "お客様が資料を拝見しました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0108", "label": 0, "meta": {}, "task": "honorific", "text": "お客様が資料をご覧になりました。"}
+{"cls": "humble_for_other", "id": "honorific-0109", "label": 1, "meta": {"pair": "その件をご存じです"}, "task": "honorific", "text": "ご来訪の方はその件を存じています。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0110", "label": 0, "meta": {}, "task": "honorific", "text": "ご来訪の方はその件をご存じです。"}
+{"cls": "humble_for_other", "id": "honorific-0111", "label": 1, "meta": {"pair": "明日こちらにいらっしゃいます"}, "task": "honorific", "text": "取引先の担当の方が明日こちらに参ります。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0112", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方が明日こちらにいらっしゃいます。"}
+{"cls": "humble_for_other", "id": "honorific-0113", "label": 1, "meta": {"pair": "お茶を召し上がりました"}, "task": "honorific", "text": "先ほどご来訪の方がお茶をいただきました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0114", "label": 0, "meta": {}, "task": "honorific", "text": "先ほどご来訪の方がお茶を召し上がりました。"}
+{"cls": "humble_for_other", "id": "honorific-0115", "label": 1, "meta": {"pair": "資料をご覧になりました"}, "task": "honorific", "text": "先ほど取引先の部長が資料を拝見しました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0116", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の部長が資料をご覧になりました。"}
+{"cls": "humble_for_other", "id": "honorific-0117", "label": 1, "meta": {"pair": "明日こちらにいらっしゃいます"}, "task": "honorific", "text": "午後に取引先の社長が明日こちらに参ります。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0118", "label": 0, "meta": {}, "task": "honorific", "text": "午後に取引先の社長が明日こちらにいらっしゃいます。"}
+{"cls": "humble_for_other", "id": "honorific-0119", "label": 1, "meta": {"pair": "昨日こちらにいらっしゃいました"}, "task": "honorific", "text": "取引先の部長が昨日こちらに伺いました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0120", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の部長が昨日こちらにいらっしゃいました。"}
+{"cls": "humble_for_other", "id": "honorific-0121", "label": 1, "meta": {"pair": "お話をお聞きになりました"}, "task": "honorific", "text": "先生がお話をうかがいました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0122", "label": 0, "meta": {}, "task": "honorific", "text": "先生がお話をお聞きになりました。"}
+{"cls": "humble_for_other", "id": "honorific-0123", "label": 1, "meta": {"pair": "資料をご覧になりました"}, "task": "honorific", "text": "取引先の担当の方が資料を拝見しました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0124", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の担当の方が資料をご覧になりました。"}
+{"cls": "humble_for_other", "id": "honorific-0125", "label": 1, "meta": {"pair": "その件をご存じです"}, "task": "honorific", "text": "取引先の部長はその件を存じています。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0126", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の部長はその件をご存じです。"}
+{"cls": "humble_for_other", "id": "honorific-0127", "label": 1, "meta": {"pair": "明日こちらにいらっしゃいます"}, "task": "honorific", "text": "取引先の部長が明日こちらに参ります。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0128", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の部長が明日こちらにいらっしゃいます。"}
+{"cls": "humble_for_other", "id": "honorific-0129", "label": 1, "meta": {"pair": "おっしゃいました"}, "task": "honorific", "text": "昨日、取引先の担当の方が申しました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0130", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、取引先の担当の方がおっしゃいました。"}
+{"cls": "humble_for_other", "id": "honorific-0131", "label": 1, "meta": {"pair": "お茶を召し上がりました"}, "task": "honorific", "text": "昨日、取引先の部長がお茶をいただきました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0132", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、取引先の部長がお茶を召し上がりました。"}
+{"cls": "humble_for_other", "id": "honorific-0133", "label": 1, "meta": {"pair": "料理を召し上がりました"}, "task": "honorific", "text": "昨日、取引先の社長が料理をいただきました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0134", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、取引先の社長が料理を召し上がりました。"}
+{"cls": "humble_for_other", "id": "honorific-0135", "label": 1, "meta": {"pair": "お話をお聞きになりました"}, "task": "honorific", "text": "取引先の部長がお話をうかがいました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0136", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の部長がお話をお聞きになりました。"}
+{"cls": "humble_for_other", "id": "honorific-0137", "label": 1, "meta": {"pair": "お話をお聞きになりました"}, "task": "honorific", "text": "昨日、取引先の担当の方がお話をうかがいました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0138", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、取引先の担当の方がお話をお聞きになりました。"}
+{"cls": "humble_for_other", "id": "honorific-0139", "label": 1, "meta": {"pair": "明日こちらにいらっしゃいます"}, "task": "honorific", "text": "午後にご来訪の方が明日こちらに参ります。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0140", "label": 0, "meta": {}, "task": "honorific", "text": "午後にご来訪の方が明日こちらにいらっしゃいます。"}
+{"cls": "humble_for_other", "id": "honorific-0141", "label": 1, "meta": {"pair": "料理を召し上がりました"}, "task": "honorific", "text": "取引先の社長が料理をいただきました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0142", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の社長が料理を召し上がりました。"}
+{"cls": "humble_for_other", "id": "honorific-0143", "label": 1, "meta": {"pair": "昨日こちらにいらっしゃいました"}, "task": "honorific", "text": "先ほど取引先の部長が昨日こちらに伺いました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0144", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の部長が昨日こちらにいらっしゃいました。"}
+{"cls": "humble_for_other", "id": "honorific-0145", "label": 1, "meta": {"pair": "料理を召し上がりました"}, "task": "honorific", "text": "先ほど取引先の社長が料理をいただきました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0146", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の社長が料理を召し上がりました。"}
+{"cls": "humble_for_other", "id": "honorific-0147", "label": 1, "meta": {"pair": "お話をお聞きになりました"}, "task": "honorific", "text": "先ほど取引先の担当の方がお話をうかがいました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0148", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の担当の方がお話をお聞きになりました。"}
+{"cls": "humble_for_other", "id": "honorific-0149", "label": 1, "meta": {"pair": "お茶を召し上がりました"}, "task": "honorific", "text": "先ほど取引先の社長がお茶をいただきました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0150", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の社長がお茶を召し上がりました。"}
+{"cls": "humble_for_other", "id": "honorific-0151", "label": 1, "meta": {"pair": "料理を召し上がりました"}, "task": "honorific", "text": "昨日、ご来訪の方が料理をいただきました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0152", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、ご来訪の方が料理を召し上がりました。"}
+{"cls": "humble_for_other", "id": "honorific-0153", "label": 1, "meta": {"pair": "本社にいらっしゃいました"}, "task": "honorific", "text": "昨日、先生が本社に参りました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0154", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、先生が本社にいらっしゃいました。"}
+{"cls": "humble_for_other", "id": "honorific-0155", "label": 1, "meta": {"pair": "明日こちらにいらっしゃいます"}, "task": "honorific", "text": "明日、先生が明日こちらに参ります。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0156", "label": 0, "meta": {}, "task": "honorific", "text": "明日、先生が明日こちらにいらっしゃいます。"}
+{"cls": "humble_for_other", "id": "honorific-0157", "label": 1, "meta": {"pair": "本社にいらっしゃいました"}, "task": "honorific", "text": "先生が本社に参りました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0158", "label": 0, "meta": {}, "task": "honorific", "text": "先生が本社にいらっしゃいました。"}
+{"cls": "humble_for_other", "id": "honorific-0159", "label": 1, "meta": {"pair": "資料をご覧になりました"}, "task": "honorific", "text": "ご来訪の方が資料を拝見しました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0160", "label": 0, "meta": {}, "task": "honorific", "text": "ご来訪の方が資料をご覧になりました。"}
+{"cls": "humble_for_other", "id": "honorific-0161", "label": 1, "meta": {"pair": "お話をお聞きになりました"}, "task": "honorific", "text": "先ほど取引先の部長がお話をうかがいました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0162", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の部長がお話をお聞きになりました。"}
+{"cls": "humble_for_other", "id": "honorific-0163", "label": 1, "meta": {"pair": "お茶を召し上がりました"}, "task": "honorific", "text": "取引先の部長がお茶をいただきました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0164", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の部長がお茶を召し上がりました。"}
+{"cls": "humble_for_other", "id": "honorific-0165", "label": 1, "meta": {"pair": "本社にいらっしゃいました"}, "task": "honorific", "text": "昨日、取引先の担当の方が本社に参りました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0166", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、取引先の担当の方が本社にいらっしゃいました。"}
+{"cls": "humble_for_other", "id": "honorific-0167", "label": 1, "meta": {"pair": "明日こちらにいらっしゃいます"}, "task": "honorific", "text": "ご来訪の方が明日こちらに参ります。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0168", "label": 0, "meta": {}, "task": "honorific", "text": "ご来訪の方が明日こちらにいらっしゃいます。"}
+{"cls": "humble_for_other", "id": "honorific-0169", "label": 1, "meta": {"pair": "資料をご覧になりました"}, "task": "honorific", "text": "先ほど取引先の社長が資料を拝見しました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0170", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の社長が資料をご覧になりました。"}
+{"cls": "humble_for_other", "id": "honorific-0171", "label": 1, "meta": {"pair": "おっしゃいました"}, "task": "honorific", "text": "先ほど取引先の社長が申しました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0172", "label": 0, "meta": {}, "task": "honorific", "text": "先ほど取引先の社長がおっしゃいました。"}
+{"cls": "humble_for_other", "id": "honorific-0173", "label": 1, "meta": {"pair": "おっしゃいました"}, "task": "honorific", "text": "昨日、ご来訪の方が申しました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0174", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、ご来訪の方がおっしゃいました。"}
+{"cls": "humble_for_other", "id": "honorific-0175", "label": 1, "meta": {"pair": "資料をご覧になりました"}, "task": "honorific", "text": "昨日、取引先の部長が資料を拝見しました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0176", "label": 0, "meta": {}, "task": "honorific", "text": "昨日、取引先の部長が資料をご覧になりました。"}
+{"cls": "humble_for_other", "id": "honorific-0177", "label": 1, "meta": {"pair": "おっしゃいました"}, "task": "honorific", "text": "先ほどお客様が申しました。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0178", "label": 0, "meta": {}, "task": "honorific", "text": "先ほどお客様がおっしゃいました。"}
+{"cls": "humble_for_other", "id": "honorific-0179", "label": 1, "meta": {"pair": "明日こちらにいらっしゃいます"}, "task": "honorific", "text": "取引先の社長が明日こちらに参ります。"}
+{"cls": "neg_paired_humble_for_other", "id": "honorific-0180", "label": 0, "meta": {}, "task": "honorific", "text": "取引先の社長が明日こちらにいらっしゃいます。"}
 {"cls": "honorific_for_self", "id": "honorific-0181", "label": 1, "meta": {"pair": "その件を存じております"}, "task": "honorific", "text": "私どもがその件をご存じです。"}
 {"cls": "neg_paired_honorific_for_self", "id": "honorific-0182", "label": 0, "meta": {}, "task": "honorific", "text": "私どもがその件を存じております。"}
 {"cls": "honorific_for_self", "id": "honorific-0183", "label": 1, "meta": {"pair": "資料を拝見します"}, "task": "honorific", "text": "明日、当方が資料をご覧になります。"}

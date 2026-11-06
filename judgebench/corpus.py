@@ -75,6 +75,58 @@ def generate_llm(per_topic=14):
     return out
 
 
+SENTENCE_GENERATORS = {"claude_haiku": "claude-haiku-5-5", "gemma4_12b": "gemma4:12b", "qwen3.5_27b": "qwen3.5:27b"}
+
+
+LENGTH_BANDS = [(20, 40), (40, 70), (70, 110)]
+
+
+def _sentence_prompt(topic, n, band):
+    lo, hi = band
+    return (
+        f"技術ブログの筆者として、次のテーマについて、です・ます調で、ちょうど1文（{lo}〜{hi}字）の文を{n}個書いてください。"
+        f"1行に1文、番号や記号は付けず、複数の文を続けず、文以外は出力しないでください。\nテーマ: {topic}"
+    )
+
+
+def _ask_ollama(model, prompt):
+    import json
+    import urllib.request
+    payload = {"model": model, "stream": False, "think": False, "messages": [{"role": "user", "content": prompt}],
+               "options": {"temperature": 0.8, "num_predict": 2000}}
+    req = urllib.request.Request("http://localhost:11434/api/chat", json.dumps(payload).encode(), {"Content-Type": "application/json"})
+    with urllib.request.urlopen(req, timeout=600) as res:
+        return json.load(res)["message"]["content"]
+
+
+def _one_sentences(lines):
+    out = []
+    for ln in lines:
+        ln = ln.strip().lstrip("-*・0123456789.)） ")
+        parts = [x for x in re.split(r"(?<=[。！？])", ln) if x.strip()]
+        if len(parts) == 1 and 20 <= len(ln) <= 110 and ln[-1:] in "。！？" and CJK.search(ln):
+            out.append(ln)
+    return out
+
+
+def generate_sentences(per_band=10):
+    """One-sentence passages from three generators, cached in data/llm_sentences.jsonl."""
+    out = []
+    for gen, model in SENTENCE_GENERATORS.items():
+        for key, topic in TOPICS.items():
+            for band in LENGTH_BANDS:
+                prompt = _sentence_prompt(topic, per_band, band)
+                if gen == "claude_haiku":
+                    cmd = ["claude", "-p", "--model", model, "--tools", "", "--no-session-persistence",
+                           "--disable-slash-commands", "--setting-sources", "", prompt]
+                    text = subprocess.run(cmd, capture_output=True, text=True, timeout=300, check=True).stdout
+                else:
+                    text = _ask_ollama(model, prompt)
+                out += [{"generator": gen, "topic": key, "text": t} for t in _one_sentences(text.splitlines())]
+    write_jsonl(DATA / "llm_sentences.jsonl", out)
+    return out
+
+
 def human():
     return read_jsonl(DATA / "human_prose.jsonl")
 
@@ -86,3 +138,5 @@ def llm():
 if __name__ == "__main__":
     if sys.argv[1:2] == ["generate-llm"]:
         print(len(generate_llm()))
+    if sys.argv[1:2] == ["generate-sentences"]:
+        print(len(generate_sentences()))

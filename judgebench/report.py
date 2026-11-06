@@ -227,6 +227,68 @@ def auc_table():
     return lines + [""]
 
 
+def _auc(pos, neg):
+    return sum((p > n) + 0.5 * (p == n) for p in pos for n in neg) / (len(pos) * len(neg))
+
+
+def confound_checks():
+    """What the AI-text dataset gives away without any language judgement (length, number of sentences)."""
+    items = datasets.load("aitext")
+    pos = [i["text"] for i in items if i["label"] == 1]
+    neg = [i["text"] for i in items if i["label"] == 0]
+    sents = lambda t: len([x for x in re.split(r"(?<=[。！？])", t) if x.strip()])
+    lines = ["## Checks on what the AI-text dataset gives away", "",
+             "Not judges: a threshold-free AUC of a trivial feature, so a reader can see how much length or sentence count alone explains.", "",
+             "| feature | AUC |", "|---|---|",
+             f"| character count | {_auc([len(t) for t in pos], [len(t) for t in neg]):.2f} |",
+             f"| number of sentences | {_auc([sents(t) for t in pos], [sents(t) for t in neg]):.2f} |", ""]
+    by_gen = {}
+    for i in items:
+        if i["label"] == 1:
+            by_gen.setdefault(i["meta"]["generator"], []).append(len(i["text"]))
+    lines += ["| group | n | median characters |", "|---|---|---|", f"| human | {len(neg)} | {statistics.median(len(t) for t in neg):.0f} |"]
+    lines += [f"| {g} | {len(v)} | {statistics.median(v):.0f} |" for g, v in by_gen.items()]
+    return lines + [""]
+
+
+def _split(items):
+    """Deterministic halves, alternating within each class so both halves hold every class."""
+    dev, ev, seen = [], [], {}
+    for it in sorted(items, key=lambda i: i["id"]):
+        k = seen[it["cls"]] = seen.get(it["cls"], -1) + 1
+        (dev if k % 2 == 0 else ev).append(it)
+    return dev, ev
+
+
+def _rates(items, res, cut):
+    pos = [res[i["id"]]["p_yes"] for i in items if i["label"] == 1 and res[i["id"]]["p_yes"] is not None]
+    neg = [res[i["id"]]["p_yes"] for i in items if i["label"] == 0 and res[i["id"]]["p_yes"] is not None]
+    return sum(p >= cut for p in pos), len(pos), sum(n >= cut for n in neg), len(neg)
+
+
+def tuned_threshold_table():
+    """Cut chosen on one half (maximising caught minus false-warning rate), measured on the other half."""
+    lines = ["## Threshold chosen on one half, measured on the other", "",
+             "Judges that return a probability. The cut is the one maximising caught rate minus false-warning rate on the first half; "
+             "both halves hold every class. Not part of the pass bar, which fixes 0.5.", "",
+             "| task | judge | cut | caught at 0.5 | false warnings at 0.5 | caught at the chosen cut | false warnings at the chosen cut |",
+             "|---|---|---|---|---|---|---|"]
+    for task in TASKS:
+        dev, ev = _split(datasets.load(task))
+        for j in JUDGES[1:]:
+            res = load_results(j, task)
+            if res is None or any(res[i["id"]]["p_yes"] is None for i in dev if i["id"] in res and j == "claude_haiku"):
+                continue
+            if res[dev[0]["id"]]["p_yes"] is None:
+                continue
+            cuts = sorted({res[i["id"]]["p_yes"] for i in dev if res[i["id"]]["p_yes"] is not None})
+            best = max(cuts, key=lambda c: (lambda r: r[0] / max(r[1], 1) - r[2] / max(r[3], 1))(_rates(dev, res, c)))
+            c5, n5, f5, m5 = _rates(ev, res, 0.5)
+            cb, nb, fb, mb = _rates(ev, res, best)
+            lines.append(f"| {task} | {j} | {best:.2f} | {rate(c5, n5)} | {rate(f5, m5)} | {rate(cb, nb)} | {rate(fb, mb)} |")
+    return lines + [""]
+
+
 def gitleaks_lookalikes():
     items = datasets.load("secrets")
     base = load_results("baseline", "secrets")
@@ -262,7 +324,8 @@ def main():
     for task, base_task in INJECTIONS.items():
         out += injection_table(task, base_task)
     out += ["## False warnings by kind of negative", ""] + negative_classes("honorific") + negative_classes("secrets")
-    out += auc_table()
+    out += confound_checks() + auc_table()
+    out += tuned_threshold_table()
     out += two_stage_table() + gitleaks_lookalikes() + no_answers()
     (RESULTS / "summary.md").write_text("\n".join(out))
     print("\n".join(out))

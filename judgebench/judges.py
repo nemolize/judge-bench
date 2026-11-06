@@ -71,7 +71,7 @@ class ClaudeJudge:
 
 
 QUESTIONS = json.loads((ROOT / "prompts" / "decisions.json").read_text(encoding="utf-8"))
-RETRIES = 3
+RETRIES = 4
 
 
 def _decide_request(url, key, payload):
@@ -84,7 +84,7 @@ def _decide_request(url, key, payload):
             with urllib.request.urlopen(req, timeout=300) as res:
                 return json.load(res)
         except urllib.error.HTTPError as exc:
-            if exc.code != 429 or attempt == RETRIES - 1:
+            if exc.code not in (429, 500, 502, 503, 504) or attempt == RETRIES - 1:
                 raise
             time.sleep(2 ** (attempt + 1))
 

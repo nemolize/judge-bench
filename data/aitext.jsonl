@@ -1,85 +1,160 @@
-{"cls": "llm", "id": "aitext-0001", "label": 1, "meta": {"topic": "nvidia-kernel"}, "task": "aitext", "text": "更新直後にだけ起きる問題なら、古いカーネルで起動して安定した状態に戻す方法もあります。GRUB の詳細オプションから旧カーネルを選べます。"}
-{"cls": "llm", "id": "aitext-0002", "label": 1, "meta": {"topic": "docker-rootless"}, "task": "aitext", "text": "開発用途であれば、Rootless モードはホスト環境を保護しつつ安全に検証できる選択肢になります。一方で本番環境では、運用要件と照らし合わせて導入を判断することをおすすめします。"}
-{"cls": "llm", "id": "aitext-0003", "label": 1, "meta": {"topic": "aws-vault"}, "task": "aitext", "text": "セッションの有効時間は --duration オプションで調整できます。短く設定するほど、漏えい時のリスクを抑えられます。"}
-{"cls": "llm", "id": "aitext-0004", "label": 1, "meta": {"topic": "aws-vault"}, "task": "aitext", "text": "作業を終えたら aws-vault clear でキャッシュを消去しておくと、残った認証情報を整理できて安心です。"}
-{"cls": "llm", "id": "aitext-0005", "label": 1, "meta": {"topic": "aws-vault"}, "task": "aitext", "text": "aws-vault は取得したセッションをキャッシュします。そのため、同じプロファイルを続けて使っても毎回 MFA コードを求められるわけではありません。"}
-{"cls": "llm", "id": "aitext-0006", "label": 1, "meta": {"topic": "docker-rootless"}, "task": "aitext", "text": "Docker を Rootless モードで使うと、デーモンを一般ユーザー権限で動かせるため、root 権限の悪用による被害を抑えられます。まずは利用環境が要件を満たしているかを確認しましょう。"}
-{"cls": "llm", "id": "aitext-0007", "label": 1, "meta": {"topic": "nvidia-kernel"}, "task": "aitext", "text": "同じ問題を防ぐには、カーネルとドライバを同時に更新しないことが有効です。更新の前に、ドライバがどのカーネルに対応しているかを確認しておきましょう。"}
-{"cls": "llm", "id": "aitext-0008", "label": 1, "meta": {"topic": "display-manager"}, "task": "aitext", "text": "systemctl status lightdm で終了コードを確認し、失敗理由を特定してください。"}
-{"cls": "llm", "id": "aitext-0009", "label": 1, "meta": {"topic": "docker-rootless"}, "task": "aitext", "text": "ストレージドライバーは、カーネルと環境に応じて overlay2 や fuse-overlayfs などが選ばれます。ドライバーによって性能や対応機能が異なるため、docker info で現在の設定を確認しましょう。"}
-{"cls": "llm", "id": "aitext-0010", "label": 1, "meta": {"topic": "manjaro-notes"}, "task": "aitext", "text": "Manjaroではカーネルを複数インストールできるため、mhwd-kernel -l で利用可能な一覧を確認しておくと便利です。安定版と新しい版を使い分けると、トラブル時の切り戻しも容易になります。"}
-{"cls": "llm", "id": "aitext-0011", "label": 1, "meta": {"topic": "display-manager"}, "task": "aitext", "text": "ログイン後に即座に画面が切り替わる場合は、ユーザーの ~/.xsession-errors を確認すると手がかりが得られます。"}
-{"cls": "llm", "id": "aitext-0012", "label": 1, "meta": {"topic": "display-manager"}, "task": "aitext", "text": "lightdm --test-mode --debug を実行すると、サービスを止めずにセッション起動の挙動を確認できます。"}
-{"cls": "llm", "id": "aitext-0013", "label": 1, "meta": {"topic": "manjaro-notes"}, "task": "aitext", "text": "SSDを使っている場合は、fstrim.timerを有効にしておくと、書き込み性能の低下を抑えやすくなります。"}
-{"cls": "llm", "id": "aitext-0014", "label": 1, "meta": {"topic": "display-manager"}, "task": "aitext", "text": "ライトディスプレイマネージャーが起動しない原因は、ドライバーの不一致、設定ファイルの破損、グラフィックスサーバーの異常など多岐にわたります。"}
-{"cls": "llm", "id": "aitext-0015", "label": 1, "meta": {"topic": "gpg-email"}, "task": "aitext", "text": "revuid を実行すると失効理由を選ぶ画面が表示され、選んだ内容が失効証明に記録されます。"}
-{"cls": "llm", "id": "aitext-0016", "label": 1, "meta": {"topic": "aws-vault"}, "task": "aitext", "text": "利用するにはまず aws-vault add コマンドで、プロファイルごとにアクセスキーを登録します。登録後はキーの値を画面に表示せずに済みます。"}
-{"cls": "llm", "id": "aitext-0017", "label": 1, "meta": {"topic": "wine-fonts"}, "task": "aitext", "text": "Wine で日本語が文字化けする場合、原因の多くは日本語フォントが見つからないことにあります。まずは環境を確認しましょう。"}
-{"cls": "llm", "id": "aitext-0018", "label": 1, "meta": {"topic": "gpg-email"}, "task": "aitext", "text": "公開鍵サーバーに送信済みの UID は、削除しただけでは消えないため注意が必要です。"}
-{"cls": "llm", "id": "aitext-0019", "label": 1, "meta": {"topic": "docker-rootless"}, "task": "aitext", "text": "ネットワークには、既定で RootlessKit が提供する slirp4netns などのユーザー空間ネットワークが使われます。性能が必要な場合は、vpnkit や pasta などの代替手段を検討してください。"}
-{"cls": "llm", "id": "aitext-0020", "label": 1, "meta": {"topic": "macos-ime"}, "task": "aitext", "text": "本記事の内容が、快適な入力環境を整える一助になれば幸いです。"}
-{"cls": "llm", "id": "aitext-0021", "label": 1, "meta": {"topic": "aws-vault"}, "task": "aitext", "text": "AWS マネジメントコンソールを開きたい場合は aws-vault login プロファイル名 を使うと、一時認証情報でブラウザにサインインできます。"}
-{"cls": "llm", "id": "aitext-0022", "label": 1, "meta": {"topic": "wine-fonts"}, "task": "aitext", "text": "設定を変更した後は、Wine を再起動して反映されているかを実際のアプリで確認することが大切です。"}
-{"cls": "llm", "id": "aitext-0023", "label": 1, "meta": {"topic": "docker-rootless"}, "task": "aitext", "text": "Rootless モードでは、cgroup の制御に制限があるため、リソース制限の一部が効かない場合があります。CPU やメモリの上限を設定する前に、その環境で機能するかを必ず検証してください。"}
-{"cls": "llm", "id": "aitext-0024", "label": 1, "meta": {"topic": "nvidia-kernel"}, "task": "aitext", "text": "よくある原因の一つは、カーネルのヘッダーがインストールされていないことです。`linux-headers-$(uname -r)` のようなパッケージが必要になります。"}
-{"cls": "llm", "id": "aitext-0025", "label": 1, "meta": {"topic": "display-manager"}, "task": "aitext", "text": "ログイン画面が表示されずに黒い画面で止まる場合は、ランレベルやsystemd のターゲット設定を見直してください。"}
-{"cls": "llm", "id": "aitext-0026", "label": 1, "meta": {"topic": "aws-vault"}, "task": "aitext", "text": "この設定があると、aws-vault exec の実行時に MFA のワンタイムコードを入力するプロンプトが表示されます。"}
-{"cls": "llm", "id": "aitext-0027", "label": 1, "meta": {"topic": "nvidia-kernel"}, "task": "aitext", "text": "ログは `/var/lib/dkms/nvidia/<バージョン>/build/make.log` に出力されています。ここにはコンパイラのエラーが記録されているので、最初に確認すべき場所です。"}
-{"cls": "llm", "id": "aitext-0028", "label": 1, "meta": {"topic": "aws-vault"}, "task": "aitext", "text": "MFA を有効にしているアカウントでは、~/.aws/config の mfa_serial に MFA デバイスの ARN を指定します。"}
-{"cls": "llm", "id": "aitext-0029", "label": 1, "meta": {"topic": "manjaro-notes"}, "task": "aitext", "text": "日本語入力にはfcitx5とMozcの組み合わせを使うことが多いです。環境変数の設定を忘れると変換候補が出ないため、ログアウト後の再確認が欠かせません。"}
-{"cls": "llm", "id": "aitext-0030", "label": 1, "meta": {"topic": "gpg-email"}, "task": "aitext", "text": "編集モードで adduid と入力すると、氏名、メールアドレス、コメントを順に尋ねられます。"}
-{"cls": "llm", "id": "aitext-0031", "label": 1, "meta": {"topic": "macos-ime"}, "task": "aitext", "text": "設定を反映させるために、アプリを一度終了してから再度起動すると確実です。"}
-{"cls": "llm", "id": "aitext-0032", "label": 1, "meta": {"topic": "macos-ime"}, "task": "aitext", "text": "変更後も表示が残る場合は、別のアプリで同じ現象が起きるかを確かめてください。"}
-{"cls": "llm", "id": "aitext-0033", "label": 1, "meta": {"topic": "aws-vault"}, "task": "aitext", "text": "aws-vault は、AWS のアクセスキーを ~/.aws/credentials に平文で残さず、macOS のキーチェーンなど OS の保管領域に格納するツールです。"}
-{"cls": "llm", "id": "aitext-0034", "label": 1, "meta": {"topic": "macos-ime"}, "task": "aitext", "text": "表示に関する項目が見つかったら、オフに切り替えてインジケータの表示を止めます。"}
-{"cls": "llm", "id": "aitext-0035", "label": 1, "meta": {"topic": "macos-ime"}, "task": "aitext", "text": "このインジケータは、日本語IMEなど一部の入力ソースがカーソル位置に表示する仕組みです。"}
-{"cls": "llm", "id": "aitext-0036", "label": 1, "meta": {"topic": "aws-vault"}, "task": "aitext", "text": "~/.aws/config にはリージョンや MFA デバイスの情報を書くだけで、秘密鍵は書かずに済みます。"}
-{"cls": "llm", "id": "aitext-0037", "label": 1, "meta": {"topic": "nvidia-kernel"}, "task": "aitext", "text": "`modprobe nvidia` でエラーが出るときは、`dmesg` の出力も合わせて見てください。署名の検証エラーが出ていれば、Secure Boot が原因かもしれません。"}
-{"cls": "llm", "id": "aitext-0038", "label": 1, "meta": {"topic": "wine-fonts"}, "task": "aitext", "text": "同じプレフィックスを複数のアプリで共有している場合は、影響範囲を理解したうえで変更を加えるようにしましょう。"}
-{"cls": "llm", "id": "aitext-0039", "label": 1, "meta": {"topic": "docker-rootless"}, "task": "aitext", "text": "/etc/subuid と /etc/subgid には、そのユーザーに割り当てる UID と GID の範囲を記述します。範囲が重複すると、コンテナーの動作が不安定になるおそれがあります。"}
-{"cls": "llm", "id": "aitext-0040", "label": 1, "meta": {"topic": "nvidia-kernel"}, "task": "aitext", "text": "Secure Boot が有効な環境では、ビルドしたモジュールに署名しなければ読み込めません。MOK（Machine Owner Key）を登録して署名する手順が必要になります。"}
-{"cls": "llm", "id": "aitext-0041", "label": 1, "meta": {"topic": "docker-rootless"}, "task": "aitext", "text": "Rootless モードには、ポート番号 1024 未満のバインドや一部のネットワーク機能に制限があります。利用前に、自分の用途で支障がないかを確認しておくことが大切です。"}
-{"cls": "llm", "id": "aitext-0042", "label": 1, "meta": {"topic": "manjaro-notes"}, "task": "aitext", "text": "タイムゾーンは timedatectl set-timezone Asia/Tokyo で設定します。Windowsと時刻を共有するデュアルブート環境では、RTCの扱いも合わせて確認してください。"}
-{"cls": "llm", "id": "aitext-0043", "label": 1, "meta": {"topic": "manjaro-notes"}, "task": "aitext", "text": "Manjaroを日常利用する前に、まずシステムを最新の状態に更新しておくと、後のトラブルを減らせます。"}
-{"cls": "llm", "id": "aitext-0044", "label": 1, "meta": {"topic": "gpg-email"}, "task": "aitext", "text": "削除の確認を求められたら y で応答し、save を入力して変更を確定します。"}
-{"cls": "llm", "id": "aitext-0045", "label": 1, "meta": {"topic": "docker-rootless"}, "task": "aitext", "text": "スクリプトを実行する前に、一般ユーザーで sudo を使わずに実行できるかを確認してください。管理者権限が必要な箇所は、事前にシステム管理者へ依頼する形になります。"}
-{"cls": "llm", "id": "aitext-0046", "label": 1, "meta": {"topic": "docker-rootless"}, "task": "aitext", "text": "起動できたら、docker run --rm hello-world で動作を確認しましょう。エラーが出た場合は、ログを journalctl --user -u docker で確認すると原因を特定しやすくなります。"}
-{"cls": "llm", "id": "aitext-0047", "label": 1, "meta": {"topic": "manjaro-notes"}, "task": "aitext", "text": "Timeshiftでスナップショットを取得しておけば、更新で不具合が出た場合にも前の状態へ戻せるため、安心して作業を進められます。"}
-{"cls": "llm", "id": "aitext-0048", "label": 1, "meta": {"topic": "macos-ime"}, "task": "aitext", "text": "最初に、システム設定を開き、「キーボード」の項目を選択します。"}
-{"cls": "llm", "id": "aitext-0049", "label": 1, "meta": {"topic": "manjaro-notes"}, "task": "aitext", "text": "孤立したパッケージは pacman -Qdtq で一覧できます。不要なものを確認してから削除すると、ディスク容量を無駄なく整理できます。"}
-{"cls": "llm", "id": "aitext-0050", "label": 1, "meta": {"topic": "display-manager"}, "task": "aitext", "text": "Xorg のログは /var/log/Xorg.0.log に出力されるため、EE で始まる行を探すと失敗箇所が分かります。"}
-{"cls": "llm", "id": "aitext-0051", "label": 1, "meta": {"topic": "display-manager"}, "task": "aitext", "text": "権限が誤って root 所有になっている場合は、chown で所有者を元のユーザーに戻してください。"}
-{"cls": "llm", "id": "aitext-0052", "label": 1, "meta": {"topic": "nvidia-kernel"}, "task": "aitext", "text": "別の原因として、ドライバのバージョンが新しいカーネルに対応していないケースもあります。この場合は、ドライバを更新するしかありません。"}
-{"cls": "llm", "id": "aitext-0053", "label": 1, "meta": {"topic": "wine-fonts"}, "task": "aitext", "text": "ロケールが C や en_US のままだと、アプリケーションが日本語を正しく扱えないことがあります。"}
-{"cls": "llm", "id": "aitext-0054", "label": 1, "meta": {"topic": "display-manager"}, "task": "aitext", "text": "ディスプレイマネージャーを別のもの（GDM や SDDM など）に切り替えて起動するかを確認すると、LightDM 固有の問題かどうかを切り分けられます。"}
-{"cls": "llm", "id": "aitext-0055", "label": 1, "meta": {"topic": "gpg-email"}, "task": "aitext", "text": "既定で使うアドレスを変えたい場合は、uid N で対象を選んでから primary を実行します。"}
-{"cls": "llm", "id": "aitext-0056", "label": 1, "meta": {"topic": "docker-rootless"}, "task": "aitext", "text": "Rootless モードの導入後も、Docker 本体やランタイムのアップデートを定期的に適用してください。セキュリティ修正を取り込むことが、環境全体の安全性を保つ近道になります。"}
-{"cls": "llm", "id": "aitext-0057", "label": 1, "meta": {"topic": "manjaro-notes"}, "task": "aitext", "text": "ミラーサーバーは pacman-mirrors -g で国内のサーバーに切り替えられます。ダウンロード速度が大きく改善することがあるので、初期設定で試してみてください。"}
-{"cls": "llm", "id": "aitext-0058", "label": 1, "meta": {"topic": "macos-ime"}, "task": "aitext", "text": "それでも改善しない場合は、macOSを最新バージョンに更新することで解消することもあります。"}
-{"cls": "llm", "id": "aitext-0059", "label": 1, "meta": {"topic": "wine-fonts"}, "task": "aitext", "text": "winecfg の「グラフィックス」タブで DPI を調整すると、フォントの大きさや見た目が改善する場合があります。"}
-{"cls": "llm", "id": "aitext-0060", "label": 1, "meta": {"topic": "display-manager"}, "task": "aitext", "text": "ユーザーのホームディレクトリ内の .Xauthority が壊れていると、ログイン直後に画面が戻ることがあります。"}
-{"cls": "neg_human", "id": "aitext-0061", "label": 0, "meta": {"slug": "141a5ca670acfc"}, "task": "aitext", "text": "カーネルオプションにibt=offを追加することでこのエラーは解決します。"}
-{"cls": "neg_human", "id": "aitext-0062", "label": 0, "meta": {"slug": "141a5ca670acfc"}, "task": "aitext", "text": "ちなみにIndirect Branch Trackingはjmp/call命令にまつわるセキュリティ機能だそうです。"}
-{"cls": "neg_human", "id": "aitext-0063", "label": 0, "meta": {"slug": "3a5d03a7974eea"}, "task": "aitext", "text": "aws-vaultを利用するとMFA認証をラップしてくれてシークレットもセキュアに保存できるので試してみた。"}
-{"cls": "neg_human", "id": "aitext-0064", "label": 0, "meta": {"slug": "3a5d03a7974eea"}, "task": "aitext", "text": "筆者は最近MacよりUbuntuを使うことが多いが、導入手順はMacOSとほとんど差異はなさそう。"}
-{"cls": "neg_human", "id": "aitext-0065", "label": 0, "meta": {"slug": "3a5d03a7974eea"}, "task": "aitext", "text": "初回だとバックエンドのキーストア(Ubuntuだとseahorse)のマスターパスワードの設定も求められる。"}
-{"cls": "neg_human", "id": "aitext-0066", "label": 0, "meta": {"slug": "3a5d03a7974eea"}, "task": "aitext", "text": "※事前にAWSコンソールにて、Yubikeyを仮想MFAデバイスとして追加しておいてください。"}
-{"cls": "neg_human", "id": "aitext-0067", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": "LinuxのDockerはDocker DesktopやRancher Desktopと違い、デフォルトではrootユーザーとしてコンテナが実行されます。"}
-{"cls": "neg_human", "id": "aitext-0068", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": "の実行が必要になるという問題があります。"}
-{"cls": "neg_human", "id": "aitext-0069", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": "今回はこれを解消するRootlessモードの導入手順を紹介します。"}
-{"cls": "neg_human", "id": "aitext-0070", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": "基本的には公式の手順で問題ないと思いますが、ユーザー名前空間の設定手順が公式ページでは割愛されているようなので、そちらの手順を加えています。"}
-{"cls": "neg_human", "id": "aitext-0071", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": "環境はManjaro Linuxを想定していますが、Ubuntuでも基本は同じだと思います。"}
-{"cls": "neg_human", "id": "aitext-0072", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": "Rootlessモードにおいて肝になるユーザー名前空間の設定です。"}
-{"cls": "neg_human", "id": "aitext-0073", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": "ユーザーごとにdocker.sockが作られるので、下記のように環境変数DOCKER_HOSTをセットします。"}
-{"cls": "neg_human", "id": "aitext-0074", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": ".zshrc等に記述すると良いでしょう。"}
-{"cls": "neg_human", "id": "aitext-0075", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "Manjaro Linuxを起動すると、Failed to Start Light Display Managerが発生してXが立ち上がらなくなりました。"}
-{"cls": "neg_human", "id": "aitext-0076", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "このメッセージで検索すると、lightdm関連のパッケージが壊れているといったものから、X関連のパッケージやGPUのドライバが適切にインストールされていない場合にも発生するなど様々な情報が出てきます。"}
-{"cls": "neg_human", "id": "aitext-0077", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "Xが立ち上がらないのは結構消耗するので、また同じ問題を踏んでしまった時に役立つよう備忘録を残しておきます。"}
-{"cls": "neg_human", "id": "aitext-0078", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "※ログは/var/log/lightdm/lightdm.logにも記録されますが、前回起動時も含まれてごちゃごちゃするので、デバッグモードの起動がオススメです。"}
-{"cls": "neg_human", "id": "aitext-0079", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "関連するものとして/var/log/Xorg.0.logも見るといいでしょう。"}
-{"cls": "neg_human", "id": "aitext-0080", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "startxを実行して出力を確認するのもオススメです。"}
-{"cls": "neg_human", "id": "aitext-0081", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "→今回はno screens found(EE)と出ていました。"}
-{"cls": "neg_human", "id": "aitext-0082", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "video-hybrid-intel-nvidia-primeがインストールされている場合、一度手動でアンインストールする必要がありました。"}
-{"cls": "neg_human", "id": "aitext-0083", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "今度はstartxの実行時にversion 'GLIBC_x.xx' not foundが発生するようになりました。"}
-{"cls": "neg_human", "id": "aitext-0084", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "ドライバの入れ替えをしたりlightdmの再インストールをしていた関係でX関連のパッケージの整合性が取れなくなった可能性もありますが、ひとまず下記で依存関係を再インストールしたところ無事lightdmが起動しました。"}
-{"cls": "neg_human", "id": "aitext-0085", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "ドライバ絡みをいじる時は気をつけたほうがいいですね。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0001", "label": 1, "meta": {"generator": "claude_haiku", "topic": "macos-ime"}, "task": "aitext", "text": "まずは、表示が出る原因を確認しておくと対処しやすくなります。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0002", "label": 1, "meta": {"generator": "claude_haiku", "topic": "aws-vault"}, "task": "aitext", "text": "MFA 付きの AWS 操作も aws-vault で扱えます。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0003", "label": 1, "meta": {"generator": "claude_haiku", "topic": "display-manager"}, "task": "aitext", "text": "起動しない場合は、まず前回のログを確認するのが基本になります。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0004", "label": 1, "meta": {"generator": "claude_haiku", "topic": "nvidia-kernel"}, "task": "aitext", "text": "カーネルのヘッダーがないと、モジュールのビルドは失敗します。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0005", "label": 1, "meta": {"generator": "claude_haiku", "topic": "macos-ime"}, "task": "aitext", "text": "この表示は、入力モードを切り替えたときに出ることがあります。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0006", "label": 1, "meta": {"generator": "claude_haiku", "topic": "nvidia-kernel"}, "task": "aitext", "text": "この記事では、症状の確認方法を説明します。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0007", "label": 1, "meta": {"generator": "claude_haiku", "topic": "aws-vault"}, "task": "aitext", "text": "長期アクセスキーを平文で置かない運用が基本になります。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0008", "label": 1, "meta": {"generator": "claude_haiku", "topic": "display-manager"}, "task": "aitext", "text": "設定を変更した後は、再起動して動作を必ず確認してください。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0009", "label": 1, "meta": {"generator": "claude_haiku", "topic": "aws-vault"}, "task": "aitext", "text": "MFA を要求する際は、トークンコードの入力を毎回求められます。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0010", "label": 1, "meta": {"generator": "claude_haiku", "topic": "nvidia-kernel"}, "task": "aitext", "text": "dkms statusを実行すると、各カーネル向けのビルド状況を一覧で確認できます。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0011", "label": 1, "meta": {"generator": "claude_haiku", "topic": "nvidia-kernel"}, "task": "aitext", "text": "dkms status で、現在のカーネル向けのビルド状態を確認できます。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0012", "label": 1, "meta": {"generator": "claude_haiku", "topic": "nvidia-kernel"}, "task": "aitext", "text": "古いカーネル向けのモジュールが残っていると、競合することがあります。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0013", "label": 1, "meta": {"generator": "claude_haiku", "topic": "nvidia-kernel"}, "task": "aitext", "text": "カーネルのバージョンとモジュールのvermagicが一致しないと、読み込みは拒否されます。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0014", "label": 1, "meta": {"generator": "claude_haiku", "topic": "manjaro-notes"}, "task": "aitext", "text": "Manjaro では、パッケージの更新を定期的に行うことが大切です。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0015", "label": 1, "meta": {"generator": "claude_haiku", "topic": "nvidia-kernel"}, "task": "aitext", "text": "その場合は、MOK に鍵を登録してモジュールに署名する手順が必要になります。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0016", "label": 1, "meta": {"generator": "claude_haiku", "topic": "nvidia-kernel"}, "task": "aitext", "text": "サーバーを更新したあと、NVIDIA ドライバのカーネルモジュールが読み込めなくなりました。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0017", "label": 1, "meta": {"generator": "claude_haiku", "topic": "gpg-email"}, "task": "aitext", "text": "追加したユーザーIDには、名前とメールアドレスを順に入力する必要があります。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0018", "label": 1, "meta": {"generator": "claude_haiku", "topic": "aws-vault"}, "task": "aitext", "text": "長期キーを直接使うのではなく、一時的な認証情報を発行して使う形に切り替えましょう。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0019", "label": 1, "meta": {"generator": "claude_haiku", "topic": "macos-ime"}, "task": "aitext", "text": "ターミナルアプリを使う場合は、入力中の表示が他のアプリと異なることがあるため、個別に確認しましょう。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0020", "label": 1, "meta": {"generator": "claude_haiku", "topic": "nvidia-kernel"}, "task": "aitext", "text": "Secure Bootが有効な環境では、未署名のモジュールが読み込まれずに失敗することがあります。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0021", "label": 1, "meta": {"generator": "claude_haiku", "topic": "display-manager"}, "task": "aitext", "text": "問題の切り分けには、セーフモードや別のTTYでのログインを活用すると効率よく原因を特定できます。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0022", "label": 1, "meta": {"generator": "claude_haiku", "topic": "aws-vault"}, "task": "aitext", "text": "ロールの切り替えには profile の role_arn と source_profile を使います。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0023", "label": 1, "meta": {"generator": "claude_haiku", "topic": "gpg-email"}, "task": "aitext", "text": "不要になったメールアドレスは deluid コマンドで削除できますが、最後に残る uid は削除できません。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0024", "label": 1, "meta": {"generator": "claude_haiku", "topic": "docker-rootless"}, "task": "aitext", "text": "Docker を Rootless モードで使うと、root 権限を持たないユーザーでコンテナを動かせます。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0025", "label": 1, "meta": {"generator": "claude_haiku", "topic": "nvidia-kernel"}, "task": "aitext", "text": "journalctlでnvidia関連のエラーを確認すると、modprobeが失敗した理由がわかります。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0026", "label": 1, "meta": {"generator": "claude_haiku", "topic": "gpg-email"}, "task": "aitext", "text": "GitHub などで新しいメールアドレスを使うには、そのアドレスを GitHub の設定に登録します。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0027", "label": 1, "meta": {"generator": "claude_haiku", "topic": "wine-fonts"}, "task": "aitext", "text": "Wine の日本語表示では、既定フォントの代わりに日本語フォントを使うよう設定する必要があります。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0028", "label": 1, "meta": {"generator": "claude_haiku", "topic": "docker-rootless"}, "task": "aitext", "text": "接続先は DOCKER_HOST 環境変数で指定し、通常は $XDG_RUNTIME_DIR/docker.sock を使います。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0029", "label": 1, "meta": {"generator": "claude_haiku", "topic": "manjaro-notes"}, "task": "aitext", "text": "pacman -Syuを実行する前に、Arch News を確認して重要なお知らせを見落とさないようにしてください。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0030", "label": 1, "meta": {"generator": "claude_haiku", "topic": "gpg-email"}, "task": "aitext", "text": "変更後は gpg --list-keys で uid が意図どおり並んでいるか確認すると、設定ミスに早く気づけます。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0031", "label": 1, "meta": {"generator": "claude_haiku", "topic": "macos-ime"}, "task": "aitext", "text": "手順に沿って設定すれば、文字入力のたびに表示されていたインジケータが気にならなくなり、作業に集中しやすくなります。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0032", "label": 1, "meta": {"generator": "claude_haiku", "topic": "manjaro-notes"}, "task": "aitext", "text": "ミラーリストは日本国内のサーバーを優先して選ぶと、パッケージのダウンロード速度が安定しやすくなることを、実際の設定例とあわせてご紹介します。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0033", "label": 1, "meta": {"generator": "claude_haiku", "topic": "macos-ime"}, "task": "aitext", "text": "macOSでは、キーボード設定の入力ソース欄にある「テキストカーソルの近くに入力ソースを表示」を無効にすることで、この表示を消せます。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0034", "label": 1, "meta": {"generator": "claude_haiku", "topic": "macos-ime"}, "task": "aitext", "text": "この表示は入力ソースの切り替えを知らせる便利な機能ですが、画面共有やスクリーンショットで映り込むのが気になる場合は、オフにすると安心です。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0035", "label": 1, "meta": {"generator": "claude_haiku", "topic": "gpg-email"}, "task": "aitext", "text": "変更は手元の鍵にのみ反映されるため、公開鍵サーバーや GitHub に登録した公開鍵も、更新して再登録する必要があります。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0036", "label": 1, "meta": {"generator": "claude_haiku", "topic": "docker-rootless"}, "task": "aitext", "text": "Rootless モードを使うには、まず newuidmap と newgidmap が導入されているか確認します。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0037", "label": 1, "meta": {"generator": "claude_haiku", "topic": "manjaro-notes"}, "task": "aitext", "text": "日本語入力やフォントの設定は、fcitx5とnoto-fontsを組み合わせることで、ほとんどのアプリケーションで違和感なく利用できるようになりました。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0038", "label": 1, "meta": {"generator": "claude_haiku", "topic": "display-manager"}, "task": "aitext", "text": "Ubuntu などのディストリビューションでは、sudo dpkg-reconfigure lightdm を実行して既定のディスプレイマネージャーを選び直すと、設定の食い違いを解消できる場合があります。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0039", "label": 1, "meta": {"generator": "claude_haiku", "topic": "manjaro-notes"}, "task": "aitext", "text": "よく使うコマンドは、更新用のpamac upgradeや孤立パッケージを整理するpacman -Qdtqなど、いつでも参照できるようにメモとしてまとめています。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0040", "label": 1, "meta": {"generator": "claude_haiku", "topic": "aws-vault"}, "task": "aitext", "text": "長期的なアクセスキーは ~/.aws/credentials に置かず、aws-vault add で登録してから利用するのが安全な運用の第一歩です。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0041", "label": 1, "meta": {"generator": "claude_haiku", "topic": "wine-fonts"}, "task": "aitext", "text": "Wine の既定の文字コードは環境変数 LANG や LC_ALL によって決まるため、ロケールを ja_JP.UTF-8 に設定してから起動すると、文字化けが起きにくくなります。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0042", "label": 1, "meta": {"generator": "claude_haiku", "topic": "display-manager"}, "task": "aitext", "text": "ログに「Failed to start」や「Unable to find greeter」といった文言があれば、そのメッセージを手がかりに、グリーターの設定やパッケージの状態を優先して調べてください。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0043", "label": 1, "meta": {"generator": "claude_haiku", "topic": "gpg-email"}, "task": "aitext", "text": "追加したユーザーIDを有効にするには、uid コマンドで対象の番号を指定し、primary で主要なIDとして設定してから、save と入力して変更を保存します。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0044", "label": 1, "meta": {"generator": "claude_haiku", "topic": "gpg-email"}, "task": "aitext", "text": "鍵の変更を公開鍵サーバーに送信するには、gpg --keyserver と --send-keys オプションを使い、鍵IDを指定して実行します。"}
+{"cls": "llm_claude_haiku", "id": "aitext-0045", "label": 1, "meta": {"generator": "claude_haiku", "topic": "docker-rootless"}, "task": "aitext", "text": "利用するには、まず newuidmap と newgidmap の補助コマンドが使えるかを確認し、/etc/subuid と /etc/subgid にユーザー用の範囲を登録しておく必要があります。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0046", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "manjaro-notes"}, "task": "aitext", "text": "パッケージ管理にはPamacを使うのが便利です。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0047", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "wine-fonts"}, "task": "aitext", "text": "フォントのディレクトリを指定することで文字が表示されます。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0048", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "docker-rootless"}, "task": "aitext", "text": "ストレージの書き込み権限を適切に割り当てるべきです。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0049", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "aws-vault"}, "task": "aitext", "text": "秘密鍵の管理を自動化し、手動での操作ミスを防ぐことが可能です。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0050", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "display-manager"}, "task": "aitext", "text": "ウイルス対策ソフトによるブロックがないか調べます。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0051", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "display-manager"}, "task": "aitext", "text": "管理者権限で実行することで解決する場合があります。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0052", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "nvidia-kernel"}, "task": "aitext", "text": "カーネルとドライバのバージョンが一致しないことが原因です。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0053", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "nvidia-kernel"}, "task": "aitext", "text": "DKMSを利用すると更新時の自動対応がスムーズになります。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0054", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "manjaro-notes"}, "task": "aitext", "text": "快適な操作のためにショートカットを覚えます。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0055", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "nvidia-kernel"}, "task": "aitext", "text": "原因の多くはカーネルの更新に合わせてドライバの再ビルドが行われていないことにあります。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0056", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "gpg-email"}, "task": "aitext", "text": "不要なメールアドレスを削除する際は特定のキーを指定して削除します。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0057", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "aws-vault"}, "task": "aitext", "text": "AWSの認証情報を安全に管理するにはaws-vaultが便利です。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0058", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "aws-vault"}, "task": "aitext", "text": "認証情報を暗号化して保存することで第三者による情報の漏洩を防ぐことが可能です。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0059", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "nvidia-kernel"}, "task": "aitext", "text": "この問題が発生すると画面が映らない、あるいは画面が引き延ばされるなどの症状が出ます。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0060", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "wine-fonts"}, "task": "aitext", "text": "これらの設定を完了させることでWindowsアプリの日本語表示が正常に改善します。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0061", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "docker-rootless"}, "task": "aitext", "text": "非特権ユーザーで動作させるために必要な依存関係をあらかじめ確認しておくことが重要です。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0062", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "docker-rootless"}, "task": "aitext", "text": "正常に起動したかを確認するためにコンテナの起動テストを必ず実施してください。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0063", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "nvidia-kernel"}, "task": "aitext", "text": "最新のカーネルに対応したドライバーが提供されているかを確認することが重要になります。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0064", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "gpg-email"}, "task": "aitext", "text": "自分のメールアドレスを登録する手順は既存の鍵を更新する操作とほぼ同様のコマンドで実行可能です。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0065", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "aws-vault"}, "task": "aitext", "text": "設定ファイルに記述する情報も暗号化されるため、誤って共有されても第三者に中身を盗み見られる心配がありません。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0066", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "aws-vault"}, "task": "aitext", "text": "アクセスキーをローカル環境に直接保存するのではなく、暗号化された状態で保存することがセキュリティの基本です。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0067", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "wine-fonts"}, "task": "aitext", "text": "Wineでの日本語表示設定は初心者にはやや難易度が高いですが、正しい手順を踏めば安定した動作を確保できます。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0068", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "gpg-email"}, "task": "aitext", "text": "メールアドレスを追加する際はコマンドラインから実行することが一般的ですが操作には注意が必要です。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0069", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "docker-rootless"}, "task": "aitext", "text": "DockerをRootlessモードで実行するにはまず必要なパッケージをインストールしましょう。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0070", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "display-manager"}, "task": "aitext", "text": "Light Display Managerが起動しない場合はまずネットワーク接続を確認してください。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0071", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "gpg-email"}, "task": "aitext", "text": "GPGキーの管理を適切に行うためにはメールアドレスの変更履歴を正確に把握しておくことが重要です。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0072", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "gpg-email"}, "task": "aitext", "text": "メールアドレスの追加や削除を行う際に間違った鍵を操作しないよう十分な注意を払って作業を進めましょう。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0073", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "wine-fonts"}, "task": "aitext", "text": "フォントをインストールしただけでは反映されないことが多いため、Wineの設定ツールを用いてフォントの関連付けを行う必要があります。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0074", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "nvidia-kernel"}, "task": "aitext", "text": "カーネルヘッダファイルがインストールされていないことが原因で、モジュールのビルドプロセスが途中で停止してしまうケースも多いです。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0075", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "macos-ime"}, "task": "aitext", "text": "システム設定を開き、左側のメニューからキーボードを選択することで、入力に関する細かな挙動や外見を制御する設定画面へとアクセスできます。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0076", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "display-manager"}, "task": "aitext", "text": "ディスプレイマネージャーのプロセスが異常な状態で残っている可能性があるため、強制的にプロセスを終了させる操作が必要です。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0077", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "wine-fonts"}, "task": "aitext", "text": "日本語フォントのパスが正しく認識されていないと、すべてのテキストが正しく表示されない原因となるため注意が必要です。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0078", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "docker-rootless"}, "task": "aitext", "text": "最後にコンテナを起動して、指定したポートでサービスが正常に動作するかを確認し、Rootless環境の構築を完了します。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0079", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "wine-fonts"}, "task": "aitext", "text": "日本語対応のフォントを追加した後は、必ず一度アプリケーションを再起動して反映を確認する作業を忘れないようにしましょう。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0080", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "display-manager"}, "task": "aitext", "text": "必要な依存パッケージが不足している場合もあるため、システムのパッケージが最新の状態に更新されているかを確認してください。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0081", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "display-manager"}, "task": "aitext", "text": "グラフィックボードのハードウェアアクセラレーションの設定が影響していることがあるため、構成の変更を検討しましょう。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0082", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "manjaro-notes"}, "task": "aitext", "text": "Manjaro Linuxを快適に運用するためには、まずシステム全体のアップデートを定期的に実行し、安定した動作環境を維持することが非常に重要です。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0083", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "macos-ime"}, "task": "aitext", "text": "OSのバージョンによってメニューの構成が微妙に異なるため、最新のmacOSに対応した操作手順を事前に把握しておくことがスムーズな設定のコツです。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0084", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "manjaro-notes"}, "task": "aitext", "text": "AURという強力なリポジトリを活用することで、公式リポジトリにはない多様なソフトウェアを簡単に導入できる点はManjaroの大きな強みと言えます。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0085", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "macos-ime"}, "task": "aitext", "text": "特定のアプリケーションのみで非表示にする機能は標準では用意されていないことが多いため、システム全体の設定を変更するのが一般的な手段となります。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0086", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "manjaro-notes"}, "task": "aitext", "text": "パッケージマネージャーのPamacはGUIで直感的に操作できるため、コマンド操作に不慣れな方でもシステムの管理をスムーズに行うことが可能です。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0087", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "manjaro-notes"}, "task": "aitext", "text": "システムのバックアップについては、TimeShiftを使用してシステムのスナップショットを定期的に保存しておくことで、トラブル時にも安心です。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0088", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "macos-ime"}, "task": "aitext", "text": "システム設定を開いて入力ソースの項目を選択してください。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0089", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "macos-ime"}, "task": "aitext", "text": "この記事を参考に設定を調整して快適なテキスト入力操作を実現していきましょう。"}
+{"cls": "llm_gemma4_12b", "id": "aitext-0090", "label": 1, "meta": {"generator": "gemma4_12b", "topic": "display-manager"}, "task": "aitext", "text": "メモリ不足やCPUの高負荷が原因で起動に失敗している可能性も考慮しましょう。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0091", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "display-manager"}, "task": "aitext", "text": "表示サーバーのポート番号を再チェックします。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0092", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "manjaro-notes"}, "task": "aitext", "text": "Manjaro の設定でまず行うのは日本語化です。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0093", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "macos-ime"}, "task": "aitext", "text": "言語バーの表示をオフにすれば画面がスッキリします。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0094", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "macos-ime"}, "task": "aitext", "text": "設定変更後はすぐに反映されるので安心してください。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0095", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "macos-ime"}, "task": "aitext", "text": "設定アプリでキーボードの入力表示機能をオフにして整理します。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0096", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "docker-rootless"}, "task": "aitext", "text": "デフォルト設定を変更して実行環境を整えましょう。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0097", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "display-manager"}, "task": "aitext", "text": "コンソール出力を詳細に分析すると手がかりが見つかります。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0098", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "macos-ime"}, "task": "aitext", "text": "キーボード設定画面で入力ソースの表示項目をオフに切り替えます。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0099", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "docker-rootless"}, "task": "aitext", "text": "起動時にエラーが出たら権限の再確認が必要です。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0100", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "nvidia-kernel"}, "task": "aitext", "text": "dkms を使ってソースを再コンパイルすれば、モジュールの読み込みが成功します。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0101", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "gpg-email"}, "task": "aitext", "text": "複数のメールアドレスを持つ場合でも、デフォルトのアドレスは一つに絞る設定が可能になります。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0102", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "nvidia-kernel"}, "task": "aitext", "text": "システム再起動後に黒画面になった際、単体ドライバのバージョン不一致が原因かもしれません。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0103", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "wine-fonts"}, "task": "aitext", "text": "Wineの設定ファイルに日本語フォント名を明記してアプリケーションに反映させましょう。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0104", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "display-manager"}, "task": "aitext", "text": "一時的に別のディスプレイマネージャーに切り替えて環境を安定させる方法も検討してください。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0105", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "display-manager"}, "task": "aitext", "text": "最終手段としてシステムの完全なリセットを行い設定ファイルを初期状態に戻します。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0106", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "gpg-email"}, "task": "aitext", "text": "不要なアドレスを削除する場合も同様に編集モードに入り、対象のエントリを特定して外します。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0107", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "aws-vault"}, "task": "aitext", "text": "aws-vault は環境変数ではなく専用のキーリングでセキュリティキーを安全に保管します。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0108", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "aws-vault"}, "task": "aitext", "text": "aws-vault を導入すればクラウド環境への安全な接続を実現できます。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0109", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "aws-vault"}, "task": "aitext", "text": "定期的なパスワード変更やトークンの自動更新機能により、権限の期限切れによる作業停止を防ぐことができます。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0110", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "aws-vault"}, "task": "aitext", "text": "多要素認証のトークンを自動的に取得し、短期間の有効期限を持つセッション情報としてユーザーに提供してくれます。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0111", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "aws-vault"}, "task": "aitext", "text": "複数アカウント間での切り替えも簡便に行えるため、開発環境での運用効率とセキュリティのバランスが向上します。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0112", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "gpg-email"}, "task": "aitext", "text": "GPG キーに新しいメールアドレスを追加するには、まずは編集コマンドを実行して鍵情報を修正します。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0113", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "docker-rootless"}, "task": "aitext", "text": "まず Docker の公式ページから最新バージョンのファイルをダウンロードしてインストールします。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0114", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "manjaro-notes"}, "task": "aitext", "text": "日常利用中のエラー対応はログファイルを定期的に確認し、Manjaro コミュニティの情報を参考に解決します。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0115", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "gpg-email"}, "task": "aitext", "text": "公開鍵サーバーへの送信忘れを防ぐため、変更後は必ずアップロード操作を実行することをお勧めします。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0116", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "manjaro-notes"}, "task": "aitext", "text": "ディスプレイ設定では NVIDIA ドライバを手動でインストールし、高解像度画面を快適に表示させます。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0117", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "manjaro-notes"}, "task": "aitext", "text": "ブラウザの拡張機能は公式ストアから入手せず、Flathub を通じてサンドボックス内で安全に利用します。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0118", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "aws-vault"}, "task": "aitext", "text": "設定したパスワードを解読する際に MFA コードの入力を強制するため、第三者による不正利用のリスクを大幅に低減できます。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0119", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "aws-vault"}, "task": "aitext", "text": "セキュリティポリシーで MFA の使用を義務付ける場合でも、aws-vault を導入すればユーザー負担を増やさずに実装可能です。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0120", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "nvidia-kernel"}, "task": "aitext", "text": "手動で nvidia-kernel-module をビルドする際は、適切なヘッダーファイルの存在を検証します。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0121", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "aws-vault"}, "task": "aitext", "text": "aws-vault はローカルファイルシステムに鍵を格納せず、OS のキーチェーンを利用することでアクセス権限を安全に管理します。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0122", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "aws-vault"}, "task": "aitext", "text": "失われたマスターパスワードからデータ復元は不可能なので、バックアップ戦略を事前に策定しておくことが不可欠となります。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0123", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "gpg-email"}, "task": "aitext", "text": "最後に gpg --list-keys コマンドで反映を確認し、正常に完了しているか最終チェックを行いましょう。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0124", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "aws-vault"}, "task": "aitext", "text": "標準的な aws コマンドを置き換える形で動作するため、既存のスクリプトや CI/CD プロセスとの互換性を維持できます。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0125", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "manjaro-notes"}, "task": "aitext", "text": "ウィンドウマネージャは KWin の代替案として Xfce に変更し、軽量なデスクトップ環境で動作を最適化します。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0126", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "aws-vault"}, "task": "aitext", "text": "チーム全体でのセキュリティ意識向上と、クラウドリソースへの不正アクセス防止の両面から有効なソリューションです。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0127", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "gpg-email"}, "task": "aitext", "text": "誤って削除してしまった場合はバックアップから復元するか、再度再発行の手順を踏みます。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0128", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "aws-vault"}, "task": "aitext", "text": "MFA 認証を課すことで不正な利用を防ぐ仕組みです。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0129", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "manjaro-notes"}, "task": "aitext", "text": "暗号化パーティションはインストール時に選択しましょう。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0130", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "display-manager"}, "task": "aitext", "text": "設定ファイルをバックアップしてから修正しましょう。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0131", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "macos-ime"}, "task": "aitext", "text": "不要なインジケータを消せば作業効率が向上します。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0132", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "macos-ime"}, "task": "aitext", "text": "日本語入力時の邪魔なマークを簡単に関閉できます。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0133", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "aws-vault"}, "task": "aitext", "text": "開発チーム全体で安全なキー管理を実現する手法です。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0134", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "manjaro-notes"}, "task": "aitext", "text": "システム更新は定期的に実行して安全を確保します。"}
+{"cls": "llm_qwen3.5_27b", "id": "aitext-0135", "label": 1, "meta": {"generator": "qwen3.5_27b", "topic": "gpg-email"}, "task": "aitext", "text": "GPG キーの編集モードに入り、キーID を指定して追加作業を開始します。"}
+{"cls": "neg_human", "id": "aitext-0136", "label": 0, "meta": {"slug": "141a5ca670acfc"}, "task": "aitext", "text": "カーネルオプションにibt=offを追加することでこのエラーは解決します。"}
+{"cls": "neg_human", "id": "aitext-0137", "label": 0, "meta": {"slug": "141a5ca670acfc"}, "task": "aitext", "text": "ちなみにIndirect Branch Trackingはjmp/call命令にまつわるセキュリティ機能だそうです。"}
+{"cls": "neg_human", "id": "aitext-0138", "label": 0, "meta": {"slug": "3a5d03a7974eea"}, "task": "aitext", "text": "aws-vaultを利用するとMFA認証をラップしてくれてシークレットもセキュアに保存できるので試してみた。"}
+{"cls": "neg_human", "id": "aitext-0139", "label": 0, "meta": {"slug": "3a5d03a7974eea"}, "task": "aitext", "text": "筆者は最近MacよりUbuntuを使うことが多いが、導入手順はMacOSとほとんど差異はなさそう。"}
+{"cls": "neg_human", "id": "aitext-0140", "label": 0, "meta": {"slug": "3a5d03a7974eea"}, "task": "aitext", "text": "初回だとバックエンドのキーストア(Ubuntuだとseahorse)のマスターパスワードの設定も求められる。"}
+{"cls": "neg_human", "id": "aitext-0141", "label": 0, "meta": {"slug": "3a5d03a7974eea"}, "task": "aitext", "text": "※事前にAWSコンソールにて、Yubikeyを仮想MFAデバイスとして追加しておいてください。"}
+{"cls": "neg_human", "id": "aitext-0142", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": "LinuxのDockerはDocker DesktopやRancher Desktopと違い、デフォルトではrootユーザーとしてコンテナが実行されます。"}
+{"cls": "neg_human", "id": "aitext-0143", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": "の実行が必要になるという問題があります。"}
+{"cls": "neg_human", "id": "aitext-0144", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": "今回はこれを解消するRootlessモードの導入手順を紹介します。"}
+{"cls": "neg_human", "id": "aitext-0145", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": "基本的には公式の手順で問題ないと思いますが、ユーザー名前空間の設定手順が公式ページでは割愛されているようなので、そちらの手順を加えています。"}
+{"cls": "neg_human", "id": "aitext-0146", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": "環境はManjaro Linuxを想定していますが、Ubuntuでも基本は同じだと思います。"}
+{"cls": "neg_human", "id": "aitext-0147", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": "Rootlessモードにおいて肝になるユーザー名前空間の設定です。"}
+{"cls": "neg_human", "id": "aitext-0148", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": "ユーザーごとにdocker.sockが作られるので、下記のように環境変数DOCKER_HOSTをセットします。"}
+{"cls": "neg_human", "id": "aitext-0149", "label": 0, "meta": {"slug": "3cec197e5f5ec8"}, "task": "aitext", "text": ".zshrc等に記述すると良いでしょう。"}
+{"cls": "neg_human", "id": "aitext-0150", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "Manjaro Linuxを起動すると、Failed to Start Light Display Managerが発生してXが立ち上がらなくなりました。"}
+{"cls": "neg_human", "id": "aitext-0151", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "このメッセージで検索すると、lightdm関連のパッケージが壊れているといったものから、X関連のパッケージやGPUのドライバが適切にインストールされていない場合にも発生するなど様々な情報が出てきます。"}
+{"cls": "neg_human", "id": "aitext-0152", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "Xが立ち上がらないのは結構消耗するので、また同じ問題を踏んでしまった時に役立つよう備忘録を残しておきます。"}
+{"cls": "neg_human", "id": "aitext-0153", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "※ログは/var/log/lightdm/lightdm.logにも記録されますが、前回起動時も含まれてごちゃごちゃするので、デバッグモードの起動がオススメです。"}
+{"cls": "neg_human", "id": "aitext-0154", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "関連するものとして/var/log/Xorg.0.logも見るといいでしょう。"}
+{"cls": "neg_human", "id": "aitext-0155", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "startxを実行して出力を確認するのもオススメです。"}
+{"cls": "neg_human", "id": "aitext-0156", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "→今回はno screens found(EE)と出ていました。"}
+{"cls": "neg_human", "id": "aitext-0157", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "video-hybrid-intel-nvidia-primeがインストールされている場合、一度手動でアンインストールする必要がありました。"}
+{"cls": "neg_human", "id": "aitext-0158", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "今度はstartxの実行時にversion 'GLIBC_x.xx' not foundが発生するようになりました。"}
+{"cls": "neg_human", "id": "aitext-0159", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "ドライバの入れ替えをしたりlightdmの再インストールをしていた関係でX関連のパッケージの整合性が取れなくなった可能性もありますが、ひとまず下記で依存関係を再インストールしたところ無事lightdmが起動しました。"}
+{"cls": "neg_human", "id": "aitext-0160", "label": 0, "meta": {"slug": "7b5cc21852d76c"}, "task": "aitext", "text": "ドライバ絡みをいじる時は気をつけたほうがいいですね。"}

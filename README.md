@@ -40,29 +40,36 @@ python3 -m judgebench.report                  # writes results/summary.md
 
 ## Ground truth
 
-- **Honorific errors:** error types follow the Agency for Cultural Affairs' [敬語の指針](https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/hokoku/pdf/keigo_tosin.pdf) (二重敬語, 尊敬語と謙譲語の取り違え). Each positive has a paired correct sentence; 敬語連結 (`お読みになっていらっしゃる`) and established forms (`お召し上がりになる`, `お見えになる`) are extra negatives the 指針 allows.
-- **"AI-sounding":** negatives are the author's own sentences from Zenn articles published before 2022-11-30 (`data/human_prose.jsonl`, dates from the Zenn API); positives are `claude -p` passages on the same topics (`data/llm_passages.jsonl`, cached so a rerun does not regenerate them).
-- **Style:** clean passages from the author's prose and the LLM passages not used above, plus synthetic sentence pairs; drift is injected.
-- **Secrets:** random strings in the shape of AWS, GitHub, Slack, Stripe and Google keys planted in unified diffs; negatives carry placeholders, hashes, UUIDs and truncated look-alikes in the same place.
+- **Honorific errors:** error types follow the Agency for Cultural Affairs' [敬語の指針](https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/hokoku/pdf/keigo_tosin.pdf) (二重敬語, 尊敬語と謙譲語の取り違え). Each positive has a paired correct sentence; 敬語連結 (`お読みになっていらっしゃる`), established forms (`お召し上がりになる`, `お見えになる`) and correct `〜になられる` are extra negatives. The prompt tells the judge the speaker is addressing someone outside the company, and the swap classes use subjects that are unambiguously outside (`お客様`, `取引先の担当の方`, ...), so a sentence such as `部長が本社に参りました。` (fine about one's own manager) is not a positive.
+- **"AI-sounding":** negatives are the author's own sentences from Zenn articles published before 2022-11-30 (`data/human_prose.jsonl`, dates from the Zenn API); positives are one-sentence texts on the same topics from three generators, `claude-haiku-5-5`, `gemma4:12b` and `qwen3.5:27b`, 45 each, drawn so that their length follows the human sentences' (`data/llm_sentences.jsonl`, cached so a rerun does not regenerate them). The summary reports the AUC of character count and of sentence count alone, as a check on what the dataset gives away.
+- **Style:** clean passages from the author's prose and multi-sentence LLM passages (`data/llm_passages.jsonl`), plus synthetic sentence pairs; drift is injected.
+- **Secrets:** random strings in the shape of AWS, GitHub, Slack, Stripe and Google keys planted in unified diffs; negatives carry placeholders, hashes, UUIDs and truncated look-alikes in the same place. The task is spotting a value that matches a key format; the values are never valid credentials, and the prompt says validity is not judged.
 - **Robustness:** three instructions aimed at the judge appended to honorific and secrets positives.
 
 ## Spot-check
 
-`python3 -m judgebench.spotcheck` writes `spotcheck.md`: 10 random items per dataset (60 in all, secret-shaped values masked). All 60 were read by hand. Labels held in every case: each positive carries the planted defect, each negative is the correct paired form or a placeholder, hash or UUID. One item reads oddly without being wrong (`午後に課長が明日こちらにいらっしゃいます。`, two time words from the frame and the entry); it is a correct honorific sentence and stays a negative.
+`python3 -m judgebench.spotcheck` writes `spotcheck.md`: 10 random items per dataset (60 in all, secret-shaped values masked). All 60 were read by hand after the datasets were rebuilt (see History). Labels held in every case: each positive carries the planted defect, each negative is the correct paired form or a placeholder, hash or UUID.
+
+## History
+
+The first full run was reviewed before publication and several design problems were found; the datasets and prompts below were then changed and every judge was rerun on the changed tasks (the style task and its results are unchanged). The pass bar, the judges' calls and the report's pass logic were not changed. Earlier versions stay in the git history.
+
+- The AI-class texts were multi-sentence while every human text was one sentence, so "more than one sentence means AI" alone scored 71.7% balanced accuracy. The positives are now one sentence, length-matched, from three generators.
+- The secrets prompt asked for "usable credentials" while every positive was an invalid random string. The prompt now asks for a value matching a key format and says validity is not judged.
+- Some honorific positives were only wrong if the subject was outside the company. The prompt now states the setting and the swap classes use unambiguous subjects.
+- The honorific dictionary also matches correct `〜になられる`; 34 such negatives were added before this rerun.
 
 ## Known limits
 
-- The human class of the "AI-sounding" task has 25 sentences, not 40: the author's pre-ChatGPT articles hold no more prose. The 40-item floor applies to positives (60 LLM passages); the false-warning rate there carries a wide interval.
-- The LLM passages mention commands and product names the author's sentences also use, but topic and length are only loosely matched; a judge may be reading content style, not authorship.
+- The human class of the "AI-sounding" task has 25 sentences, not 40: the author's pre-ChatGPT articles hold no more prose. The 40-item floor applies to positives (45 per generator); the false-warning rate there carries a wide interval.
+- The human sentences come from one author and four articles; the AI sentences are prompted to match their topics and length, not their style.
 - Honorific and style text is synthetic or pulled from a few articles; a judge that does well here has not been shown to do well on arbitrary prose.
 - The honorific baseline is a hand-written dictionary of the double-honorific shapes the 指針 names, and the generator draws on the same source. It is expected to do well on that class and cannot see the other two.
-- Claude latency is a sequential probe of 20 calls; the 1,419 judged items ran six at a time. Local latency is one call at a time, model loaded.
+- Claude, Jev and GPT latency is a sequential probe of 20 calls; the judged items ran six at a time. Local latency is one call at a time, model loaded.
 - `gitleaks` flags 60 of 225 look-alike negatives (40-hex strings and UUIDs next to a variable named like a token): the scanner's generic-key rule, not noise in the dataset.
-- The AI-class passages were all written by `claude-haiku-5-5`, the same model as the `claude_haiku` judge, the only judge near the bar there. The test covers one source model.
-- After the first run, a review found that the honorific dictionary also matches correct sentences such as `部長になられました`, which the first negative set did not contain. Thirty-four such negatives (`neg_naru_honorific`) were added and all three judges and the baseline were rerun on them; earlier item ids and verdicts are unchanged, but every false-warning figure now divides by 209 negatives, not 175. `results/summary.md` splits false warnings by kind of negative.
-- The bar's balanced-accuracy condition was implemented as the average of the two Wilson lower bounds, which is conservative. `results/summary.md` also prints a Newcombe-style bound; for `claude_haiku` on the "AI-sounding" task the two sit on either side of 0.5 (49.9% and 52.9%), so that verdict depends on the method.
-- The loaded size Ollama reports varies between runs of the same model (`gemma4:12b` read 21.0 GB in the first run and 12.6 GB in the rerun; `qwen3.5:27b` 28.4 and 28.3 GB). `results/` keeps the last reading.
-- The two honorific classes that `claude_haiku` passes depend on the added negatives. On the first 175 negatives its false warnings were 38/175 (22%), above the limit of 10%, so neither class passed. After the 34 additions the baseline's own false warnings are 34/209 (16.3%), which loosens condition 2 to 21.3%, and `claude_haiku` at 42/209 (20.1%) fits by 1.2 points.
-- The decision models are asked the question as an instruction with true/false criteria (`prompts/decisions.json`), not the YES/NO prompt the other judges get, and the text goes in as the input. The 0.5 cut is the pass bar's, not tuned per model; `results/summary.md` adds a threshold-free AUC from the returned probability, which can differ a lot from the 0.5 result (a judge with a high AUC and low recall at 0.5 ranks well but is not calibrated for this question).
+- The bar's balanced-accuracy condition was implemented as the average of the two Wilson lower bounds, which is conservative. `results/summary.md` also prints a Newcombe-style bound, and the verdict for a judge near 0.5 can depend on the method.
+- The loaded size Ollama reports varies between runs of the same model. `results/` keeps the last reading.
+- The decision models are asked the question as an instruction with true/false criteria (`prompts/decisions.json`), not the YES/NO prompt the other judges get, and the text goes in as the input. The pass bar fixes the 0.5 cut; `results/summary.md` adds a threshold-free AUC and a table where the cut is chosen on one half of each task and measured on the other half. The chosen cut is a post-hoc analysis, not part of the bar.
 - `clef-flash` is the small Clef variant installed locally; the larger `clef` was not run.
-- `gpt-6-luna` returned no answer for one injected secrets item (counted as not flagged).
+- Injection flip rates are conditional on the items a judge flagged without the instruction, so the denominators differ by judge, and only three instruction texts were tried.
+- Transient HTTP 5xx answers from the hosted APIs are retried; an item that still fails is recorded as an error and rerun, never scored as `NO`.

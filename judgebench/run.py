@@ -42,7 +42,7 @@ def run_judge(name, tasks):
     meta = json.loads(meta_path.read_text()) if meta_path.exists() else {}
     for task in tasks:
         out = RESULTS / f"{judge.name}__{task}.jsonl"
-        done = {r["id"]: r for r in read_jsonl(out)} if out.exists() else {}
+        done = {r["id"]: r for r in read_jsonl(out) if not r.get("error")} if out.exists() else {}
         todo = [it for it in datasets.load(task) if it["id"] not in done]
         if getattr(judge, "hosted", False):
             with ThreadPoolExecutor(max_workers=CLAUDE_WORKERS) as pool:
