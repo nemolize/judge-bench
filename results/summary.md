@@ -10,6 +10,7 @@
 | claude_haiku | 7.71 | hosted |
 | jev | 0.17 | hosted |
 | clef_flash | 0.64 | 21.3 |
+| clef | 0.42 | hosted |
 | gpt_6_luna | 0.43 | hosted |
 
 ### honorific
@@ -40,12 +41,16 @@
 | clef_flash | humble_for_other | 0/45 = 0% [0%-8%] | 1/209 = 0% [0%-3%] | 0 | 0 | no |
 | clef_flash | honorific_for_self | 1/45 = 2% [0%-12%] | 1/209 = 0% [0%-3%] | 0 | 0 | no |
 | clef_flash | (all positives) | 1/135 = 1% [0%-4%] | 1/209 = 0% [0%-3%] | 0 | 0 | no |
+| clef | double_honorific | 1/45 = 2% [0%-12%] | 2/209 = 1% [0%-3%] | 0 | 0 | no |
+| clef | humble_for_other | 0/45 = 0% [0%-8%] | 2/209 = 1% [0%-3%] | 0 | 0 | no |
+| clef | honorific_for_self | 2/45 = 4% [1%-15%] | 2/209 = 1% [0%-3%] | 0 | 0 | no |
+| clef | (all positives) | 3/135 = 2% [1%-6%] | 2/209 = 1% [0%-3%] | 0 | 0 | no |
 | gpt_6_luna | double_honorific | 43/45 = 96% [85%-99%] | 58/209 = 28% [22%-34%] | 0 | 0 | no |
 | gpt_6_luna | humble_for_other | 13/45 = 29% [18%-43%] | 58/209 = 28% [22%-34%] | 0 | 0 | no |
 | gpt_6_luna | honorific_for_self | 37/45 = 82% [69%-91%] | 58/209 = 28% [22%-34%] | 0 | 0 | no |
 | gpt_6_luna | (all positives) | 93/135 = 69% [61%-76%] | 58/209 = 28% [22%-34%] | 0 | 0 | no |
 
-Zero counts: baseline/humble_for_other caught 0 of 45 (rate < 6.5%); baseline/honorific_for_self caught 0 of 45 (rate < 6.5%); jev/humble_for_other caught 0 of 45 (rate < 6.5%); clef_flash/double_honorific caught 0 of 45 (rate < 6.5%); clef_flash/humble_for_other caught 0 of 45 (rate < 6.5%)
+Zero counts: baseline/humble_for_other caught 0 of 45 (rate < 6.5%); baseline/honorific_for_self caught 0 of 45 (rate < 6.5%); jev/humble_for_other caught 0 of 45 (rate < 6.5%); clef_flash/double_honorific caught 0 of 45 (rate < 6.5%); clef_flash/humble_for_other caught 0 of 45 (rate < 6.5%); clef/humble_for_other caught 0 of 45 (rate < 6.5%)
 
 ### style
 
@@ -75,12 +80,16 @@ Zero counts: baseline/humble_for_other caught 0 of 45 (rate < 6.5%); baseline/ho
 | clef_flash | width | 1/45 = 2% [0%-12%] | 1/135 = 1% [0%-4%] | 0 | 0 | no |
 | clef_flash | term_variant | 0/45 = 0% [0%-8%] | 1/135 = 1% [0%-4%] | 0 | 0 | no |
 | clef_flash | (all positives) | 11/135 = 8% [5%-14%] | 1/135 = 1% [0%-4%] | 0 | 0 | no |
+| clef | mixed_register | 0/45 = 0% [0%-8%] | 0/135 = 0% [0%-3%] | 0 | 0 | no |
+| clef | width | 3/45 = 7% [2%-18%] | 0/135 = 0% [0%-3%] | 0 | 0 | no |
+| clef | term_variant | 0/45 = 0% [0%-8%] | 0/135 = 0% [0%-3%] | 0 | 0 | no |
+| clef | (all positives) | 3/135 = 2% [1%-6%] | 0/135 = 0% [0%-3%] | 0 | 0 | no |
 | gpt_6_luna | mixed_register | 9/45 = 20% [11%-34%] | 0/135 = 0% [0%-3%] | 0 | 0 | no |
 | gpt_6_luna | width | 24/45 = 53% [39%-67%] | 0/135 = 0% [0%-3%] | 0 | 0 | no |
 | gpt_6_luna | term_variant | 11/45 = 24% [14%-39%] | 0/135 = 0% [0%-3%] | 0 | 0 | yes |
 | gpt_6_luna | (all positives) | 44/135 = 33% [25%-41%] | 0/135 = 0% [0%-3%] | 0 | 0 | no |
 
-Zero counts: baseline/term_variant caught 0 of 45 (rate < 6.5%); jev/term_variant caught 0 of 45 (rate < 6.5%); clef_flash/term_variant caught 0 of 45 (rate < 6.5%); gpt_6_luna false warnings 0 of 135 (rate < 2.2%)
+Zero counts: baseline/term_variant caught 0 of 45 (rate < 6.5%); jev/term_variant caught 0 of 45 (rate < 6.5%); clef_flash/term_variant caught 0 of 45 (rate < 6.5%); clef/mixed_register caught 0 of 45 (rate < 6.5%); clef/term_variant caught 0 of 45 (rate < 6.5%); clef false warnings 0 of 135 (rate < 2.2%); gpt_6_luna false warnings 0 of 135 (rate < 2.2%)
 
 ### secrets
 
@@ -122,6 +131,12 @@ Zero counts: baseline/term_variant caught 0 of 45 (rate < 6.5%); jev/term_varian
 | clef_flash | stripe_live_key | 45/45 = 100% [92%-100%] | 180/225 = 80% [74%-85%] | 0 | 0 | no |
 | clef_flash | gcp_api_key | 45/45 = 100% [92%-100%] | 180/225 = 80% [74%-85%] | 0 | 0 | no |
 | clef_flash | (all positives) | 225/225 = 100% [98%-100%] | 180/225 = 80% [74%-85%] | 0 | 0 | no |
+| clef | aws_access_key | 45/45 = 100% [92%-100%] | 90/225 = 40% [34%-47%] | 0 | 0 | no |
+| clef | github_pat | 45/45 = 100% [92%-100%] | 90/225 = 40% [34%-47%] | 0 | 0 | no |
+| clef | slack_bot_token | 45/45 = 100% [92%-100%] | 90/225 = 40% [34%-47%] | 0 | 0 | no |
+| clef | stripe_live_key | 45/45 = 100% [92%-100%] | 90/225 = 40% [34%-47%] | 0 | 0 | no |
+| clef | gcp_api_key | 45/45 = 100% [92%-100%] | 90/225 = 40% [34%-47%] | 0 | 0 | no |
+| clef | (all positives) | 225/225 = 100% [98%-100%] | 90/225 = 40% [34%-47%] | 0 | 0 | no |
 | gpt_6_luna | aws_access_key | 45/45 = 100% [92%-100%] | 55/225 = 24% [19%-30%] | 0 | 0 | no |
 | gpt_6_luna | github_pat | 45/45 = 100% [92%-100%] | 55/225 = 24% [19%-30%] | 0 | 0 | no |
 | gpt_6_luna | slack_bot_token | 45/45 = 100% [92%-100%] | 55/225 = 24% [19%-30%] | 0 | 0 | no |
@@ -159,6 +174,10 @@ Zero counts: none
 | clef_flash | llm_gemma4_12b | 20/45 = 44% [31%-59%] | 3/25 = 12% [4%-30%] | 0 | 0 | no |
 | clef_flash | llm_qwen3.5_27b | 14/45 = 31% [20%-46%] | 3/25 = 12% [4%-30%] | 0 | 0 | no |
 | clef_flash | (all positives) | 46/135 = 34% [27%-42%] | 3/25 = 12% [4%-30%] | 0 | 0 | no |
+| clef | llm_claude_haiku | 4/45 = 9% [4%-21%] | 1/25 = 4% [1%-20%] | 0 | 0 | no |
+| clef | llm_gemma4_12b | 24/45 = 53% [39%-67%] | 1/25 = 4% [1%-20%] | 0 | 0 | yes |
+| clef | llm_qwen3.5_27b | 16/45 = 36% [23%-50%] | 1/25 = 4% [1%-20%] | 0 | 0 | yes |
+| clef | (all positives) | 44/135 = 33% [25%-41%] | 1/25 = 4% [1%-20%] | 0 | 0 | no |
 | gpt_6_luna | llm_claude_haiku | 33/45 = 73% [59%-84%] | 12/25 = 48% [30%-67%] | 0 | 0 | no |
 | gpt_6_luna | llm_gemma4_12b | 39/45 = 87% [74%-94%] | 12/25 = 48% [30%-67%] | 0 | 0 | no |
 | gpt_6_luna | llm_qwen3.5_27b | 41/45 = 91% [79%-96%] | 12/25 = 48% [30%-67%] | 0 | 0 | no |
@@ -176,6 +195,7 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 | claude_haiku | 59.6% | 50.1% | 52.4% |
 | jev | 57.9% | 46.2% | 48.8% |
 | clef_flash | 61.0% | 48.3% | 51.3% |
+| clef | 64.3% | 52.9% | 55.7% |
 | gpt_6_luna | 67.9% | 55.0% | 57.9% |
 
 ## Robustness
@@ -202,6 +222,9 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 | clef_flash | authority | 0 | 0 | 0% (100%) (not measurable: fewer than 40) | not measurable |
 | clef_flash | direct | 0 | 0 | 0% (100%) (not measurable: fewer than 40) | not measurable |
 | clef_flash | fake_answer | 0 | 0 | 0% (100%) (not measurable: fewer than 40) | not measurable |
+| clef | authority | 1 | 1 | 100% (100%) (not measurable: fewer than 40) | not measurable |
+| clef | direct | 1 | 0 | 0% (79%) (not measurable: fewer than 40) | not measurable |
+| clef | fake_answer | 1 | 0 | 0% (79%) (not measurable: fewer than 40) | not measurable |
 | gpt_6_luna | authority | 32 | 29 | 91% (97%) (not measurable: fewer than 40) | not measurable |
 | gpt_6_luna | direct | 32 | 12 | 38% (55%) (not measurable: fewer than 40) | not measurable |
 | gpt_6_luna | fake_answer | 32 | 27 | 84% (93%) (not measurable: fewer than 40) | not measurable |
@@ -228,6 +251,9 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 | clef_flash | authority | 45 | 0 | 0% (8%) | yes |
 | clef_flash | direct | 45 | 0 | 0% (8%) | yes |
 | clef_flash | fake_answer | 45 | 0 | 0% (8%) | yes |
+| clef | authority | 45 | 0 | 0% (8%) | yes |
+| clef | direct | 45 | 0 | 0% (8%) | yes |
+| clef | fake_answer | 45 | 0 | 0% (8%) | yes |
 | gpt_6_luna | authority | 45 | 27 | 60% (73%) | no |
 | gpt_6_luna | direct | 45 | 0 | 0% (8%) | yes |
 | gpt_6_luna | fake_answer | 45 | 2 | 4% (15%) | no |
@@ -244,6 +270,7 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 | claude_haiku | 11/135 | 20/20 | 6/20 | 8/34 |
 | jev | 14/135 | 10/20 | 1/20 | 2/34 |
 | clef_flash | 1/135 | 0/20 | 0/20 | 0/34 |
+| clef | 0/135 | 0/20 | 2/20 | 0/34 |
 | gpt_6_luna | 30/135 | 14/20 | 4/20 | 10/34 |
 
 ### secrets: false warnings by kind of negative
@@ -256,6 +283,7 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 | claude_haiku | 57/225 |
 | jev | 65/225 |
 | clef_flash | 180/225 |
+| clef | 90/225 |
 | gpt_6_luna | 55/225 |
 
 ## Checks on what the AI-text dataset gives away
@@ -291,6 +319,7 @@ Not part of the pass bar, which fixes the 0.5 cut. Shown because a decision mode
 | claude_haiku | n/a | n/a | n/a | n/a |
 | jev | 0.57 | 0.75 | 0.99 | 0.69 |
 | clef_flash | 0.49 | 0.73 | 0.95 | 0.75 |
+| clef | 0.53 | 0.66 | 0.98 | 0.79 |
 | gpt_6_luna | 0.77 | 0.83 | 0.97 | 0.70 |
 
 ## Threshold chosen on one half, measured on the other
@@ -303,21 +332,25 @@ Judges that return a probability. The cut is the one maximising caught rate minu
 | honorific | qwen3.5_27b | 0.68 | 57/66 = 86% [76%-93%] | 47/103 = 46% [36%-55%] | 52/66 = 79% [67%-87%] | 25/103 = 24% [17%-33%] |
 | honorific | jev | 0.47 | 22/66 = 33% [23%-45%] | 12/103 = 12% [7%-19%] | 25/66 = 38% [27%-50%] | 16/103 = 16% [10%-24%] |
 | honorific | clef_flash | 0.23 | 0/66 = 0% [0%-6%] | 1/103 = 1% [0%-5%] | 31/66 = 47% [35%-59%] | 57/103 = 55% [46%-65%] |
+| honorific | clef | 0.32 | 0/66 = 0% [0%-6%] | 1/103 = 1% [0%-5%] | 19/66 = 29% [19%-41%] | 27/103 = 26% [19%-35%] |
 | honorific | gpt_6_luna | 0.47 | 47/66 = 71% [59%-81%] | 34/103 = 33% [25%-43%] | 49/66 = 74% [63%-83%] | 38/103 = 37% [28%-47%] |
 | style | gemma4_12b | 1.00 | 53/63 = 84% [73%-91%] | 18/65 = 28% [18%-40%] | 39/63 = 62% [50%-73%] | 4/65 = 6% [2%-15%] |
 | style | qwen3.5_27b | 0.38 | 52/65 = 80% [69%-88%] | 5/65 = 8% [3%-17%] | 56/65 = 86% [76%-93%] | 7/65 = 11% [5%-21%] |
 | style | jev | 0.33 | 28/65 = 43% [32%-55%] | 4/65 = 6% [2%-15%] | 39/65 = 60% [48%-71%] | 8/65 = 12% [6%-22%] |
 | style | clef_flash | 0.21 | 5/65 = 8% [3%-17%] | 0/65 = 0% [0%-6%] | 44/65 = 68% [56%-78%] | 20/65 = 31% [21%-43%] |
+| style | clef | 0.13 | 1/65 = 2% [0%-8%] | 0/65 = 0% [0%-6%] | 29/65 = 45% [33%-57%] | 8/65 = 12% [6%-22%] |
 | style | gpt_6_luna | 0.01 | 23/65 = 35% [25%-48%] | 0/65 = 0% [0%-6%] | 57/65 = 88% [78%-94%] | 27/65 = 42% [30%-54%] |
 | secrets | gemma4_12b | 1.00 | 105/105 = 100% [96%-100%] | 31/105 = 30% [22%-39%] | 102/105 = 97% [92%-99%] | 1/105 = 1% [0%-5%] |
 | secrets | qwen3.5_27b | 0.87 | 105/105 = 100% [96%-100%] | 32/105 = 30% [22%-40%] | 101/105 = 96% [91%-99%] | 0/105 = 0% [0%-4%] |
 | secrets | jev | 0.94 | 105/105 = 100% [96%-100%] | 30/105 = 29% [21%-38%] | 99/105 = 94% [88%-97%] | 0/105 = 0% [0%-4%] |
 | secrets | clef_flash | 0.96 | 105/105 = 100% [96%-100%] | 82/105 = 78% [69%-85%] | 82/105 = 78% [69%-85%] | 6/105 = 6% [3%-12%] |
+| secrets | clef | 0.96 | 105/105 = 100% [96%-100%] | 40/105 = 38% [29%-48%] | 95/105 = 90% [83%-95%] | 6/105 = 6% [3%-12%] |
 | secrets | gpt_6_luna | 0.99 | 105/105 = 100% [96%-100%] | 23/105 = 22% [15%-31%] | 102/105 = 97% [92%-99%] | 6/105 = 6% [3%-12%] |
 | aitext | gemma4_12b | 0.00 | 14/66 = 21% [13%-33%] | 0/12 = 0% [0%-24%] | 59/66 = 89% [80%-95%] | 5/12 = 42% [19%-68%] |
 | aitext | qwen3.5_27b | 0.16 | 0/66 = 0% [0%-6%] | 0/12 = 0% [0%-24%] | 15/66 = 23% [14%-34%] | 3/12 = 25% [9%-53%] |
 | aitext | jev | 0.42 | 17/66 = 26% [17%-37%] | 1/12 = 8% [1%-35%] | 49/66 = 74% [63%-83%] | 4/12 = 33% [14%-61%] |
 | aitext | clef_flash | 0.30 | 23/66 = 35% [24%-47%] | 1/12 = 8% [1%-35%] | 56/66 = 85% [74%-92%] | 4/12 = 33% [14%-61%] |
+| aitext | clef | 0.34 | 20/66 = 30% [21%-42%] | 1/12 = 8% [1%-35%] | 43/66 = 65% [53%-76%] | 2/12 = 17% [5%-45%] |
 | aitext | gpt_6_luna | 0.46 | 57/66 = 86% [76%-93%] | 4/12 = 33% [14%-61%] | 63/66 = 95% [87%-98%] | 8/12 = 67% [39%-86%] |
 
 ## Two-stage setups
@@ -331,12 +364,14 @@ Not part of the pass bar (it scores single judges); reported because the article
 | honorific | rule OR LLM: claude_haiku | 130/135 = 96% [92%-98%] | 71/209 = 34% [28%-41%] |
 | honorific | rule OR LLM: jev | 70/135 = 52% [43%-60%] | 59/209 = 28% [23%-35%] |
 | honorific | rule OR LLM: clef_flash | 46/135 = 34% [27%-42%] | 35/209 = 17% [12%-22%] |
+| honorific | rule OR LLM: clef | 47/135 = 35% [27%-43%] | 36/209 = 17% [13%-23%] |
 | honorific | rule OR LLM: gpt_6_luna | 95/135 = 70% [62%-77%] | 82/209 = 39% [33%-46%] |
 | secrets | gitleaks AND LLM: gemma4_12b | 225/225 = 100% [98%-100%] | 23/225 = 10% [7%-15%] |
 | secrets | gitleaks AND LLM: qwen3.5_27b | 225/225 = 100% [98%-100%] | 25/225 = 11% [8%-16%] |
 | secrets | gitleaks AND LLM: claude_haiku | 225/225 = 100% [98%-100%] | 15/225 = 7% [4%-11%] |
 | secrets | gitleaks AND LLM: jev | 225/225 = 100% [98%-100%] | 15/225 = 7% [4%-11%] |
 | secrets | gitleaks AND LLM: clef_flash | 225/225 = 100% [98%-100%] | 60/225 = 27% [21%-33%] |
+| secrets | gitleaks AND LLM: clef | 225/225 = 100% [98%-100%] | 35/225 = 16% [11%-21%] |
 | secrets | gitleaks AND LLM: gpt_6_luna | 225/225 = 100% [98%-100%] | 9/225 = 4% [2%-7%] |
 
 ## What gitleaks flags among the secrets negatives

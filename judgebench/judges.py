@@ -106,13 +106,16 @@ class DecisionsJudge:
             instructions = f"{q['instructions']}（はい: {q['true']}／いいえ: {q['false']}）"
             return {"model": self.model, "input": text,
                     "questions": [{"type": "predicate", "name": "q", "instructions": instructions}]}
-        return {"model": self.model, "state": text, "questions": {"q": {
+        body = {"state": text, "questions": {"q": {
             "type": "noul", "instructions": q["instructions"], "criteria": {"true": q["true"], "false": q["false"]}}}}
+        return body if "/ai/run/" in self.url else {"model": self.model, **body}
 
     def decide(self, task, text):
         t0 = time.perf_counter()
-        res = _decide_request(self.url, os.environ.get(self.key_env), self._payload(QUESTIONS[task], text))
+        url = self.url.replace("{CLOUDFLARE_ACCOUNT_ID}", os.environ.get("CLOUDFLARE_ACCOUNT_ID", ""))
+        res = _decide_request(url, os.environ.get(self.key_env), self._payload(QUESTIONS[task], text))
         dt = time.perf_counter() - t0
+        res = res.get("result", res)
         answers = res["answers"]
         ans = answers[0] if isinstance(answers, list) else answers["q"]
         p = ans.get("probability", ans.get("noul"))
@@ -130,6 +133,8 @@ class DecisionsJudge:
 DECISION_JUDGES = {
     "jev": ("jev-1.14.0", "https://api.typesafe.ai/v1/systemone", "TYPESAFE_API_KEY", "noul", True),
     "clef_flash": ("clef-flash", OLLAMA + "/v1/systemone", "", "noul", False),
+    "clef": ("@cf/cloudflare/clef", "https://api.cloudflare.com/client/v4/accounts/{CLOUDFLARE_ACCOUNT_ID}/ai/run/@cf/cloudflare/clef",
+             "CLOUDFLARE_API_TOKEN", "noul", True),
     "gpt_6_luna": ("gpt-6-luna", "https://api.openai.com/v1/decisions", "OPENAI_API_KEY", "predicate", True),
 }
 

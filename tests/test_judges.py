@@ -21,6 +21,13 @@ class DecisionsJudgeTests(unittest.TestCase):
         out = self.decide("clef_flash", {"answers": {"q": {"type": "refusal"}}})
         self.assertIsNone(out["verdict"])
 
+    def test_cloudflare_result_is_unwrapped(self):
+        out = self.decide("clef", {"result": {"answers": {"q": {"type": "noul", "noul": 0.7}}}, "success": True})
+        self.assertEqual((out["verdict"], out["p_yes"]), ("YES", 0.7))
+
+    def test_cloudflare_body_has_no_model_field(self):
+        self.assertNotIn("model", judges.make("clef")._payload(judges.QUESTIONS["honorific"], "x"))
+
     def test_payload_shapes(self):
         q = judges.QUESTIONS["honorific"]
         noul = judges.make("jev")._payload(q, "x")

@@ -4,7 +4,7 @@ Reproducible comparison of judge models on five tasks whose correct answer is bu
 
 Not related to [JudgeBench](https://github.com/ScalerLab/JudgeBench) (ICLR 2025), which scores LLM judges on English response-pair preferences; this repository compares rule-based, LLM and decision-model judges on Japanese judgement tasks.
 
-Judges: `gemma4:12b` and `qwen3.5:27b` through Ollama (YES when the first-token probability of `YES` is at least that of `NO`), `claude-haiku-5-5` through `claude -p` (YES/NO as text, no logprobs), three decision models called through a decisions API that returns the probability of yes (`jev-1.14.0` from TypeSafe, `clef-flash` served by Ollama, `gpt-6-luna` from OpenAI; YES when the probability is at least 0.5), and a rule-based baseline per task. `pass_bar.md` fixes what counts as beating the baseline; it was committed before any results file. The three decision models were added after the first four judges had been run, under the same bar. `results/summary.md` is the outcome.
+Judges: `gemma4:12b` and `qwen3.5:27b` through Ollama (YES when the first-token probability of `YES` is at least that of `NO`), `claude-haiku-5-5` through `claude -p` (YES/NO as text, no logprobs), four decision models called through a decisions API that returns the probability of yes (`jev-1.14.0` from TypeSafe, `clef-flash` served by Ollama, `clef` (27B) on Cloudflare Workers AI, `gpt-6-luna` from OpenAI; YES when the probability is at least 0.5), and a rule-based baseline per task. `pass_bar.md` fixes what counts as beating the baseline; it was committed before any results file. The decision models were added after the first judges had been run, under the same bar. `results/summary.md` is the outcome.
 
 ## Rerun
 
@@ -21,6 +21,7 @@ python3 -m judgebench.run judge qwen3.5:27b
 python3 -m judgebench.run judge claude_haiku
 python3 -m judgebench.run judge clef_flash                   # Ollama, model clef-flash
 TYPESAFE_API_KEY=... python3 -m judgebench.run judge jev     # a TypeSafe API key
+CLOUDFLARE_ACCOUNT_ID=... CLOUDFLARE_API_TOKEN=... python3 -m judgebench.run judge clef   # Workers AI Read
 OPENAI_API_KEY=... python3 -m judgebench.run judge gpt_6_luna
 python3 -m judgebench.report                  # writes results/summary.md
 ```
@@ -75,7 +76,7 @@ The first full run was reviewed before publication and several design problems w
 - The bar's balanced-accuracy condition was implemented as the average of the two Wilson lower bounds, which is conservative. `results/summary.md` also prints a Newcombe-style bound, and the verdict for a judge near 0.5 can depend on the method.
 - The loaded size Ollama reports varies between runs of the same model. `results/` keeps the last reading.
 - The decision models are asked the question as an instruction with true/false criteria (`prompts/decisions.json`), not the YES/NO prompt the other judges get, and the text goes in as the input. The pass bar fixes the 0.5 cut; `results/summary.md` adds a threshold-free AUC and a table where the cut is chosen on one half of each task and measured on the other half. The chosen cut is a post-hoc analysis, not part of the bar.
-- `clef-flash` is the small Clef variant installed locally; the larger `clef` was not run.
+- `clef-flash` is the small Clef variant (9B) run locally through Ollama; `clef` (27B) was run on Cloudflare Workers AI, so the two differ in size and in where they run. The Workers AI request body carries no `model` field (the model is in the URL), and its answers are wrapped in `result`.
 - Injection flip rates are conditional on the items a judge flagged without the instruction, so the denominators differ by judge, and only three instruction texts were tried.
 - Results without a probability keep the sampled-token verdict and are left out of the threshold analysis: 3 style and 3 honorific-injection results of `gemma4_12b`; `gpt-6-luna` gave no answer for 2 injected secrets items (counted as not flagged).
 - Transient HTTP 5xx answers from the hosted APIs are retried; an item that still fails is recorded as an error and rerun, never scored as `NO`.
