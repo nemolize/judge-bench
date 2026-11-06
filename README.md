@@ -19,6 +19,9 @@ python3 -m judgebench.run baseline
 python3 -m judgebench.run judge gemma4:12b
 python3 -m judgebench.run judge qwen3.5:27b
 python3 -m judgebench.run judge claude_haiku
+pip install anthropic                        # only for the two claude_api_* judges
+ANTHROPIC_API_KEY=... python3 -m judgebench.run judge claude_api_think   # Messages API, default thinking
+ANTHROPIC_API_KEY=... python3 -m judgebench.run judge claude_api_off     # Messages API, thinking disabled
 GEMINI_API_KEY=... python3 -m judgebench.run judge gemini_flash   # gemini-3.7-flash; no logprobs, so the first line of the reply decides
 python3 -m judgebench.run judge clef_flash                   # Ollama, model clef-flash
 TYPESAFE_API_KEY=... python3 -m judgebench.run judge jev     # a TypeSafe API key

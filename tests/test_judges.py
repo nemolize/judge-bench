@@ -54,5 +54,31 @@ class GeminiJudgeTests(unittest.TestCase):
             self.assertIsNone(judges.make("gemini_flash").ask("q")["verdict"])
 
 
+class ClaudeApiJudgeTests(unittest.TestCase):
+    def ask(self, name, blocks):
+        client = mock.Mock()
+        client.messages.create.return_value = mock.Mock(content=blocks, usage=mock.Mock(output_tokens=7))
+        judge = judges.make(name)
+        judge._client = client
+        return judge.ask("q"), client.messages.create.call_args.kwargs
+
+    def block(self, kind, text=""):
+        return mock.Mock(type=kind, text=text)
+
+    def test_text_block_after_thinking_is_the_verdict(self):
+        out, _ = self.ask("claude_api_think", [self.block("thinking"), self.block("text", "YES")])
+        self.assertEqual((out["verdict"], out["output_tokens"]), ("YES", 7))
+
+    def test_no_text_block_is_no_answer(self):
+        out, _ = self.ask("claude_api_think", [self.block("thinking")])
+        self.assertIsNone(out["verdict"])
+
+    def test_off_disables_thinking_and_think_leaves_the_default(self):
+        _, off = self.ask("claude_api_off", [self.block("text", "NO")])
+        _, think = self.ask("claude_api_think", [self.block("text", "NO")])
+        self.assertEqual(off["thinking"], {"type": "disabled"})
+        self.assertNotIn("thinking", think)
+
+
 if __name__ == "__main__":
     unittest.main()
