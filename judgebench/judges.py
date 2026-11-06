@@ -76,6 +76,35 @@ class ClaudeJudge:
         return None
 
 
+class ClaudeApiJudge:
+    """claude-haiku-5-5 over the Messages API, so thinking can be set; the verdict is the first line of the text block."""
+
+    hosted = True
+
+    def __init__(self, name, thinking):
+        self.name, self.thinking, self._client = name, thinking, None
+
+    def ask(self, prompt):
+        if self._client is None:
+            import anthropic
+            self._client = anthropic.Anthropic(max_retries=5)
+        t0 = time.perf_counter()
+        extra = {"thinking": self.thinking} if self.thinking else {}
+        res = self._client.messages.create(model=CLAUDE_MODEL, max_tokens=16000, system=CLAUDE_SYSTEM,
+                                           messages=[{"role": "user", "content": prompt}], **extra)
+        text = next((b.text for b in res.content if b.type == "text"), "")
+        lines = text.strip().splitlines()
+        first = lines[0].strip() if lines else ""
+        return {"verdict": first if first in ("YES", "NO") else None, "p_yes": None,
+                "latency_s": time.perf_counter() - t0, "output_tokens": res.usage.output_tokens}
+
+    def loaded_bytes(self):
+        return None
+
+
+CLAUDE_API_JUDGES = {"claude_api_think": None, "claude_api_off": {"type": "disabled"}}
+
+
 class GeminiJudge:
     """Gemini returns no logprobs for this model, so the verdict is the first line of the reply, as for Claude."""
 
@@ -168,4 +197,6 @@ def make(name):
         return DecisionsJudge(name, model, url, key_env, kind, hosted)
     if name == "claude_haiku":
         return ClaudeJudge()
+    if name in CLAUDE_API_JUDGES:
+        return ClaudeApiJudge(name, CLAUDE_API_JUDGES[name])
     return GeminiJudge() if name == "gemini_flash" else OllamaJudge(name)
