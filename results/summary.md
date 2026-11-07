@@ -6,6 +6,8 @@
 |---|---|---|
 | baseline (batch, amortised) | 0.001 | 0.51 (peak RSS) |
 | gemma4_12b | 0.27 | 25.0 |
+| gemma4_26b | 0.54 | 29.0 |
+| gemma4_31b | 3.70 | 32.2 |
 | qwen3.5_27b | 0.85 | 28.3 |
 | claude_haiku | 7.71 | hosted |
 | claude_api_think | 1.37 | hosted |
@@ -28,6 +30,14 @@
 | gemma4_12b | humble_for_other | 44/45 = 98% [88%-100%] | 160/209 = 77% [70%-82%] | 0 | 0 | no |
 | gemma4_12b | honorific_for_self | 45/45 = 100% [92%-100%] | 160/209 = 77% [70%-82%] | 0 | 0 | no |
 | gemma4_12b | (all positives) | 134/135 = 99% [96%-100%] | 160/209 = 77% [70%-82%] | 0 | 0 | no |
+| gemma4_26b | double_honorific | 45/45 = 100% [92%-100%] | 87/209 = 42% [35%-48%] | 0 | 0 | no |
+| gemma4_26b | humble_for_other | 45/45 = 100% [92%-100%] | 87/209 = 42% [35%-48%] | 0 | 0 | no |
+| gemma4_26b | honorific_for_self | 45/45 = 100% [92%-100%] | 87/209 = 42% [35%-48%] | 0 | 0 | no |
+| gemma4_26b | (all positives) | 135/135 = 100% [97%-100%] | 87/209 = 42% [35%-48%] | 0 | 0 | no |
+| gemma4_31b | double_honorific | 45/45 = 100% [92%-100%] | 102/209 = 49% [42%-56%] | 0 | 0 | no |
+| gemma4_31b | humble_for_other | 45/45 = 100% [92%-100%] | 102/209 = 49% [42%-56%] | 0 | 0 | no |
+| gemma4_31b | honorific_for_self | 45/45 = 100% [92%-100%] | 102/209 = 49% [42%-56%] | 0 | 0 | no |
+| gemma4_31b | (all positives) | 135/135 = 100% [97%-100%] | 102/209 = 49% [42%-56%] | 0 | 0 | no |
 | qwen3.5_27b | double_honorific | 45/45 = 100% [92%-100%] | 96/209 = 46% [39%-53%] | 0 | 0 | no |
 | qwen3.5_27b | humble_for_other | 29/45 = 64% [50%-77%] | 96/209 = 46% [39%-53%] | 0 | 0 | no |
 | qwen3.5_27b | honorific_for_self | 45/45 = 100% [92%-100%] | 96/209 = 46% [39%-53%] | 0 | 0 | no |
@@ -79,6 +89,14 @@ Zero counts: baseline/humble_for_other caught 0 of 45 (rate < 6.5%); baseline/ho
 | gemma4_12b | width | 27/45 = 60% [45%-73%] | 37/135 = 27% [21%-35%] | 0 | 0 | no |
 | gemma4_12b | term_variant | 45/45 = 100% [92%-100%] | 37/135 = 27% [21%-35%] | 0 | 0 | no |
 | gemma4_12b | (all positives) | 117/135 = 87% [80%-91%] | 37/135 = 27% [21%-35%] | 0 | 0 | no |
+| gemma4_26b | mixed_register | 44/45 = 98% [88%-100%] | 5/135 = 4% [2%-8%] | 0 | 0 | yes |
+| gemma4_26b | width | 25/45 = 56% [41%-69%] | 5/135 = 4% [2%-8%] | 0 | 0 | no |
+| gemma4_26b | term_variant | 37/45 = 82% [69%-91%] | 5/135 = 4% [2%-8%] | 0 | 0 | yes |
+| gemma4_26b | (all positives) | 106/135 = 79% [71%-85%] | 5/135 = 4% [2%-8%] | 0 | 0 | yes |
+| gemma4_31b | mixed_register | 45/45 = 100% [92%-100%] | 7/135 = 5% [3%-10%] | 0 | 0 | yes |
+| gemma4_31b | width | 37/45 = 82% [69%-91%] | 7/135 = 5% [3%-10%] | 0 | 0 | no |
+| gemma4_31b | term_variant | 45/45 = 100% [92%-100%] | 7/135 = 5% [3%-10%] | 0 | 0 | yes |
+| gemma4_31b | (all positives) | 127/135 = 94% [89%-97%] | 7/135 = 5% [3%-10%] | 0 | 0 | yes |
 | qwen3.5_27b | mixed_register | 44/45 = 98% [88%-100%] | 10/135 = 7% [4%-13%] | 0 | 0 | yes |
 | qwen3.5_27b | width | 35/45 = 78% [64%-87%] | 10/135 = 7% [4%-13%] | 0 | 0 | no |
 | qwen3.5_27b | term_variant | 30/45 = 67% [52%-79%] | 10/135 = 7% [4%-13%] | 0 | 0 | yes |
@@ -134,6 +152,18 @@ Zero counts: baseline/term_variant caught 0 of 45 (rate < 6.5%); jev/term_varian
 | gemma4_12b | stripe_live_key | 45/45 = 100% [92%-100%] | 69/225 = 31% [25%-37%] | 0 | 0 | no |
 | gemma4_12b | gcp_api_key | 45/45 = 100% [92%-100%] | 69/225 = 31% [25%-37%] | 0 | 0 | no |
 | gemma4_12b | (all positives) | 225/225 = 100% [98%-100%] | 69/225 = 31% [25%-37%] | 0 | 0 | no |
+| gemma4_26b | aws_access_key | 45/45 = 100% [92%-100%] | 67/225 = 30% [24%-36%] | 0 | 0 | no |
+| gemma4_26b | github_pat | 45/45 = 100% [92%-100%] | 67/225 = 30% [24%-36%] | 0 | 0 | no |
+| gemma4_26b | slack_bot_token | 45/45 = 100% [92%-100%] | 67/225 = 30% [24%-36%] | 0 | 0 | no |
+| gemma4_26b | stripe_live_key | 45/45 = 100% [92%-100%] | 67/225 = 30% [24%-36%] | 0 | 0 | no |
+| gemma4_26b | gcp_api_key | 45/45 = 100% [92%-100%] | 67/225 = 30% [24%-36%] | 0 | 0 | no |
+| gemma4_26b | (all positives) | 225/225 = 100% [98%-100%] | 67/225 = 30% [24%-36%] | 0 | 0 | no |
+| gemma4_31b | aws_access_key | 45/45 = 100% [92%-100%] | 80/225 = 36% [30%-42%] | 0 | 0 | no |
+| gemma4_31b | github_pat | 45/45 = 100% [92%-100%] | 80/225 = 36% [30%-42%] | 0 | 0 | no |
+| gemma4_31b | slack_bot_token | 45/45 = 100% [92%-100%] | 80/225 = 36% [30%-42%] | 0 | 0 | no |
+| gemma4_31b | stripe_live_key | 45/45 = 100% [92%-100%] | 80/225 = 36% [30%-42%] | 0 | 0 | no |
+| gemma4_31b | gcp_api_key | 45/45 = 100% [92%-100%] | 80/225 = 36% [30%-42%] | 0 | 0 | no |
+| gemma4_31b | (all positives) | 225/225 = 100% [98%-100%] | 80/225 = 36% [30%-42%] | 0 | 0 | no |
 | qwen3.5_27b | aws_access_key | 45/45 = 100% [92%-100%] | 68/225 = 30% [25%-37%] | 0 | 0 | no |
 | qwen3.5_27b | github_pat | 45/45 = 100% [92%-100%] | 68/225 = 30% [25%-37%] | 0 | 0 | no |
 | qwen3.5_27b | slack_bot_token | 45/45 = 100% [92%-100%] | 68/225 = 30% [25%-37%] | 0 | 0 | no |
@@ -203,6 +233,14 @@ Zero counts: none
 | gemma4_12b | llm_gemma4_12b | 12/45 = 27% [16%-41%] | 1/25 = 4% [1%-20%] | 0 | 0 | no |
 | gemma4_12b | llm_qwen3.5_27b | 8/45 = 18% [9%-31%] | 1/25 = 4% [1%-20%] | 0 | 0 | no |
 | gemma4_12b | (all positives) | 25/135 = 19% [13%-26%] | 1/25 = 4% [1%-20%] | 0 | 0 | no |
+| gemma4_26b | llm_claude_haiku | 10/45 = 22% [13%-36%] | 5/25 = 20% [9%-39%] | 0 | 0 | no |
+| gemma4_26b | llm_gemma4_12b | 24/45 = 53% [39%-67%] | 5/25 = 20% [9%-39%] | 0 | 0 | no |
+| gemma4_26b | llm_qwen3.5_27b | 17/45 = 38% [25%-52%] | 5/25 = 20% [9%-39%] | 0 | 0 | no |
+| gemma4_26b | (all positives) | 51/135 = 38% [30%-46%] | 5/25 = 20% [9%-39%] | 0 | 0 | no |
+| gemma4_31b | llm_claude_haiku | 22/45 = 49% [35%-63%] | 3/25 = 12% [4%-30%] | 0 | 0 | yes |
+| gemma4_31b | llm_gemma4_12b | 28/45 = 62% [48%-75%] | 3/25 = 12% [4%-30%] | 0 | 0 | yes |
+| gemma4_31b | llm_qwen3.5_27b | 25/45 = 56% [41%-69%] | 3/25 = 12% [4%-30%] | 0 | 0 | yes |
+| gemma4_31b | (all positives) | 75/135 = 56% [47%-64%] | 3/25 = 12% [4%-30%] | 0 | 0 | yes |
 | qwen3.5_27b | llm_claude_haiku | 0/45 = 0% [0%-8%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
 | qwen3.5_27b | llm_gemma4_12b | 0/45 = 0% [0%-8%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
 | qwen3.5_27b | llm_qwen3.5_27b | 0/45 = 0% [0%-8%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
@@ -248,6 +286,8 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 |---|---|---|---|
 | baseline | 55.5% | 43.4% | 46.0% |
 | gemma4_12b | 57.3% | 46.7% | 49.0% |
+| gemma4_26b | 58.9% | 45.5% | 48.6% |
+| gemma4_31b | 71.8% | 58.6% | 61.9% |
 | qwen3.5_27b | 50.0% | 43.3% | 43.3% |
 | claude_haiku | 59.6% | 50.1% | 52.4% |
 | claude_api_think | 58.5% | 49.2% | 51.3% |
@@ -270,6 +310,12 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 | gemma4_12b | authority | 45 | 7 | 16% (29%) | no |
 | gemma4_12b | direct | 45 | 34 | 76% (86%) | no |
 | gemma4_12b | fake_answer | 45 | 45 | 100% (100%) | no |
+| gemma4_26b | authority | 45 | 0 | 0% (8%) | yes |
+| gemma4_26b | direct | 45 | 10 | 22% (36%) | no |
+| gemma4_26b | fake_answer | 45 | 30 | 67% (79%) | no |
+| gemma4_31b | authority | 45 | 4 | 9% (21%) | no |
+| gemma4_31b | direct | 45 | 45 | 100% (100%) | no |
+| gemma4_31b | fake_answer | 45 | 40 | 89% (95%) | no |
 | qwen3.5_27b | authority | 38 | 12 | 32% (47%) (not measurable: fewer than 40) | not measurable |
 | qwen3.5_27b | direct | 38 | 37 | 97% (100%) (not measurable: fewer than 40) | not measurable |
 | qwen3.5_27b | fake_answer | 38 | 38 | 100% (100%) (not measurable: fewer than 40) | not measurable |
@@ -308,6 +354,12 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 | gemma4_12b | authority | 45 | 43 | 96% (99%) | no |
 | gemma4_12b | direct | 45 | 2 | 4% (15%) | no |
 | gemma4_12b | fake_answer | 45 | 45 | 100% (100%) | no |
+| gemma4_26b | authority | 45 | 3 | 7% (18%) | no |
+| gemma4_26b | direct | 45 | 0 | 0% (8%) | yes |
+| gemma4_26b | fake_answer | 45 | 0 | 0% (8%) | yes |
+| gemma4_31b | authority | 45 | 45 | 100% (100%) | no |
+| gemma4_31b | direct | 45 | 0 | 0% (8%) | yes |
+| gemma4_31b | fake_answer | 45 | 12 | 27% (41%) | no |
 | qwen3.5_27b | authority | 45 | 45 | 100% (100%) | no |
 | qwen3.5_27b | direct | 45 | 45 | 100% (100%) | no |
 | qwen3.5_27b | fake_answer | 45 | 45 | 100% (100%) | no |
@@ -344,6 +396,8 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 |---|---|---|---|---|
 | baseline | 0/135 | 0/20 | 0/20 | 34/34 |
 | gemma4_12b | 88/135 | 20/20 | 18/20 | 34/34 |
+| gemma4_26b | 41/135 | 20/20 | 7/20 | 19/34 |
+| gemma4_31b | 41/135 | 19/20 | 8/20 | 34/34 |
 | qwen3.5_27b | 47/135 | 20/20 | 15/20 | 14/34 |
 | claude_haiku | 11/135 | 20/20 | 6/20 | 8/34 |
 | claude_api_think | 2/135 | 20/20 | 4/20 | 12/34 |
@@ -360,6 +414,8 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 |---|---|
 | baseline | 60/225 |
 | gemma4_12b | 69/225 |
+| gemma4_26b | 67/225 |
+| gemma4_31b | 80/225 |
 | qwen3.5_27b | 68/225 |
 | claude_haiku | 57/225 |
 | claude_api_think | 16/225 |
@@ -399,6 +455,8 @@ Not part of the pass bar, which fixes the 0.5 cut. Shown because a decision mode
 | judge | honorific | style | secrets | aitext |
 |---|---|---|---|---|
 | gemma4_12b | 0.73 | 0.91 | 1.00 | 0.72 |
+| gemma4_26b | 0.97 | 0.97 | 0.96 | 0.66 |
+| gemma4_31b | 0.96 | 0.95 | 1.00 | 0.80 |
 | qwen3.5_27b | 0.84 | 0.94 | 0.99 | 0.41 |
 | claude_haiku | n/a | n/a | n/a | n/a |
 | claude_api_think | n/a | n/a | n/a | n/a |
@@ -416,12 +474,15 @@ Judges that return a probability. The cut is the one maximising caught rate minu
 | task | judge | cut | caught at 0.5 | false warnings at 0.5 | caught at the chosen cut | false warnings at the chosen cut |
 |---|---|---|---|---|---|---|
 | honorific | gemma4_12b | 1.00 | 66/66 = 100% [94%-100%] | 80/103 = 78% [69%-85%] | 55/66 = 83% [73%-90%] | 37/103 = 36% [27%-46%] |
+| honorific | gemma4_26b | 1.00 | 60/60 = 100% [94%-100%] | 41/103 = 40% [31%-49%] | 47/60 = 78% [66%-87%] | 6/103 = 6% [3%-12%] |
+| honorific | gemma4_31b | 1.00 | 21/21 = 100% [85%-100%] | 47/83 = 57% [46%-67%] | 17/21 = 81% [60%-92%] | 5/83 = 6% [3%-13%] |
 | honorific | qwen3.5_27b | 0.68 | 57/66 = 86% [76%-93%] | 47/103 = 46% [36%-55%] | 52/66 = 79% [67%-87%] | 25/103 = 24% [17%-33%] |
 | honorific | jev | 0.47 | 22/66 = 33% [23%-45%] | 12/103 = 12% [7%-19%] | 25/66 = 38% [27%-50%] | 16/103 = 16% [10%-24%] |
 | honorific | clef_flash | 0.23 | 0/66 = 0% [0%-6%] | 1/103 = 1% [0%-5%] | 31/66 = 47% [35%-59%] | 57/103 = 55% [46%-65%] |
 | honorific | clef | 0.32 | 0/66 = 0% [0%-6%] | 1/103 = 1% [0%-5%] | 19/66 = 29% [19%-41%] | 27/103 = 26% [19%-35%] |
 | honorific | gpt_6_luna | 0.47 | 47/66 = 71% [59%-81%] | 34/103 = 33% [25%-43%] | 49/66 = 74% [63%-83%] | 38/103 = 37% [28%-47%] |
 | style | gemma4_12b | 1.00 | 53/63 = 84% [73%-91%] | 18/65 = 28% [18%-40%] | 39/63 = 62% [50%-73%] | 4/65 = 6% [2%-15%] |
+| style | gemma4_26b | 0.00 | 34/48 = 71% [57%-82%] | 3/63 = 5% [2%-13%] | 46/48 = 96% [86%-99%] | 6/63 = 10% [4%-19%] |
 | style | qwen3.5_27b | 0.38 | 52/65 = 80% [69%-88%] | 5/65 = 8% [3%-17%] | 56/65 = 86% [76%-93%] | 7/65 = 11% [5%-21%] |
 | style | jev | 0.33 | 28/65 = 43% [32%-55%] | 4/65 = 6% [2%-15%] | 39/65 = 60% [48%-71%] | 8/65 = 12% [6%-22%] |
 | style | clef_flash | 0.21 | 5/65 = 8% [3%-17%] | 0/65 = 0% [0%-6%] | 44/65 = 68% [56%-78%] | 20/65 = 31% [21%-43%] |
@@ -434,6 +495,8 @@ Judges that return a probability. The cut is the one maximising caught rate minu
 | secrets | clef | 0.96 | 105/105 = 100% [96%-100%] | 40/105 = 38% [29%-48%] | 95/105 = 90% [83%-95%] | 6/105 = 6% [3%-12%] |
 | secrets | gpt_6_luna | 0.99 | 105/105 = 100% [96%-100%] | 23/105 = 22% [15%-31%] | 102/105 = 97% [92%-99%] | 6/105 = 6% [3%-12%] |
 | aitext | gemma4_12b | 0.00 | 14/66 = 21% [13%-33%] | 0/12 = 0% [0%-24%] | 59/66 = 89% [80%-95%] | 5/12 = 42% [19%-68%] |
+| aitext | gemma4_26b | 0.65 | 23/66 = 35% [24%-47%] | 3/12 = 25% [9%-53%] | 22/66 = 33% [23%-45%] | 3/12 = 25% [9%-53%] |
+| aitext | gemma4_31b | 0.00 | 41/66 = 62% [50%-73%] | 0/8 = 0% [0%-32%] | 55/66 = 83% [73%-90%] | 3/8 = 38% [14%-69%] |
 | aitext | qwen3.5_27b | 0.16 | 0/66 = 0% [0%-6%] | 0/12 = 0% [0%-24%] | 15/66 = 23% [14%-34%] | 3/12 = 25% [9%-53%] |
 | aitext | jev | 0.42 | 17/66 = 26% [17%-37%] | 1/12 = 8% [1%-35%] | 49/66 = 74% [63%-83%] | 4/12 = 33% [14%-61%] |
 | aitext | clef_flash | 0.30 | 23/66 = 35% [24%-47%] | 1/12 = 8% [1%-35%] | 56/66 = 85% [74%-92%] | 4/12 = 33% [14%-61%] |
@@ -447,6 +510,8 @@ Not part of the pass bar (it scores single judges); reported because the article
 | task | setup | caught | false warnings |
 |---|---|---|---|
 | honorific | rule OR LLM: gemma4_12b | 134/135 = 99% [96%-100%] | 160/209 = 77% [70%-82%] |
+| honorific | rule OR LLM: gemma4_26b | 135/135 = 100% [97%-100%] | 102/209 = 49% [42%-56%] |
+| honorific | rule OR LLM: gemma4_31b | 135/135 = 100% [97%-100%] | 102/209 = 49% [42%-56%] |
 | honorific | rule OR LLM: qwen3.5_27b | 119/135 = 88% [82%-93%] | 116/209 = 56% [49%-62%] |
 | honorific | rule OR LLM: claude_haiku | 130/135 = 96% [92%-98%] | 71/209 = 34% [28%-41%] |
 | honorific | rule OR LLM: claude_api_think | 135/135 = 100% [97%-100%] | 60/209 = 29% [23%-35%] |
@@ -457,6 +522,8 @@ Not part of the pass bar (it scores single judges); reported because the article
 | honorific | rule OR LLM: clef | 47/135 = 35% [27%-43%] | 36/209 = 17% [13%-23%] |
 | honorific | rule OR LLM: gpt_6_luna | 95/135 = 70% [62%-77%] | 82/209 = 39% [33%-46%] |
 | secrets | gitleaks AND LLM: gemma4_12b | 225/225 = 100% [98%-100%] | 23/225 = 10% [7%-15%] |
+| secrets | gitleaks AND LLM: gemma4_26b | 225/225 = 100% [98%-100%] | 16/225 = 7% [4%-11%] |
+| secrets | gitleaks AND LLM: gemma4_31b | 225/225 = 100% [98%-100%] | 29/225 = 13% [9%-18%] |
 | secrets | gitleaks AND LLM: qwen3.5_27b | 225/225 = 100% [98%-100%] | 25/225 = 11% [8%-16%] |
 | secrets | gitleaks AND LLM: claude_haiku | 225/225 = 100% [98%-100%] | 15/225 = 7% [4%-11%] |
 | secrets | gitleaks AND LLM: claude_api_think | 225/225 = 100% [98%-100%] | 2/225 = 1% [0%-3%] |

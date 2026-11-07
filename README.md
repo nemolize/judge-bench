@@ -17,6 +17,8 @@ python3 -m unittest discover -s tests         # generators are deterministic, 40
 python3 -m judgebench.run build               # (re)generate every dataset from the seed
 python3 -m judgebench.run baseline
 python3 -m judgebench.run judge gemma4:12b
+python3 -m judgebench.run judge gemma4:26b
+python3 -m judgebench.run judge gemma4:31b
 python3 -m judgebench.run judge qwen3.5:27b
 python3 -m judgebench.run judge claude_haiku
 pip install anthropic                        # only for the two claude_api_* judges
