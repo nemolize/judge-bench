@@ -80,5 +80,23 @@ class ClaudeApiJudgeTests(unittest.TestCase):
         self.assertNotIn("thinking", think)
 
 
+class OllamaThinkJudgeTests(unittest.TestCase):
+    def ask(self, content):
+        with mock.patch.object(judges, "_post", return_value={"message": {"content": content}, "eval_count": 9}) as post:
+            return judges.make("gemma4:26b+think").ask("q"), post.call_args.args[1]
+
+    def test_first_word_is_the_verdict(self):
+        self.assertEqual(self.ask("YES")[0]["verdict"], "YES")
+        self.assertEqual(self.ask("No.\nbecause")[0]["verdict"], "NO")
+
+    def test_anything_else_is_no_answer(self):
+        self.assertIsNone(self.ask("Maybe")[0]["verdict"])
+
+    def test_thinking_is_on_and_the_name_marks_it(self):
+        out, request = self.ask("YES")
+        self.assertTrue(request["think"])
+        self.assertEqual(judges.make("gemma4:26b+think").name, "gemma4_26b_think")
+
+
 if __name__ == "__main__":
     unittest.main()
