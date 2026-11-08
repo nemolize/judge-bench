@@ -2,6 +2,7 @@
 import json
 import math
 import os
+import re
 import subprocess
 import time
 import urllib.error
@@ -46,6 +47,31 @@ class OllamaJudge:
         first = res["logprobs"][0]
         lp = {c["token"]: c["logprob"] for c in first["top_logprobs"]}
         return {**verdict_from(first["token"], lp), "latency_s": dt}
+
+    def loaded_bytes(self):
+        for m in _post_get("/api/ps").get("models", []):
+            if m["name"] == self.model:
+                return m["size"]
+        return None
+
+
+class OllamaThinkJudge:
+    """An Ollama model with thinking on; no logprobs, so the verdict is the first word of the answer."""
+
+    def __init__(self, model):
+        self.model = model
+        self.name = model.replace(":", "_") + "_think"
+
+    def ask(self, prompt):
+        t0 = time.perf_counter()
+        res = _post("/api/chat", {
+            "model": self.model, "stream": False, "think": True,
+            "messages": [{"role": "user", "content": prompt}],
+            "options": {"num_predict": 8192, "temperature": 0},
+        })
+        match = re.match(r"^\W*(YES|NO)\b", (res["message"].get("content") or "").strip(), re.I)
+        return {"verdict": match.group(1).upper() if match else None, "p_yes": None,
+                "latency_s": time.perf_counter() - t0, "output_tokens": res.get("eval_count")}
 
     def loaded_bytes(self):
         for m in _post_get("/api/ps").get("models", []):
@@ -197,6 +223,8 @@ def make(name):
         return DecisionsJudge(name, model, url, key_env, kind, hosted)
     if name == "claude_haiku":
         return ClaudeJudge()
+    if name.endswith("+think"):
+        return OllamaThinkJudge(name[:-len("+think")])
     if name in CLAUDE_API_JUDGES:
         return ClaudeApiJudge(name, CLAUDE_API_JUDGES[name])
     return GeminiJudge() if name == "gemini_flash" else OllamaJudge(name)

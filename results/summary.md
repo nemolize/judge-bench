@@ -7,6 +7,7 @@
 | baseline (batch, amortised) | 0.001 | 0.51 (peak RSS) |
 | gemma4_12b | 0.27 | 25.0 |
 | gemma4_26b | 0.54 | 29.0 |
+| gemma4_26b_think | 16.85 | 24.9 |
 | gemma4_31b | 3.70 | 32.2 |
 | qwen3.5_27b | 0.85 | 28.3 |
 | claude_haiku | 7.71 | hosted |
@@ -34,6 +35,10 @@
 | gemma4_26b | humble_for_other | 45/45 = 100% [92%-100%] | 87/209 = 42% [35%-48%] | 0 | 0 | no |
 | gemma4_26b | honorific_for_self | 45/45 = 100% [92%-100%] | 87/209 = 42% [35%-48%] | 0 | 0 | no |
 | gemma4_26b | (all positives) | 135/135 = 100% [97%-100%] | 87/209 = 42% [35%-48%] | 0 | 0 | no |
+| gemma4_26b_think | double_honorific | 45/45 = 100% [92%-100%] | 31/129 = 24% [17%-32%] | 0 | 0 | no |
+| gemma4_26b_think | humble_for_other | 45/45 = 100% [92%-100%] | 31/129 = 24% [17%-32%] | 0 | 0 | no |
+| gemma4_26b_think | honorific_for_self | 45/45 = 100% [92%-100%] | 31/129 = 24% [17%-32%] | 0 | 0 | no |
+| gemma4_26b_think | (all positives) | 135/135 = 100% [97%-100%] | 31/129 = 24% [17%-32%] | 0 | 0 | no |
 | gemma4_31b | double_honorific | 45/45 = 100% [92%-100%] | 102/209 = 49% [42%-56%] | 0 | 0 | no |
 | gemma4_31b | humble_for_other | 45/45 = 100% [92%-100%] | 102/209 = 49% [42%-56%] | 0 | 0 | no |
 | gemma4_31b | honorific_for_self | 45/45 = 100% [92%-100%] | 102/209 = 49% [42%-56%] | 0 | 0 | no |
@@ -93,6 +98,10 @@ Zero counts: baseline/humble_for_other caught 0 of 45 (rate < 6.5%); baseline/ho
 | gemma4_26b | width | 25/45 = 56% [41%-69%] | 5/135 = 4% [2%-8%] | 0 | 0 | no |
 | gemma4_26b | term_variant | 37/45 = 82% [69%-91%] | 5/135 = 4% [2%-8%] | 0 | 0 | yes |
 | gemma4_26b | (all positives) | 106/135 = 79% [71%-85%] | 5/135 = 4% [2%-8%] | 0 | 0 | yes |
+| gemma4_26b_think | mixed_register | 45/45 = 100% [92%-100%] | 2/135 = 1% [0%-5%] | 0 | 0 | yes |
+| gemma4_26b_think | width | 37/45 = 82% [69%-91%] | 2/135 = 1% [0%-5%] | 0 | 0 | no |
+| gemma4_26b_think | term_variant | 45/45 = 100% [92%-100%] | 2/135 = 1% [0%-5%] | 0 | 0 | yes |
+| gemma4_26b_think | (all positives) | 127/135 = 94% [89%-97%] | 2/135 = 1% [0%-5%] | 0 | 0 | yes |
 | gemma4_31b | mixed_register | 45/45 = 100% [92%-100%] | 7/135 = 5% [3%-10%] | 0 | 0 | yes |
 | gemma4_31b | width | 37/45 = 82% [69%-91%] | 7/135 = 5% [3%-10%] | 0 | 0 | no |
 | gemma4_31b | term_variant | 45/45 = 100% [92%-100%] | 7/135 = 5% [3%-10%] | 0 | 0 | yes |
@@ -397,6 +406,7 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 | baseline | 0/135 | 0/20 | 0/20 | 34/34 |
 | gemma4_12b | 88/135 | 20/20 | 18/20 | 34/34 |
 | gemma4_26b | 41/135 | 20/20 | 7/20 | 19/34 |
+| gemma4_26b_think | 1/135 | 19/20 | 9/20 | 2/34 |
 | gemma4_31b | 41/135 | 19/20 | 8/20 | 34/34 |
 | qwen3.5_27b | 47/135 | 20/20 | 15/20 | 14/34 |
 | claude_haiku | 11/135 | 20/20 | 6/20 | 8/34 |
@@ -456,6 +466,7 @@ Not part of the pass bar, which fixes the 0.5 cut. Shown because a decision mode
 |---|---|---|---|---|
 | gemma4_12b | 0.73 | 0.91 | 1.00 | 0.72 |
 | gemma4_26b | 0.97 | 0.97 | 0.96 | 0.66 |
+| gemma4_26b_think | n/a | n/a | n/a | n/a |
 | gemma4_31b | 0.96 | 0.95 | 1.00 | 0.80 |
 | qwen3.5_27b | 0.84 | 0.94 | 0.99 | 0.41 |
 | claude_haiku | n/a | n/a | n/a | n/a |
@@ -511,6 +522,7 @@ Not part of the pass bar (it scores single judges); reported because the article
 |---|---|---|---|
 | honorific | rule OR LLM: gemma4_12b | 134/135 = 99% [96%-100%] | 160/209 = 77% [70%-82%] |
 | honorific | rule OR LLM: gemma4_26b | 135/135 = 100% [97%-100%] | 102/209 = 49% [42%-56%] |
+| honorific | rule OR LLM: gemma4_26b_think | 135/135 = 100% [97%-100%] | 63/209 = 30% [24%-37%] |
 | honorific | rule OR LLM: gemma4_31b | 135/135 = 100% [97%-100%] | 102/209 = 49% [42%-56%] |
 | honorific | rule OR LLM: qwen3.5_27b | 119/135 = 88% [82%-93%] | 116/209 = 56% [49%-62%] |
 | honorific | rule OR LLM: claude_haiku | 130/135 = 96% [92%-98%] | 71/209 = 34% [28%-41%] |
@@ -546,4 +558,5 @@ Not part of the pass bar (it scores single judges); reported because the article
 
 | judge | task | no answer |
 |---|---|---|
+| gemma4_26b_think | honorific | 80 |
 | gpt_6_luna | injection_secrets | 2 |

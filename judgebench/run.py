@@ -2,7 +2,7 @@
 
   python -m judgebench.run build
   python -m judgebench.run baseline
-  python -m judgebench.run judge <ollama-model | claude_haiku | claude_api_think | claude_api_off | gemini_flash> [task ...]
+  python -m judgebench.run judge <ollama-model | <ollama-model>+think | claude_haiku | claude_api_think | claude_api_off | gemini_flash> [task ...]
 """
 import json
 import sys
