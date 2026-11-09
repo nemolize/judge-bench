@@ -1,0 +1,3 @@
+# glob@13 (via textlint) pins minimatch ^10, which has a DoS fixed in 11.0.1; drop once textlint moves to glob 14.
+overrides:
+  glob@13>minimatch: ^11.0.5
