@@ -4,11 +4,11 @@ Reproducible comparison of judge models on five tasks whose correct answer is bu
 
 Not related to [JudgeBench](https://github.com/ScalerLab/JudgeBench) (ICLR 2025), which scores LLM judges on English response-pair preferences; this repository compares rule-based, LLM and decision-model judges on Japanese judgement tasks.
 
-Judges: `gemma4:12b` and `qwen3.5:27b` through Ollama (YES when the first-token probability of `YES` is at least that of `NO`), `claude-haiku-5-5` through `claude -p` (YES/NO as text, no logprobs), four decision models called through a decisions API that returns the probability of yes (`jev-1.14.0` from TypeSafe, `clef-flash` served by Ollama, `clef` (27B) on Cloudflare Workers AI, `gpt-6-luna` from OpenAI; YES when the probability is at least 0.5), and a rule-based baseline per task. `pass_bar.md` fixes what counts as beating the baseline; it was committed before any results file. The decision models were added after the first judges had been run, under the same bar. `results/summary.md` is the outcome.
+Judges: `gemma4:12b`, `gemma4:26b`, `gemma4:31b` and `qwen3.5:27b` through Ollama (YES when the first-token probability of `YES` is at least that of `NO`), `gemma4:26b+think` (thinking on, no logprobs, run on honorific and style only), `claude-haiku-5-5` through the Messages API with thinking on and off (`claude_api_think`, `claude_api_off`; YES/NO as text, no logprobs), `gemini-3.7-flash` (YES/NO as text), four decision models called through a decisions API that returns the probability of yes (`jev-1.14.0` from TypeSafe, `clef-flash` served by Ollama, `clef` (27B) on Cloudflare Workers AI, `gpt-6-luna` from OpenAI; YES when the probability is at least 0.5), and a rule-based baseline per task. `claude_haiku` (the same model through `claude -p`) was run first; its results stay in `results/summary.md` but disagree with the API runs and are not used in the article. `pass_bar.md` fixes what counts as beating the baseline; it was committed before any results file. The decision models were added after the first judges had been run, under the same bar. `results/summary.md` is the outcome.
 
 ## Rerun
 
-Needs Python 3.13, Node with pnpm, [Ollama](https://ollama.com), [gitleaks](https://github.com/gitleaks/gitleaks) and, for the Claude judge, the `claude` CLI.
+Needs Python 3.13, Node with pnpm, [Ollama](https://ollama.com), [gitleaks](https://github.com/gitleaks/gitleaks) and, for the `claude_haiku` judge only, the `claude` CLI.
 
 ```sh
 pnpm install                                  # textlint and its rules
