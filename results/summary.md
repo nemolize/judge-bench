@@ -6,6 +6,7 @@
 |---|---|---|
 | baseline (batch, amortised) | 0.001 | 0.51 (peak RSS) |
 | gemma4_12b | 0.27 | 25.0 |
+| gemma4_12b_think | 24.67 | 16.5 |
 | gemma4_26b | 0.54 | 29.0 |
 | gemma4_26b_think | 16.85 | 24.9 |
 | gemma4_31b | 3.70 | 32.2 |
@@ -31,6 +32,10 @@
 | gemma4_12b | humble_for_other | 44/45 = 98% [88%-100%] | 160/209 = 77% [70%-82%] | 0 | 0 | no |
 | gemma4_12b | honorific_for_self | 45/45 = 100% [92%-100%] | 160/209 = 77% [70%-82%] | 0 | 0 | no |
 | gemma4_12b | (all positives) | 134/135 = 99% [96%-100%] | 160/209 = 77% [70%-82%] | 0 | 0 | no |
+| gemma4_12b_think | double_honorific | 45/45 = 100% [92%-100%] | 48/133 = 36% [28%-45%] | 0 | 0 | no |
+| gemma4_12b_think | humble_for_other | 44/45 = 98% [88%-100%] | 48/133 = 36% [28%-45%] | 0 | 1 | no |
+| gemma4_12b_think | honorific_for_self | 45/45 = 100% [92%-100%] | 48/133 = 36% [28%-45%] | 0 | 0 | no |
+| gemma4_12b_think | (all positives) | 134/135 = 99% [96%-100%] | 48/133 = 36% [28%-45%] | 0 | 1 | no |
 | gemma4_26b | double_honorific | 45/45 = 100% [92%-100%] | 87/209 = 42% [35%-48%] | 0 | 0 | no |
 | gemma4_26b | humble_for_other | 45/45 = 100% [92%-100%] | 87/209 = 42% [35%-48%] | 0 | 0 | no |
 | gemma4_26b | honorific_for_self | 45/45 = 100% [92%-100%] | 87/209 = 42% [35%-48%] | 0 | 0 | no |
@@ -94,6 +99,10 @@ Zero counts: baseline/humble_for_other caught 0 of 45 (rate < 6.5%); baseline/ho
 | gemma4_12b | width | 27/45 = 60% [45%-73%] | 37/135 = 27% [21%-35%] | 0 | 0 | no |
 | gemma4_12b | term_variant | 45/45 = 100% [92%-100%] | 37/135 = 27% [21%-35%] | 0 | 0 | no |
 | gemma4_12b | (all positives) | 117/135 = 87% [80%-91%] | 37/135 = 27% [21%-35%] | 0 | 0 | no |
+| gemma4_12b_think | mixed_register | 45/45 = 100% [92%-100%] | 4/132 = 3% [1%-8%] | 0 | 0 | yes |
+| gemma4_12b_think | width | 39/45 = 87% [74%-94%] | 4/132 = 3% [1%-8%] | 3 | 1 | no |
+| gemma4_12b_think | term_variant | 45/45 = 100% [92%-100%] | 4/132 = 3% [1%-8%] | 0 | 0 | yes |
+| gemma4_12b_think | (all positives) | 129/135 = 96% [91%-98%] | 4/132 = 3% [1%-8%] | 3 | 1 | no |
 | gemma4_26b | mixed_register | 44/45 = 98% [88%-100%] | 5/135 = 4% [2%-8%] | 0 | 0 | yes |
 | gemma4_26b | width | 25/45 = 56% [41%-69%] | 5/135 = 4% [2%-8%] | 0 | 0 | no |
 | gemma4_26b | term_variant | 37/45 = 82% [69%-91%] | 5/135 = 4% [2%-8%] | 0 | 0 | yes |
@@ -405,6 +414,7 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 |---|---|---|---|---|
 | baseline | 0/135 | 0/20 | 0/20 | 34/34 |
 | gemma4_12b | 88/135 | 20/20 | 18/20 | 34/34 |
+| gemma4_12b_think | 8/135 | 20/20 | 8/20 | 12/34 |
 | gemma4_26b | 41/135 | 20/20 | 7/20 | 19/34 |
 | gemma4_26b_think | 1/135 | 19/20 | 9/20 | 2/34 |
 | gemma4_31b | 41/135 | 19/20 | 8/20 | 34/34 |
@@ -465,6 +475,7 @@ Not part of the pass bar, which fixes the 0.5 cut. Shown because a decision mode
 | judge | honorific | style | secrets | aitext |
 |---|---|---|---|---|
 | gemma4_12b | 0.73 | 0.91 | 1.00 | 0.72 |
+| gemma4_12b_think | n/a | n/a | n/a | n/a |
 | gemma4_26b | 0.97 | 0.97 | 0.96 | 0.66 |
 | gemma4_26b_think | n/a | n/a | n/a | n/a |
 | gemma4_31b | 0.96 | 0.95 | 1.00 | 0.80 |
@@ -521,6 +532,7 @@ Not part of the pass bar (it scores single judges); reported because the article
 | task | setup | caught | false warnings |
 |---|---|---|---|
 | honorific | rule OR LLM: gemma4_12b | 134/135 = 99% [96%-100%] | 160/209 = 77% [70%-82%] |
+| honorific | rule OR LLM: gemma4_12b_think | 134/135 = 99% [96%-100%] | 70/209 = 33% [27%-40%] |
 | honorific | rule OR LLM: gemma4_26b | 135/135 = 100% [97%-100%] | 102/209 = 49% [42%-56%] |
 | honorific | rule OR LLM: gemma4_26b_think | 135/135 = 100% [97%-100%] | 63/209 = 30% [24%-37%] |
 | honorific | rule OR LLM: gemma4_31b | 135/135 = 100% [97%-100%] | 102/209 = 49% [42%-56%] |
@@ -558,5 +570,7 @@ Not part of the pass bar (it scores single judges); reported because the article
 
 | judge | task | no answer |
 |---|---|---|
+| gemma4_12b_think | honorific | 77 |
+| gemma4_12b_think | style | 7 |
 | gemma4_26b_think | honorific | 80 |
 | gpt_6_luna | injection_secrets | 2 |
