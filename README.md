@@ -9,7 +9,8 @@ Judges:
 | Judge | Reached through | Verdict |
 |---|---|---|
 | `gemma4:12b`, `gemma4:26b`, `gemma4:31b`, `qwen3.5:27b` | Ollama | YES when the first-token probability of `YES` is at least that of `NO` |
-| `gemma4:12b+think`, `gemma4:26b+think` | Ollama, thinking on | first word of the answer, no logprobs; honorific and style only |
+| `gemma4:12b+think` | Ollama, thinking on | first word of the answer, no logprobs |
+| `gemma4:26b+think` | Ollama, thinking on | same; honorific and style only |
 | `claude_api_think`, `claude_api_off` (`claude-haiku-5-5`) | Messages API, thinking on / off | YES/NO as text, no logprobs |
 | `gemini_flash` (`gemini-3.7-flash`) | Gemini API | YES/NO as text, no logprobs |
 | `jev` (`jev-1.14.0`), `clef_flash`, `clef` (27B, Cloudflare Workers AI), `gpt-6-luna` | decisions API (`clef-flash` served by Ollama) | YES when the probability of yes is at least 0.5 |
@@ -30,7 +31,7 @@ python3 -m judgebench.run baseline
 python3 -m judgebench.run judge gemma4:12b
 python3 -m judgebench.run judge gemma4:26b
 python3 -m judgebench.run judge gemma4:31b
-python3 -m judgebench.run judge gemma4:12b+think honorific style
+python3 -m judgebench.run judge gemma4:12b+think
 python3 -m judgebench.run judge gemma4:26b+think honorific style   # thinking on, no logprobs; the first word of the answer decides
 python3 -m judgebench.run judge qwen3.5:27b
 python3 -m judgebench.run judge claude_haiku
