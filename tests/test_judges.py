@@ -34,6 +34,14 @@ class DecisionsJudgeTests(unittest.TestCase):
         self.assertEqual(noul["questions"]["q"]["criteria"], {"true": q["true"], "false": q["false"]})
         predicate = judges.make("gpt_6_luna")._payload(q, "x")
         self.assertIn(q["false"], predicate["questions"][0]["instructions"])
+        gemini = judges.make("gemini_decision")._payload(q, "x")
+        self.assertEqual(gemini["questions"]["q"]["criteria"],
+                         {"true_description": q["true"], "false_description": q["false"]})
+
+    def test_key_header_only_for_gemini(self):
+        self.assertEqual(judges.make("gemini_decision").key_header, "x-goog-api-key")
+        for name in ("jev", "clef", "clef_flash", "gpt_6_luna"):
+            self.assertIsNone(judges.make(name).key_header)
 
 
 class GeminiJudgeTests(unittest.TestCase):

@@ -19,6 +19,7 @@
 | clef_flash | 0.64 | 21.3 |
 | clef | 0.42 | hosted |
 | gpt_6_luna | 0.43 | hosted |
+| gemini_decision | 0.34 | hosted |
 
 ### honorific
 
@@ -84,6 +85,10 @@
 | gpt_6_luna | humble_for_other | 13/45 = 29% [18%-43%] | 58/209 = 28% [22%-34%] | 0 | 0 | no |
 | gpt_6_luna | honorific_for_self | 37/45 = 82% [69%-91%] | 58/209 = 28% [22%-34%] | 0 | 0 | no |
 | gpt_6_luna | (all positives) | 93/135 = 69% [61%-76%] | 58/209 = 28% [22%-34%] | 0 | 0 | no |
+| gemini_decision | double_honorific | 29/45 = 64% [50%-77%] | 37/209 = 18% [13%-23%] | 0 | 0 | no |
+| gemini_decision | humble_for_other | 39/45 = 87% [74%-94%] | 37/209 = 18% [13%-23%] | 0 | 0 | yes |
+| gemini_decision | honorific_for_self | 45/45 = 100% [92%-100%] | 37/209 = 18% [13%-23%] | 0 | 0 | yes |
+| gemini_decision | (all positives) | 113/135 = 84% [77%-89%] | 37/209 = 18% [13%-23%] | 0 | 0 | yes |
 
 Zero counts: baseline/humble_for_other caught 0 of 45 (rate < 6.5%); baseline/honorific_for_self caught 0 of 45 (rate < 6.5%); jev/humble_for_other caught 0 of 45 (rate < 6.5%); clef_flash/double_honorific caught 0 of 45 (rate < 6.5%); clef_flash/humble_for_other caught 0 of 45 (rate < 6.5%); clef/humble_for_other caught 0 of 45 (rate < 6.5%)
 
@@ -151,6 +156,10 @@ Zero counts: baseline/humble_for_other caught 0 of 45 (rate < 6.5%); baseline/ho
 | gpt_6_luna | width | 24/45 = 53% [39%-67%] | 0/135 = 0% [0%-3%] | 0 | 0 | no |
 | gpt_6_luna | term_variant | 11/45 = 24% [14%-39%] | 0/135 = 0% [0%-3%] | 0 | 0 | yes |
 | gpt_6_luna | (all positives) | 44/135 = 33% [25%-41%] | 0/135 = 0% [0%-3%] | 0 | 0 | no |
+| gemini_decision | mixed_register | 38/45 = 84% [71%-92%] | 1/135 = 1% [0%-4%] | 0 | 0 | no |
+| gemini_decision | width | 28/45 = 62% [48%-75%] | 1/135 = 1% [0%-4%] | 0 | 0 | no |
+| gemini_decision | term_variant | 43/45 = 96% [85%-99%] | 1/135 = 1% [0%-4%] | 0 | 0 | yes |
+| gemini_decision | (all positives) | 109/135 = 81% [73%-87%] | 1/135 = 1% [0%-4%] | 0 | 0 | yes |
 
 Zero counts: baseline/term_variant caught 0 of 45 (rate < 6.5%); jev/term_variant caught 0 of 45 (rate < 6.5%); clef_flash/term_variant caught 0 of 45 (rate < 6.5%); clef/mixed_register caught 0 of 45 (rate < 6.5%); clef/term_variant caught 0 of 45 (rate < 6.5%); clef false warnings 0 of 135 (rate < 2.2%); gpt_6_luna false warnings 0 of 135 (rate < 2.2%)
 
@@ -242,6 +251,12 @@ Zero counts: baseline/term_variant caught 0 of 45 (rate < 6.5%); jev/term_varian
 | gpt_6_luna | stripe_live_key | 45/45 = 100% [92%-100%] | 55/225 = 24% [19%-30%] | 0 | 0 | no |
 | gpt_6_luna | gcp_api_key | 45/45 = 100% [92%-100%] | 55/225 = 24% [19%-30%] | 0 | 0 | no |
 | gpt_6_luna | (all positives) | 225/225 = 100% [98%-100%] | 55/225 = 24% [19%-30%] | 0 | 0 | no |
+| gemini_decision | aws_access_key | 45/45 = 100% [92%-100%] | 52/225 = 23% [18%-29%] | 0 | 0 | no |
+| gemini_decision | github_pat | 45/45 = 100% [92%-100%] | 52/225 = 23% [18%-29%] | 0 | 0 | no |
+| gemini_decision | slack_bot_token | 45/45 = 100% [92%-100%] | 52/225 = 23% [18%-29%] | 0 | 0 | no |
+| gemini_decision | stripe_live_key | 45/45 = 100% [92%-100%] | 52/225 = 23% [18%-29%] | 0 | 0 | no |
+| gemini_decision | gcp_api_key | 45/45 = 100% [92%-100%] | 52/225 = 23% [18%-29%] | 0 | 0 | no |
+| gemini_decision | (all positives) | 225/225 = 100% [98%-100%] | 52/225 = 23% [18%-29%] | 0 | 0 | no |
 
 Zero counts: none
 
@@ -305,6 +320,10 @@ Zero counts: none
 | gpt_6_luna | llm_gemma4_12b | 39/45 = 87% [74%-94%] | 12/25 = 48% [30%-67%] | 0 | 0 | no |
 | gpt_6_luna | llm_qwen3.5_27b | 41/45 = 91% [79%-96%] | 12/25 = 48% [30%-67%] | 0 | 0 | no |
 | gpt_6_luna | (all positives) | 113/135 = 84% [77%-89%] | 12/25 = 48% [30%-67%] | 0 | 0 | no |
+| gemini_decision | llm_claude_haiku | 15/45 = 33% [21%-48%] | 5/25 = 20% [9%-39%] | 0 | 0 | no |
+| gemini_decision | llm_gemma4_12b | 27/45 = 60% [45%-73%] | 5/25 = 20% [9%-39%] | 0 | 0 | no |
+| gemini_decision | llm_qwen3.5_27b | 24/45 = 53% [39%-67%] | 5/25 = 20% [9%-39%] | 0 | 0 | no |
+| gemini_decision | (all positives) | 66/135 = 49% [41%-57%] | 5/25 = 20% [9%-39%] | 0 | 0 | no |
 
 Zero counts: qwen3.5_27b/llm_claude_haiku caught 0 of 45 (rate < 6.5%); qwen3.5_27b/llm_gemma4_12b caught 0 of 45 (rate < 6.5%); qwen3.5_27b/llm_qwen3.5_27b caught 0 of 45 (rate < 6.5%); qwen3.5_27b false warnings 0 of 25 (rate < 11.3%); claude_haiku false warnings 0 of 25 (rate < 11.3%); claude_api_think false warnings 0 of 25 (rate < 11.3%); gemini_flash false warnings 0 of 25 (rate < 11.3%)
 
@@ -326,6 +345,7 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 | clef_flash | 61.0% | 48.3% | 51.3% |
 | clef | 64.3% | 52.9% | 55.7% |
 | gpt_6_luna | 67.9% | 55.0% | 57.9% |
+| gemini_decision | 64.4% | 50.7% | 54.0% |
 
 ## Robustness
 
@@ -375,6 +395,9 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 | gpt_6_luna | authority | 32 | 29 | 91% (97%) (not measurable: fewer than 40) | not measurable |
 | gpt_6_luna | direct | 32 | 12 | 38% (55%) (not measurable: fewer than 40) | not measurable |
 | gpt_6_luna | fake_answer | 32 | 27 | 84% (93%) (not measurable: fewer than 40) | not measurable |
+| gemini_decision | authority | 37 | 37 | 100% (100%) (not measurable: fewer than 40) | not measurable |
+| gemini_decision | direct | 37 | 34 | 92% (97%) (not measurable: fewer than 40) | not measurable |
+| gemini_decision | fake_answer | 37 | 20 | 54% (69%) (not measurable: fewer than 40) | not measurable |
 
 ### injection_secrets
 
@@ -422,6 +445,9 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 | gpt_6_luna | authority | 45 | 27 | 60% (73%) | no |
 | gpt_6_luna | direct | 45 | 0 | 0% (8%) | yes |
 | gpt_6_luna | fake_answer | 45 | 2 | 4% (15%) | no |
+| gemini_decision | authority | 45 | 45 | 100% (100%) | no |
+| gemini_decision | direct | 45 | 0 | 0% (8%) | yes |
+| gemini_decision | fake_answer | 45 | 0 | 0% (8%) | yes |
 
 ## False warnings by kind of negative
 
@@ -444,6 +470,7 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 | clef_flash | 1/135 | 0/20 | 0/20 | 0/34 |
 | clef | 0/135 | 0/20 | 2/20 | 0/34 |
 | gpt_6_luna | 30/135 | 14/20 | 4/20 | 10/34 |
+| gemini_decision | 18/135 | 6/20 | 2/20 | 11/34 |
 
 ### secrets: false warnings by kind of negative
 
@@ -463,6 +490,7 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 | clef_flash | 180/225 |
 | clef | 90/225 |
 | gpt_6_luna | 55/225 |
+| gemini_decision | 52/225 |
 
 ## Checks on what the AI-text dataset gives away
 
@@ -506,6 +534,7 @@ Not part of the pass bar, which fixes the 0.5 cut. Shown because a decision mode
 | clef_flash | 0.49 | 0.73 | 0.95 | 0.75 |
 | clef | 0.53 | 0.66 | 0.98 | 0.79 |
 | gpt_6_luna | 0.77 | 0.83 | 0.97 | 0.70 |
+| gemini_decision | 0.92 | 0.99 | 1.00 | 0.78 |
 
 ## Threshold chosen on one half, measured on the other
 
@@ -521,6 +550,7 @@ Judges that return a probability. The cut is the one maximising caught rate minu
 | honorific | clef_flash | 0.23 | 0/66 = 0% [0%-6%] | 1/103 = 1% [0%-5%] | 31/66 = 47% [35%-59%] | 57/103 = 55% [46%-65%] |
 | honorific | clef | 0.32 | 0/66 = 0% [0%-6%] | 1/103 = 1% [0%-5%] | 19/66 = 29% [19%-41%] | 27/103 = 26% [19%-35%] |
 | honorific | gpt_6_luna | 0.47 | 47/66 = 71% [59%-81%] | 34/103 = 33% [25%-43%] | 49/66 = 74% [63%-83%] | 38/103 = 37% [28%-47%] |
+| honorific | gemini_decision | 0.48 | 52/66 = 79% [67%-87%] | 17/103 = 17% [11%-25%] | 53/66 = 80% [69%-88%] | 18/103 = 17% [11%-26%] |
 | style | gemma4_12b | 1.00 | 53/63 = 84% [73%-91%] | 18/65 = 28% [18%-40%] | 39/63 = 62% [50%-73%] | 4/65 = 6% [2%-15%] |
 | style | gemma4_26b | 0.00 | 34/48 = 71% [57%-82%] | 3/63 = 5% [2%-13%] | 46/48 = 96% [86%-99%] | 6/63 = 10% [4%-19%] |
 | style | qwen3.5_27b | 0.38 | 52/65 = 80% [69%-88%] | 5/65 = 8% [3%-17%] | 56/65 = 86% [76%-93%] | 7/65 = 11% [5%-21%] |
@@ -528,12 +558,14 @@ Judges that return a probability. The cut is the one maximising caught rate minu
 | style | clef_flash | 0.21 | 5/65 = 8% [3%-17%] | 0/65 = 0% [0%-6%] | 44/65 = 68% [56%-78%] | 20/65 = 31% [21%-43%] |
 | style | clef | 0.13 | 1/65 = 2% [0%-8%] | 0/65 = 0% [0%-6%] | 29/65 = 45% [33%-57%] | 8/65 = 12% [6%-22%] |
 | style | gpt_6_luna | 0.01 | 23/65 = 35% [25%-48%] | 0/65 = 0% [0%-6%] | 57/65 = 88% [78%-94%] | 27/65 = 42% [30%-54%] |
+| style | gemini_decision | 0.24 | 54/65 = 83% [72%-90%] | 0/65 = 0% [0%-6%] | 60/65 = 92% [83%-97%] | 1/65 = 2% [0%-8%] |
 | secrets | gemma4_12b | 1.00 | 105/105 = 100% [96%-100%] | 31/105 = 30% [22%-39%] | 102/105 = 97% [92%-99%] | 1/105 = 1% [0%-5%] |
 | secrets | qwen3.5_27b | 0.87 | 105/105 = 100% [96%-100%] | 32/105 = 30% [22%-40%] | 101/105 = 96% [91%-99%] | 0/105 = 0% [0%-4%] |
 | secrets | jev | 0.94 | 105/105 = 100% [96%-100%] | 30/105 = 29% [21%-38%] | 99/105 = 94% [88%-97%] | 0/105 = 0% [0%-4%] |
 | secrets | clef_flash | 0.96 | 105/105 = 100% [96%-100%] | 82/105 = 78% [69%-85%] | 82/105 = 78% [69%-85%] | 6/105 = 6% [3%-12%] |
 | secrets | clef | 0.96 | 105/105 = 100% [96%-100%] | 40/105 = 38% [29%-48%] | 95/105 = 90% [83%-95%] | 6/105 = 6% [3%-12%] |
 | secrets | gpt_6_luna | 0.99 | 105/105 = 100% [96%-100%] | 23/105 = 22% [15%-31%] | 102/105 = 97% [92%-99%] | 6/105 = 6% [3%-12%] |
+| secrets | gemini_decision | 0.93 | 105/105 = 100% [96%-100%] | 22/105 = 21% [14%-30%] | 105/105 = 100% [96%-100%] | 4/105 = 4% [1%-9%] |
 | aitext | gemma4_12b | 0.00 | 14/66 = 21% [13%-33%] | 0/12 = 0% [0%-24%] | 59/66 = 89% [80%-95%] | 5/12 = 42% [19%-68%] |
 | aitext | gemma4_26b | 0.65 | 23/66 = 35% [24%-47%] | 3/12 = 25% [9%-53%] | 22/66 = 33% [23%-45%] | 3/12 = 25% [9%-53%] |
 | aitext | gemma4_31b | 0.00 | 41/66 = 62% [50%-73%] | 0/8 = 0% [0%-32%] | 55/66 = 83% [73%-90%] | 3/8 = 38% [14%-69%] |
@@ -542,6 +574,7 @@ Judges that return a probability. The cut is the one maximising caught rate minu
 | aitext | clef_flash | 0.30 | 23/66 = 35% [24%-47%] | 1/12 = 8% [1%-35%] | 56/66 = 85% [74%-92%] | 4/12 = 33% [14%-61%] |
 | aitext | clef | 0.34 | 20/66 = 30% [21%-42%] | 1/12 = 8% [1%-35%] | 43/66 = 65% [53%-76%] | 2/12 = 17% [5%-45%] |
 | aitext | gpt_6_luna | 0.46 | 57/66 = 86% [76%-93%] | 4/12 = 33% [14%-61%] | 63/66 = 95% [87%-98%] | 8/12 = 67% [39%-86%] |
+| aitext | gemini_decision | 0.34 | 35/66 = 53% [41%-65%] | 2/12 = 17% [5%-45%] | 63/66 = 95% [87%-98%] | 5/12 = 42% [19%-68%] |
 
 ## Two-stage setups
 
@@ -563,6 +596,7 @@ Not part of the pass bar (it scores single judges); reported because the article
 | honorific | rule OR LLM: clef_flash | 46/135 = 34% [27%-42%] | 35/209 = 17% [12%-22%] |
 | honorific | rule OR LLM: clef | 47/135 = 35% [27%-43%] | 36/209 = 17% [13%-23%] |
 | honorific | rule OR LLM: gpt_6_luna | 95/135 = 70% [62%-77%] | 82/209 = 39% [33%-46%] |
+| honorific | rule OR LLM: gemini_decision | 129/135 = 96% [91%-98%] | 60/209 = 29% [23%-35%] |
 | secrets | gitleaks AND LLM: gemma4_12b | 225/225 = 100% [98%-100%] | 23/225 = 10% [7%-15%] |
 | secrets | gitleaks AND LLM: gemma4_12b_think | 225/225 = 100% [98%-100%] | 0/225 = 0% [0%-2%] |
 | secrets | gitleaks AND LLM: gemma4_26b | 225/225 = 100% [98%-100%] | 16/225 = 7% [4%-11%] |
@@ -576,6 +610,7 @@ Not part of the pass bar (it scores single judges); reported because the article
 | secrets | gitleaks AND LLM: clef_flash | 225/225 = 100% [98%-100%] | 60/225 = 27% [21%-33%] |
 | secrets | gitleaks AND LLM: clef | 225/225 = 100% [98%-100%] | 35/225 = 16% [11%-21%] |
 | secrets | gitleaks AND LLM: gpt_6_luna | 225/225 = 100% [98%-100%] | 9/225 = 4% [2%-7%] |
+| secrets | gitleaks AND LLM: gemini_decision | 225/225 = 100% [98%-100%] | 4/225 = 2% [1%-4%] |
 
 ## What gitleaks flags among the secrets negatives
 
