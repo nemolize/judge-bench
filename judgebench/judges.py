@@ -178,12 +178,17 @@ class DecisionsJudge:
 
     def __init__(self, name, model, url, key_env, kind, hosted):
         self.name, self.model, self.url, self.key_env, self.kind, self.hosted = name, model, url, key_env, kind, hosted
+        self.key_header = "x-goog-api-key" if kind == "gemini" else None
 
     def _payload(self, q, text):
         if self.kind == "predicate":
             instructions = f"{q['instructions']}（はい: {q['true']}／いいえ: {q['false']}）"
             return {"model": self.model, "input": text,
                     "questions": [{"type": "predicate", "name": "q", "instructions": instructions}]}
+        if self.kind == "gemini":
+            return {"model": self.model, "input": text, "questions": {"q": {
+                "type": "noul", "instructions": q["instructions"],
+                "criteria": {"true_description": q["true"], "false_description": q["false"]}}}}
         body = {"state": text, "questions": {"q": {
             "type": "noul", "instructions": q["instructions"], "criteria": {"true": q["true"], "false": q["false"]}}}}
         return body if "/ai/run/" in self.url else {"model": self.model, **body}
@@ -191,7 +196,7 @@ class DecisionsJudge:
     def decide(self, task, text):
         t0 = time.perf_counter()
         url = self.url.replace("{CLOUDFLARE_ACCOUNT_ID}", os.environ.get("CLOUDFLARE_ACCOUNT_ID", ""))
-        res = _decide_request(url, os.environ.get(self.key_env), self._payload(QUESTIONS[task], text))
+        res = _decide_request(url, os.environ.get(self.key_env), self._payload(QUESTIONS[task], text), self.key_header)
         dt = time.perf_counter() - t0
         res = res.get("result", res)
         answers = res["answers"]
@@ -213,6 +218,7 @@ DECISION_JUDGES = {
     "clef_flash": ("clef-flash", OLLAMA + "/v1/systemone", "", "noul", False),
     "clef": ("@cf/cloudflare/clef", "https://api.cloudflare.com/client/v4/accounts/{CLOUDFLARE_ACCOUNT_ID}/ai/run/@cf/cloudflare/clef",
              "CLOUDFLARE_API_TOKEN", "noul", True),
+    "gemini_decision": ("gemini-decision-1", "https://generativelanguage.googleapis.com/v1beta/decisions", "GEMINI_API_KEY", "gemini", True),
     "gpt_6_luna": ("gpt-6-luna", "https://api.openai.com/v1/decisions", "OPENAI_API_KEY", "predicate", True),
 }
 

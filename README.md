@@ -13,7 +13,7 @@ Judges:
 | `gemma4:26b+think` | Ollama, thinking on | same; honorific and style only |
 | `claude_api_think`, `claude_api_off` (`claude-haiku-5-5`) | Messages API, thinking on / off | YES/NO as text, no logprobs |
 | `gemini_flash` (`gemini-3.7-flash`) | Gemini API | YES/NO as text, no logprobs |
-| `jev` (`jev-1.14.0`), `clef_flash`, `clef` (27B, Cloudflare Workers AI), `gpt-6-luna` | decisions API (`clef-flash` served by Ollama) | YES when the probability of yes is at least 0.5 |
+| `jev` (`jev-1.14.0`), `clef_flash`, `clef` (27B, Cloudflare Workers AI), `gpt-6-luna`, `gemini_decision` (`gemini-decision-1`, Gemini Decisions API) | decisions API (`clef-flash` served by Ollama) | YES when the probability of yes is at least 0.5 |
 | `claude_haiku` | `claude -p` | YES/NO as text; run first, disagrees with the API runs, not used in the article |
 
 Each task also has a rule-based baseline. `pass_bar.md` fixes what counts as beating the baseline; it was committed before any results file. The decision models were added after the first judges had been run, under the same bar. `results/summary.md` is the outcome.
@@ -43,6 +43,7 @@ python3 -m judgebench.run judge clef_flash                   # Ollama, model cle
 TYPESAFE_API_KEY=... python3 -m judgebench.run judge jev     # a TypeSafe API key
 CLOUDFLARE_ACCOUNT_ID=... CLOUDFLARE_API_TOKEN=... python3 -m judgebench.run judge clef   # Workers AI Read
 OPENAI_API_KEY=... python3 -m judgebench.run judge gpt_6_luna
+GEMINI_API_KEY=... python3 -m judgebench.run judge gemini_decision   # gemini-decision-1; the probability is clamped to 0.01-0.99 by the API
 python3 -m judgebench.report                  # writes results/summary.md
 ```
 

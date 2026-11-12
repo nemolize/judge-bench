@@ -8,7 +8,7 @@ from . import datasets
 from .common import ROOT, read_jsonl, rng
 
 RESULTS = ROOT / "results"
-JUDGES = ["baseline", "gemma4_12b", "gemma4_12b_think", "gemma4_26b", "gemma4_26b_think", "gemma4_31b", "qwen3.5_27b", "claude_haiku", "claude_api_think", "claude_api_off", "gemini_flash", "jev", "clef_flash", "clef", "gpt_6_luna"]
+JUDGES = ["baseline", "gemma4_12b", "gemma4_12b_think", "gemma4_26b", "gemma4_26b_think", "gemma4_31b", "qwen3.5_27b", "claude_haiku", "claude_api_think", "claude_api_off", "gemini_flash", "jev", "clef_flash", "clef", "gpt_6_luna", "gemini_decision"]
 TASKS = ["honorific", "style", "secrets", "aitext"]
 INJECTIONS = {"injection_honorific": "honorific", "injection_secrets": "secrets"}
 Z = 1.96
