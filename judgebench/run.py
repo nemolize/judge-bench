@@ -49,7 +49,9 @@ def run_judge(name, tasks):
                 new = list(pool.map(lambda it: _one(judge, task, it), todo))
         else:
             new = [_one(judge, task, it) for it in todo]
-            meta["loaded_bytes"] = judge.loaded_bytes()
+            loaded = judge.loaded_bytes()
+            if loaded is not None:
+                meta["loaded_bytes"] = loaded
         write_jsonl(out, list(done.values()) + new)
         print(task, len(new), "new,", sum(1 for r in new if r.get("error")), "errors", flush=True)
     meta_path.write_text(json.dumps(meta, indent=2))

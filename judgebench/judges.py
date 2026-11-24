@@ -152,6 +152,56 @@ class GeminiJudge:
         return None
 
 
+STRATA_MODELS = {"sync_m": ("qwen3.8-flash-next-sync-m", False), "inkling_2_mini": ("inkling-2-mini-sq-20", False),
+                 "qwen3.8_iq3_s": ("qwen3.8-flash-next-iq3_s", True)}
+
+
+class StrataJudge:
+    """A Strata engine's OpenAI-compatible API (Sync-Strata or upstream Strata).
+
+    The verdict is the YES/NO probability when STRATA_MODELS says the model returns logprobs and thinking is off,
+    otherwise the first line of the reply. `think` runs reasoning_effort "low" with room for the reasoning."""
+
+    def __init__(self, name, think=False):
+        self.url = os.environ.get("STRATA_URL", "http://127.0.0.1:8080/v1")
+        (self.model, self.logprobs), self.think = STRATA_MODELS[name], think
+        self.name = name + "_think" if think else name
+
+    def _chat(self, body):
+        """Sync-Strata answers with the model it has loaded whatever `model` asks for, so the wrong engine must be an error row."""
+        req = urllib.request.Request(self.url + "/chat/completions", json.dumps(body).encode(), {"Content-Type": "application/json"})
+        with urllib.request.urlopen(req, timeout=600) as res:
+            out = json.load(res)
+        served = out.get("model")
+        if served is not None and served != self.model:
+            raise RuntimeError(f"engine served {served!r}, expected {self.model!r}")
+        return out
+
+    def _ask_logprobs(self, prompt):
+        t0 = time.perf_counter()
+        out = self._chat({"model": self.model, "temperature": 0, "max_tokens": 1, "reasoning_effort": "none",
+                          "logprobs": True, "top_logprobs": 10, "messages": [{"role": "user", "content": prompt}]})
+        first = out["choices"][0]["logprobs"]["content"][0]
+        lp = {c["token"]: c["logprob"] for c in first["top_logprobs"]}
+        return {**verdict_from(first["token"], lp), "latency_s": time.perf_counter() - t0, "served_model": out.get("model")}
+
+    def ask(self, prompt):
+        if self.logprobs and not self.think:
+            return self._ask_logprobs(prompt)
+        t0 = time.perf_counter()
+        out = self._chat({"model": self.model, "temperature": 0,
+                          "max_tokens": 4096 if self.think else 8, "reasoning_effort": "low" if self.think else "none",
+                          "messages": [{"role": "system", "content": CLAUDE_SYSTEM}, {"role": "user", "content": prompt}]})
+        lines = (out["choices"][0]["message"].get("content") or "").strip().splitlines()
+        first = lines[0].strip() if lines else ""
+        return {"verdict": first if first in ("YES", "NO") else None, "p_yes": None, "latency_s": time.perf_counter() - t0,
+                "output_tokens": (out.get("usage") or {}).get("completion_tokens"), "served_model": out.get("model"),
+                "server_ms": (out.get("timings") or {}).get("prompt_ms", 0) + (out.get("timings") or {}).get("predicted_ms", 0)}
+
+    def loaded_bytes(self):
+        return None
+
+
 QUESTIONS = json.loads((ROOT / "prompts" / "decisions.json").read_text(encoding="utf-8"))
 RETRIES = 4
 
@@ -229,6 +279,8 @@ def make(name):
         return DecisionsJudge(name, model, url, key_env, kind, hosted)
     if name == "claude_haiku":
         return ClaudeJudge()
+    if name.removesuffix("+think") in STRATA_MODELS:
+        return StrataJudge(name.removesuffix("+think"), think=name.endswith("+think"))
     if name.endswith("+think"):
         return OllamaThinkJudge(name[:-len("+think")])
     if name in CLAUDE_API_JUDGES:

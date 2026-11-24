@@ -1,3 +1,5 @@
+import io
+import json
 import unittest
 from unittest import mock
 
@@ -104,6 +106,93 @@ class OllamaThinkJudgeTests(unittest.TestCase):
         out, request = self.ask("YES")
         self.assertTrue(request["think"])
         self.assertEqual(judges.make("gemma4:26b+think").name, "gemma4_26b_think")
+
+
+class SyncStrataJudgeTests(unittest.TestCase):
+    def ask(self, content):
+        seen = {}
+
+        def fake_urlopen(req, timeout):
+            seen["body"] = json.loads(req.data)
+            seen["url"] = req.full_url
+            payload = {"choices": [{"message": {"content": content}}], "timings": {"prompt_ms": 300.0, "predicted_ms": 20.0}}
+            return io.BytesIO(json.dumps(payload).encode())
+
+        with mock.patch.object(judges.urllib.request, "urlopen", fake_urlopen):
+            return judges.make("sync_m").ask("p"), seen
+
+    def test_thinking_is_off_and_the_request_is_greedy(self):
+        _, seen = self.ask("YES")
+        self.assertEqual(seen["body"]["reasoning_effort"], "none")
+        self.assertEqual(seen["body"]["temperature"], 0)
+        self.assertTrue(seen["url"].endswith("/v1/chat/completions"))
+
+    def test_each_engine_sends_its_own_model_id(self):
+        _, seen = self.ask("YES")
+        self.assertEqual(seen["body"]["model"], "qwen3.8-flash-next-sync-m")
+        with mock.patch.object(judges.urllib.request, "urlopen") as urlopen:
+            urlopen.return_value = io.BytesIO(json.dumps({"choices": [{"message": {"content": "NO"}}]}).encode())
+            judge = judges.make("inkling_2_mini")
+            judge.ask("p")
+            body = json.loads(urlopen.call_args.args[0].data)
+        self.assertEqual((judge.name, body["model"]), ("inkling_2_mini", "inkling-2-mini-sq-20"))
+
+    def test_logprob_engine_is_judged_by_probability_like_ollama(self):
+        reply = {"choices": [{"logprobs": {"content": [{"token": "NO", "top_logprobs": [
+            {"token": "NO", "logprob": -0.9}, {"token": "YES", "logprob": -0.5}]}]}}]}
+        with mock.patch.object(judges.urllib.request, "urlopen") as urlopen:
+            urlopen.return_value = io.BytesIO(json.dumps(reply).encode())
+            out = judges.make("qwen3.8_iq3_s").ask("p")
+            body = json.loads(urlopen.call_args.args[0].data)
+        self.assertEqual(out["verdict"], "YES")
+        self.assertGreater(out["p_yes"], 0.5)
+        self.assertEqual((body["max_tokens"], body["reasoning_effort"], len(body["messages"])), (1, "none", 1))
+
+    def ask_model(self, name, reply):
+        with mock.patch.object(judges.urllib.request, "urlopen") as urlopen:
+            urlopen.return_value = io.BytesIO(json.dumps(reply).encode())
+            judge = judges.make(name)
+            out = judge.ask("p")
+            return out, json.loads(urlopen.call_args.args[0].data)
+
+    def test_iq3_s_thinking_run_is_a_reasoning_request_judged_by_first_line(self):
+        reply = {"model": "qwen3.8-flash-next-iq3_s", "choices": [{"message": {"content": "YES"}}]}
+        out, body = self.ask_model("qwen3.8_iq3_s+think", reply)
+        self.assertEqual(body["reasoning_effort"], "low")
+        self.assertNotIn("logprobs", body)
+        self.assertEqual(body["messages"][0]["role"], "system")
+        self.assertEqual((out["verdict"], out["p_yes"]), ("YES", None))
+
+    def test_the_served_model_is_recorded(self):
+        reply = {"model": "inkling-2-mini-sq-20", "choices": [{"message": {"content": "NO"}}]}
+        self.assertEqual(self.ask_model("inkling_2_mini", reply)[0]["served_model"], "inkling-2-mini-sq-20")
+
+    def test_an_engine_serving_another_model_is_an_error(self):
+        reply = {"model": "qwen3.8-flash-next-sync-m", "choices": [{"message": {"content": "YES"}}]}
+        with self.assertRaises(RuntimeError):
+            self.ask_model("qwen3.8_iq3_s+think", reply)
+
+    def test_think_variant_turns_reasoning_on_and_has_its_own_name(self):
+        with mock.patch.object(judges.urllib.request, "urlopen") as urlopen:
+            urlopen.return_value = io.BytesIO(json.dumps({"choices": [{"message": {"content": "YES"}}], "usage": {"completion_tokens": 300}}).encode())
+            judge = judges.make("sync_m+think")
+            out = judge.ask("p")
+            body = json.loads(urlopen.call_args.args[0].data)
+        self.assertEqual((judge.name, judges.make("sync_m").name), ("sync_m_think", "sync_m"))
+        self.assertEqual(body["reasoning_effort"], "low")
+        self.assertGreater(body["max_tokens"], 1000)
+        self.assertEqual(out["output_tokens"], 300)
+
+    def test_first_line_must_be_exactly_yes_or_no(self):
+        self.assertEqual(self.ask("YES")[0]["verdict"], "YES")
+        self.assertEqual(self.ask("NO\nbecause")[0]["verdict"], "NO")
+        self.assertIsNone(self.ask("Yes, it is")[0]["verdict"])
+        self.assertIsNone(self.ask(None)[0]["verdict"])
+
+    def test_no_probability_and_server_time_is_kept(self):
+        out, _ = self.ask("NO")
+        self.assertIsNone(out["p_yes"])
+        self.assertEqual(out["server_ms"], 320.0)
 
 
 if __name__ == "__main__":
