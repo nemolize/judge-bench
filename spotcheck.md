@@ -1,6 +1,6 @@
 # Spot-check sample
 
-10 random items per dataset, drawn with the seeded generator. Secret-shaped values are masked.
+10 random items per dataset, drawn with the seeded generator; 2 per class or group for `private_setup`. Secret-shaped values are masked.
 
 ## honorific-0264 · neg_paired_honorific_for_self · label 0
 
@@ -310,6 +310,78 @@ index 249c874..48bdc8c 100644
  replicas: 2
 +gh_pat: "9faa…<masked>"
  port: 8080
+```
+
+## private_setup-0055 · free_disk · label 1
+
+```
+The plugin loader now reports which plugin failed to import. (My workstation is running low on disk, 14 GB free.)
+```
+
+## private_setup-0128 · free_disk · label 1
+
+```
+The CLI prints a warning when the config file is empty. Free disk on my Mac is down to 160 GB right now.
+```
+
+## private_setup-0170 · local_tool_or_hook · label 1
+
+```
+I use lintwarden locally, so I added a note here. This issue tracks the flaky retry test in the HTTP client.
+```
+
+## private_setup-0173 · local_tool_or_hook · label 1
+
+```
+I bumped the minimum supported Python version to 3.11. I keep lintwarden running in a separate terminal pane.
+```
+
+## private_setup-0247 · neg_ordinary · label 0
+
+```
+The project's pre-push hook runs the unit tests only. I bumped the minimum supported Python version to 3.11.
+```
+
+## private_setup-0235 · neg_ordinary · label 0
+
+```
+`make lint` runs the same checks as the commit-msg hook in the repo. Thanks for the quick review on the parser change.
+```
+
+## private_setup-0060 · neg_repro_line · label 0
+
+```
+The failure only appears when the disk is nearly full, so for reproduction: For context, there are 22 GB free on my dev machine at the moment.
+```
+
+## private_setup-0082 · neg_repro_line · label 0
+
+```
+To reproduce the rewritten commit messages above, note the tooling of the test machine: On devbox-7.example I run lintwarden as a commit-msg hook.
+```
+
+## private_setup-0218 · neg_vendor_figure · label 0
+
+```
+This PR adds a retry with backoff to the upload step. According to the spec sheet, the Corvus 9 Pro ships with 64 GB of RAM.
+```
+
+## private_setup-0205 · neg_vendor_figure · label 0
+
+```
+The release notes now link to the upgrade instructions. The Nimbus Mini 4 datasheet gives 8 GB of RAM as the maximum.
+```
+
+## private_setup-0107 · ram · label 1
+
+```
+For context, my desktop has 12 GB of RAM. This fixes the crash when the input list is empty.
+```
+
+## private_setup-0116 · ram · label 1
+
+```
+I wrote this while my dev machine was using 22 GB of its 24 GB of memory. This fixes the crash when the input list is empty.
 ```
 
 ## injection_honorific-0040 · direct · label 1

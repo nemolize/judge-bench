@@ -1,6 +1,6 @@
 # judge-bench
 
-Reproducible comparison of judge models on five tasks whose correct answer is built mechanically: honorific errors, "AI-sounding" Japanese, style and notation drift, secrets in a diff, and robustness against an instruction aimed at the judge.
+Reproducible comparison of judge models on six tasks whose correct answer is built mechanically: honorific errors, "AI-sounding" Japanese, style and notation drift, secrets in a diff, private setup details in text bound for a public repo, and robustness against an instruction aimed at the judge.
 
 Not related to [JudgeBench](https://github.com/ScalerLab/JudgeBench) (ICLR 2025), which scores LLM judges on English response-pair preferences; this repository compares rule-based, LLM and decision-model judges on Japanese judgement tasks.
 
@@ -45,6 +45,10 @@ python3 -m judgebench.run judge claude_haiku
 pip install anthropic                        # only for the two claude_api_* judges
 ANTHROPIC_API_KEY=... python3 -m judgebench.run judge claude_api_think   # Messages API, default thinking
 ANTHROPIC_API_KEY=... python3 -m judgebench.run judge claude_api_off     # Messages API, thinking disabled
+# private-setup task only: the three judges it was run with (ollama pull gemma4:26b first)
+python3 -m judgebench.run judge gemma4:12b private_setup
+python3 -m judgebench.run judge gemma4:26b+think private_setup
+ANTHROPIC_API_KEY=... python3 -m judgebench.run judge claude_api_think private_setup   # also probes its sequential latency on this task
 GEMINI_API_KEY=... python3 -m judgebench.run judge gemini_flash   # gemini-3.7-flash; no logprobs, so the first line of the reply decides
 python3 -m judgebench.run judge clef_flash                   # Ollama, model clef-flash
 TYPESAFE_API_KEY=... python3 -m judgebench.run judge jev     # a TypeSafe API key
@@ -65,6 +69,7 @@ pip install matplotlib && python3 -m judgebench.charts <dir>   # the article's t
 | Style and notation drift | `textlint` with `no-mix-dearu-desumasu`, `ja-no-orthographic-variants` and a `prh` rule for full-width Latin and digits | |
 | Secrets in a diff | `gitleaks detect --no-git` over each diff as a plain file | |
 | "AI-sounding" Japanese | A fixed list of stock phrases (`judgebench/baselines.py`) | Hand-written before any run, never tuned; no off-the-shelf detector is claimed. |
+| Private setup details | A list of regular expressions (`PRIVATE_SETUP_PATTERNS` in `judgebench/baselines.py`) | A first-person machine next to a size in GB or TB, a free-disk figure, "I run ... hook / tmux / zsh", a home-directory path. Committed before any result of the task, never tuned. |
 
 `tests/test_baselines.py` shows each baseline flagging a known-bad example and passing a known-good one.
 
@@ -74,11 +79,12 @@ pip install matplotlib && python3 -m judgebench.charts <dir>   # the article's t
 - **"AI-sounding":** negatives are the author's own sentences from Zenn articles published before 2022-11-30 (`data/human_prose.jsonl`, dates from the Zenn API); positives are one-sentence texts on the same topics from three generators, `claude-haiku-5-5`, `gemma4:12b` and `qwen3.5:27b`, 45 each, drawn so that their length follows the human sentences' (`data/llm_sentences.jsonl`, cached so a rerun does not regenerate them). The summary reports the AUC of character count and of sentence count alone, as a check on what the dataset gives away.
 - **Style:** clean passages from the author's prose and multi-sentence LLM passages (`data/llm_passages.jsonl`), plus synthetic sentence pairs; drift is injected.
 - **Secrets:** random strings in the shape of AWS, GitHub, Slack, Stripe and Google keys planted in unified diffs; negatives carry placeholders, hashes, UUIDs and truncated look-alikes in the same place. The task is spotting a value that matches a key format; the values are never valid credentials, and the prompt says validity is not judged.
+- **Private setup:** `private_setup.md` defines the class. 270 English items (`data/private_setup.jsonl`) are written by `judgebench/private_setup.py` from fixed phrase pools and invented values: 45 positives in each of `ram`, `free_disk` and `local_tool_or_hook` (a sentence about the author's own machine or tools next to an unrelated post sentence), and 45 negatives in each of `neg_ordinary` (fixes, questions, a repo's own hooks and documented defaults), `neg_vendor_figure` (a product's published figures or a documented requirement) and `neg_repro_line` (the same kind of detail, but the text says it is needed to reproduce the result). 15 items per positive class are paired with a `neg_repro_line` item that carries the identical disclosure sentence and differs only in the sentence before it (`pair_id`). Only sentence shapes follow real posts that leaked such details; no text is copied from one and every hostname, path, size and name is invented. The prompt is Japanese over English text, as for the secrets task.
 - **Robustness:** three instructions aimed at the judge appended to honorific and secrets positives.
 
 ## Spot-check
 
-`python3 -m judgebench.spotcheck` writes `spotcheck.md`: 10 random items per dataset (60 in all, secret-shaped values masked). All 60 were read by hand after the datasets were rebuilt (see History). Labels held in every case: each positive carries the planted defect, each negative is the correct paired form or a placeholder, hash or UUID.
+`python3 -m judgebench.spotcheck` writes `spotcheck.md`: 10 random items per dataset, and for `private_setup` 2 from each of its six classes and groups (62 in all, secret-shaped values masked). The first 60 were read by hand after the datasets were rebuilt (see History); the 12 `private_setup` items were read by hand against `private_setup.md` after the generator was last changed, and every label held. Labels held in every case: each positive carries the planted defect, each negative is the correct paired form or a placeholder, hash or UUID.
 
 ## History
 
@@ -96,6 +102,8 @@ The first full run was reviewed before publication and several design problems w
 
 ## Known limits
 
+- The private-setup items come from a generator: a few dozen sentence templates and context sentences, recombined. Wording repeats far more than in real posts, the context sentence is always one short line, and the disclosure is easier to see than in a long README. A judge's catch rate here is a guide to how it would do in front of a real hook, not a measurement of one. What the author would not have meant to publish cannot be read off a published text, so the labels follow the rule in `private_setup.md`: a detail is a positive unless the text itself shows it is needed.
+- For the private-setup task `results/summary.md` marks a row with fewer than 40 valid positives, or a judge with more than 5% errors, as not measurable; the other tasks' tables were published without that check and some of their rows exceed 5% errors.
 - The human class of the "AI-sounding" task has 25 sentences, not 40: the author's pre-ChatGPT articles hold no more prose. The 40-item floor applies to positives (45 per generator); the false-warning rate there carries a wide interval.
 - The human sentences come from one author and four articles; the AI sentences are prompted to match their topics and length, not their style.
 - Honorific and style text is synthetic or pulled from a few articles; a judge that does well here has not been shown to do well on arbitrary prose.

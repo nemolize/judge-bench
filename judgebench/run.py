@@ -67,14 +67,16 @@ def rederive(name):
         write_jsonl(path, rows)
 
 
-def run_latency_probe(name):
+def run_latency_probe(name, task="honorific"):
     """Hosted judges run in parallel, so per-item latency is probed one call at a time."""
     judge = judges.make(name)
-    items = datasets.load("honorific")[:LATENCY_PROBE]
-    times = [_one(judge, "honorific", it)["latency_s"] for it in items]
+    items = datasets.load(task)[:LATENCY_PROBE]
+    times = [t for t in (_one(judge, task, it)["latency_s"] for it in items) if t is not None]
     meta_path = RESULTS / f"{judge.name}__meta.json"
     meta = json.loads(meta_path.read_text()) if meta_path.exists() else {}
-    meta["sequential_latency_s"] = [t for t in times if t is not None]
+    meta.setdefault("sequential_latency_by_task", {})[task] = times
+    if task == "honorific":
+        meta["sequential_latency_s"] = times
     meta_path.write_text(json.dumps(meta, indent=2))
 
 
@@ -89,4 +91,7 @@ if __name__ == "__main__":
     elif cmd == "judge":
         run_judge(sys.argv[2], sys.argv[3:] or list(datasets.TASKS))
         if getattr(judges.make(sys.argv[2]), "hosted", False):
-            run_latency_probe(sys.argv[2])
+            asked = sys.argv[3:]
+            for probe_task in ("honorific", "private_setup"):
+                if not asked or probe_task in asked:
+                    run_latency_probe(sys.argv[2], probe_task)

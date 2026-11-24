@@ -58,6 +58,24 @@ def gitleaks(items):
     return flagged, stats
 
 
+# Private-setup patterns (private_setup.md): fixed before any run and never tuned on data.
+PRIVATE_SETUP_PATTERNS = [
+    r"\b(?:my|this)\s+(?:laptop|workstation|desktop|machine|server|dev box|mac)\b[^.\n]{0,80}\b\d+(?:\.\d+)?\s*(?:GB|GiB|TB)\b",
+    r"\b\d+(?:\.\d+)?\s*(?:GB|GiB|TB)\s+(?:of\s+)?free\b",
+    r"\bfree\s+(?:disk|space)\b[^.\n]{0,40}\b\d+(?:\.\d+)?\s*(?:GB|GiB|TB)\b",
+    r"\b(?:I|I'm|I am)\s+(?:currently\s+)?(?:run|running|use|using|keep)\b[^.\n]{0,60}\b(?:hook|tmux|zsh|direnv|dotfiles)\b",
+    r"\b(?:my|this)\s+(?:shell|editor)\b[^.\n]{0,40}\b(?:loads|runs)\b",
+    r"(?:/home/[\w.-]+/|/Users/[\w.-]+/|(?<![\w/.])~/\.)",
+]
+PRIVATE_SETUP_RE = [re.compile(p, re.IGNORECASE) for p in PRIVATE_SETUP_PATTERNS]
+
+
+def private_setup_rules(items):
+    t0 = time.perf_counter()
+    flagged = {it["id"]: any(p.search(it["text"]) for p in PRIVATE_SETUP_RE) for it in items}
+    return flagged, {"seconds": time.perf_counter() - t0, "peak_rss_bytes": None}
+
+
 def phrases(items):
     t0 = time.perf_counter()
     flagged = {it["id"]: any(p in it["text"] for p in AI_PHRASES) for it in items}
@@ -70,4 +88,6 @@ def run(task, items):
         return textlint(items, base)
     if base == "secrets":
         return gitleaks(items)
+    if base == "private_setup":
+        return private_setup_rules(items)
     return phrases(items)
