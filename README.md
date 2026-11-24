@@ -11,6 +11,9 @@ Judges:
 | `gemma4:12b`, `gemma4:26b`, `gemma4:31b`, `qwen3.5:27b` | Ollama | YES when the first-token probability of `YES` is at least that of `NO` |
 | `gemma4:12b+think` | Ollama, thinking on | first word of the answer, no logprobs |
 | `gemma4:26b+think` | Ollama, thinking on | same; honorific and style only |
+| `sync_m_think` (Qwen3.8-Flash-Next 125B MoE, Sync-M pack) | Sync-Strata 0.1.4 OpenAI-compatible API, `reasoning_effort` low | first line of the reply, no logprobs |
+| `qwen3.8_iq3_s` (same model, ISTA-DASLab IQ3_S pack) | Strata 0.2.20 (terminal build 0.1.66) API, thinking off | YES when the first-token probability of `YES` is at least that of `NO` |
+| `qwen3.8_iq3_s_think` | same engine, `reasoning_effort` low | first line of the reply, no logprobs |
 | `claude_api_think`, `claude_api_off` (`claude-haiku-5-5`) | Messages API, thinking on / off | YES/NO as text, no logprobs |
 | `gemini_flash` (`gemini-3.7-flash`) | Gemini API | YES/NO as text, no logprobs |
 | `jev` (`jev-1.14.0`), `clef_flash`, `clef` (27B, Cloudflare Workers AI), `gpt-6-luna`, `gemini_decision` (`gemini-decision-1`, Gemini Decisions API) | decisions API (`clef-flash` served by Ollama) | YES when the probability of yes is at least 0.5 |
@@ -34,6 +37,10 @@ python3 -m judgebench.run judge gemma4:31b
 python3 -m judgebench.run judge gemma4:12b+think
 python3 -m judgebench.run judge gemma4:26b+think honorific style   # thinking on, no logprobs; the first word of the answer decides
 python3 -m judgebench.run judge qwen3.5:27b
+# Strata judges: start the engine (Sync-Strata `sync.sh up --api-only`, or Strata `strata launch --family qwen --model iq3_s --context 32k --vision off`), then point STRATA_URL at it
+STRATA_URL=http://127.0.0.1:8080/v1 python3 -m judgebench.run judge sync_m+think          # one engine at a time: they share the GPU
+STRATA_URL=http://127.0.0.1:8080/v1 python3 -m judgebench.run judge qwen3.8_iq3_s
+STRATA_URL=http://127.0.0.1:8080/v1 python3 -m judgebench.run judge qwen3.8_iq3_s+think
 python3 -m judgebench.run judge claude_haiku
 pip install anthropic                        # only for the two claude_api_* judges
 ANTHROPIC_API_KEY=... python3 -m judgebench.run judge claude_api_think   # Messages API, default thinking
@@ -45,6 +52,7 @@ CLOUDFLARE_ACCOUNT_ID=... CLOUDFLARE_API_TOKEN=... python3 -m judgebench.run jud
 OPENAI_API_KEY=... python3 -m judgebench.run judge gpt_6_luna
 GEMINI_API_KEY=... python3 -m judgebench.run judge gemini_decision   # gemini-decision-1; the probability is clamped to 0.01-0.99 by the API
 python3 -m judgebench.report                  # writes results/summary.md
+pip install matplotlib && python3 -m judgebench.charts <dir>   # the article's three charts
 ```
 
 `data/secrets.jsonl` and `data/injection_secrets.jsonl` are rebuilt from the seed and not committed: random strings in the shape of real tokens trip secret scanners and push protection. Everything in this repository is dummy data; no live credential is in it.
@@ -101,3 +109,8 @@ The first full run was reviewed before publication and several design problems w
 - Injection flip rates are conditional on the items a judge flagged without the instruction, so the denominators differ by judge, and only three instruction texts were tried.
 - Results without a probability keep the sampled-token verdict and are left out of the threshold analysis: 3 style and 3 honorific-injection results of `gemma4_12b`; `gpt-6-luna` gave no answer for 2 injected secrets items (counted as not flagged).
 - Transient HTTP 5xx answers from the hosted APIs are retried; an item that still fails is recorded as an error and rerun, never scored as `NO`.
+- The Strata judges ran on another machine than the Ollama ones (Manjaro Linux, i9-13900K, GeForce RTX 2070 SUPER 8 GB, 62 GB RAM), measured on 2026-11-23 and 24, one engine at a time. The runner stayed on the first machine and reached the engine through an SSH tunnel (about 0.02 s round trip, included in the latency; the first call is not discarded). One run each.
+- Versions: Sync-Strata 0.1.4 with the Sync-M pack (`sync-strata/Sync-M` at revision `435b4178227d9fb13b7e63f8645b7213819419a2`); Strata 0.2.20 (terminal build 0.1.66) with the ISTA-DASLab IQ3_S pack of Qwen3.8-Flash-Next (revision not recorded). Both run the same base model, so a difference between them comes from the pack or the engine, which this benchmark cannot separate.
+- Sync-Strata returns no logprobs, so `sync_m_think` is decided by the first line of the reply, like the Claude and Gemini judges; it also gets their system message. `qwen3.8_iq3_s` is decided by probability, as the Ollama judges are, and gets no system message. The thinking runs use `reasoning_effort` low with room for 4,096 tokens. Do not compare these judges' no-answer or false-warning rates with the Ollama ones without this in mind.
+- The memory column for the Strata judges is the engine process's resident memory (Sync-M 34.8 GiB, IQ3_S 49.8 GiB; about 7.3 to 7.5 GiB of the 8 GiB GPU on top), not the loaded size Ollama reports.
+- Two more judges were run and then left out of `JUDGES` in `judgebench/report.py`, so they are not in `results/summary.md`; their result files stay in `results/`. `sync_m` (Sync-M, thinking off) answered the same word whatever the sentence: with the honorific prompt it caught 1 of 135 positives and flagged 0 of 209 negatives, and a 24-item check (12 positives, 12 negatives; not stored in `results/`) with other answer words gave one word for almost every item: with "NO means an error" 23 of 24 answers were NO, with "A means an error" 23 of 24 were A, and with "B means an error" 18 of 24 were B (12 of 12 positives, 6 of 12 negatives). Its direct answer carried little information about the sentence, though thinking on (`sync_m_think`) judges well. `inkling_2_mini` (Inkling-2-Mini SQ-20 on Strata 0.2.20, no logprobs) answered YES to 208 of 209 correct honorific sentences, to 57% of correct style passages and to 24 of 25 human sentences.

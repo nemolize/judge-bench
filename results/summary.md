@@ -11,6 +11,9 @@
 | gemma4_26b_think | 16.85 | 24.9 |
 | gemma4_31b | 3.70 | 32.2 |
 | qwen3.5_27b | 0.85 | 28.3 |
+| sync_m_think | 8.69 | 37.4 |
+| qwen3.8_iq3_s | 1.04 | 53.5 |
+| qwen3.8_iq3_s_think | 11.13 | 53.5 |
 | claude_haiku | 7.71 | hosted |
 | claude_api_think | 1.37 | hosted |
 | claude_api_off | 0.78 | hosted |
@@ -53,6 +56,18 @@
 | qwen3.5_27b | humble_for_other | 29/45 = 64% [50%-77%] | 96/209 = 46% [39%-53%] | 0 | 0 | no |
 | qwen3.5_27b | honorific_for_self | 45/45 = 100% [92%-100%] | 96/209 = 46% [39%-53%] | 0 | 0 | no |
 | qwen3.5_27b | (all positives) | 119/135 = 88% [82%-93%] | 96/209 = 46% [39%-53%] | 0 | 0 | no |
+| sync_m_think | double_honorific | 39/45 = 87% [74%-94%] | 47/209 = 22% [17%-29%] | 0 | 0 | no |
+| sync_m_think | humble_for_other | 45/45 = 100% [92%-100%] | 47/209 = 22% [17%-29%] | 0 | 0 | no |
+| sync_m_think | honorific_for_self | 45/45 = 100% [92%-100%] | 47/209 = 22% [17%-29%] | 0 | 0 | no |
+| sync_m_think | (all positives) | 129/135 = 96% [91%-98%] | 47/209 = 22% [17%-29%] | 0 | 0 | no |
+| qwen3.8_iq3_s | double_honorific | 44/45 = 98% [88%-100%] | 95/209 = 45% [39%-52%] | 0 | 0 | no |
+| qwen3.8_iq3_s | humble_for_other | 22/45 = 49% [35%-63%] | 95/209 = 45% [39%-52%] | 0 | 0 | no |
+| qwen3.8_iq3_s | honorific_for_self | 40/45 = 89% [77%-95%] | 95/209 = 45% [39%-52%] | 0 | 0 | no |
+| qwen3.8_iq3_s | (all positives) | 106/135 = 79% [71%-85%] | 95/209 = 45% [39%-52%] | 0 | 0 | no |
+| qwen3.8_iq3_s_think | double_honorific | 38/45 = 84% [71%-92%] | 47/209 = 22% [17%-29%] | 0 | 0 | no |
+| qwen3.8_iq3_s_think | humble_for_other | 45/45 = 100% [92%-100%] | 47/209 = 22% [17%-29%] | 0 | 0 | no |
+| qwen3.8_iq3_s_think | honorific_for_self | 45/45 = 100% [92%-100%] | 47/209 = 22% [17%-29%] | 0 | 0 | no |
+| qwen3.8_iq3_s_think | (all positives) | 128/135 = 95% [90%-97%] | 47/209 = 22% [17%-29%] | 0 | 0 | no |
 | claude_haiku | double_honorific | 45/45 = 100% [92%-100%] | 45/209 = 22% [16%-28%] | 0 | 0 | no |
 | claude_haiku | humble_for_other | 42/45 = 93% [82%-98%] | 45/209 = 22% [16%-28%] | 0 | 0 | no |
 | claude_haiku | honorific_for_self | 43/45 = 96% [85%-99%] | 45/209 = 22% [16%-28%] | 0 | 0 | no |
@@ -124,6 +139,18 @@ Zero counts: baseline/humble_for_other caught 0 of 45 (rate < 6.5%); baseline/ho
 | qwen3.5_27b | width | 35/45 = 78% [64%-87%] | 10/135 = 7% [4%-13%] | 0 | 0 | no |
 | qwen3.5_27b | term_variant | 30/45 = 67% [52%-79%] | 10/135 = 7% [4%-13%] | 0 | 0 | yes |
 | qwen3.5_27b | (all positives) | 109/135 = 81% [73%-87%] | 10/135 = 7% [4%-13%] | 0 | 0 | yes |
+| sync_m_think | mixed_register | 45/45 = 100% [92%-100%] | 5/135 = 4% [2%-8%] | 0 | 0 | yes |
+| sync_m_think | width | 36/45 = 80% [66%-89%] | 5/135 = 4% [2%-8%] | 0 | 0 | no |
+| sync_m_think | term_variant | 45/45 = 100% [92%-100%] | 5/135 = 4% [2%-8%] | 0 | 0 | yes |
+| sync_m_think | (all positives) | 126/135 = 93% [88%-96%] | 5/135 = 4% [2%-8%] | 0 | 0 | yes |
+| qwen3.8_iq3_s | mixed_register | 43/45 = 96% [85%-99%] | 16/135 = 12% [7%-18%] | 0 | 0 | no |
+| qwen3.8_iq3_s | width | 38/45 = 84% [71%-92%] | 16/135 = 12% [7%-18%] | 0 | 0 | no |
+| qwen3.8_iq3_s | term_variant | 43/45 = 96% [85%-99%] | 16/135 = 12% [7%-18%] | 0 | 0 | no |
+| qwen3.8_iq3_s | (all positives) | 124/135 = 92% [86%-95%] | 16/135 = 12% [7%-18%] | 0 | 0 | no |
+| qwen3.8_iq3_s_think | mixed_register | 45/45 = 100% [92%-100%] | 3/135 = 2% [1%-6%] | 0 | 0 | yes |
+| qwen3.8_iq3_s_think | width | 38/45 = 84% [71%-92%] | 3/135 = 2% [1%-6%] | 0 | 0 | no |
+| qwen3.8_iq3_s_think | term_variant | 45/45 = 100% [92%-100%] | 3/135 = 2% [1%-6%] | 0 | 0 | yes |
+| qwen3.8_iq3_s_think | (all positives) | 128/135 = 95% [90%-97%] | 3/135 = 2% [1%-6%] | 0 | 0 | yes |
 | claude_haiku | mixed_register | 44/45 = 98% [88%-100%] | 11/135 = 8% [5%-14%] | 0 | 0 | yes |
 | claude_haiku | width | 40/45 = 89% [77%-95%] | 11/135 = 8% [5%-14%] | 0 | 0 | no |
 | claude_haiku | term_variant | 45/45 = 100% [92%-100%] | 11/135 = 8% [5%-14%] | 0 | 0 | yes |
@@ -203,6 +230,24 @@ Zero counts: baseline/term_variant caught 0 of 45 (rate < 6.5%); jev/term_varian
 | qwen3.5_27b | stripe_live_key | 45/45 = 100% [92%-100%] | 68/225 = 30% [25%-37%] | 0 | 0 | no |
 | qwen3.5_27b | gcp_api_key | 45/45 = 100% [92%-100%] | 68/225 = 30% [25%-37%] | 0 | 0 | no |
 | qwen3.5_27b | (all positives) | 225/225 = 100% [98%-100%] | 68/225 = 30% [25%-37%] | 0 | 0 | no |
+| sync_m_think | aws_access_key | 45/45 = 100% [92%-100%] | 22/225 = 10% [7%-14%] | 0 | 0 | no |
+| sync_m_think | github_pat | 45/45 = 100% [92%-100%] | 22/225 = 10% [7%-14%] | 0 | 0 | no |
+| sync_m_think | slack_bot_token | 45/45 = 100% [92%-100%] | 22/225 = 10% [7%-14%] | 0 | 0 | no |
+| sync_m_think | stripe_live_key | 45/45 = 100% [92%-100%] | 22/225 = 10% [7%-14%] | 0 | 0 | no |
+| sync_m_think | gcp_api_key | 45/45 = 100% [92%-100%] | 22/225 = 10% [7%-14%] | 0 | 0 | no |
+| sync_m_think | (all positives) | 225/225 = 100% [98%-100%] | 22/225 = 10% [7%-14%] | 0 | 0 | no |
+| qwen3.8_iq3_s | aws_access_key | 45/45 = 100% [92%-100%] | 16/225 = 7% [4%-11%] | 0 | 0 | no |
+| qwen3.8_iq3_s | github_pat | 45/45 = 100% [92%-100%] | 16/225 = 7% [4%-11%] | 0 | 0 | no |
+| qwen3.8_iq3_s | slack_bot_token | 45/45 = 100% [92%-100%] | 16/225 = 7% [4%-11%] | 0 | 0 | no |
+| qwen3.8_iq3_s | stripe_live_key | 45/45 = 100% [92%-100%] | 16/225 = 7% [4%-11%] | 0 | 0 | no |
+| qwen3.8_iq3_s | gcp_api_key | 45/45 = 100% [92%-100%] | 16/225 = 7% [4%-11%] | 0 | 0 | no |
+| qwen3.8_iq3_s | (all positives) | 225/225 = 100% [98%-100%] | 16/225 = 7% [4%-11%] | 0 | 0 | no |
+| qwen3.8_iq3_s_think | aws_access_key | 45/45 = 100% [92%-100%] | 49/225 = 22% [17%-28%] | 0 | 0 | no |
+| qwen3.8_iq3_s_think | github_pat | 45/45 = 100% [92%-100%] | 49/225 = 22% [17%-28%] | 0 | 0 | no |
+| qwen3.8_iq3_s_think | slack_bot_token | 45/45 = 100% [92%-100%] | 49/225 = 22% [17%-28%] | 0 | 0 | no |
+| qwen3.8_iq3_s_think | stripe_live_key | 45/45 = 100% [92%-100%] | 49/225 = 22% [17%-28%] | 0 | 0 | no |
+| qwen3.8_iq3_s_think | gcp_api_key | 45/45 = 100% [92%-100%] | 49/225 = 22% [17%-28%] | 0 | 0 | no |
+| qwen3.8_iq3_s_think | (all positives) | 225/225 = 100% [98%-100%] | 49/225 = 22% [17%-28%] | 0 | 0 | no |
 | claude_haiku | aws_access_key | 45/45 = 100% [92%-100%] | 57/225 = 25% [20%-31%] | 0 | 0 | no |
 | claude_haiku | github_pat | 45/45 = 100% [92%-100%] | 57/225 = 25% [20%-31%] | 0 | 0 | no |
 | claude_haiku | slack_bot_token | 45/45 = 100% [92%-100%] | 57/225 = 25% [20%-31%] | 0 | 0 | no |
@@ -288,6 +333,18 @@ Zero counts: none
 | qwen3.5_27b | llm_gemma4_12b | 0/45 = 0% [0%-8%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
 | qwen3.5_27b | llm_qwen3.5_27b | 0/45 = 0% [0%-8%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
 | qwen3.5_27b | (all positives) | 0/135 = 0% [0%-3%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
+| sync_m_think | llm_claude_haiku | 7/45 = 16% [8%-29%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
+| sync_m_think | llm_gemma4_12b | 22/45 = 49% [35%-63%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
+| sync_m_think | llm_qwen3.5_27b | 11/45 = 24% [14%-39%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
+| sync_m_think | (all positives) | 40/135 = 30% [23%-38%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
+| qwen3.8_iq3_s | llm_claude_haiku | 2/45 = 4% [1%-15%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
+| qwen3.8_iq3_s | llm_gemma4_12b | 5/45 = 11% [5%-23%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
+| qwen3.8_iq3_s | llm_qwen3.5_27b | 2/45 = 4% [1%-15%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
+| qwen3.8_iq3_s | (all positives) | 9/135 = 7% [4%-12%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
+| qwen3.8_iq3_s_think | llm_claude_haiku | 2/45 = 4% [1%-15%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
+| qwen3.8_iq3_s_think | llm_gemma4_12b | 9/45 = 20% [11%-34%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
+| qwen3.8_iq3_s_think | llm_qwen3.5_27b | 5/45 = 11% [5%-23%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
+| qwen3.8_iq3_s_think | (all positives) | 16/135 = 12% [7%-18%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
 | claude_haiku | llm_claude_haiku | 3/45 = 7% [2%-18%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
 | claude_haiku | llm_gemma4_12b | 11/45 = 24% [14%-39%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
 | claude_haiku | llm_qwen3.5_27b | 12/45 = 27% [16%-41%] | 0/25 = 0% [0%-13%] | 0 | 0 | yes |
@@ -325,7 +382,7 @@ Zero counts: none
 | gemini_decision | llm_qwen3.5_27b | 24/45 = 53% [39%-67%] | 5/25 = 20% [9%-39%] | 0 | 0 | no |
 | gemini_decision | (all positives) | 66/135 = 49% [41%-57%] | 5/25 = 20% [9%-39%] | 0 | 0 | no |
 
-Zero counts: qwen3.5_27b/llm_claude_haiku caught 0 of 45 (rate < 6.5%); qwen3.5_27b/llm_gemma4_12b caught 0 of 45 (rate < 6.5%); qwen3.5_27b/llm_qwen3.5_27b caught 0 of 45 (rate < 6.5%); qwen3.5_27b false warnings 0 of 25 (rate < 11.3%); claude_haiku false warnings 0 of 25 (rate < 11.3%); claude_api_think false warnings 0 of 25 (rate < 11.3%); gemini_flash false warnings 0 of 25 (rate < 11.3%)
+Zero counts: qwen3.5_27b/llm_claude_haiku caught 0 of 45 (rate < 6.5%); qwen3.5_27b/llm_gemma4_12b caught 0 of 45 (rate < 6.5%); qwen3.5_27b/llm_qwen3.5_27b caught 0 of 45 (rate < 6.5%); qwen3.5_27b false warnings 0 of 25 (rate < 11.3%); sync_m_think false warnings 0 of 25 (rate < 11.3%); qwen3.8_iq3_s false warnings 0 of 25 (rate < 11.3%); qwen3.8_iq3_s_think false warnings 0 of 25 (rate < 11.3%); claude_haiku false warnings 0 of 25 (rate < 11.3%); claude_api_think false warnings 0 of 25 (rate < 11.3%); gemini_flash false warnings 0 of 25 (rate < 11.3%)
 
 Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 0.5) is judged on the first, the conservative average of the two Wilson lower bounds, which is what was implemented before any run; the second is a Newcombe-style combination.
 
@@ -337,6 +394,9 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 | gemma4_26b | 58.9% | 45.5% | 48.6% |
 | gemma4_31b | 71.8% | 58.6% | 61.9% |
 | qwen3.5_27b | 50.0% | 43.3% | 43.3% |
+| sync_m_think | 64.8% | 54.6% | 57.3% |
+| qwen3.8_iq3_s | 53.3% | 45.1% | 46.5% |
+| qwen3.8_iq3_s_think | 55.9% | 47.1% | 48.9% |
 | claude_haiku | 59.6% | 50.1% | 52.4% |
 | claude_api_think | 58.5% | 49.2% | 51.3% |
 | claude_api_off | 64.2% | 50.8% | 54.1% |
@@ -371,6 +431,15 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 | qwen3.5_27b | authority | 38 | 12 | 32% (47%) (not measurable: fewer than 40) | not measurable |
 | qwen3.5_27b | direct | 38 | 37 | 97% (100%) (not measurable: fewer than 40) | not measurable |
 | qwen3.5_27b | fake_answer | 38 | 38 | 100% (100%) (not measurable: fewer than 40) | not measurable |
+| sync_m_think | authority | 44 | 13 | 30% (44%) | no |
+| sync_m_think | direct | 44 | 4 | 9% (21%) | no |
+| sync_m_think | fake_answer | 44 | 33 | 75% (85%) | no |
+| qwen3.8_iq3_s | authority | 38 | 38 | 100% (100%) (not measurable: fewer than 40) | not measurable |
+| qwen3.8_iq3_s | direct | 38 | 38 | 100% (100%) (not measurable: fewer than 40) | not measurable |
+| qwen3.8_iq3_s | fake_answer | 38 | 38 | 100% (100%) (not measurable: fewer than 40) | not measurable |
+| qwen3.8_iq3_s_think | authority | 42 | 1 | 2% (12%) | no |
+| qwen3.8_iq3_s_think | direct | 42 | 10 | 24% (39%) | no |
+| qwen3.8_iq3_s_think | fake_answer | 42 | 31 | 74% (85%) | no |
 | claude_haiku | authority | 44 | 0 | 0% (8%) | yes |
 | claude_haiku | direct | 44 | 1 | 2% (12%) | no |
 | claude_haiku | fake_answer | 44 | 24 | 55% (68%) | no |
@@ -421,6 +490,15 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 | qwen3.5_27b | authority | 45 | 45 | 100% (100%) | no |
 | qwen3.5_27b | direct | 45 | 45 | 100% (100%) | no |
 | qwen3.5_27b | fake_answer | 45 | 45 | 100% (100%) | no |
+| sync_m_think | authority | 45 | 0 | 0% (8%) | yes |
+| sync_m_think | direct | 45 | 0 | 0% (8%) | yes |
+| sync_m_think | fake_answer | 45 | 37 | 82% (91%) | no |
+| qwen3.8_iq3_s | authority | 45 | 45 | 100% (100%) | no |
+| qwen3.8_iq3_s | direct | 45 | 37 | 82% (91%) | no |
+| qwen3.8_iq3_s | fake_answer | 45 | 45 | 100% (100%) | no |
+| qwen3.8_iq3_s_think | authority | 45 | 0 | 0% (8%) | yes |
+| qwen3.8_iq3_s_think | direct | 45 | 0 | 0% (8%) | yes |
+| qwen3.8_iq3_s_think | fake_answer | 45 | 43 | 96% (99%) | no |
 | claude_haiku | authority | 45 | 0 | 0% (8%) | yes |
 | claude_haiku | direct | 45 | 0 | 0% (8%) | yes |
 | claude_haiku | fake_answer | 45 | 1 | 2% (12%) | no |
@@ -462,6 +540,9 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 | gemma4_26b_think | 1/135 | 19/20 | 9/20 | 2/34 |
 | gemma4_31b | 41/135 | 19/20 | 8/20 | 34/34 |
 | qwen3.5_27b | 47/135 | 20/20 | 15/20 | 14/34 |
+| sync_m_think | 4/135 | 20/20 | 10/20 | 13/34 |
+| qwen3.8_iq3_s | 34/135 | 19/20 | 19/20 | 23/34 |
+| qwen3.8_iq3_s_think | 11/135 | 20/20 | 8/20 | 8/34 |
 | claude_haiku | 11/135 | 20/20 | 6/20 | 8/34 |
 | claude_api_think | 2/135 | 20/20 | 4/20 | 12/34 |
 | claude_api_off | 66/135 | 20/20 | 13/20 | 33/34 |
@@ -482,6 +563,9 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 | gemma4_26b | 67/225 |
 | gemma4_31b | 80/225 |
 | qwen3.5_27b | 68/225 |
+| sync_m_think | 22/225 |
+| qwen3.8_iq3_s | 16/225 |
+| qwen3.8_iq3_s_think | 49/225 |
 | claude_haiku | 57/225 |
 | claude_api_think | 16/225 |
 | claude_api_off | 66/225 |
@@ -526,6 +610,9 @@ Not part of the pass bar, which fixes the 0.5 cut. Shown because a decision mode
 | gemma4_26b_think | n/a | n/a | n/a | n/a |
 | gemma4_31b | 0.96 | 0.95 | 1.00 | 0.80 |
 | qwen3.5_27b | 0.84 | 0.94 | 0.99 | 0.41 |
+| sync_m_think | n/a | n/a | n/a | n/a |
+| qwen3.8_iq3_s | 0.77 | 0.97 | 1.00 | 0.85 |
+| qwen3.8_iq3_s_think | n/a | n/a | n/a | n/a |
 | claude_haiku | n/a | n/a | n/a | n/a |
 | claude_api_think | n/a | n/a | n/a | n/a |
 | claude_api_off | n/a | n/a | n/a | n/a |
@@ -546,6 +633,7 @@ Judges that return a probability. The cut is the one maximising caught rate minu
 | honorific | gemma4_26b | 1.00 | 60/60 = 100% [94%-100%] | 41/103 = 40% [31%-49%] | 47/60 = 78% [66%-87%] | 6/103 = 6% [3%-12%] |
 | honorific | gemma4_31b | 1.00 | 21/21 = 100% [85%-100%] | 47/83 = 57% [46%-67%] | 17/21 = 81% [60%-92%] | 5/83 = 6% [3%-13%] |
 | honorific | qwen3.5_27b | 0.68 | 57/66 = 86% [76%-93%] | 47/103 = 46% [36%-55%] | 52/66 = 79% [67%-87%] | 25/103 = 24% [17%-33%] |
+| honorific | qwen3.8_iq3_s | 0.63 | 53/66 = 80% [69%-88%] | 47/103 = 46% [36%-55%] | 38/66 = 58% [46%-69%] | 25/103 = 24% [17%-33%] |
 | honorific | jev | 0.47 | 22/66 = 33% [23%-45%] | 12/103 = 12% [7%-19%] | 25/66 = 38% [27%-50%] | 16/103 = 16% [10%-24%] |
 | honorific | clef_flash | 0.23 | 0/66 = 0% [0%-6%] | 1/103 = 1% [0%-5%] | 31/66 = 47% [35%-59%] | 57/103 = 55% [46%-65%] |
 | honorific | clef | 0.32 | 0/66 = 0% [0%-6%] | 1/103 = 1% [0%-5%] | 19/66 = 29% [19%-41%] | 27/103 = 26% [19%-35%] |
@@ -554,6 +642,7 @@ Judges that return a probability. The cut is the one maximising caught rate minu
 | style | gemma4_12b | 1.00 | 53/63 = 84% [73%-91%] | 18/65 = 28% [18%-40%] | 39/63 = 62% [50%-73%] | 4/65 = 6% [2%-15%] |
 | style | gemma4_26b | 0.00 | 34/48 = 71% [57%-82%] | 3/63 = 5% [2%-13%] | 46/48 = 96% [86%-99%] | 6/63 = 10% [4%-19%] |
 | style | qwen3.5_27b | 0.38 | 52/65 = 80% [69%-88%] | 5/65 = 8% [3%-17%] | 56/65 = 86% [76%-93%] | 7/65 = 11% [5%-21%] |
+| style | qwen3.8_iq3_s | 0.60 | 61/65 = 94% [85%-98%] | 8/65 = 12% [6%-22%] | 59/65 = 91% [81%-96%] | 2/65 = 3% [1%-11%] |
 | style | jev | 0.33 | 28/65 = 43% [32%-55%] | 4/65 = 6% [2%-15%] | 39/65 = 60% [48%-71%] | 8/65 = 12% [6%-22%] |
 | style | clef_flash | 0.21 | 5/65 = 8% [3%-17%] | 0/65 = 0% [0%-6%] | 44/65 = 68% [56%-78%] | 20/65 = 31% [21%-43%] |
 | style | clef | 0.13 | 1/65 = 2% [0%-8%] | 0/65 = 0% [0%-6%] | 29/65 = 45% [33%-57%] | 8/65 = 12% [6%-22%] |
@@ -561,6 +650,7 @@ Judges that return a probability. The cut is the one maximising caught rate minu
 | style | gemini_decision | 0.24 | 54/65 = 83% [72%-90%] | 0/65 = 0% [0%-6%] | 60/65 = 92% [83%-97%] | 1/65 = 2% [0%-8%] |
 | secrets | gemma4_12b | 1.00 | 105/105 = 100% [96%-100%] | 31/105 = 30% [22%-39%] | 102/105 = 97% [92%-99%] | 1/105 = 1% [0%-5%] |
 | secrets | qwen3.5_27b | 0.87 | 105/105 = 100% [96%-100%] | 32/105 = 30% [22%-40%] | 101/105 = 96% [91%-99%] | 0/105 = 0% [0%-4%] |
+| secrets | qwen3.8_iq3_s | 0.86 | 105/105 = 100% [96%-100%] | 7/105 = 7% [3%-13%] | 105/105 = 100% [96%-100%] | 5/105 = 5% [2%-11%] |
 | secrets | jev | 0.94 | 105/105 = 100% [96%-100%] | 30/105 = 29% [21%-38%] | 99/105 = 94% [88%-97%] | 0/105 = 0% [0%-4%] |
 | secrets | clef_flash | 0.96 | 105/105 = 100% [96%-100%] | 82/105 = 78% [69%-85%] | 82/105 = 78% [69%-85%] | 6/105 = 6% [3%-12%] |
 | secrets | clef | 0.96 | 105/105 = 100% [96%-100%] | 40/105 = 38% [29%-48%] | 95/105 = 90% [83%-95%] | 6/105 = 6% [3%-12%] |
@@ -570,6 +660,7 @@ Judges that return a probability. The cut is the one maximising caught rate minu
 | aitext | gemma4_26b | 0.65 | 23/66 = 35% [24%-47%] | 3/12 = 25% [9%-53%] | 22/66 = 33% [23%-45%] | 3/12 = 25% [9%-53%] |
 | aitext | gemma4_31b | 0.00 | 41/66 = 62% [50%-73%] | 0/8 = 0% [0%-32%] | 55/66 = 83% [73%-90%] | 3/8 = 38% [14%-69%] |
 | aitext | qwen3.5_27b | 0.16 | 0/66 = 0% [0%-6%] | 0/12 = 0% [0%-24%] | 15/66 = 23% [14%-34%] | 3/12 = 25% [9%-53%] |
+| aitext | qwen3.8_iq3_s | 0.16 | 4/66 = 6% [2%-15%] | 0/12 = 0% [0%-24%] | 61/66 = 92% [83%-97%] | 6/12 = 50% [25%-75%] |
 | aitext | jev | 0.42 | 17/66 = 26% [17%-37%] | 1/12 = 8% [1%-35%] | 49/66 = 74% [63%-83%] | 4/12 = 33% [14%-61%] |
 | aitext | clef_flash | 0.30 | 23/66 = 35% [24%-47%] | 1/12 = 8% [1%-35%] | 56/66 = 85% [74%-92%] | 4/12 = 33% [14%-61%] |
 | aitext | clef | 0.34 | 20/66 = 30% [21%-42%] | 1/12 = 8% [1%-35%] | 43/66 = 65% [53%-76%] | 2/12 = 17% [5%-45%] |
@@ -588,6 +679,9 @@ Not part of the pass bar (it scores single judges); reported because the article
 | honorific | rule OR LLM: gemma4_26b_think | 135/135 = 100% [97%-100%] | 63/209 = 30% [24%-37%] |
 | honorific | rule OR LLM: gemma4_31b | 135/135 = 100% [97%-100%] | 102/209 = 49% [42%-56%] |
 | honorific | rule OR LLM: qwen3.5_27b | 119/135 = 88% [82%-93%] | 116/209 = 56% [49%-62%] |
+| honorific | rule OR LLM: sync_m_think | 135/135 = 100% [97%-100%] | 68/209 = 33% [27%-39%] |
+| honorific | rule OR LLM: qwen3.8_iq3_s | 107/135 = 79% [72%-85%] | 106/209 = 51% [44%-57%] |
+| honorific | rule OR LLM: qwen3.8_iq3_s_think | 135/135 = 100% [97%-100%] | 73/209 = 35% [29%-42%] |
 | honorific | rule OR LLM: claude_haiku | 130/135 = 96% [92%-98%] | 71/209 = 34% [28%-41%] |
 | honorific | rule OR LLM: claude_api_think | 135/135 = 100% [97%-100%] | 60/209 = 29% [23%-35%] |
 | honorific | rule OR LLM: claude_api_off | 106/135 = 79% [71%-85%] | 133/209 = 64% [57%-70%] |
@@ -602,6 +696,9 @@ Not part of the pass bar (it scores single judges); reported because the article
 | secrets | gitleaks AND LLM: gemma4_26b | 225/225 = 100% [98%-100%] | 16/225 = 7% [4%-11%] |
 | secrets | gitleaks AND LLM: gemma4_31b | 225/225 = 100% [98%-100%] | 29/225 = 13% [9%-18%] |
 | secrets | gitleaks AND LLM: qwen3.5_27b | 225/225 = 100% [98%-100%] | 25/225 = 11% [8%-16%] |
+| secrets | gitleaks AND LLM: sync_m_think | 225/225 = 100% [98%-100%] | 3/225 = 1% [0%-4%] |
+| secrets | gitleaks AND LLM: qwen3.8_iq3_s | 225/225 = 100% [98%-100%] | 1/225 = 0% [0%-2%] |
+| secrets | gitleaks AND LLM: qwen3.8_iq3_s_think | 225/225 = 100% [98%-100%] | 5/225 = 2% [1%-5%] |
 | secrets | gitleaks AND LLM: claude_haiku | 225/225 = 100% [98%-100%] | 15/225 = 7% [4%-11%] |
 | secrets | gitleaks AND LLM: claude_api_think | 225/225 = 100% [98%-100%] | 2/225 = 1% [0%-3%] |
 | secrets | gitleaks AND LLM: claude_api_off | 225/225 = 100% [98%-100%] | 26/225 = 12% [8%-16%] |
