@@ -148,6 +148,30 @@ class SyncStrataJudgeTests(unittest.TestCase):
         self.assertGreater(out["p_yes"], 0.5)
         self.assertEqual((body["max_tokens"], body["reasoning_effort"], len(body["messages"])), (1, "none", 1))
 
+    def ask_model(self, name, reply):
+        with mock.patch.object(judges.urllib.request, "urlopen") as urlopen:
+            urlopen.return_value = io.BytesIO(json.dumps(reply).encode())
+            judge = judges.make(name)
+            out = judge.ask("p")
+            return out, json.loads(urlopen.call_args.args[0].data)
+
+    def test_iq3_s_thinking_run_is_a_reasoning_request_judged_by_first_line(self):
+        reply = {"model": "qwen3.8-flash-next-iq3_s", "choices": [{"message": {"content": "YES"}}]}
+        out, body = self.ask_model("qwen3.8_iq3_s+think", reply)
+        self.assertEqual(body["reasoning_effort"], "low")
+        self.assertNotIn("logprobs", body)
+        self.assertEqual(body["messages"][0]["role"], "system")
+        self.assertEqual((out["verdict"], out["p_yes"]), ("YES", None))
+
+    def test_the_served_model_is_recorded(self):
+        reply = {"model": "inkling-2-mini-sq-20", "choices": [{"message": {"content": "NO"}}]}
+        self.assertEqual(self.ask_model("inkling_2_mini", reply)[0]["served_model"], "inkling-2-mini-sq-20")
+
+    def test_an_engine_serving_another_model_is_an_error(self):
+        reply = {"model": "qwen3.8-flash-next-sync-m", "choices": [{"message": {"content": "YES"}}]}
+        with self.assertRaises(RuntimeError):
+            self.ask_model("qwen3.8_iq3_s+think", reply)
+
     def test_think_variant_turns_reasoning_on_and_has_its_own_name(self):
         with mock.patch.object(judges.urllib.request, "urlopen") as urlopen:
             urlopen.return_value = io.BytesIO(json.dumps({"choices": [{"message": {"content": "YES"}}], "usage": {"completion_tokens": 300}}).encode())

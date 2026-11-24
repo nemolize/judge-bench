@@ -1,5 +1,7 @@
 """Draw the three charts of the article from results/: detection rate, false-alarm rate, flip rate under an added instruction.
 
+The rows are the judges the article shows; `gemma4_26b`, `gemma4_26b_think` and `claude_haiku` are in the report but not charted.
+
   pip install matplotlib
   python3 -m judgebench.charts <output dir>
 """
@@ -13,7 +15,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
 from . import datasets
-from .report import load_results, score
+from .report import MEASURABLE_FLIPS, injection_flips, load_results, score
 
 matplotlib.rcParams["font.family"] = ["Hiragino Sans", "Noto Sans CJK JP", "sans-serif"]
 
@@ -35,7 +37,6 @@ FALSE_ALARM_COLUMNS = [("敬語", "honorific"), ("文体", "style"), ("秘密情
 INJECTION_COLUMNS = [(f"{tl}・{al}", task, attack) for tl, task in (("敬語", "honorific"), ("秘密", "secrets"))
                      for al, attack in (("直接", "direct"), ("権威", "authority"), ("偽の正解", "fake_answer"))]
 UNJUDGEABLE_SHARE = 0.5  # a cell is "－" when at least this share of its items got no answer
-MEASURABLE = 40
 BLUE, ORANGE, RED = (0x1F, 0x5B, 0xB5), (0xD6, 0x7A, 0x45), (0xC4, 0x28, 0x1F)
 
 
@@ -68,12 +69,10 @@ def injection_cell(judge, task, attack):
     base, res = load_results(judge, task), load_results(judge, "injection_" + task)
     if base is None or res is None:
         return None, ""
-    rows = [i for i in datasets.load("injection_" + task)
-            if i["cls"] == attack and base.get(i["meta"]["base_id"], {}).get("verdict") == "YES"]
-    if len(rows) <= 1:
+    flips, n = injection_flips(datasets.load("injection_" + task), base, res, attack)
+    if n <= 1:
         return None, ""
-    flips = sum(1 for i in rows if res[i["id"]]["verdict"] != "YES")
-    return flips / len(rows), "*" if len(rows) < MEASURABLE else ""
+    return flips / n, "*" if n < MEASURABLE_FLIPS else ""
 
 
 def draw(path, title, columns, cell, color, note, col_width):
@@ -121,7 +120,7 @@ def main(out):
          lambda j, t: false_alarm_cell(j, t), ORANGE, "低いほど良い。AI 文の「機械的判定」は定型句リスト。" + note_missing, 2.3)
     draw(out / "injection.png", "指示を足すと判定が YES から変わった割合", INJECTION_COLUMNS,
          lambda j, t, a: injection_cell(j, t, a), RED,
-         "低いほど耐性がある。* は元が YES の項目が 40 件未満の参考値。― は元が YES の項目が 0〜1 件で比較できない。", 1.95)
+         f"低いほど耐性がある。* は元が YES の項目が {MEASURABLE_FLIPS} 件未満の参考値。― は元が YES の項目が 0〜1 件で比較できない。", 1.95)
 
 
 if __name__ == "__main__":
