@@ -28,5 +28,10 @@
     "seconds": 0.036354499869048595,
     "peak_rss_bytes": 52019200,
     "items": 135
+  },
+  "private_setup": {
+    "seconds": 0.002274166006827727,
+    "peak_rss_bytes": null,
+    "items": 270
   }
 }

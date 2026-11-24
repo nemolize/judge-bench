@@ -196,7 +196,7 @@ def task_latency_table(task, base_meta):
         if j == "baseline":
             m = base_meta.get(task)
             if m:
-                lines.append(f"| baseline (batch, amortised) | {m['seconds'] / m['items']:.4f} |")
+                lines.append(f"| baseline (batch, amortised) | {m['seconds'] / m['items']:.6f} |")
             continue
         if load_results(j, task) is None:
             continue

@@ -4,8 +4,8 @@
 
 | judge | median latency (s/item) | loaded size (GB) |
 |---|---|---|
-| baseline (batch, amortised) | 0.001 | 0.51 (peak RSS) |
-| gemma4_12b | 0.27 | 25.0 |
+| baseline (batch, amortised) | 0.000 | 0.51 (peak RSS) |
+| gemma4_12b | 0.27 | 18.2 |
 | gemma4_12b_think | 24.67 | 16.4 |
 | gemma4_26b | 0.54 | 29.0 |
 | gemma4_26b_think | 16.85 | 24.9 |
@@ -23,6 +23,13 @@
 | clef | 0.42 | hosted |
 | gpt_6_luna | 0.43 | hosted |
 | gemini_decision | 0.34 | hosted |
+
+### Latency on private_setup
+
+| judge | median latency (s/item) |
+|---|---|
+| baseline (batch, amortised) | 0.000008 |
+| gemma4_12b | 2.98 |
 
 ### honorific
 
@@ -407,6 +414,21 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 | gpt_6_luna | 67.9% | 55.0% | 57.9% |
 | gemini_decision | 64.4% | 50.7% | 54.0% |
 
+### private_setup
+
+| judge | class | caught | false warnings (all negatives) | no answer | errors | beats baseline |
+|---|---|---|---|---|---|---|
+| baseline | ram | 31/45 = 69% [54%-80%] | 47/135 = 35% [27%-43%] | 0 | 0 |  |
+| baseline | free_disk | 45/45 = 100% [92%-100%] | 47/135 = 35% [27%-43%] | 0 | 0 |  |
+| baseline | local_tool_or_hook | 28/45 = 62% [48%-75%] | 47/135 = 35% [27%-43%] | 0 | 0 |  |
+| baseline | (all positives) | 104/135 = 77% [69%-83%] | 47/135 = 35% [27%-43%] | 0 | 0 |  |
+| gemma4_12b | ram | 45/45 = 100% [92%-100%] | 58/135 = 43% [35%-51%] | 0 | 0 | no |
+| gemma4_12b | free_disk | 45/45 = 100% [92%-100%] | 58/135 = 43% [35%-51%] | 0 | 0 | no |
+| gemma4_12b | local_tool_or_hook | 38/45 = 84% [71%-92%] | 58/135 = 43% [35%-51%] | 0 | 0 | no |
+| gemma4_12b | (all positives) | 128/135 = 95% [90%-97%] | 58/135 = 43% [35%-51%] | 0 | 0 | no |
+
+Zero counts: none
+
 ## Robustness
 
 ### injection_honorific
@@ -576,6 +598,13 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 | gpt_6_luna | 55/225 |
 | gemini_decision | 52/225 |
 
+### private_setup: false warnings by kind of negative
+
+| judge | neg_repro_line (n=45) | neg_vendor_figure (n=45) | neg_ordinary (n=45) |
+|---|---|---|---|
+| baseline | 37/45 | 6/45 | 4/45 |
+| gemma4_12b | 45/45 | 9/45 | 4/45 |
+
 ## Checks on what the AI-text dataset gives away
 
 Not judges: a threshold-free AUC of a trivial feature, so a reader can see how much length or sentence count alone explains.
@@ -602,26 +631,26 @@ Not judges: a threshold-free AUC of a trivial feature, so a reader can see how m
 
 Not part of the pass bar, which fixes the 0.5 cut. Shown because a decision model's probability need not be calibrated at 0.5.
 
-| judge | honorific | style | secrets | aitext |
-|---|---|---|---|---|
-| gemma4_12b | 0.73 | 0.91 | 1.00 | 0.72 |
-| gemma4_12b_think | n/a | n/a | n/a | n/a |
-| gemma4_26b | 0.97 | 0.97 | 0.96 | 0.66 |
-| gemma4_26b_think | n/a | n/a | n/a | n/a |
-| gemma4_31b | 0.96 | 0.95 | 1.00 | 0.80 |
-| qwen3.5_27b | 0.84 | 0.94 | 0.99 | 0.41 |
-| sync_m_think | n/a | n/a | n/a | n/a |
-| qwen3.8_iq3_s | 0.77 | 0.97 | 1.00 | 0.85 |
-| qwen3.8_iq3_s_think | n/a | n/a | n/a | n/a |
-| claude_haiku | n/a | n/a | n/a | n/a |
-| claude_api_think | n/a | n/a | n/a | n/a |
-| claude_api_off | n/a | n/a | n/a | n/a |
-| gemini_flash | n/a | n/a | n/a | n/a |
-| jev | 0.57 | 0.75 | 0.99 | 0.69 |
-| clef_flash | 0.49 | 0.73 | 0.95 | 0.75 |
-| clef | 0.53 | 0.66 | 0.98 | 0.79 |
-| gpt_6_luna | 0.77 | 0.83 | 0.97 | 0.70 |
-| gemini_decision | 0.92 | 0.99 | 1.00 | 0.78 |
+| judge | honorific | style | secrets | aitext | private_setup |
+|---|---|---|---|---|---|
+| gemma4_12b | 0.73 | 0.91 | 1.00 | 0.72 | 0.90 |
+| gemma4_12b_think | n/a | n/a | n/a | n/a | n/a |
+| gemma4_26b | 0.97 | 0.97 | 0.96 | 0.66 | n/a |
+| gemma4_26b_think | n/a | n/a | n/a | n/a | n/a |
+| gemma4_31b | 0.96 | 0.95 | 1.00 | 0.80 | n/a |
+| qwen3.5_27b | 0.84 | 0.94 | 0.99 | 0.41 | n/a |
+| sync_m_think | n/a | n/a | n/a | n/a | n/a |
+| qwen3.8_iq3_s | 0.77 | 0.97 | 1.00 | 0.85 | n/a |
+| qwen3.8_iq3_s_think | n/a | n/a | n/a | n/a | n/a |
+| claude_haiku | n/a | n/a | n/a | n/a | n/a |
+| claude_api_think | n/a | n/a | n/a | n/a | n/a |
+| claude_api_off | n/a | n/a | n/a | n/a | n/a |
+| gemini_flash | n/a | n/a | n/a | n/a | n/a |
+| jev | 0.57 | 0.75 | 0.99 | 0.69 | n/a |
+| clef_flash | 0.49 | 0.73 | 0.95 | 0.75 | n/a |
+| clef | 0.53 | 0.66 | 0.98 | 0.79 | n/a |
+| gpt_6_luna | 0.77 | 0.83 | 0.97 | 0.70 | n/a |
+| gemini_decision | 0.92 | 0.99 | 1.00 | 0.78 | n/a |
 
 ## Threshold chosen on one half, measured on the other
 
@@ -666,6 +695,7 @@ Judges that return a probability. The cut is the one maximising caught rate minu
 | aitext | clef | 0.34 | 20/66 = 30% [21%-42%] | 1/12 = 8% [1%-35%] | 43/66 = 65% [53%-76%] | 2/12 = 17% [5%-45%] |
 | aitext | gpt_6_luna | 0.46 | 57/66 = 86% [76%-93%] | 4/12 = 33% [14%-61%] | 63/66 = 95% [87%-98%] | 8/12 = 67% [39%-86%] |
 | aitext | gemini_decision | 0.34 | 35/66 = 53% [41%-65%] | 2/12 = 17% [5%-45%] | 63/66 = 95% [87%-98%] | 5/12 = 42% [19%-68%] |
+| private_setup | gemma4_12b | 1.00 | 62/66 = 94% [85%-98%] | 25/55 = 45% [33%-58%] | 55/66 = 83% [73%-90%] | 9/55 = 16% [9%-28%] |
 
 ## Two-stage setups
 
