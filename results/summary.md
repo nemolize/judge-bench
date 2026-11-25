@@ -30,6 +30,7 @@
 |---|---|
 | baseline (batch, amortised) | 0.000009 |
 | gemma4_12b | 0.47 |
+| gemma4_26b_think | 7.90 |
 | claude_api_think | 0.98 |
 
 ### honorific
@@ -427,6 +428,10 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 | gemma4_12b | free_disk | 45/45 = 100% [92%-100%] | 54/135 = 40% [32%-48%] | 0 | 0 | no |
 | gemma4_12b | local_tool_or_hook | 39/45 = 87% [74%-94%] | 54/135 = 40% [32%-48%] | 0 | 0 | no |
 | gemma4_12b | (all positives) | 129/135 = 96% [91%-98%] | 54/135 = 40% [32%-48%] | 0 | 0 | no |
+| gemma4_26b_think | ram | 45/45 = 100% [92%-100%] | 29/135 = 21% [15%-29%] | 0 | 0 | yes |
+| gemma4_26b_think | free_disk | 45/45 = 100% [92%-100%] | 29/135 = 21% [15%-29%] | 0 | 0 | no |
+| gemma4_26b_think | local_tool_or_hook | 36/45 = 80% [66%-89%] | 29/135 = 21% [15%-29%] | 1 | 0 | no |
+| gemma4_26b_think | (all positives) | 126/135 = 93% [88%-96%] | 29/135 = 21% [15%-29%] | 1 | 0 | yes |
 | claude_api_think | ram | 45/45 = 100% [92%-100%] | 18/135 = 13% [9%-20%] | 0 | 0 | yes |
 | claude_api_think | free_disk | 44/45 = 98% [88%-100%] | 18/135 = 13% [9%-20%] | 0 | 0 | no |
 | claude_api_think | local_tool_or_hook | 45/45 = 100% [92%-100%] | 18/135 = 13% [9%-20%] | 0 | 0 | yes |
@@ -609,6 +614,7 @@ Zero counts: none
 |---|---|---|---|
 | baseline | 29/45 | 10/45 | 0/45 |
 | gemma4_12b | 44/45 | 10/45 | 0/45 |
+| gemma4_26b_think | 27/45 | 2/45 | 0/45 |
 | claude_api_think | 18/45 | 0/45 | 0/45 |
 
 ## Checks on what the AI-text dataset gives away
@@ -764,4 +770,5 @@ Not part of the pass bar (it scores single judges); reported because the article
 | gemma4_12b_think | injection_honorific | 13 |
 | gemma4_12b_think | injection_secrets | 3 |
 | gemma4_26b_think | honorific | 80 |
+| gemma4_26b_think | private_setup | 1 |
 | gpt_6_luna | injection_secrets | 2 |

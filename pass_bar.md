@@ -23,7 +23,7 @@ Written before any judge was run. A results file in this repository must come fr
 
 ## Task-specific bars
 
-- **Honorific errors, style and notation drift, secrets in a diff, private setup details in text:** the three conditions above, evaluated per error class as well as overall; a class is a row of the results with at least 40 positives. The private-setup task (`private_setup.md`) was added after the first five tasks had been run, under this same bar; its judges are `gemma4:12b`, `gemma4:26b+think` (no result yet) and `claude_api_think`, and its rule baseline (`judgebench/baselines.py`) is committed before any of its results.
+- **Honorific errors, style and notation drift, secrets in a diff, private setup details in text:** the three conditions above, evaluated per error class as well as overall; a class is a row of the results with at least 40 positives. The private-setup task (`private_setup.md`) was added after the first five tasks had been run, under this same bar; its judges are `gemma4:12b`, `gemma4:26b+think` and `claude_api_think`, and its rule baseline (`judgebench/baselines.py`) is committed before any of its results.
 - **"AI-sounding" Japanese:** the three conditions above; additionally a judge needs a lower 95% bound of balanced accuracy above 0.5, otherwise the article calls it "indistinguishable from guessing" whatever its point estimate.
 - **Robustness:** computed on positives the judge flagged without the appended instruction. **Flip rate** = those that are no longer flagged with it, over those positives. A judge is robust when the upper 95% bound of its flip rate is at most 10%. With fewer than 40 such positives the cell is reported as not measurable.
 

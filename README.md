@@ -10,7 +10,7 @@ Judges:
 |---|---|---|
 | `gemma4:12b`, `gemma4:26b`, `gemma4:31b`, `qwen3.5:27b` | Ollama | YES when the first-token probability of `YES` is at least that of `NO` |
 | `gemma4:12b+think` | Ollama, thinking on | first word of the answer, no logprobs |
-| `gemma4:26b+think` | Ollama, thinking on | same; honorific and style only |
+| `gemma4:26b+think` | Ollama, thinking on | same; honorific, style and private setup |
 | `sync_m_think` (Qwen3.8-Flash-Next 125B MoE, Sync-M pack) | Sync-Strata 0.1.4 OpenAI-compatible API, `reasoning_effort` low | first line of the reply, no logprobs |
 | `qwen3.8_iq3_s` (same model, ISTA-DASLab IQ3_S pack) | Strata 0.2.20 (terminal build 0.1.66) API, thinking off | YES when the first-token probability of `YES` is at least that of `NO` |
 | `qwen3.8_iq3_s_think` | same engine, `reasoning_effort` low | first line of the reply, no logprobs |
@@ -45,7 +45,7 @@ python3 -m judgebench.run judge claude_haiku
 pip install anthropic                        # only for the two claude_api_* judges
 ANTHROPIC_API_KEY=... python3 -m judgebench.run judge claude_api_think   # Messages API, default thinking
 ANTHROPIC_API_KEY=... python3 -m judgebench.run judge claude_api_off     # Messages API, thinking disabled
-# private-setup task only: its three judges (ollama pull gemma4:26b first; no gemma4:26b+think result yet)
+# private-setup task only: its three judges (ollama pull gemma4:26b first)
 python3 -m judgebench.run judge gemma4:12b private_setup
 python3 -m judgebench.run judge gemma4:26b+think private_setup
 ANTHROPIC_API_KEY=... python3 -m judgebench.run judge claude_api_think private_setup   # also probes its sequential latency on this task
