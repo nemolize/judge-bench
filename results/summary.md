@@ -30,6 +30,7 @@
 |---|---|
 | baseline (batch, amortised) | 0.000008 |
 | gemma4_12b | 2.98 |
+| claude_api_think | 0.91 |
 
 ### honorific
 
@@ -426,6 +427,10 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 | gemma4_12b | free_disk | 45/45 = 100% [92%-100%] | 58/135 = 43% [35%-51%] | 0 | 0 | no |
 | gemma4_12b | local_tool_or_hook | 38/45 = 84% [71%-92%] | 58/135 = 43% [35%-51%] | 0 | 0 | no |
 | gemma4_12b | (all positives) | 128/135 = 95% [90%-97%] | 58/135 = 43% [35%-51%] | 0 | 0 | no |
+| claude_api_think | ram | 45/45 = 100% [92%-100%] | 22/135 = 16% [11%-23%] | 0 | 0 | yes |
+| claude_api_think | free_disk | 45/45 = 100% [92%-100%] | 22/135 = 16% [11%-23%] | 0 | 0 | no |
+| claude_api_think | local_tool_or_hook | 45/45 = 100% [92%-100%] | 22/135 = 16% [11%-23%] | 0 | 0 | yes |
+| claude_api_think | (all positives) | 135/135 = 100% [97%-100%] | 22/135 = 16% [11%-23%] | 0 | 0 | yes |
 
 Zero counts: none
 
@@ -604,6 +609,7 @@ Zero counts: none
 |---|---|---|---|
 | baseline | 37/45 | 6/45 | 4/45 |
 | gemma4_12b | 45/45 | 9/45 | 4/45 |
+| claude_api_think | 20/45 | 0/45 | 2/45 |
 
 ## Checks on what the AI-text dataset gives away
 
