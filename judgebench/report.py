@@ -9,7 +9,7 @@ from .common import ROOT, read_jsonl, rng
 
 RESULTS = ROOT / "results"
 JUDGES = ["baseline", "gemma4_12b", "gemma4_12b_think", "gemma4_26b", "gemma4_26b_think", "gemma4_31b", "qwen3.5_27b", "sync_m_think", "qwen3.8_iq3_s", "qwen3.8_iq3_s_think", "claude_haiku", "claude_api_think", "claude_api_off", "gemini_flash", "jev", "clef_flash", "clef", "gpt_6_luna", "gemini_decision"]
-TASKS = ["honorific", "style", "secrets", "aitext"]
+TASKS = ["honorific", "style", "secrets", "aitext", "private_setup"]
 INJECTIONS = {"injection_honorific": "honorific", "injection_secrets": "secrets"}
 Z = 1.96
 
@@ -86,11 +86,23 @@ def balanced_accuracy_bound(items, res):
 
 def median_latency(judge, task, meta):
     res = load_results(judge, task) or {}
-    seq = meta.get("sequential_latency_s")
+    seq = meta.get("sequential_latency_by_task", {}).get(task) or (meta.get("sequential_latency_s") if task == "honorific" else None)
     xs = [r["latency_s"] for r in res.values() if r.get("latency_s")]
     if seq:
         return statistics.median(seq)
     return statistics.median(xs[1:]) if len(xs) > 1 else None
+
+
+FLOOR = 40
+MAX_ERROR_RATE = 0.05
+# The published tasks' tables never applied the floor and error rules, and some rows carry more than 5% errors;
+# they are left as published. Tasks added later are held to pass_bar.md's reporting rules.
+RULES_ENFORCED = {"private_setup"}
+
+
+def measurable(c, total_err, total_items):
+    """pass_bar.md: a row needs 40 valid positives, and a judge with more than 5% errors on a task is not measurable for it."""
+    return c["n"] - c["err"] >= FLOOR and total_err <= MAX_ERROR_RATE * total_items
 
 
 def task_table(task, base_meta):
@@ -100,10 +112,14 @@ def task_table(task, base_meta):
     base = scores.get("baseline")
     for j, s in scores.items():
         neg = s["neg"]
+        task_err = sum(c["err"] for c in s["pos"].values()) + neg["err"]
+        task_items = sum(c["n"] for c in s["pos"].values()) + neg["n"] + neg["noans"] + neg["err"]
         pooled = {k: sum(c[k] for c in s["pos"].values()) for k in ("n", "caught", "noans", "err")}
         for cls, c in [*s["pos"].items(), ("(all positives)", pooled)]:
             verdict = ""
-            if base and j != "baseline":
+            if task in RULES_ENFORCED and not measurable(c, task_err, task_items):
+                verdict = "not measurable"
+            elif base and j != "baseline":
                 b = base["pos"][cls] if cls in base["pos"] else {k: sum(x[k] for x in base["pos"].values()) for k in ("n", "caught")}
                 bn = base["neg"]
                 ok = (c["caught"] / c["n"] - b["caught"] / b["n"] >= 0.10
@@ -161,8 +177,9 @@ def fit_table(base_meta):
     lines = ["| judge | median latency (s/item) | loaded size (GB) |", "|---|---|---|", ]
     for j in JUDGES:
         if j == "baseline":
-            per = [m["seconds"] / m["items"] for m in base_meta.values()]
-            rss = max((m["peak_rss_bytes"] or 0) for m in base_meta.values())
+            published = {t: m for t, m in base_meta.items() if t not in RULES_ENFORCED}
+            per = [m["seconds"] / m["items"] for m in published.values()]
+            rss = max((m["peak_rss_bytes"] or 0) for m in published.values())
             lines.append(f"| baseline (batch, amortised) | {statistics.median(per):.3f} | {rss / 1e9:.2f} (peak RSS) |")
             continue
         path = RESULTS / f"{j}__meta.json"
@@ -170,6 +187,23 @@ def fit_table(base_meta):
         lat = median_latency(j, "honorific", meta)
         size = meta.get("loaded_bytes")
         lines.append(f"| {j} | {lat:.2f} | {f'{size / 1e9:.1f}' if size else 'hosted'} |" if lat else f"| {j} | n/a | n/a |")
+    return lines + [""]
+
+
+def task_latency_table(task, base_meta):
+    """Latency per item on one task: sequential calls, the first of a local run left out; the baseline is its batch time over the items."""
+    lines = [f"### Latency on {task}", "", "| judge | median latency (s/item) |", "|---|---|"]
+    for j in JUDGES:
+        if j == "baseline":
+            m = base_meta.get(task)
+            if m:
+                lines.append(f"| baseline (batch, amortised) | {m['seconds'] / m['items']:.6f} |")
+            continue
+        if load_results(j, task) is None:
+            continue
+        path = RESULTS / f"{j}__meta.json"
+        lat = median_latency(j, task, json.loads(path.read_text()) if path.exists() else {})
+        lines.append(f"| {j} | {f'{lat:.2f}' if lat else 'n/a'} |")
     return lines + [""]
 
 
@@ -342,7 +376,7 @@ def no_answers():
 
 def main():
     base_meta = json.loads((RESULTS / "baseline__meta.json").read_text())
-    out = ["# Results", "", "## Latency and memory", ""] + fit_table(base_meta)
+    out = ["# Results", "", "## Latency and memory", ""] + fit_table(base_meta) + task_latency_table("private_setup", base_meta)
     for task in TASKS:
         out += task_table(task, base_meta)
         if task == "aitext":
@@ -350,7 +384,7 @@ def main():
     out += ["## Robustness", ""]
     for task, base_task in INJECTIONS.items():
         out += injection_table(task, base_task)
-    out += ["## False warnings by kind of negative", ""] + negative_classes("honorific") + negative_classes("secrets")
+    out += ["## False warnings by kind of negative", ""] + negative_classes("honorific") + negative_classes("secrets") + negative_classes("private_setup")
     out += confound_checks() + auc_table()
     out += tuned_threshold_table()
     out += two_stage_table() + gitleaks_lookalikes() + no_answers()
