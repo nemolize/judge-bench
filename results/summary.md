@@ -4,8 +4,8 @@
 
 | judge | median latency (s/item) | loaded size (GB) |
 |---|---|---|
-| baseline (batch, amortised) | 0.000 | 0.51 (peak RSS) |
-| gemma4_12b | 0.27 | 18.2 |
+| baseline (batch, amortised) | 0.001 | 0.51 (peak RSS) |
+| gemma4_12b | 0.27 | 25.0 |
 | gemma4_12b_think | 24.67 | 16.4 |
 | gemma4_26b | 0.54 | 29.0 |
 | gemma4_26b_think | 16.85 | 24.9 |
@@ -28,9 +28,9 @@
 
 | judge | median latency (s/item) |
 |---|---|
-| baseline (batch, amortised) | 0.000008 |
-| gemma4_12b | 2.98 |
-| claude_api_think | 0.91 |
+| baseline (batch, amortised) | 0.000009 |
+| gemma4_12b | 0.47 |
+| claude_api_think | 0.98 |
 
 ### honorific
 
@@ -419,18 +419,18 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 
 | judge | class | caught | false warnings (all negatives) | no answer | errors | beats baseline |
 |---|---|---|---|---|---|---|
-| baseline | ram | 31/45 = 69% [54%-80%] | 47/135 = 35% [27%-43%] | 0 | 0 |  |
-| baseline | free_disk | 45/45 = 100% [92%-100%] | 47/135 = 35% [27%-43%] | 0 | 0 |  |
-| baseline | local_tool_or_hook | 28/45 = 62% [48%-75%] | 47/135 = 35% [27%-43%] | 0 | 0 |  |
-| baseline | (all positives) | 104/135 = 77% [69%-83%] | 47/135 = 35% [27%-43%] | 0 | 0 |  |
-| gemma4_12b | ram | 45/45 = 100% [92%-100%] | 58/135 = 43% [35%-51%] | 0 | 0 | no |
-| gemma4_12b | free_disk | 45/45 = 100% [92%-100%] | 58/135 = 43% [35%-51%] | 0 | 0 | no |
-| gemma4_12b | local_tool_or_hook | 38/45 = 84% [71%-92%] | 58/135 = 43% [35%-51%] | 0 | 0 | no |
-| gemma4_12b | (all positives) | 128/135 = 95% [90%-97%] | 58/135 = 43% [35%-51%] | 0 | 0 | no |
-| claude_api_think | ram | 45/45 = 100% [92%-100%] | 22/135 = 16% [11%-23%] | 0 | 0 | yes |
-| claude_api_think | free_disk | 45/45 = 100% [92%-100%] | 22/135 = 16% [11%-23%] | 0 | 0 | no |
-| claude_api_think | local_tool_or_hook | 45/45 = 100% [92%-100%] | 22/135 = 16% [11%-23%] | 0 | 0 | yes |
-| claude_api_think | (all positives) | 135/135 = 100% [97%-100%] | 22/135 = 16% [11%-23%] | 0 | 0 | yes |
+| baseline | ram | 21/45 = 47% [33%-61%] | 39/135 = 29% [22%-37%] | 0 | 0 |  |
+| baseline | free_disk | 45/45 = 100% [92%-100%] | 39/135 = 29% [22%-37%] | 0 | 0 |  |
+| baseline | local_tool_or_hook | 21/45 = 47% [33%-61%] | 39/135 = 29% [22%-37%] | 0 | 0 |  |
+| baseline | (all positives) | 87/135 = 64% [56%-72%] | 39/135 = 29% [22%-37%] | 0 | 0 |  |
+| gemma4_12b | ram | 45/45 = 100% [92%-100%] | 54/135 = 40% [32%-48%] | 0 | 0 | no |
+| gemma4_12b | free_disk | 45/45 = 100% [92%-100%] | 54/135 = 40% [32%-48%] | 0 | 0 | no |
+| gemma4_12b | local_tool_or_hook | 39/45 = 87% [74%-94%] | 54/135 = 40% [32%-48%] | 0 | 0 | no |
+| gemma4_12b | (all positives) | 129/135 = 96% [91%-98%] | 54/135 = 40% [32%-48%] | 0 | 0 | no |
+| claude_api_think | ram | 45/45 = 100% [92%-100%] | 18/135 = 13% [9%-20%] | 0 | 0 | yes |
+| claude_api_think | free_disk | 44/45 = 98% [88%-100%] | 18/135 = 13% [9%-20%] | 0 | 0 | no |
+| claude_api_think | local_tool_or_hook | 45/45 = 100% [92%-100%] | 18/135 = 13% [9%-20%] | 0 | 0 | yes |
+| claude_api_think | (all positives) | 134/135 = 99% [96%-100%] | 18/135 = 13% [9%-20%] | 0 | 0 | yes |
 
 Zero counts: none
 
@@ -607,9 +607,9 @@ Zero counts: none
 
 | judge | neg_repro_line (n=45) | neg_vendor_figure (n=45) | neg_ordinary (n=45) |
 |---|---|---|---|
-| baseline | 37/45 | 6/45 | 4/45 |
-| gemma4_12b | 45/45 | 9/45 | 4/45 |
-| claude_api_think | 20/45 | 0/45 | 2/45 |
+| baseline | 29/45 | 10/45 | 0/45 |
+| gemma4_12b | 44/45 | 10/45 | 0/45 |
+| claude_api_think | 18/45 | 0/45 | 0/45 |
 
 ## Checks on what the AI-text dataset gives away
 
@@ -639,7 +639,7 @@ Not part of the pass bar, which fixes the 0.5 cut. Shown because a decision mode
 
 | judge | honorific | style | secrets | aitext | private_setup |
 |---|---|---|---|---|---|
-| gemma4_12b | 0.73 | 0.91 | 1.00 | 0.72 | 0.90 |
+| gemma4_12b | 0.73 | 0.91 | 1.00 | 0.72 | 0.92 |
 | gemma4_12b_think | n/a | n/a | n/a | n/a | n/a |
 | gemma4_26b | 0.97 | 0.97 | 0.96 | 0.66 | n/a |
 | gemma4_26b_think | n/a | n/a | n/a | n/a | n/a |
@@ -701,7 +701,7 @@ Judges that return a probability. The cut is the one maximising caught rate minu
 | aitext | clef | 0.34 | 20/66 = 30% [21%-42%] | 1/12 = 8% [1%-35%] | 43/66 = 65% [53%-76%] | 2/12 = 17% [5%-45%] |
 | aitext | gpt_6_luna | 0.46 | 57/66 = 86% [76%-93%] | 4/12 = 33% [14%-61%] | 63/66 = 95% [87%-98%] | 8/12 = 67% [39%-86%] |
 | aitext | gemini_decision | 0.34 | 35/66 = 53% [41%-65%] | 2/12 = 17% [5%-45%] | 63/66 = 95% [87%-98%] | 5/12 = 42% [19%-68%] |
-| private_setup | gemma4_12b | 1.00 | 62/66 = 94% [85%-98%] | 25/55 = 45% [33%-58%] | 55/66 = 83% [73%-90%] | 9/55 = 16% [9%-28%] |
+| private_setup | gemma4_12b | 1.00 | 63/66 = 95% [87%-98%] | 22/59 = 37% [26%-50%] | 47/66 = 71% [59%-81%] | 3/59 = 5% [2%-14%] |
 
 ## Two-stage setups
 

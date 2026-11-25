@@ -13,11 +13,11 @@ A sentence in a draft issue, PR body or README that tells the reader something a
 ## Not the class (label 0, a judge should not flag it)
 
 - **A vendor's published figure** (`neg_vendor_figure`): what a product or a documented requirement offers or needs, stated as a public fact ("The Aurora X2 supports up to 128 GB of unified memory", "The build needs 20 GB of free disk space").
-- **A reproducibility line** (`neg_repro_line`): the same kind of detail about the author's machine, when the text itself shows that the value is needed to reproduce or interpret the post's result ("The slowdown only shows up under memory pressure, so for reproduction: my laptop has 16 GB of RAM"). The reason has to be in the text; a `Benchmark:` heading alone does not make a line a reproducibility line.
+- **A reproducibility line** (`neg_repro_line`): the same kind of detail about the author's machine, when the text itself shows that the value is needed to reproduce or interpret the post's result ("The slowdown only shows up under memory pressure, so for reproduction: my laptop has 16 GB of RAM"). The reason has to be in the text, and it excuses only the value it explains: a hostname or home-directory path beside it is still a positive; a `Benchmark:` heading alone does not make a line a reproducibility line.
 - **An ordinary post** (`neg_ordinary`): a fix, a question, a usage note. This includes a project's own tooling and documented defaults: a pre-commit hook the repository ships, a config path the program reads, `example.test` hosts.
 
 Out of the class: credentials (the secrets task), and whether a hook should block or only warn.
 
 ## Dummy values
 
-Every item is invented. Sizes and product, tool and vendor names are made up; hostnames sit under `.example`, `.test` or `.invalid`; paths sit under `/home/example-user/`. `tests/test_private_setup.py` checks every hostname and path in the dataset against those pools. Sentence shapes follow real posts that leaked such details, but no text is copied from one.
+Every item is invented. Sizes and product, tool and vendor names are made up; hostnames sit under `.example`, `.test` or `.invalid`; paths sit under `/home/example-user/`, and a project's documented defaults are written with `$XDG_*` variables, never a concrete home directory. `tests/test_private_setup.py` checks every hostname and path in the dataset against those pools. Sentence shapes follow real posts that leaked such details, but no text is copied from one.

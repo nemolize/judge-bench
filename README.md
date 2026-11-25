@@ -45,7 +45,7 @@ python3 -m judgebench.run judge claude_haiku
 pip install anthropic                        # only for the two claude_api_* judges
 ANTHROPIC_API_KEY=... python3 -m judgebench.run judge claude_api_think   # Messages API, default thinking
 ANTHROPIC_API_KEY=... python3 -m judgebench.run judge claude_api_off     # Messages API, thinking disabled
-# private-setup task only: the three judges it was run with (ollama pull gemma4:26b first)
+# private-setup task only: its three judges (ollama pull gemma4:26b first; no gemma4:26b+think result yet)
 python3 -m judgebench.run judge gemma4:12b private_setup
 python3 -m judgebench.run judge gemma4:26b+think private_setup
 ANTHROPIC_API_KEY=... python3 -m judgebench.run judge claude_api_think private_setup   # also probes its sequential latency on this task
@@ -71,7 +71,7 @@ pip install matplotlib && python3 -m judgebench.charts <dir>   # the article's t
 | "AI-sounding" Japanese | A fixed list of stock phrases (`judgebench/baselines.py`) | Hand-written before any run, never tuned; no off-the-shelf detector is claimed. |
 | Private setup details | A list of regular expressions (`PRIVATE_SETUP_PATTERNS` in `judgebench/baselines.py`) | A first-person machine next to a size in GB or TB, a free-disk figure, "I run ... hook / tmux / zsh", a home-directory path. Committed before any result of the task, never tuned. |
 
-`tests/test_baselines.py` shows each baseline flagging a known-bad example and passing a known-good one.
+`tests/test_baselines.py` shows each baseline flagging a known-bad example and passing a known-good one; the private-setup baseline's is in `tests/test_private_setup.py`.
 
 ## Ground truth
 
@@ -84,7 +84,7 @@ pip install matplotlib && python3 -m judgebench.charts <dir>   # the article's t
 
 ## Spot-check
 
-`python3 -m judgebench.spotcheck` writes `spotcheck.md`: 10 random items per dataset, and for `private_setup` 2 from each of its six classes and groups (62 in all, secret-shaped values masked). The first 60 were read by hand after the datasets were rebuilt (see History); the 12 `private_setup` items were read by hand against `private_setup.md` after the generator was last changed, and every label held. Labels held in every case: each positive carries the planted defect, each negative is the correct paired form or a placeholder, hash or UUID.
+`python3 -m judgebench.spotcheck` writes `spotcheck.md`: 10 random items per dataset, and for `private_setup` 2 from each of its six classes and groups (secret-shaped values masked). The earlier datasets' samples were read by hand after they were rebuilt (see History); the `private_setup` sample was read by hand against `private_setup.md` after the generator was last changed, and every label held. Labels held in every case: each positive carries the planted defect, each negative is the correct paired form or a placeholder, hash or UUID.
 
 ## History
 
@@ -103,6 +103,7 @@ The first full run was reviewed before publication and several design problems w
 ## Known limits
 
 - The private-setup items come from a generator: a few dozen sentence templates and context sentences, recombined. Wording repeats far more than in real posts, the context sentence is always one short line, and the disclosure is easier to see than in a long README. A judge's catch rate here is a guide to how it would do in front of a real hook, not a measurement of one. What the author would not have meant to publish cannot be read off a published text, so the labels follow the rule in `private_setup.md`: a detail is a positive unless the text itself shows it is needed.
+- Every reproducibility line in the private-setup set is built from a stated reason plus the disclosure, and the reason is matched to the value (a memory-pressure reason only goes with a small RAM figure). A third of them state the reason only implicitly ("The workload peaks at about 40 GB of memory and smaller machines swap."), the rest announce it ("so for reproduction:"); real posts can be vaguer than either, so the false-warning rate on this group is a lower bound for real text.
 - For the private-setup task `results/summary.md` marks a row with fewer than 40 valid positives, or a judge with more than 5% errors, as not measurable; the other tasks' tables were published without that check and some of their rows exceed 5% errors.
 - The human class of the "AI-sounding" task has 25 sentences, not 40: the author's pre-ChatGPT articles hold no more prose. The 40-item floor applies to positives (45 per generator); the false-warning rate there carries a wide interval.
 - The human sentences come from one author and four articles; the AI sentences are prompted to match their topics and length, not their style.

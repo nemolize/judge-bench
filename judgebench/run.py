@@ -36,8 +36,19 @@ def _one(judge, task, it):
         return {"id": it["id"], "verdict": None, "p_yes": None, "latency_s": None, "error": str(exc)[:300]}
 
 
+def preflight(judge, task):
+    """One call before the task loop: an unreachable judge stops the run instead of writing a file of error rows."""
+    first = next(iter(datasets.load(task)), None)
+    if first is not None:
+        res = _one(judge, task, first)
+        if res.get("error"):
+            raise RuntimeError(f"{judge.name} is unreachable, nothing was written: {res['error']}")
+
+
 def run_judge(name, tasks):
     judge = judges.make(name)
+    if tasks:
+        preflight(judge, tasks[0])
     meta_path = RESULTS / f"{judge.name}__meta.json"
     meta = json.loads(meta_path.read_text()) if meta_path.exists() else {}
     for task in tasks:
@@ -50,7 +61,7 @@ def run_judge(name, tasks):
         else:
             new = [_one(judge, task, it) for it in todo]
             loaded = judge.loaded_bytes()
-            if loaded is not None:
+            if loaded is not None and ("honorific" in tasks or "loaded_bytes" not in meta):
                 meta["loaded_bytes"] = loaded
         write_jsonl(out, list(done.values()) + new)
         print(task, len(new), "new,", sum(1 for r in new if r.get("error")), "errors", flush=True)
@@ -72,12 +83,20 @@ def run_latency_probe(name, task="honorific"):
     judge = judges.make(name)
     items = datasets.load(task)[:LATENCY_PROBE]
     times = [t for t in (_one(judge, task, it)["latency_s"] for it in items) if t is not None]
+    if not times:
+        print(f"no probe call succeeded for {judge.name} on {task}; the stored latency is left as it was", flush=True)
+        return
     meta_path = RESULTS / f"{judge.name}__meta.json"
     meta = json.loads(meta_path.read_text()) if meta_path.exists() else {}
     meta.setdefault("sequential_latency_by_task", {})[task] = times
     if task == "honorific":
         meta["sequential_latency_s"] = times
     meta_path.write_text(json.dumps(meta, indent=2))
+
+
+def probe_tasks(asked):
+    """The tasks whose sequential latency a hosted run re-probes: those asked, or both when none was named."""
+    return [t for t in ("honorific", "private_setup") if not asked or t in asked]
 
 
 if __name__ == "__main__":
@@ -91,7 +110,5 @@ if __name__ == "__main__":
     elif cmd == "judge":
         run_judge(sys.argv[2], sys.argv[3:] or list(datasets.TASKS))
         if getattr(judges.make(sys.argv[2]), "hosted", False):
-            asked = sys.argv[3:]
-            for probe_task in ("honorific", "private_setup"):
-                if not asked or probe_task in asked:
-                    run_latency_probe(sys.argv[2], probe_task)
+            for probe_task in probe_tasks(sys.argv[3:]):
+                run_latency_probe(sys.argv[2], probe_task)

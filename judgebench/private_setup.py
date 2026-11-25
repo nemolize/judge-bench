@@ -12,7 +12,8 @@ PAIRED = 15  # per positive class: items whose disclosure sentence also appears 
 MACHINES = ["my laptop", "my workstation", "my desktop", "my home server", "my dev machine", "my work machine", "my Mac"]
 RAM_GB = [8, 12, 16, 24, 32, 48, 64, 96, 128]
 DISK_GB = [6, 9, 14, 22, 35, 48, 73, 120, 160, 210, 380]
-TOOLS = ["fmtbot", "lintwarden", "snapkeep", "dotsync", "pushguard", "tmux", "direnv"]
+WATCHERS = ["fmtbot", "lintwarden", "snapkeep", "dotsync", "pushguard"]
+TOOLS = WATCHERS + ["tmux", "direnv"]
 HOOKS = ["pre-commit", "pre-push", "commit-msg", "post-merge"]
 HOSTS = [f"devbox-{k}.example" for k in range(1, 9)]
 PRODUCTS = ["Aurora X2", "Nimbus Mini 4", "Corvus 9 Pro", "Helix T5", "Orion Q server", "Zephyr 14 laptop"]
@@ -49,18 +50,37 @@ POST_CONTEXT = [
 ]
 
 NEEDS = {
-    "ram": ["The slowdown below only shows up under memory pressure, so for reproduction:",
-            "The out-of-memory failure depends on the machine's memory, so here is the test setup:",
-            "The numbers in the table depend on the amount of RAM, so for reference:",
-            "To reproduce the swapping described above, note the memory of the test machine:"],
-    "free_disk": ["The failure only appears when the disk is nearly full, so for reproduction:",
-                  "The cache eviction bug depends on the free space, so here is the test setup:",
-                  "The write errors above appear only below a certain amount of free disk, so for reference:",
-                  "To reproduce the 'no space left' error, note the disk state of the test machine:"],
-    "local_tool_or_hook": ["The formatting differences below only appear with the formatter active, so for reproduction:",
-                           "The slow push is caused by a local hook, so here is the test setup:",
-                           "The conflict only occurs with the watcher running, so for reference:",
-                           "To reproduce the rewritten commit messages above, note the tooling of the test machine:"],
+    "ram": [
+        ("cue", "The slowdown below only shows up under memory pressure, so for reproduction:", (None, 16)),
+        ("cue", "The out-of-memory failure depends on the machine's memory, so here is the test setup:", (None, 16)),
+        ("cue", "The numbers in the table depend on the amount of RAM, so for reference:", (None, None)),
+        ("cue", "To reproduce the swapping described above, note the memory of the test machine:", (None, 16)),
+        ("implicit", "The workload peaks at about 40 GB of memory and smaller machines swap.", (48, None)),
+    ],
+    "free_disk": [
+        ("cue", "The failure only appears when the disk is nearly full, so for reproduction:", (None, 22)),
+        ("cue", "The cache eviction bug depends on the free space, so here is the test setup:", (None, None)),
+        ("cue", "The write errors above appear only below a certain amount of free disk, so for reference:", (None, 22)),
+        ("cue", "To reproduce the 'no space left' error, note the disk state of the test machine:", (None, 22)),
+        ("implicit", "The cache grows to about 100 GB and the job fails on smaller disks.", (120, None)),
+    ],
+    "save": [
+        ("cue", "The formatting differences below only appear with the formatter active, so for reproduction:", (None, None)),
+        ("implicit", "The diff noise below comes from a formatter that rewrites files on save.", (None, None)),
+    ],
+    "hook": [
+        ("cue", "The slow push is caused by a local hook, so here is the test setup:", (None, None), "pre-push"),
+        ("cue", "To reproduce the rewritten commit messages above, note the tooling of the test machine:", (None, None), "commit-msg"),
+        ("implicit", "The push below is slow because a local hook runs the full test suite.", (None, None), "pre-push"),
+    ],
+    "shell": [
+        ("cue", "The odd startup output below depends on what the shell loads, so for reference:", (None, None)),
+        ("implicit", "The extra output below comes from a tool the shell loads at startup.", (None, None)),
+    ],
+    "pane": [
+        ("cue", "The conflict only occurs with the watcher running, so for reference:", (None, None)),
+        ("implicit", "The conflict below only happens while a file watcher is running.", (None, None)),
+    ],
 }
 
 ORDINARY = [
@@ -97,13 +117,14 @@ PROJECT_TOOLING = [
 ]
 EXAMPLE_HOST_PATH = [
     "Set `API_HOST=api.example.test` before running the integration tests.",
-    "The program reads `/home/example-user/.config/app/config.toml` by default.",
+    "The program reads `$XDG_CONFIG_HOME/app/config.toml` by default.",
     "The sample config points at `staging-1.example` for the demo.",
-    "Logs are written to `/home/example-user/.cache/app/logs` unless `LOG_DIR` is set.",
+    "Logs are written to `$XDG_CACHE_HOME/app/logs` unless `LOG_DIR` is set.",
     "The docs use `db.example.test` as the database host in every example.",
-    "The default socket path is `/home/example-user/.run/app.sock`.",
+    "The default socket path is `$XDG_RUNTIME_DIR/app.sock`.",
 ]
 
+ORDINARY_MIX = [(PROJECT_TOOLING, 10), (EXAMPLE_HOST_PATH, 10), (ORDINARY, 25)]
 STORAGE_GB = [128, 256, 512, 1024]
 VENDOR = [
     ("The {p} supports up to {n} GB of unified memory.", RAM_GB),
@@ -121,43 +142,62 @@ def _cap(s):
     return s[0].upper() + s[1:]
 
 
-# (template, standalone): a standalone sentence states the detail and nothing else, so it can also stand in a
-# reproducibility line; the others carry a consequence ("so I ...") that a reproducibility line would contradict.
+# (template, standalone, tool group): a standalone sentence states the detail and nothing else, so it can also stand
+# in a reproducibility line; the others carry a consequence ("so I ...") that such a line would contradict.
 RAM_TEMPLATES = [
-    ("{M} has {n} GB of RAM.", True),
-    ("I'm on {m} with {n} GB of memory.", True),
-    ("For context, {m} has {n} GB of RAM.", True),
-    ("({M} currently has {n} GB of memory installed.)", True),
-    ("For context, {m} has {n} GB of RAM and it was nearly full while I wrote this.", False),
-    ("I wrote this while {m} was using {u} GB of its {n} GB of memory.", False),
-    ("Side note: {m} only has {n} GB of RAM, so I kept the examples small.", False),
+    ("{M} has {n} GB of RAM.", True, None, None),
+    ("I'm on {m} with {n} GB of memory.", True, None, None),
+    ("For context, {m} has {n} GB of RAM.", True, None, None),
+    ("({M} currently has {n} GB of memory installed.)", True, None, None),
+    ("For context, {m} has {n} GB of RAM and it was nearly full while I wrote this.", False, None, 16),
+    ("I wrote this while {m} was using {u} GB of its {n} GB of memory.", False, None, None),
+    ("Side note: {m} only has {n} GB of RAM, so I kept the examples small.", False, None, 16),
 ]
 DISK_TEMPLATES = [
-    ("{M} has {d} GB of free disk left.", True),
-    ("Free disk on {m} is down to {d} GB right now.", True),
-    ("({M} is running low on disk, {d} GB free.)", True),
-    ("For context, there are {d} GB free on {m} at the moment.", True),
-    ("I only have {d} GB free on {m}, so I did not clone the full history.", False),
-    ("Side note: {m} is at {d} GB free, which is why I trimmed the fixtures.", False),
+    ("{M} has {d} GB of free disk left.", True, None, None),
+    ("Free disk on {m} is down to {d} GB right now.", True, None, 22),
+    ("({M} currently has {d} GB of free disk.)", True, None, None),
+    ("For context, there are {d} GB free on {m} at the moment.", True, None, None),
+    ("I only have {d} GB free on {m}, so I did not clone the full history.", False, None, 22),
+    ("Side note: {m} is at {d} GB free, which is why I trimmed the fixtures.", False, None, 22),
 ]
 TOOL_TEMPLATES = [
-    ("I run {t} on every save in my editor.", True),
-    ("My shell loads {t} at startup.", True),
-    ("I keep {t} running in a separate terminal pane.", True),
-    ("On {host} I run {t} as a {h} hook.", True),
-    ("{M} runs a {h} hook that rewrites my commit messages before I push.", True),
-    ("I have a {h} hook in /home/example-user/.config/git/hooks that runs {t}.", True),
-    ("My shell loads {t} at startup, which is how I noticed this.", False),
-    ("I use {t} locally, so I added a note here.", False),
+    ("I run {t} on every save in my editor.", True, "save", None),
+    ("My shell loads {t} at startup.", True, "shell", None),
+    ("I keep {t} running in a separate terminal pane.", True, "pane", None),
+    ("On {host} I run {t} as a {h} hook.", False, "hook", None),
+    ("{M} has a {h} hook installed that runs {t}.", True, "hook", None),
+    ("I have a {h} hook in /home/example-user/.config/git/hooks that runs {t}.", False, "hook", None),
+    ("My shell loads {t} at startup, which is how I noticed this.", False, "shell", None),
+    ("I use {t} locally, so I added a note here.", False, "save", None),
 ]
+CONTEXT_FIRST = 0.7
 
 
-def _disclosure(cls, r, standalone_only=False):
+def _disclosure(cls, r, standalone_only=False, bounds=(None, None), group=None, hook=None):
+    """One disclosure sentence and its tool group; `bounds`, `group` and `hook` limit the value or tool to what a reason fits."""
     templates = {"ram": RAM_TEMPLATES, "free_disk": DISK_TEMPLATES, "local_tool_or_hook": TOOL_TEMPLATES}[cls]
-    template = r.choice([t for t, standalone in templates if standalone or not standalone_only])
-    m, n = r.choice(MACHINES), r.choice(RAM_GB)
-    return template.format(M=_cap(m), m=m, n=n, u=n - r.choice([1, 2, 4]), d=r.choice(DISK_GB), t=r.choice(TOOLS),
-                           h=r.choice(HOOKS), host=r.choice(HOSTS))
+    template, _, group, scarce_hi = r.choice([t for t in templates if (t[1] or not standalone_only) and (group is None or t[2] == group)])
+    lo, hi = bounds
+    hi = min(v for v in (hi, scarce_hi) if v is not None) if hi is not None or scarce_hi is not None else None
+    within = lambda pool: [v for v in pool if (lo is None or v >= lo) and (hi is None or v <= hi)]
+    m, n = r.choice(MACHINES), r.choice(within(RAM_GB))
+    text = template.format(M=_cap(m), m=m, n=n, u=n - r.choice([1, 2, 4]), d=r.choice(within(DISK_GB)),
+                           t=r.choice(TOOLS if group == "shell" else WATCHERS), h=hook or r.choice(HOOKS), host=r.choice(HOSTS))
+    return text, group
+
+
+def _reproducibility_pair(cls, k, r):
+    """(disclosure, reason) where the reason explains why that very value matters; every third pair is implicit."""
+    pick = lambda group: r.choice([n for n in NEEDS[group] if (n[0] == "implicit") == (k % 3 == 0)])
+    if cls == "local_tool_or_hook":
+        group = r.choice(["save", "shell", "pane", "hook"])
+        reason = pick(group)
+        d, _ = _disclosure(cls, r, standalone_only=True, group=group, hook=reason[3] if len(reason) > 3 else None)
+        return d, reason[1]
+    _, reason, bounds = pick(cls)
+    d, _ = _disclosure(cls, r, standalone_only=True, bounds=bounds)
+    return d, reason
 
 
 def generate():
@@ -183,8 +223,8 @@ def generate():
     for cls in classes:
         for k in range(PAIRED):
             def pair():
-                d = _disclosure(cls, r, standalone_only=True)
-                return [f"{r.choice(POST_CONTEXT)} {d}", f"{r.choice(NEEDS[cls])} {d}"]
+                d, reason = _reproducibility_pair(cls, k, r)
+                return [f"{r.choice(POST_CONTEXT)} {d}", f"{reason} {d}"]
             pos, rep = fresh(pair)
             pid = f"{cls}-{k + 1:02d}"
             add(cls, 1, pos, "disclosure", pid)
@@ -192,20 +232,20 @@ def generate():
     for cls in classes:
         for _ in range(PER_GROUP - PAIRED):
             def single():
-                parts = [r.choice(POST_CONTEXT), _disclosure(cls, r)]
-                return [" ".join(parts if r.random() < 0.7 else parts[::-1])]
+                parts = [r.choice(POST_CONTEXT), _disclosure(cls, r)[0]]
+                return [" ".join(parts if r.random() < CONTEXT_FIRST else parts[::-1])]
             add(cls, 1, fresh(single)[0], "disclosure")
     for _ in range(PER_GROUP):
         def vendor():
             template, values = r.choice(VENDOR)
             t = template.format(p=r.choice(PRODUCTS), n=r.choice(values))
             parts = [r.choice(POST_CONTEXT), t]
-            return [" ".join(parts if r.random() < 0.5 else parts[::-1])]
+            return [" ".join(parts if r.random() < CONTEXT_FIRST else parts[::-1])]
         add("neg_vendor_figure", 0, fresh(vendor)[0], "vendor_figure")
-    for i in range(PER_GROUP):
+    pools = [pool for pool, count in ORDINARY_MIX for _ in range(count)]
+    for pool in pools:
         def ordinary():
-            pool = [PROJECT_TOOLING, EXAMPLE_HOST_PATH, ORDINARY][i % 3 if i < 30 else 2]
             parts = [r.choice(POST_CONTEXT), r.choice(pool)]
-            return [" ".join(parts if r.random() < 0.5 else parts[::-1])]
+            return [" ".join(parts if r.random() < CONTEXT_FIRST else parts[::-1])]
         add("neg_ordinary", 0, fresh(ordinary)[0], "ordinary")
     return items

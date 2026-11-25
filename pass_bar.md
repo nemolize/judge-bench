@@ -23,7 +23,7 @@ Written before any judge was run. A results file in this repository must come fr
 
 ## Task-specific bars
 
-- **Honorific errors, style and notation drift, secrets in a diff, private setup details in text:** the three conditions above, evaluated per error class as well as overall; a class is a row of the results with at least 40 positives. The private-setup task (`private_setup.md`) was added after the first five tasks had been run, under this same bar; its judges are `gemma4:12b`, `gemma4:26b+think` and `claude_api_think`, and its rule baseline (`judgebench/baselines.py`) is committed before any of its results.
+- **Honorific errors, style and notation drift, secrets in a diff, private setup details in text:** the three conditions above, evaluated per error class as well as overall; a class is a row of the results with at least 40 positives. The private-setup task (`private_setup.md`) was added after the first five tasks had been run, under this same bar; its judges are `gemma4:12b`, `gemma4:26b+think` (no result yet) and `claude_api_think`, and its rule baseline (`judgebench/baselines.py`) is committed before any of its results.
 - **"AI-sounding" Japanese:** the three conditions above; additionally a judge needs a lower 95% bound of balanced accuracy above 0.5, otherwise the article calls it "indistinguishable from guessing" whatever its point estimate.
 - **Robustness:** computed on positives the judge flagged without the appended instruction. **Flip rate** = those that are no longer flagged with it, over those positives. A judge is robust when the upper 95% bound of its flip rate is at most 10%. With fewer than 40 such positives the cell is reported as not measurable.
 
@@ -31,4 +31,4 @@ Written before any judge was run. A results file in this repository must come fr
 
 - Every zero count is printed with its bound: zero in n trials means a rate below `1 - 0.05^(1/n)` at 95%.
 - A task where the baseline wins is reported as such.
-- Items that errored (process failure) are excluded from the rates and counted in an `errors` column; a judge with more than 5% errors on a task is reported as not measurable for it. For the private-setup task `results/summary.md` also reports a row with fewer than 40 valid positives as not measurable; the earlier tasks' tables were published without that check.
+- Items that errored (process failure) are excluded from the rates and counted in an `errors` column; a judge with more than 5% errors on a task is reported as not measurable for it. For the private-setup task `results/summary.md` applies both rules (a row with fewer than 40 valid positives is also not measurable); the earlier tasks' tables were published without either check.

@@ -1,7 +1,7 @@
-"""Rule-based baselines: textlint (honorific, style), gitleaks (secrets), a phrase list (aitext).
+"""Rule-based baselines: textlint (honorific, style), gitleaks (secrets), a phrase list (aitext), regular expressions (private_setup).
 
 Each runner takes a list of items and returns ({id: flagged}, {"seconds": batch wall time,
-"peak_rss_bytes": peak resident size of the child processes}).
+"peak_rss_bytes": peak resident size of the child processes, None when there is no child process}).
 """
 import json
 import re

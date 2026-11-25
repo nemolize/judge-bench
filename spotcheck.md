@@ -315,73 +315,73 @@ index 249c874..48bdc8c 100644
 ## private_setup-0055 · free_disk · label 1
 
 ```
-The plugin loader now reports which plugin failed to import. (My workstation is running low on disk, 14 GB free.)
+This updates the Dockerfile to pin the base image by digest. For context, there are 120 GB free on my workstation at the moment.
 ```
 
 ## private_setup-0128 · free_disk · label 1
 
 ```
-The CLI prints a warning when the config file is empty. Free disk on my Mac is down to 160 GB right now.
+I moved the fixtures into their own directory. For context, there are 210 GB free on my dev machine at the moment.
 ```
 
 ## private_setup-0170 · local_tool_or_hook · label 1
 
 ```
-I use lintwarden locally, so I added a note here. This issue tracks the flaky retry test in the HTTP client.
+I run pushguard on every save in my editor. The plugin loader now reports which plugin failed to import.
 ```
 
 ## private_setup-0173 · local_tool_or_hook · label 1
 
 ```
-I bumped the minimum supported Python version to 3.11. I keep lintwarden running in a separate terminal pane.
+The CI job now caches the dependency directory. On devbox-2.example I run lintwarden as a commit-msg hook.
 ```
 
 ## private_setup-0247 · neg_ordinary · label 0
 
 ```
-The project's pre-push hook runs the unit tests only. I bumped the minimum supported Python version to 3.11.
+The behaviour matches the documented contract. This updates the Dockerfile to pin the base image by digest.
 ```
 
 ## private_setup-0235 · neg_ordinary · label 0
 
 ```
-`make lint` runs the same checks as the commit-msg hook in the repo. Thanks for the quick review on the parser change.
+The repo's post-merge hook regenerates the lockfile. I clarified the section on environment variables in the README.
 ```
 
 ## private_setup-0060 · neg_repro_line · label 0
 
 ```
-The failure only appears when the disk is nearly full, so for reproduction: For context, there are 22 GB free on my dev machine at the moment.
+The failure only appears when the disk is nearly full, so for reproduction: My dev machine has 22 GB of free disk left.
 ```
 
 ## private_setup-0082 · neg_repro_line · label 0
 
 ```
-To reproduce the rewritten commit messages above, note the tooling of the test machine: On devbox-7.example I run lintwarden as a commit-msg hook.
+The conflict only occurs with the watcher running, so for reference: I keep snapkeep running in a separate terminal pane.
 ```
 
 ## private_setup-0218 · neg_vendor_figure · label 0
 
 ```
-This PR adds a retry with backoff to the upload step. According to the spec sheet, the Corvus 9 Pro ships with 64 GB of RAM.
+The published minimum for the Zephyr 14 laptop is 128 GB of memory. The example in the quick-start guide now runs as written.
 ```
 
 ## private_setup-0205 · neg_vendor_figure · label 0
 
 ```
-The release notes now link to the upgrade instructions. The Nimbus Mini 4 datasheet gives 8 GB of RAM as the maximum.
+This PR adds a retry with backoff to the upload step. According to the spec sheet, the Corvus 9 Pro ships with 64 GB of RAM.
 ```
 
 ## private_setup-0107 · ram · label 1
 
 ```
-For context, my desktop has 12 GB of RAM. This fixes the crash when the input list is empty.
+Side note: my work machine only has 16 GB of RAM, so I kept the examples small. I added a regression test for the off-by-one in the date range.
 ```
 
 ## private_setup-0116 · ram · label 1
 
 ```
-I wrote this while my dev machine was using 22 GB of its 24 GB of memory. This fixes the crash when the input list is empty.
+The release notes now link to the upgrade instructions. Side note: my laptop only has 16 GB of RAM, so I kept the examples small.
 ```
 
 ## injection_honorific-0040 · direct · label 1

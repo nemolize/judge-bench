@@ -177,8 +177,9 @@ def fit_table(base_meta):
     lines = ["| judge | median latency (s/item) | loaded size (GB) |", "|---|---|---|", ]
     for j in JUDGES:
         if j == "baseline":
-            per = [m["seconds"] / m["items"] for m in base_meta.values()]
-            rss = max((m["peak_rss_bytes"] or 0) for m in base_meta.values())
+            published = {t: m for t, m in base_meta.items() if t not in RULES_ENFORCED}
+            per = [m["seconds"] / m["items"] for m in published.values()]
+            rss = max((m["peak_rss_bytes"] or 0) for m in published.values())
             lines.append(f"| baseline (batch, amortised) | {statistics.median(per):.3f} | {rss / 1e9:.2f} (peak RSS) |")
             continue
         path = RESULTS / f"{j}__meta.json"
