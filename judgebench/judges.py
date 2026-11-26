@@ -132,24 +132,37 @@ CLAUDE_API_JUDGES = {"claude_api_think": None, "claude_api_off": {"type": "disab
 
 
 class GeminiJudge:
-    """Gemini returns no logprobs for this model, so the verdict is the first line of the reply, as for Claude."""
+    """Gemini returns no logprobs for these models, so the verdict is the first line of the reply, as for Claude.
 
-    name = "gemini_flash"
+    Each result also records the model version the API reports and the token counts, because an alias can be
+    served by another model (gemini-3.7-flash is answered by gemini-3.8-flash since its deprecation)."""
+
     hosted = True
+
+    def __init__(self, name="gemini_flash", model=GEMINI_MODEL, level="low"):
+        self.name, self.level = name, level
+        self.url = "https://generativelanguage.googleapis.com/v1beta/models/" + model + ":generateContent"
 
     def ask(self, prompt):
         t0 = time.perf_counter()
         body = {"contents": [{"role": "user", "parts": [{"text": prompt}]}],
                 "systemInstruction": {"parts": [{"text": CLAUDE_SYSTEM}]},
-                "generationConfig": {"temperature": 0, "maxOutputTokens": 1024, "thinkingConfig": {"thinkingLevel": "low"}}}
-        res = _decide_request(GEMINI_URL, os.environ.get("GEMINI_API_KEY"), body, key_header="x-goog-api-key")
+                "generationConfig": {"temperature": 0, "maxOutputTokens": 1024, "thinkingConfig": {"thinkingLevel": self.level}}}
+        res = _decide_request(self.url, os.environ.get("GEMINI_API_KEY"), body, key_header="x-goog-api-key")
         parts = (res["candidates"][0].get("content") or {}).get("parts") or [{}]
-        lines = (parts[0].get("text") or "").strip().splitlines()
-        first = lines[0].strip() if lines else ""
-        return {"verdict": first if first in ("YES", "NO") else None, "p_yes": None, "latency_s": time.perf_counter() - t0}
+        text = "".join(p.get("text", "") for p in parts if not p.get("thought"))
+        first = (text.strip().splitlines() or [""])[0].strip()
+        usage = res.get("usageMetadata", {})
+        return {"verdict": first if first in ("YES", "NO") else None, "p_yes": None, "latency_s": time.perf_counter() - t0,
+                "model_version": res.get("modelVersion"), "input_tokens": usage.get("promptTokenCount"),
+                "output_tokens": usage.get("candidatesTokenCount"), "thinking_tokens": usage.get("thoughtsTokenCount")}
 
     def loaded_bytes(self):
         return None
+
+
+GEMINI_JUDGES = {"gemini_flash": (GEMINI_MODEL, "low"), "gemini_3_8_flash": ("gemini-3.8-flash", "low"),
+                 "gemini_4_hydrogen": ("gemini-4-hydrogen", "low")}
 
 
 STRATA_MODELS = {"sync_m": ("qwen3.8-flash-next-sync-m", False), "inkling_2_mini": ("inkling-2-mini-sq-20", False),
@@ -285,4 +298,6 @@ def make(name):
         return OllamaThinkJudge(name[:-len("+think")])
     if name in CLAUDE_API_JUDGES:
         return ClaudeApiJudge(name, CLAUDE_API_JUDGES[name])
-    return GeminiJudge() if name == "gemini_flash" else OllamaJudge(name)
+    if name in GEMINI_JUDGES:
+        return GeminiJudge(name, *GEMINI_JUDGES[name])
+    return OllamaJudge(name)

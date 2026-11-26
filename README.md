@@ -15,7 +15,8 @@ Judges:
 | `qwen3.8_iq3_s` (same model, ISTA-DASLab IQ3_S pack) | Strata 0.2.20 (terminal build 0.1.66) API, thinking off | YES when the first-token probability of `YES` is at least that of `NO` |
 | `qwen3.8_iq3_s_think` | same engine, `reasoning_effort` low | first line of the reply, no logprobs |
 | `claude_api_think`, `claude_api_off` (`claude-haiku-5-5`) | Messages API, thinking on / off | YES/NO as text, no logprobs |
-| `gemini_flash` (`gemini-3.7-flash`) | Gemini API | YES/NO as text, no logprobs |
+| `gemini_flash` (sent as `gemini-3.7-flash`) | Gemini API | YES/NO as text, no logprobs; run on 2026-11-07, after the model was deprecated on 2026-10-08, so the API answered with `gemini-3.8-flash` (kept for the record, not in the article) |
+| `gemini_3_8_flash` (`gemini-3.8-flash`), `gemini_4_hydrogen` (`gemini-4-hydrogen`) | Gemini API, `thinkingLevel` low | same as `gemini_flash`; run on 2026-11-27, each result records the `modelVersion` the API returned and the token counts |
 | `jev` (`jev-1.14.0`), `clef_flash`, `clef` (27B, Cloudflare Workers AI), `gpt-6-luna`, `gemini_decision` (`gemini-decision-1`, Gemini Decisions API) | decisions API (`clef-flash` served by Ollama) | YES when the probability of yes is at least 0.5 |
 | `claude_haiku` | `claude -p` | YES/NO as text; run first, disagrees with the API runs, not used in the article |
 
@@ -50,6 +51,8 @@ python3 -m judgebench.run judge gemma4:12b private_setup
 python3 -m judgebench.run judge gemma4:26b+think private_setup
 ANTHROPIC_API_KEY=... python3 -m judgebench.run judge claude_api_think private_setup   # also probes its sequential latency on this task
 GEMINI_API_KEY=... python3 -m judgebench.run judge gemini_flash   # gemini-3.7-flash; no logprobs, so the first line of the reply decides
+GEMINI_API_KEY=... python3 -m judgebench.run judge gemini_3_8_flash   # same method, model gemini-3.8-flash
+GEMINI_API_KEY=... python3 -m judgebench.run judge gemini_4_hydrogen  # same method, model gemini-4-hydrogen
 python3 -m judgebench.run judge clef_flash                   # Ollama, model clef-flash
 TYPESAFE_API_KEY=... python3 -m judgebench.run judge jev     # a TypeSafe API key
 CLOUDFLARE_ACCOUNT_ID=... CLOUDFLARE_API_TOKEN=... python3 -m judgebench.run judge clef   # Workers AI Read
