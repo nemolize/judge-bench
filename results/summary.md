@@ -18,6 +18,8 @@
 | claude_api_think | 1.37 | hosted |
 | claude_api_off | 0.78 | hosted |
 | gemini_flash | 3.29 | hosted |
+| gemini_3_8_flash | 3.31 | hosted |
+| gemini_4_hydrogen | 2.94 | hosted |
 | jev | 0.17 | hosted |
 | clef_flash | 0.64 | 21.3 |
 | clef | 0.42 | hosted |
@@ -93,6 +95,14 @@
 | gemini_flash | humble_for_other | 45/45 = 100% [92%-100%] | 16/209 = 8% [5%-12%] | 0 | 0 | yes |
 | gemini_flash | honorific_for_self | 45/45 = 100% [92%-100%] | 16/209 = 8% [5%-12%] | 0 | 0 | yes |
 | gemini_flash | (all positives) | 135/135 = 100% [97%-100%] | 16/209 = 8% [5%-12%] | 0 | 0 | yes |
+| gemini_3_8_flash | double_honorific | 45/45 = 100% [92%-100%] | 20/209 = 10% [6%-14%] | 0 | 0 | no |
+| gemini_3_8_flash | humble_for_other | 45/45 = 100% [92%-100%] | 20/209 = 10% [6%-14%] | 0 | 0 | yes |
+| gemini_3_8_flash | honorific_for_self | 45/45 = 100% [92%-100%] | 20/209 = 10% [6%-14%] | 0 | 0 | yes |
+| gemini_3_8_flash | (all positives) | 135/135 = 100% [97%-100%] | 20/209 = 10% [6%-14%] | 0 | 0 | yes |
+| gemini_4_hydrogen | double_honorific | 45/45 = 100% [92%-100%] | 21/209 = 10% [7%-15%] | 0 | 0 | no |
+| gemini_4_hydrogen | humble_for_other | 45/45 = 100% [92%-100%] | 21/209 = 10% [7%-15%] | 0 | 0 | yes |
+| gemini_4_hydrogen | honorific_for_self | 45/45 = 100% [92%-100%] | 21/209 = 10% [7%-15%] | 0 | 0 | yes |
+| gemini_4_hydrogen | (all positives) | 135/135 = 100% [97%-100%] | 21/209 = 10% [7%-15%] | 0 | 0 | yes |
 | jev | double_honorific | 13/45 = 29% [18%-43%] | 27/209 = 13% [9%-18%] | 0 | 0 | no |
 | jev | humble_for_other | 0/45 = 0% [0%-8%] | 27/209 = 13% [9%-18%] | 0 | 0 | no |
 | jev | honorific_for_self | 25/45 = 56% [41%-69%] | 27/209 = 13% [9%-18%] | 0 | 0 | yes |
@@ -176,6 +186,14 @@ Zero counts: baseline/humble_for_other caught 0 of 45 (rate < 6.5%); baseline/ho
 | gemini_flash | width | 39/45 = 87% [74%-94%] | 4/135 = 3% [1%-7%] | 0 | 0 | no |
 | gemini_flash | term_variant | 45/45 = 100% [92%-100%] | 4/135 = 3% [1%-7%] | 0 | 0 | yes |
 | gemini_flash | (all positives) | 129/135 = 96% [91%-98%] | 4/135 = 3% [1%-7%] | 0 | 0 | yes |
+| gemini_3_8_flash | mixed_register | 45/45 = 100% [92%-100%] | 4/135 = 3% [1%-7%] | 0 | 0 | yes |
+| gemini_3_8_flash | width | 39/45 = 87% [74%-94%] | 4/135 = 3% [1%-7%] | 0 | 0 | no |
+| gemini_3_8_flash | term_variant | 45/45 = 100% [92%-100%] | 4/135 = 3% [1%-7%] | 0 | 0 | yes |
+| gemini_3_8_flash | (all positives) | 129/135 = 96% [91%-98%] | 4/135 = 3% [1%-7%] | 0 | 0 | yes |
+| gemini_4_hydrogen | mixed_register | 45/45 = 100% [92%-100%] | 3/135 = 2% [1%-6%] | 0 | 0 | yes |
+| gemini_4_hydrogen | width | 41/45 = 91% [79%-96%] | 3/135 = 2% [1%-6%] | 0 | 0 | no |
+| gemini_4_hydrogen | term_variant | 45/45 = 100% [92%-100%] | 3/135 = 2% [1%-6%] | 0 | 0 | yes |
+| gemini_4_hydrogen | (all positives) | 131/135 = 97% [93%-99%] | 3/135 = 2% [1%-6%] | 0 | 0 | yes |
 | jev | mixed_register | 38/45 = 84% [71%-92%] | 9/135 = 7% [4%-12%] | 0 | 0 | no |
 | jev | width | 19/45 = 42% [29%-57%] | 9/135 = 7% [4%-12%] | 0 | 0 | no |
 | jev | term_variant | 0/45 = 0% [0%-8%] | 9/135 = 7% [4%-12%] | 0 | 0 | no |
@@ -281,6 +299,18 @@ Zero counts: baseline/term_variant caught 0 of 45 (rate < 6.5%); jev/term_varian
 | gemini_flash | stripe_live_key | 45/45 = 100% [92%-100%] | 6/225 = 3% [1%-6%] | 0 | 0 | no |
 | gemini_flash | gcp_api_key | 45/45 = 100% [92%-100%] | 6/225 = 3% [1%-6%] | 0 | 0 | no |
 | gemini_flash | (all positives) | 225/225 = 100% [98%-100%] | 6/225 = 3% [1%-6%] | 0 | 0 | no |
+| gemini_3_8_flash | aws_access_key | 45/45 = 100% [92%-100%] | 6/225 = 3% [1%-6%] | 0 | 0 | no |
+| gemini_3_8_flash | github_pat | 45/45 = 100% [92%-100%] | 6/225 = 3% [1%-6%] | 0 | 0 | no |
+| gemini_3_8_flash | slack_bot_token | 45/45 = 100% [92%-100%] | 6/225 = 3% [1%-6%] | 0 | 0 | no |
+| gemini_3_8_flash | stripe_live_key | 45/45 = 100% [92%-100%] | 6/225 = 3% [1%-6%] | 0 | 0 | no |
+| gemini_3_8_flash | gcp_api_key | 45/45 = 100% [92%-100%] | 6/225 = 3% [1%-6%] | 0 | 0 | no |
+| gemini_3_8_flash | (all positives) | 225/225 = 100% [98%-100%] | 6/225 = 3% [1%-6%] | 0 | 0 | no |
+| gemini_4_hydrogen | aws_access_key | 45/45 = 100% [92%-100%] | 4/225 = 2% [1%-4%] | 0 | 0 | no |
+| gemini_4_hydrogen | github_pat | 45/45 = 100% [92%-100%] | 4/225 = 2% [1%-4%] | 0 | 0 | no |
+| gemini_4_hydrogen | slack_bot_token | 45/45 = 100% [92%-100%] | 4/225 = 2% [1%-4%] | 0 | 0 | no |
+| gemini_4_hydrogen | stripe_live_key | 45/45 = 100% [92%-100%] | 4/225 = 2% [1%-4%] | 0 | 0 | no |
+| gemini_4_hydrogen | gcp_api_key | 45/45 = 100% [92%-100%] | 4/225 = 2% [1%-4%] | 0 | 0 | no |
+| gemini_4_hydrogen | (all positives) | 225/225 = 100% [98%-100%] | 4/225 = 2% [1%-4%] | 0 | 0 | no |
 | jev | aws_access_key | 45/45 = 100% [92%-100%] | 65/225 = 29% [23%-35%] | 0 | 0 | no |
 | jev | github_pat | 45/45 = 100% [92%-100%] | 65/225 = 29% [23%-35%] | 0 | 0 | no |
 | jev | slack_bot_token | 45/45 = 100% [92%-100%] | 65/225 = 29% [23%-35%] | 0 | 0 | no |
@@ -370,6 +400,14 @@ Zero counts: none
 | gemini_flash | llm_gemma4_12b | 6/45 = 13% [6%-26%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
 | gemini_flash | llm_qwen3.5_27b | 5/45 = 11% [5%-23%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
 | gemini_flash | (all positives) | 15/135 = 11% [7%-18%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
+| gemini_3_8_flash | llm_claude_haiku | 4/45 = 9% [4%-21%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
+| gemini_3_8_flash | llm_gemma4_12b | 7/45 = 16% [8%-29%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
+| gemini_3_8_flash | llm_qwen3.5_27b | 7/45 = 16% [8%-29%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
+| gemini_3_8_flash | (all positives) | 18/135 = 13% [9%-20%] | 0/25 = 0% [0%-13%] | 0 | 0 | no |
+| gemini_4_hydrogen | llm_claude_haiku | 16/45 = 36% [23%-50%] | 0/25 = 0% [0%-13%] | 0 | 0 | yes |
+| gemini_4_hydrogen | llm_gemma4_12b | 24/45 = 53% [39%-67%] | 0/25 = 0% [0%-13%] | 0 | 0 | yes |
+| gemini_4_hydrogen | llm_qwen3.5_27b | 21/45 = 47% [33%-61%] | 0/25 = 0% [0%-13%] | 0 | 0 | yes |
+| gemini_4_hydrogen | (all positives) | 61/135 = 45% [37%-54%] | 0/25 = 0% [0%-13%] | 0 | 0 | yes |
 | jev | llm_claude_haiku | 4/45 = 9% [4%-21%] | 2/25 = 8% [2%-25%] | 0 | 0 | no |
 | jev | llm_gemma4_12b | 17/45 = 38% [25%-52%] | 2/25 = 8% [2%-25%] | 0 | 0 | no |
 | jev | llm_qwen3.5_27b | 11/45 = 24% [14%-39%] | 2/25 = 8% [2%-25%] | 0 | 0 | no |
@@ -391,7 +429,7 @@ Zero counts: none
 | gemini_decision | llm_qwen3.5_27b | 24/45 = 53% [39%-67%] | 5/25 = 20% [9%-39%] | 0 | 0 | no |
 | gemini_decision | (all positives) | 66/135 = 49% [41%-57%] | 5/25 = 20% [9%-39%] | 0 | 0 | no |
 
-Zero counts: qwen3.5_27b/llm_claude_haiku caught 0 of 45 (rate < 6.5%); qwen3.5_27b/llm_gemma4_12b caught 0 of 45 (rate < 6.5%); qwen3.5_27b/llm_qwen3.5_27b caught 0 of 45 (rate < 6.5%); qwen3.5_27b false warnings 0 of 25 (rate < 11.3%); sync_m_think false warnings 0 of 25 (rate < 11.3%); qwen3.8_iq3_s false warnings 0 of 25 (rate < 11.3%); qwen3.8_iq3_s_think false warnings 0 of 25 (rate < 11.3%); claude_haiku false warnings 0 of 25 (rate < 11.3%); claude_api_think false warnings 0 of 25 (rate < 11.3%); gemini_flash false warnings 0 of 25 (rate < 11.3%)
+Zero counts: qwen3.5_27b/llm_claude_haiku caught 0 of 45 (rate < 6.5%); qwen3.5_27b/llm_gemma4_12b caught 0 of 45 (rate < 6.5%); qwen3.5_27b/llm_qwen3.5_27b caught 0 of 45 (rate < 6.5%); qwen3.5_27b false warnings 0 of 25 (rate < 11.3%); sync_m_think false warnings 0 of 25 (rate < 11.3%); qwen3.8_iq3_s false warnings 0 of 25 (rate < 11.3%); qwen3.8_iq3_s_think false warnings 0 of 25 (rate < 11.3%); claude_haiku false warnings 0 of 25 (rate < 11.3%); claude_api_think false warnings 0 of 25 (rate < 11.3%); gemini_flash false warnings 0 of 25 (rate < 11.3%); gemini_3_8_flash false warnings 0 of 25 (rate < 11.3%); gemini_4_hydrogen false warnings 0 of 25 (rate < 11.3%)
 
 Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 0.5) is judged on the first, the conservative average of the two Wilson lower bounds, which is what was implemented before any run; the second is a Newcombe-style combination.
 
@@ -410,6 +448,8 @@ Lower bounds of balanced accuracy, two methods. The pass bar's condition (above 
 | claude_api_think | 58.5% | 49.2% | 51.3% |
 | claude_api_off | 64.2% | 50.8% | 54.1% |
 | gemini_flash | 55.6% | 46.8% | 48.6% |
+| gemini_3_8_flash | 56.7% | 47.6% | 49.6% |
+| gemini_4_hydrogen | 72.6% | 61.9% | 64.8% |
 | jev | 57.9% | 46.2% | 48.8% |
 | clef_flash | 61.0% | 48.3% | 51.3% |
 | clef | 64.3% | 52.9% | 55.7% |
@@ -484,6 +524,12 @@ Zero counts: none
 | gemini_flash | authority | 45 | 0 | 0% (8%) | yes |
 | gemini_flash | direct | 45 | 0 | 0% (8%) | yes |
 | gemini_flash | fake_answer | 45 | 0 | 0% (8%) | yes |
+| gemini_3_8_flash | authority | 45 | 0 | 0% (8%) | yes |
+| gemini_3_8_flash | direct | 45 | 0 | 0% (8%) | yes |
+| gemini_3_8_flash | fake_answer | 45 | 0 | 0% (8%) | yes |
+| gemini_4_hydrogen | authority | 45 | 0 | 0% (8%) | yes |
+| gemini_4_hydrogen | direct | 45 | 0 | 0% (8%) | yes |
+| gemini_4_hydrogen | fake_answer | 45 | 0 | 0% (8%) | yes |
 | jev | authority | 13 | 4 | 31% (58%) (not measurable: fewer than 40) | not measurable |
 | jev | direct | 13 | 2 | 15% (42%) (not measurable: fewer than 40) | not measurable |
 | jev | fake_answer | 13 | 0 | 0% (23%) (not measurable: fewer than 40) | not measurable |
@@ -543,6 +589,12 @@ Zero counts: none
 | gemini_flash | authority | 45 | 0 | 0% (8%) | yes |
 | gemini_flash | direct | 45 | 0 | 0% (8%) | yes |
 | gemini_flash | fake_answer | 45 | 0 | 0% (8%) | yes |
+| gemini_3_8_flash | authority | 45 | 0 | 0% (8%) | yes |
+| gemini_3_8_flash | direct | 45 | 0 | 0% (8%) | yes |
+| gemini_3_8_flash | fake_answer | 45 | 0 | 0% (8%) | yes |
+| gemini_4_hydrogen | authority | 45 | 0 | 0% (8%) | yes |
+| gemini_4_hydrogen | direct | 45 | 0 | 0% (8%) | yes |
+| gemini_4_hydrogen | fake_answer | 45 | 0 | 0% (8%) | yes |
 | jev | authority | 45 | 0 | 0% (8%) | yes |
 | jev | direct | 45 | 0 | 0% (8%) | yes |
 | jev | fake_answer | 45 | 0 | 0% (8%) | yes |
@@ -579,6 +631,8 @@ Zero counts: none
 | claude_api_think | 2/135 | 20/20 | 4/20 | 12/34 |
 | claude_api_off | 66/135 | 20/20 | 13/20 | 33/34 |
 | gemini_flash | 6/135 | 0/20 | 3/20 | 7/34 |
+| gemini_3_8_flash | 8/135 | 1/20 | 4/20 | 7/34 |
+| gemini_4_hydrogen | 0/135 | 15/20 | 4/20 | 2/34 |
 | jev | 14/135 | 10/20 | 1/20 | 2/34 |
 | clef_flash | 1/135 | 0/20 | 0/20 | 0/34 |
 | clef | 0/135 | 0/20 | 2/20 | 0/34 |
@@ -602,6 +656,8 @@ Zero counts: none
 | claude_api_think | 16/225 |
 | claude_api_off | 66/225 |
 | gemini_flash | 6/225 |
+| gemini_3_8_flash | 6/225 |
+| gemini_4_hydrogen | 4/225 |
 | jev | 65/225 |
 | clef_flash | 180/225 |
 | clef | 90/225 |
@@ -658,6 +714,8 @@ Not part of the pass bar, which fixes the 0.5 cut. Shown because a decision mode
 | claude_api_think | n/a | n/a | n/a | n/a | n/a |
 | claude_api_off | n/a | n/a | n/a | n/a | n/a |
 | gemini_flash | n/a | n/a | n/a | n/a | n/a |
+| gemini_3_8_flash | n/a | n/a | n/a | n/a | n/a |
+| gemini_4_hydrogen | n/a | n/a | n/a | n/a | n/a |
 | jev | 0.57 | 0.75 | 0.99 | 0.69 | n/a |
 | clef_flash | 0.49 | 0.73 | 0.95 | 0.75 | n/a |
 | clef | 0.53 | 0.66 | 0.98 | 0.79 | n/a |
@@ -728,6 +786,8 @@ Not part of the pass bar (it scores single judges); reported because the article
 | honorific | rule OR LLM: claude_api_think | 135/135 = 100% [97%-100%] | 60/209 = 29% [23%-35%] |
 | honorific | rule OR LLM: claude_api_off | 106/135 = 79% [71%-85%] | 133/209 = 64% [57%-70%] |
 | honorific | rule OR LLM: gemini_flash | 135/135 = 100% [97%-100%] | 43/209 = 21% [16%-27%] |
+| honorific | rule OR LLM: gemini_3_8_flash | 135/135 = 100% [97%-100%] | 47/209 = 22% [17%-29%] |
+| honorific | rule OR LLM: gemini_4_hydrogen | 135/135 = 100% [97%-100%] | 53/209 = 25% [20%-32%] |
 | honorific | rule OR LLM: jev | 70/135 = 52% [43%-60%] | 59/209 = 28% [23%-35%] |
 | honorific | rule OR LLM: clef_flash | 46/135 = 34% [27%-42%] | 35/209 = 17% [12%-22%] |
 | honorific | rule OR LLM: clef | 47/135 = 35% [27%-43%] | 36/209 = 17% [13%-23%] |
@@ -745,6 +805,8 @@ Not part of the pass bar (it scores single judges); reported because the article
 | secrets | gitleaks AND LLM: claude_api_think | 225/225 = 100% [98%-100%] | 2/225 = 1% [0%-3%] |
 | secrets | gitleaks AND LLM: claude_api_off | 225/225 = 100% [98%-100%] | 26/225 = 12% [8%-16%] |
 | secrets | gitleaks AND LLM: gemini_flash | 225/225 = 100% [98%-100%] | 2/225 = 1% [0%-3%] |
+| secrets | gitleaks AND LLM: gemini_3_8_flash | 225/225 = 100% [98%-100%] | 2/225 = 1% [0%-3%] |
+| secrets | gitleaks AND LLM: gemini_4_hydrogen | 225/225 = 100% [98%-100%] | 1/225 = 0% [0%-2%] |
 | secrets | gitleaks AND LLM: jev | 225/225 = 100% [98%-100%] | 15/225 = 7% [4%-11%] |
 | secrets | gitleaks AND LLM: clef_flash | 225/225 = 100% [98%-100%] | 60/225 = 27% [21%-33%] |
 | secrets | gitleaks AND LLM: clef | 225/225 = 100% [98%-100%] | 35/225 = 16% [11%-21%] |

@@ -22,7 +22,8 @@ matplotlib.rcParams["font.family"] = ["Hiragino Sans", "Noto Sans CJK JP", "sans
 GROUPS = [
     [("baseline", "機械的判定")],
     [("claude_api_think", "claude-haiku（thinking あり）"), ("claude_api_off", "claude-haiku（thinking なし）"),
-     ("gemini_flash", "gemini-3.7-flash（thinking あり）")],
+     ("gemini_3_8_flash", "gemini-3.8-flash（thinking: low）"),
+     ("gemini_4_hydrogen", "gemini-4-hydrogen（thinking: low）")],
     [("gemma4_12b", "gemma4:12b"), ("gemma4_12b_think", "gemma4:12b（thinking あり）"), ("gemma4_31b", "gemma4:31b"),
      ("qwen3.5_27b", "qwen3.5:27b"), ("sync_m_think", "Qwen3.8 Sync-M（thinking あり）"), ("qwen3.8_iq3_s", "Qwen3.8 IQ3_S"),
      ("qwen3.8_iq3_s_think", "Qwen3.8 IQ3_S（thinking あり）")],
