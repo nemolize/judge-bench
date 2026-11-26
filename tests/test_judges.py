@@ -163,6 +163,12 @@ class SyncStrataJudgeTests(unittest.TestCase):
         self.assertEqual(body["messages"][0]["role"], "system")
         self.assertEqual((out["verdict"], out["p_yes"]), ("YES", None))
 
+    def test_q2_0_pack_sends_its_own_model_id_and_is_judged_by_probability(self):
+        reply = {"model": "qwen3.8-flash-next-q2_0", "choices": [{"logprobs": {"content": [{"token": "NO", "top_logprobs": [
+            {"token": "NO", "logprob": -0.1}, {"token": "YES", "logprob": -2.4}]}]}}]}
+        out, body = self.ask_model("qwen3.8_q2_0", reply)
+        self.assertEqual((body["model"], out["verdict"]), ("qwen3.8-flash-next-q2_0", "NO"))
+
     def test_the_served_model_is_recorded(self):
         reply = {"model": "inkling-2-mini-sq-20", "choices": [{"message": {"content": "NO"}}]}
         self.assertEqual(self.ask_model("inkling_2_mini", reply)[0]["served_model"], "inkling-2-mini-sq-20")

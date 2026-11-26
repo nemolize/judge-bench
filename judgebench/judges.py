@@ -153,7 +153,7 @@ class GeminiJudge:
 
 
 STRATA_MODELS = {"sync_m": ("qwen3.8-flash-next-sync-m", False), "inkling_2_mini": ("inkling-2-mini-sq-20", False),
-                 "qwen3.8_iq3_s": ("qwen3.8-flash-next-iq3_s", True)}
+                 "qwen3.8_iq3_s": ("qwen3.8-flash-next-iq3_s", True), "qwen3.8_q2_0": ("qwen3.8-flash-next-q2_0", True)}
 
 
 class StrataJudge:
