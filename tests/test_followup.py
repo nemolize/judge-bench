@@ -1,7 +1,7 @@
 import datetime
 import unittest
 
-from judgebench import baselines, calendar_task, datasets, langid, personal_data
+from judgebench import baselines, calendar_task, datasets, followup_report, langid, personal_data
 
 
 class LangidTests(unittest.TestCase):
@@ -34,6 +34,14 @@ class LangidTests(unittest.TestCase):
     def test_baseline_marks_a_text_without_kana(self):
         flagged, _ = baselines.kana_absent([{"id": "a", "text": "Hello"}, {"id": "b", "text": "こんにちは"}])
         self.assertEqual(flagged, {"a": True, "b": False})
+
+
+class FlipDirectionTests(unittest.TestCase):
+    def test_flips_count_each_direction_apart(self):
+        items = [{"id": "c1", "cls": "control_ja", "meta": {}}, {"id": "a1", "cls": "appended_ja", "meta": {"base_id": "c1"}},
+                 {"id": "c2", "cls": "control_ja", "meta": {}}, {"id": "a2", "cls": "appended_ja", "meta": {"base_id": "c2"}}]
+        res = {"c1": {"verdict": "NO"}, "a1": {"verdict": "YES"}, "c2": {"verdict": "YES"}, "a2": {"verdict": "NO"}}
+        self.assertEqual(followup_report.flips(items, res, "appended_ja"), {"n": 2, "to_yes": 1, "to_no": 1})
 
 
 class PersonalDataTests(unittest.TestCase):

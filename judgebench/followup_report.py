@@ -5,6 +5,7 @@ the false-alarm denominator, an errored item is excluded and counted in `errors`
 """
 import json
 import statistics
+import urllib.request
 
 from . import datasets
 from .common import ROOT, read_jsonl
@@ -13,6 +14,7 @@ RESULTS = ROOT / "results"
 TASKS = ["langid", "personal_data", "calendar"]
 JUDGES = ["baseline", "fasttext", "claude_api_off", "claude_api_think", "gemma4_12b", "gemma4_12b_think", "gemini_decision"]
 Z = 1.96
+NO_REASONING_BELOW = 5  # output tokens: a reply under this holds no reasoning, only the verdict word
 
 
 def zero_bound(n):
@@ -49,10 +51,9 @@ def score(items, res):
     return {"pos": pos, "neg": neg, "all_pos": total(pos), "all_neg": total(neg), "noans": noans, "errors": errors}
 
 
-def flips(items, res, base_cls, appended_cls):
-    """Of the control items the judge flagged (or, for negatives, did not), how many change once the sentence is appended."""
-    by_id = {i["id"]: i for i in items}
-    out = {"n": 0, "changed": 0}
+def flips(items, res, appended_cls):
+    """Per appended item with a usable verdict pair (control, appended): `to_yes` = NO became YES, `to_no` = YES became NO."""
+    out = {"n": 0, "to_yes": 0, "to_no": 0}
     for it in items:
         if it["cls"] != appended_cls:
             continue
@@ -60,7 +61,8 @@ def flips(items, res, base_cls, appended_cls):
         if not a or not b or a.get("error") or b.get("error") or a["verdict"] is None or b["verdict"] is None:
             continue
         out["n"] += 1
-        out["changed"] += a["verdict"] != b["verdict"]
+        out["to_yes"] += b["verdict"] == "NO" and a["verdict"] == "YES"
+        out["to_no"] += b["verdict"] == "YES" and a["verdict"] == "NO"
     return out
 
 
@@ -69,8 +71,20 @@ def median_s(res):
     return statistics.median(xs[1:]) if len(xs) > 1 else None
 
 
+def environment():
+    """Versions of the interpreter and tools on the machine that builds the report, which is the one that ran the judges."""
+    import importlib.metadata
+    import platform
+    import subprocess
+    ollama = subprocess.run(["ollama", "--version"], capture_output=True, text=True).stdout.strip().rsplit(" ", 1)[-1]
+    tags = json.loads(urllib.request.urlopen("http://localhost:11434/api/tags", timeout=10).read())
+    digest = next(m["digest"][:12] for m in tags["models"] if m["name"] == "gemma4:12b")
+    return {"python": platform.python_version(), "ollama": ollama, "gemma4_12b_digest": digest,
+            "fasttext_numpy2_wheel": importlib.metadata.version("fasttext-numpy2-wheel")}
+
+
 def build():
-    summary = {"judges": {}, "tasks": {}, "appended": {}}
+    summary = {"judges": {}, "tasks": {}, "appended": {}, "environment": environment()}
     for task in TASKS:
         items = datasets.load(task)
         summary["tasks"][task] = {"items": len(items), "judges": {}}
@@ -84,12 +98,13 @@ def build():
             dates = {r.get("measured_at") for r in res.values() if r.get("measured_at")}
             entry["served_models"] = sorted(models)
             entry["measured_at"] = sorted(dates)
+            entry["no_reasoning"] = sum(1 for r in res.values() if r.get("output_tokens") is not None and r["output_tokens"] < NO_REASONING_BELOW)
             summary["tasks"][task]["judges"][j] = entry
     items = datasets.load("langid")
     for j in JUDGES:
         res = load(j, "langid")
         if res is not None:
-            summary["appended"][j] = {"appended_ja": flips(items, res, "control_ja", "appended_ja"), "appended_other": flips(items, res, None, "appended_other")}
+            summary["appended"][j] = {"appended_ja": flips(items, res, "appended_ja"), "appended_other": flips(items, res, "appended_other")}
     return summary
 
 
@@ -112,9 +127,12 @@ def markdown(summary):
             lines.append(f"| {j} | {pct(e['all_pos']['k'], e['all_pos']['n'])} | " + " | ".join(cells) + f" | {pct(e['all_neg']['k'], e['all_neg']['n'])} | " + " | ".join(ncells) + f" | {e['noans']} | {e['errors']} | {lat} |")
         zeros = [f"{j}/{c}: 0 of {v['n']} (< {zero_bound(v['n']):.1%})" for j, e in t["judges"].items() for grp in ("pos", "neg") for c, v in e[grp].items() if v["n"] and v["k"] == 0]
         lines += ["", "Zero counts: " + ("; ".join(zeros) or "none"), ""]
-    lines += ["## Appended sentence: verdict changed against the control sentence", "", "| judge | appended_ja (a Chinese label) | appended_other (a Japanese label) |", "|---|---|---|"]
+    lines += ["## Appended sentence: verdict flipped by the appended sentence", "",
+              "`to_yes` = NO became YES, `to_no` = YES became NO, against the control sentence. For appended_ja (a Japanese text, label NO) to_yes is the harm; for appended_other (a non-Japanese text, label YES) to_no is.", "",
+              "| judge | appended_ja to_yes / to_no | appended_other to_yes / to_no |", "|---|---|---|"]
     for j, a in summary["appended"].items():
-        lines.append(f"| {j} | {pct(a['appended_ja']['changed'], a['appended_ja']['n'])} | {pct(a['appended_other']['changed'], a['appended_other']['n'])} |")
+        cell = lambda c: f"{c['to_yes']} / {c['to_no']} of {c['n']}"
+        lines.append(f"| {j} | {cell(a['appended_ja'])} | {cell(a['appended_other'])} |")
     return "\n".join(lines) + "\n"
 
 

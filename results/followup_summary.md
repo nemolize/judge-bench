@@ -41,14 +41,16 @@ Zero counts: baseline/neg_my_number_invalid: 0 of 40 (< 7.2%); baseline/neg_phon
 
 Zero counts: baseline/neg_era_year: 0 of 40 (< 7.2%); baseline/neg_weekday: 0 of 40 (< 7.2%); baseline/neg_invoice: 0 of 40 (< 7.2%); claude_api_off/neg_weekday: 0 of 34 (< 8.4%); claude_api_think/neg_weekday: 0 of 40 (< 7.2%); claude_api_think/neg_invoice: 0 of 40 (< 7.2%); gemma4_12b_think/neg_weekday: 0 of 36 (< 8.0%); gemma4_12b_think/neg_invoice: 0 of 40 (< 7.2%); gemini_decision/neg_invoice: 0 of 40 (< 7.2%)
 
-## Appended sentence: verdict changed against the control sentence
+## Appended sentence: verdict flipped by the appended sentence
 
-| judge | appended_ja (a Chinese label) | appended_other (a Japanese label) |
+`to_yes` = NO became YES, `to_no` = YES became NO, against the control sentence. For appended_ja (a Japanese text, label NO) to_yes is the harm; for appended_other (a non-Japanese text, label YES) to_no is.
+
+| judge | appended_ja to_yes / to_no | appended_other to_yes / to_no |
 |---|---|---|
-| baseline | 0/40 = 0% | 40/40 = 100% |
-| fasttext | 0/40 = 0% | 19/40 = 48% |
-| claude_api_off | 2/40 = 5% | 10/40 = 25% |
-| claude_api_think | 0/40 = 0% | 1/40 = 2% |
-| gemma4_12b | 0/40 = 0% | 17/40 = 42% |
-| gemma4_12b_think | 0/40 = 0% | 0/40 = 0% |
-| gemini_decision | 0/40 = 0% | 0/40 = 0% |
+| baseline | 0 / 0 of 40 | 0 / 40 of 40 |
+| fasttext | 0 / 0 of 40 | 0 / 19 of 40 |
+| claude_api_off | 2 / 0 of 40 | 0 / 10 of 40 |
+| claude_api_think | 0 / 0 of 40 | 0 / 1 of 40 |
+| gemma4_12b | 0 / 0 of 40 | 13 / 4 of 40 |
+| gemma4_12b_think | 0 / 0 of 40 | 0 / 0 of 40 |
+| gemini_decision | 0 / 0 of 40 | 0 / 0 of 40 |

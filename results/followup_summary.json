@@ -2,74 +2,94 @@
   "appended": {
     "baseline": {
       "appended_ja": {
-        "changed": 0,
-        "n": 40
+        "n": 40,
+        "to_no": 0,
+        "to_yes": 0
       },
       "appended_other": {
-        "changed": 40,
-        "n": 40
+        "n": 40,
+        "to_no": 40,
+        "to_yes": 0
       }
     },
     "claude_api_off": {
       "appended_ja": {
-        "changed": 2,
-        "n": 40
+        "n": 40,
+        "to_no": 0,
+        "to_yes": 2
       },
       "appended_other": {
-        "changed": 10,
-        "n": 40
+        "n": 40,
+        "to_no": 10,
+        "to_yes": 0
       }
     },
     "claude_api_think": {
       "appended_ja": {
-        "changed": 0,
-        "n": 40
+        "n": 40,
+        "to_no": 0,
+        "to_yes": 0
       },
       "appended_other": {
-        "changed": 1,
-        "n": 40
+        "n": 40,
+        "to_no": 1,
+        "to_yes": 0
       }
     },
     "fasttext": {
       "appended_ja": {
-        "changed": 0,
-        "n": 40
+        "n": 40,
+        "to_no": 0,
+        "to_yes": 0
       },
       "appended_other": {
-        "changed": 19,
-        "n": 40
+        "n": 40,
+        "to_no": 19,
+        "to_yes": 0
       }
     },
     "gemini_decision": {
       "appended_ja": {
-        "changed": 0,
-        "n": 40
+        "n": 40,
+        "to_no": 0,
+        "to_yes": 0
       },
       "appended_other": {
-        "changed": 0,
-        "n": 40
+        "n": 40,
+        "to_no": 0,
+        "to_yes": 0
       }
     },
     "gemma4_12b": {
       "appended_ja": {
-        "changed": 0,
-        "n": 40
+        "n": 40,
+        "to_no": 0,
+        "to_yes": 0
       },
       "appended_other": {
-        "changed": 17,
-        "n": 40
+        "n": 40,
+        "to_no": 4,
+        "to_yes": 13
       }
     },
     "gemma4_12b_think": {
       "appended_ja": {
-        "changed": 0,
-        "n": 40
+        "n": 40,
+        "to_no": 0,
+        "to_yes": 0
       },
       "appended_other": {
-        "changed": 0,
-        "n": 40
+        "n": 40,
+        "to_no": 0,
+        "to_yes": 0
       }
     }
+  },
+  "environment": {
+    "fasttext_numpy2_wheel": "0.9.2",
+    "gemma4_12b_digest": "c7597fc90b86",
+    "ollama": "0.40.17",
+    "python": "3.12.15"
   },
   "judges": {},
   "tasks": {
@@ -102,6 +122,7 @@
               "n": 40
             }
           },
+          "no_reasoning": 0,
           "noans": 0,
           "pos": {
             "era_year": {
@@ -147,6 +168,7 @@
               "n": 34
             }
           },
+          "no_reasoning": 228,
           "noans": 12,
           "pos": {
             "era_year": {
@@ -194,6 +216,7 @@
               "n": 40
             }
           },
+          "no_reasoning": 0,
           "noans": 0,
           "pos": {
             "era_year": {
@@ -241,6 +264,7 @@
               "n": 40
             }
           },
+          "no_reasoning": 0,
           "noans": 0,
           "pos": {
             "era_year": {
@@ -286,6 +310,7 @@
               "n": 40
             }
           },
+          "no_reasoning": 0,
           "noans": 0,
           "pos": {
             "era_year": {
@@ -333,6 +358,7 @@
               "n": 36
             }
           },
+          "no_reasoning": 0,
           "noans": 4,
           "pos": {
             "era_year": {
@@ -387,6 +413,7 @@
               "n": 40
             }
           },
+          "no_reasoning": 0,
           "noans": 0,
           "pos": {
             "appended_other": {
@@ -440,6 +467,7 @@
               "n": 40
             }
           },
+          "no_reasoning": 319,
           "noans": 1,
           "pos": {
             "appended_other": {
@@ -495,6 +523,7 @@
               "n": 40
             }
           },
+          "no_reasoning": 69,
           "noans": 0,
           "pos": {
             "appended_other": {
@@ -548,6 +577,7 @@
               "n": 40
             }
           },
+          "no_reasoning": 0,
           "noans": 0,
           "pos": {
             "appended_other": {
@@ -601,6 +631,7 @@
               "n": 40
             }
           },
+          "no_reasoning": 0,
           "noans": 0,
           "pos": {
             "appended_other": {
@@ -654,6 +685,7 @@
               "n": 40
             }
           },
+          "no_reasoning": 0,
           "noans": 0,
           "pos": {
             "appended_other": {
@@ -701,6 +733,7 @@
               "n": 40
             }
           },
+          "no_reasoning": 0,
           "noans": 0,
           "pos": {
             "appended_other": {
@@ -751,6 +784,7 @@
               "n": 40
             }
           },
+          "no_reasoning": 0,
           "noans": 0,
           "pos": {
             "email_personal": {
@@ -796,6 +830,7 @@
               "n": 40
             }
           },
+          "no_reasoning": 230,
           "noans": 10,
           "pos": {
             "email_personal": {
@@ -843,6 +878,7 @@
               "n": 40
             }
           },
+          "no_reasoning": 43,
           "noans": 0,
           "pos": {
             "email_personal": {
@@ -890,6 +926,7 @@
               "n": 40
             }
           },
+          "no_reasoning": 0,
           "noans": 0,
           "pos": {
             "email_personal": {
@@ -935,6 +972,7 @@
               "n": 40
             }
           },
+          "no_reasoning": 0,
           "noans": 0,
           "pos": {
             "email_personal": {
