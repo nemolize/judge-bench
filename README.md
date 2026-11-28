@@ -146,7 +146,7 @@ Three tasks added for a second article, with their own bar (`pass_bar_followup.m
 | `personal_data` | generated dummy values (random digits; mobile numbers `0X0-0000-XXXX`; reserved `example.*` domains); no value is taken from a person | the text holds a valid My Number, a mobile number or a personal email address |
 | `calendar` | generated era-year, date-weekday and invoice statements, each with a consistent twin | the text contradicts itself |
 
-The phone-number shapes are generated, not checked against the numbering plan, so a value could coincide with an assigned number.
+The phone-number shapes are generated, not checked against the numbering plan, so a value could coincide with an assigned number. Every mobile value is `0X0-0000-XXXX`; the `080` ones (`mobile_080` in the summary) read like toll-free `0800` numbers, and the landline negatives built from `011` and `052` carry 11 digits instead of 10.
 
 ```sh
 python3 -m unittest discover -s tests          # generators, labels and baselines

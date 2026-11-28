@@ -72,6 +72,15 @@ def median_s(res):
     return statistics.median(xs[1:]) if len(xs) > 1 else None
 
 
+def judge_reads_probability(judge):
+    return judge in ("gemma4_12b", "gemini_decision")
+
+
+def dataset_notes():
+    mobile = [it for it in datasets.load("personal_data") if it["cls"] == "mobile_number"]
+    return {"mobile_positives": len(mobile), "mobile_080": sum(it["meta"]["value"].startswith("080") for it in mobile)}
+
+
 def environment():
     """Versions of the interpreter and tools on the machine that builds the report, which is the one that ran the judges."""
     import importlib.metadata
@@ -85,7 +94,7 @@ def environment():
 
 
 def build():
-    summary = {"judges": {}, "tasks": {}, "appended": {}, "environment": environment()}
+    summary = {"judges": {}, "tasks": {}, "appended": {}, "environment": environment(), "dataset_notes": dataset_notes()}
     for task in TASKS:
         items = datasets.load(task)
         summary["tasks"][task] = {"items": len(items), "judges": {}}
@@ -99,6 +108,7 @@ def build():
             dates = {r.get("measured_at") for r in res.values() if r.get("measured_at")}
             entry["served_models"] = sorted(models)
             entry["measured_at"] = sorted(dates)
+            entry["no_probability"] = sum(1 for r in res.values() if r.get("p_yes") is None and not r.get("error") and r.get("verdict") is not None) if judge_reads_probability(j) else None
             entry["no_reasoning"] = sum(1 for r in res.values() if r.get("output_tokens") is not None and r["output_tokens"] < NO_REASONING_BELOW)
             summary["tasks"][task]["judges"][j] = entry
     items = datasets.load("langid")

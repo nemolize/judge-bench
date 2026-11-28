@@ -38,10 +38,11 @@ class LangidTests(unittest.TestCase):
 
 class FlipDirectionTests(unittest.TestCase):
     def test_flips_count_each_direction_apart(self):
-        items = [{"id": "c1", "cls": "control_ja", "meta": {}}, {"id": "a1", "cls": "appended_ja", "meta": {"base_id": "c1"}},
-                 {"id": "c2", "cls": "control_ja", "meta": {}}, {"id": "a2", "cls": "appended_ja", "meta": {"base_id": "c2"}}]
-        res = {"c1": {"verdict": "NO"}, "a1": {"verdict": "YES"}, "c2": {"verdict": "YES"}, "a2": {"verdict": "NO"}}
-        self.assertEqual(followup_report.flips(items, res, "appended_ja"), {"n": 2, "to_yes": 1, "to_no": 1})
+        items, res = [], {}
+        for n, (before, after) in enumerate([("NO", "YES"), ("NO", "YES"), ("YES", "NO"), ("YES", "YES")]):
+            items += [{"id": f"c{n}", "cls": "control_ja", "meta": {}}, {"id": f"a{n}", "cls": "appended_ja", "meta": {"base_id": f"c{n}"}}]
+            res |= {f"c{n}": {"verdict": before}, f"a{n}": {"verdict": after}}
+        self.assertEqual(followup_report.flips(items, res, "appended_ja"), {"n": 4, "to_yes": 2, "to_no": 1})
 
 
 class PersonalDataTests(unittest.TestCase):
