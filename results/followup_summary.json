@@ -1,0 +1,960 @@
+{
+  "appended": {
+    "baseline": {
+      "appended_ja": {
+        "changed": 0,
+        "n": 40
+      },
+      "appended_other": {
+        "changed": 40,
+        "n": 40
+      }
+    },
+    "claude_api_off": {
+      "appended_ja": {
+        "changed": 2,
+        "n": 40
+      },
+      "appended_other": {
+        "changed": 10,
+        "n": 40
+      }
+    },
+    "claude_api_think": {
+      "appended_ja": {
+        "changed": 0,
+        "n": 40
+      },
+      "appended_other": {
+        "changed": 1,
+        "n": 40
+      }
+    },
+    "fasttext": {
+      "appended_ja": {
+        "changed": 0,
+        "n": 40
+      },
+      "appended_other": {
+        "changed": 19,
+        "n": 40
+      }
+    },
+    "gemini_decision": {
+      "appended_ja": {
+        "changed": 0,
+        "n": 40
+      },
+      "appended_other": {
+        "changed": 0,
+        "n": 40
+      }
+    },
+    "gemma4_12b": {
+      "appended_ja": {
+        "changed": 0,
+        "n": 40
+      },
+      "appended_other": {
+        "changed": 17,
+        "n": 40
+      }
+    },
+    "gemma4_12b_think": {
+      "appended_ja": {
+        "changed": 0,
+        "n": 40
+      },
+      "appended_other": {
+        "changed": 0,
+        "n": 40
+      }
+    }
+  },
+  "judges": {},
+  "tasks": {
+    "calendar": {
+      "items": 240,
+      "judges": {
+        "baseline": {
+          "all_neg": {
+            "k": 0,
+            "n": 120
+          },
+          "all_pos": {
+            "k": 120,
+            "n": 120
+          },
+          "errors": 0,
+          "measured_at": [],
+          "median_s": null,
+          "neg": {
+            "neg_era_year": {
+              "k": 0,
+              "n": 40
+            },
+            "neg_invoice": {
+              "k": 0,
+              "n": 40
+            },
+            "neg_weekday": {
+              "k": 0,
+              "n": 40
+            }
+          },
+          "noans": 0,
+          "pos": {
+            "era_year": {
+              "k": 40,
+              "n": 40
+            },
+            "invoice": {
+              "k": 40,
+              "n": 40
+            },
+            "weekday": {
+              "k": 40,
+              "n": 40
+            }
+          },
+          "served_models": []
+        },
+        "claude_api_off": {
+          "all_neg": {
+            "k": 22,
+            "n": 114
+          },
+          "all_pos": {
+            "k": 39,
+            "n": 120
+          },
+          "errors": 0,
+          "measured_at": [
+            "2026-11-28"
+          ],
+          "median_s": 0.6662701669847593,
+          "neg": {
+            "neg_era_year": {
+              "k": 1,
+              "n": 40
+            },
+            "neg_invoice": {
+              "k": 21,
+              "n": 40
+            },
+            "neg_weekday": {
+              "k": 0,
+              "n": 34
+            }
+          },
+          "noans": 12,
+          "pos": {
+            "era_year": {
+              "k": 4,
+              "n": 40
+            },
+            "invoice": {
+              "k": 33,
+              "n": 40
+            },
+            "weekday": {
+              "k": 2,
+              "n": 40
+            }
+          },
+          "served_models": [
+            "claude-haiku-5-5"
+          ]
+        },
+        "claude_api_think": {
+          "all_neg": {
+            "k": 1,
+            "n": 120
+          },
+          "all_pos": {
+            "k": 119,
+            "n": 120
+          },
+          "errors": 0,
+          "measured_at": [
+            "2026-11-28"
+          ],
+          "median_s": 1.1376169170252979,
+          "neg": {
+            "neg_era_year": {
+              "k": 1,
+              "n": 40
+            },
+            "neg_invoice": {
+              "k": 0,
+              "n": 40
+            },
+            "neg_weekday": {
+              "k": 0,
+              "n": 40
+            }
+          },
+          "noans": 0,
+          "pos": {
+            "era_year": {
+              "k": 40,
+              "n": 40
+            },
+            "invoice": {
+              "k": 39,
+              "n": 40
+            },
+            "weekday": {
+              "k": 40,
+              "n": 40
+            }
+          },
+          "served_models": [
+            "claude-haiku-5-5"
+          ]
+        },
+        "gemini_decision": {
+          "all_neg": {
+            "k": 7,
+            "n": 120
+          },
+          "all_pos": {
+            "k": 111,
+            "n": 120
+          },
+          "errors": 0,
+          "measured_at": [
+            "2026-11-28"
+          ],
+          "median_s": 0.3184816249413416,
+          "neg": {
+            "neg_era_year": {
+              "k": 2,
+              "n": 40
+            },
+            "neg_invoice": {
+              "k": 0,
+              "n": 40
+            },
+            "neg_weekday": {
+              "k": 5,
+              "n": 40
+            }
+          },
+          "noans": 0,
+          "pos": {
+            "era_year": {
+              "k": 40,
+              "n": 40
+            },
+            "invoice": {
+              "k": 31,
+              "n": 40
+            },
+            "weekday": {
+              "k": 40,
+              "n": 40
+            }
+          },
+          "served_models": []
+        },
+        "gemma4_12b": {
+          "all_neg": {
+            "k": 44,
+            "n": 120
+          },
+          "all_pos": {
+            "k": 63,
+            "n": 120
+          },
+          "errors": 0,
+          "measured_at": [
+            "2026-11-28"
+          ],
+          "median_s": 0.5366894579492509,
+          "neg": {
+            "neg_era_year": {
+              "k": 31,
+              "n": 40
+            },
+            "neg_invoice": {
+              "k": 4,
+              "n": 40
+            },
+            "neg_weekday": {
+              "k": 9,
+              "n": 40
+            }
+          },
+          "noans": 0,
+          "pos": {
+            "era_year": {
+              "k": 34,
+              "n": 40
+            },
+            "invoice": {
+              "k": 20,
+              "n": 40
+            },
+            "weekday": {
+              "k": 9,
+              "n": 40
+            }
+          },
+          "served_models": [
+            "gemma4:12b"
+          ]
+        },
+        "gemma4_12b_think": {
+          "all_neg": {
+            "k": 1,
+            "n": 116
+          },
+          "all_pos": {
+            "k": 120,
+            "n": 120
+          },
+          "errors": 0,
+          "measured_at": [
+            "2026-11-28"
+          ],
+          "median_s": 22.494236125028692,
+          "neg": {
+            "neg_era_year": {
+              "k": 1,
+              "n": 40
+            },
+            "neg_invoice": {
+              "k": 0,
+              "n": 40
+            },
+            "neg_weekday": {
+              "k": 0,
+              "n": 36
+            }
+          },
+          "noans": 4,
+          "pos": {
+            "era_year": {
+              "k": 40,
+              "n": 40
+            },
+            "invoice": {
+              "k": 40,
+              "n": 40
+            },
+            "weekday": {
+              "k": 40,
+              "n": 40
+            }
+          },
+          "served_models": [
+            "gemma4:12b"
+          ]
+        }
+      }
+    },
+    "langid": {
+      "items": 320,
+      "judges": {
+        "baseline": {
+          "all_neg": {
+            "k": 39,
+            "n": 160
+          },
+          "all_pos": {
+            "k": 80,
+            "n": 160
+          },
+          "errors": 0,
+          "measured_at": [],
+          "median_s": null,
+          "neg": {
+            "appended_ja": {
+              "k": 0,
+              "n": 40
+            },
+            "control_ja": {
+              "k": 0,
+              "n": 40
+            },
+            "mixed_ja_main": {
+              "k": 0,
+              "n": 40
+            },
+            "romaji_ja": {
+              "k": 39,
+              "n": 40
+            }
+          },
+          "noans": 0,
+          "pos": {
+            "appended_other": {
+              "k": 0,
+              "n": 40
+            },
+            "control_en": {
+              "k": 40,
+              "n": 40
+            },
+            "control_zh": {
+              "k": 40,
+              "n": 40
+            },
+            "mixed_en_main": {
+              "k": 0,
+              "n": 40
+            }
+          },
+          "served_models": []
+        },
+        "claude_api_off": {
+          "all_neg": {
+            "k": 24,
+            "n": 160
+          },
+          "all_pos": {
+            "k": 124,
+            "n": 160
+          },
+          "errors": 0,
+          "measured_at": [
+            "2026-11-28"
+          ],
+          "median_s": 0.9238725409377366,
+          "neg": {
+            "appended_ja": {
+              "k": 2,
+              "n": 40
+            },
+            "control_ja": {
+              "k": 0,
+              "n": 40
+            },
+            "mixed_ja_main": {
+              "k": 10,
+              "n": 40
+            },
+            "romaji_ja": {
+              "k": 12,
+              "n": 40
+            }
+          },
+          "noans": 1,
+          "pos": {
+            "appended_other": {
+              "k": 29,
+              "n": 40
+            },
+            "control_en": {
+              "k": 40,
+              "n": 40
+            },
+            "control_zh": {
+              "k": 38,
+              "n": 40
+            },
+            "mixed_en_main": {
+              "k": 17,
+              "n": 40
+            }
+          },
+          "served_models": [
+            "claude-haiku-5-5"
+          ]
+        },
+        "claude_api_think": {
+          "all_neg": {
+            "k": 0,
+            "n": 160
+          },
+          "all_pos": {
+            "k": 159,
+            "n": 160
+          },
+          "errors": 0,
+          "measured_at": [
+            "2026-11-28"
+          ],
+          "median_s": 1.1855836659669876,
+          "neg": {
+            "appended_ja": {
+              "k": 0,
+              "n": 40
+            },
+            "control_ja": {
+              "k": 0,
+              "n": 40
+            },
+            "mixed_ja_main": {
+              "k": 0,
+              "n": 40
+            },
+            "romaji_ja": {
+              "k": 0,
+              "n": 40
+            }
+          },
+          "noans": 0,
+          "pos": {
+            "appended_other": {
+              "k": 39,
+              "n": 40
+            },
+            "control_en": {
+              "k": 40,
+              "n": 40
+            },
+            "control_zh": {
+              "k": 40,
+              "n": 40
+            },
+            "mixed_en_main": {
+              "k": 40,
+              "n": 40
+            }
+          },
+          "served_models": [
+            "claude-haiku-5-5"
+          ]
+        },
+        "fasttext": {
+          "all_neg": {
+            "k": 40,
+            "n": 160
+          },
+          "all_pos": {
+            "k": 121,
+            "n": 160
+          },
+          "errors": 0,
+          "measured_at": [],
+          "median_s": null,
+          "neg": {
+            "appended_ja": {
+              "k": 0,
+              "n": 40
+            },
+            "control_ja": {
+              "k": 0,
+              "n": 40
+            },
+            "mixed_ja_main": {
+              "k": 0,
+              "n": 40
+            },
+            "romaji_ja": {
+              "k": 40,
+              "n": 40
+            }
+          },
+          "noans": 0,
+          "pos": {
+            "appended_other": {
+              "k": 21,
+              "n": 40
+            },
+            "control_en": {
+              "k": 40,
+              "n": 40
+            },
+            "control_zh": {
+              "k": 39,
+              "n": 40
+            },
+            "mixed_en_main": {
+              "k": 21,
+              "n": 40
+            }
+          },
+          "served_models": []
+        },
+        "gemini_decision": {
+          "all_neg": {
+            "k": 1,
+            "n": 160
+          },
+          "all_pos": {
+            "k": 145,
+            "n": 160
+          },
+          "errors": 0,
+          "measured_at": [
+            "2026-11-28"
+          ],
+          "median_s": 0.33528962498530746,
+          "neg": {
+            "appended_ja": {
+              "k": 0,
+              "n": 40
+            },
+            "control_ja": {
+              "k": 0,
+              "n": 40
+            },
+            "mixed_ja_main": {
+              "k": 1,
+              "n": 40
+            },
+            "romaji_ja": {
+              "k": 0,
+              "n": 40
+            }
+          },
+          "noans": 0,
+          "pos": {
+            "appended_other": {
+              "k": 40,
+              "n": 40
+            },
+            "control_en": {
+              "k": 40,
+              "n": 40
+            },
+            "control_zh": {
+              "k": 40,
+              "n": 40
+            },
+            "mixed_en_main": {
+              "k": 25,
+              "n": 40
+            }
+          },
+          "served_models": []
+        },
+        "gemma4_12b": {
+          "all_neg": {
+            "k": 1,
+            "n": 160
+          },
+          "all_pos": {
+            "k": 87,
+            "n": 160
+          },
+          "errors": 0,
+          "measured_at": [
+            "2026-11-28"
+          ],
+          "median_s": 0.3589462910313159,
+          "neg": {
+            "appended_ja": {
+              "k": 0,
+              "n": 40
+            },
+            "control_ja": {
+              "k": 0,
+              "n": 40
+            },
+            "mixed_ja_main": {
+              "k": 1,
+              "n": 40
+            },
+            "romaji_ja": {
+              "k": 0,
+              "n": 40
+            }
+          },
+          "noans": 0,
+          "pos": {
+            "appended_other": {
+              "k": 28,
+              "n": 40
+            },
+            "control_en": {
+              "k": 21,
+              "n": 40
+            },
+            "control_zh": {
+              "k": 29,
+              "n": 40
+            },
+            "mixed_en_main": {
+              "k": 9,
+              "n": 40
+            }
+          },
+          "served_models": [
+            "gemma4:12b"
+          ]
+        },
+        "gemma4_12b_think": {
+          "all_neg": {
+            "k": 0,
+            "n": 80
+          },
+          "all_pos": {
+            "k": 120,
+            "n": 120
+          },
+          "errors": 0,
+          "measured_at": [
+            "2026-11-28"
+          ],
+          "median_s": 9.194072791025974,
+          "neg": {
+            "appended_ja": {
+              "k": 0,
+              "n": 40
+            },
+            "control_ja": {
+              "k": 0,
+              "n": 40
+            }
+          },
+          "noans": 0,
+          "pos": {
+            "appended_other": {
+              "k": 40,
+              "n": 40
+            },
+            "control_en": {
+              "k": 40,
+              "n": 40
+            },
+            "control_zh": {
+              "k": 40,
+              "n": 40
+            }
+          },
+          "served_models": [
+            "gemma4:12b"
+          ]
+        }
+      }
+    },
+    "personal_data": {
+      "items": 240,
+      "judges": {
+        "baseline": {
+          "all_neg": {
+            "k": 0,
+            "n": 120
+          },
+          "all_pos": {
+            "k": 120,
+            "n": 120
+          },
+          "errors": 0,
+          "measured_at": [],
+          "median_s": null,
+          "neg": {
+            "neg_email_role": {
+              "k": 0,
+              "n": 40
+            },
+            "neg_my_number_invalid": {
+              "k": 0,
+              "n": 40
+            },
+            "neg_phone_nonpersonal": {
+              "k": 0,
+              "n": 40
+            }
+          },
+          "noans": 0,
+          "pos": {
+            "email_personal": {
+              "k": 40,
+              "n": 40
+            },
+            "mobile_number": {
+              "k": 40,
+              "n": 40
+            },
+            "my_number_valid": {
+              "k": 40,
+              "n": 40
+            }
+          },
+          "served_models": []
+        },
+        "claude_api_off": {
+          "all_neg": {
+            "k": 30,
+            "n": 115
+          },
+          "all_pos": {
+            "k": 105,
+            "n": 120
+          },
+          "errors": 0,
+          "measured_at": [
+            "2026-11-28"
+          ],
+          "median_s": 0.7368902080925182,
+          "neg": {
+            "neg_email_role": {
+              "k": 0,
+              "n": 40
+            },
+            "neg_my_number_invalid": {
+              "k": 30,
+              "n": 35
+            },
+            "neg_phone_nonpersonal": {
+              "k": 0,
+              "n": 40
+            }
+          },
+          "noans": 10,
+          "pos": {
+            "email_personal": {
+              "k": 40,
+              "n": 40
+            },
+            "mobile_number": {
+              "k": 36,
+              "n": 40
+            },
+            "my_number_valid": {
+              "k": 29,
+              "n": 40
+            }
+          },
+          "served_models": [
+            "claude-haiku-5-5"
+          ]
+        },
+        "claude_api_think": {
+          "all_neg": {
+            "k": 1,
+            "n": 120
+          },
+          "all_pos": {
+            "k": 113,
+            "n": 120
+          },
+          "errors": 0,
+          "measured_at": [
+            "2026-11-28"
+          ],
+          "median_s": 1.2538475838955492,
+          "neg": {
+            "neg_email_role": {
+              "k": 0,
+              "n": 40
+            },
+            "neg_my_number_invalid": {
+              "k": 1,
+              "n": 40
+            },
+            "neg_phone_nonpersonal": {
+              "k": 0,
+              "n": 40
+            }
+          },
+          "noans": 0,
+          "pos": {
+            "email_personal": {
+              "k": 40,
+              "n": 40
+            },
+            "mobile_number": {
+              "k": 40,
+              "n": 40
+            },
+            "my_number_valid": {
+              "k": 33,
+              "n": 40
+            }
+          },
+          "served_models": [
+            "claude-haiku-5-5"
+          ]
+        },
+        "gemini_decision": {
+          "all_neg": {
+            "k": 27,
+            "n": 120
+          },
+          "all_pos": {
+            "k": 101,
+            "n": 120
+          },
+          "errors": 0,
+          "measured_at": [
+            "2026-11-28"
+          ],
+          "median_s": 0.3224560839589685,
+          "neg": {
+            "neg_email_role": {
+              "k": 0,
+              "n": 40
+            },
+            "neg_my_number_invalid": {
+              "k": 27,
+              "n": 40
+            },
+            "neg_phone_nonpersonal": {
+              "k": 0,
+              "n": 40
+            }
+          },
+          "noans": 0,
+          "pos": {
+            "email_personal": {
+              "k": 40,
+              "n": 40
+            },
+            "mobile_number": {
+              "k": 36,
+              "n": 40
+            },
+            "my_number_valid": {
+              "k": 25,
+              "n": 40
+            }
+          },
+          "served_models": []
+        },
+        "gemma4_12b": {
+          "all_neg": {
+            "k": 40,
+            "n": 120
+          },
+          "all_pos": {
+            "k": 99,
+            "n": 120
+          },
+          "errors": 0,
+          "measured_at": [
+            "2026-11-28"
+          ],
+          "median_s": 0.46118462504819036,
+          "neg": {
+            "neg_email_role": {
+              "k": 0,
+              "n": 40
+            },
+            "neg_my_number_invalid": {
+              "k": 40,
+              "n": 40
+            },
+            "neg_phone_nonpersonal": {
+              "k": 0,
+              "n": 40
+            }
+          },
+          "noans": 0,
+          "pos": {
+            "email_personal": {
+              "k": 22,
+              "n": 40
+            },
+            "mobile_number": {
+              "k": 37,
+              "n": 40
+            },
+            "my_number_valid": {
+              "k": 40,
+              "n": 40
+            }
+          },
+          "served_models": [
+            "gemma4:12b"
+          ]
+        }
+      }
+    }
+  }
+}

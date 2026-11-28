@@ -33,5 +33,20 @@
     "seconds": 0.0023177500115707517,
     "peak_rss_bytes": null,
     "items": 270
+  },
+  "langid": {
+    "seconds": 0.00010475004091858864,
+    "peak_rss_bytes": null,
+    "items": 320
+  },
+  "personal_data": {
+    "seconds": 0.0006206670077517629,
+    "peak_rss_bytes": null,
+    "items": 240
+  },
+  "calendar": {
+    "seconds": 0.0011061250697821379,
+    "peak_rss_bytes": null,
+    "items": 240
   }
 }
