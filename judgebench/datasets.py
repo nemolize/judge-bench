@@ -1,5 +1,5 @@
 """Dataset registry: task name -> generator, and the prompt each task uses."""
-from . import aitext, honorific, injection, private_setup, secrets_task, style
+from . import aitext, calendar_task, honorific, injection, langid, personal_data, private_setup, secrets_task, style
 from .common import DATA, UNCOMMITTED, digest, read_jsonl, write_jsonl
 
 TASKS = {
@@ -8,6 +8,9 @@ TASKS = {
     "style": style.generate,
     "secrets": secrets_task.generate,
     "private_setup": private_setup.generate,
+    "langid": langid.generate,
+    "personal_data": personal_data.generate,
+    "calendar": calendar_task.generate,
     "injection_honorific": lambda: injection.generate("injection_honorific"),
     "injection_secrets": lambda: injection.generate("injection_secrets"),
 }

@@ -76,6 +76,46 @@ def private_setup_rules(items):
     return flagged, {"seconds": time.perf_counter() - t0, "peak_rss_bytes": None}
 
 
+KANA = re.compile(r"[\u3040-\u30ff]")
+MY_NUMBER = re.compile(r"(?<!\d)(\d{4}) ?(\d{4}) ?(\d{4})(?!\d)")
+MOBILE = re.compile(r"(?<!\d)0[789]0-\d{4}-\d{4}(?!\d)")
+PERSONAL_EMAIL = re.compile(r"\b[a-z]+\.[a-z]+@(?:example\.(?:com|org|net))\b")
+
+
+def _my_number_valid(text):
+    from .personal_data import valid_my_number
+    return any(valid_my_number("".join(m.groups())) for m in MY_NUMBER.finditer(text))
+
+
+def kana_absent(items):
+    """langid baseline: flagged (not Japanese) when the text holds no kana at all."""
+    t0 = time.perf_counter()
+    flagged = {it["id"]: not KANA.search(it["text"]) for it in items}
+    return flagged, {"seconds": time.perf_counter() - t0, "peak_rss_bytes": None}
+
+
+def personal_data_rules(items):
+    t0 = time.perf_counter()
+    flagged = {it["id"]: _my_number_valid(it["text"]) or bool(MOBILE.search(it["text"])) or bool(PERSONAL_EMAIL.search(it["text"])) for it in items}
+    return flagged, {"seconds": time.perf_counter() - t0, "peak_rss_bytes": None}
+
+
+def calendar_rules(items):
+    from .calendar_task import consistent
+    t0 = time.perf_counter()
+    flagged = {it["id"]: not consistent(it["text"]) for it in items}
+    return flagged, {"seconds": time.perf_counter() - t0, "peak_rss_bytes": None}
+
+
+def fasttext_not_japanese(items, model_path):
+    """langid second baseline: fastText lid.176 (needs `pip install fasttext-numpy2-wheel` and the model file)."""
+    import fasttext
+    model = fasttext.load_model(str(model_path))
+    t0 = time.perf_counter()
+    flagged = {it["id"]: model.predict(it["text"].replace("\n", " "))[0][0] != "__label__ja" for it in items}
+    return flagged, {"seconds": time.perf_counter() - t0, "peak_rss_bytes": None}
+
+
 def phrases(items):
     t0 = time.perf_counter()
     flagged = {it["id"]: any(p in it["text"] for p in AI_PHRASES) for it in items}
@@ -90,4 +130,10 @@ def run(task, items):
         return gitleaks(items)
     if base == "private_setup":
         return private_setup_rules(items)
+    if base == "langid":
+        return kana_absent(items)
+    if base == "personal_data":
+        return personal_data_rules(items)
+    if base == "calendar":
+        return calendar_rules(items)
     return phrases(items)
