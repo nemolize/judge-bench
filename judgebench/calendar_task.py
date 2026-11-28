@@ -6,12 +6,14 @@ independent of any judge: the era table below, datetime's weekday, and integer a
 - weekday: a Gregorian date against its weekday;
 - invoice: unit price x quantity per line, the subtotal, the tax and the total.
 Era years n = 1 and each era's last year are not used: the era changes inside those years, so a date there is ambiguous.
+No date before 1873 is used: Japan kept the lunisolar calendar until the end of 1872, so a month and day there are not Gregorian.
 """
 import datetime
 
 from .common import item, rng
 
 N = 40
+GREGORIAN_FROM = 1873
 ERAS = [("明治", 1868, 45), ("大正", 1912, 15), ("昭和", 1926, 64), ("平成", 1989, 31), ("令和", 2019, 8)]
 WEEKDAYS = "月火水木金土日"
 PRODUCTS = ["ノート", "ボールペン", "クリアファイル", "付箋", "USBケーブル", "マウスパッド", "インク", "電池", "ホチキス", "封筒"]
@@ -62,19 +64,25 @@ def generate():
         n += 1
         items.append(item("calendar", n, cls, 1, bad, pair_id=f"{cls}-{pair}", **meta))
 
-    seen = set()
-    for pair in range(N):
+    def draw_era_statement(rg, seen, min_year):
         while True:
-            era, start, last = r.choice(ERAS)
-            ny = r.randrange(2, last)
-            if start + ny - 1 > 2030 or (era, ny) in seen:
+            era, start, last = rg.choice(ERAS)
+            ny = rg.randrange(2, last)
+            if start + ny - 1 > 2030 or start + ny - 1 < min_year or (era, ny) in seen:
                 continue
             seen.add((era, ny))
             break
         y = era_to_year(era, ny)
-        m, d = _valid_date(r, y)
-        wrong = y + r.choice([-3, -2, -1, 1, 2, 3])
-        tpl = r.choice(["{era}{n}年は西暦{y}年です。", "この書類は{era}{n}年{m}月{d}日付で、西暦では{y}年{m}月{d}日にあたります。", "{era}{n}年{m}月{d}日は、西暦{y}年{m}月{d}日のことです。"])
+        m, d = _valid_date(rg, y)
+        wrong = y + rg.choice([-3, -2, -1, 1, 2, 3])
+        tpl = rg.choice(["{era}{n}年は西暦{y}年です。", "この書類は{era}{n}年{m}月{d}日付で、西暦では{y}年{m}月{d}日にあたります。", "{era}{n}年{m}月{d}日は、西暦{y}年{m}月{d}日のことです。"])
+        return era, ny, y, m, d, wrong, tpl
+
+    seen, fix = set(), rng("calendar-gregorian-only")
+    for pair in range(N):
+        era, ny, y, m, d, wrong, tpl = draw_era_statement(r, seen, 0)
+        if y < GREGORIAN_FROM:  # dates before 1873 are lunar; the replacement has its own stream so no other item changes
+            era, ny, y, m, d, wrong, tpl = draw_era_statement(fix, seen, GREGORIAN_FROM)
         fmt = lambda yy: tpl.format(era=era, n=ny, y=yy, m=m, d=d)
         add("era_year", pair, fmt(y), fmt(wrong), era=era, era_year=ny)
 

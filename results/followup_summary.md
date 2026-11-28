@@ -33,13 +33,13 @@ Zero counts: baseline/neg_my_number_invalid: 0 of 40 (< 7.2%); baseline/neg_phon
 | judge | detection | era_year | invoice | weekday | false alarm | neg_era_year | neg_invoice | neg_weekday | no answer | errors | median s |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | baseline | 120/120 = 100% | 40/40 = 100% | 40/40 = 100% | 40/40 = 100% | 0/120 = 0% | 0/40 = 0% | 0/40 = 0% | 0/40 = 0% | 0 | 0 | n/a |
-| claude_api_off | 39/120 = 32% | 4/40 = 10% | 33/40 = 82% | 2/40 = 5% | 22/114 = 19% | 1/40 = 2% | 21/40 = 52% | 0/34 = 0% | 12 | 0 | 0.67 |
-| claude_api_think | 119/120 = 99% | 40/40 = 100% | 39/40 = 98% | 40/40 = 100% | 1/120 = 1% | 1/40 = 2% | 0/40 = 0% | 0/40 = 0% | 0 | 0 | 1.14 |
+| claude_api_off | 39/120 = 32% | 4/40 = 10% | 33/40 = 82% | 2/40 = 5% | 22/114 = 19% | 1/40 = 2% | 21/40 = 52% | 0/34 = 0% | 12 | 0 | 0.66 |
+| claude_api_think | 119/120 = 99% | 40/40 = 100% | 39/40 = 98% | 40/40 = 100% | 0/120 = 0% | 0/40 = 0% | 0/40 = 0% | 0/40 = 0% | 0 | 0 | 1.13 |
 | gemma4_12b | 63/120 = 52% | 34/40 = 85% | 20/40 = 50% | 9/40 = 22% | 44/120 = 37% | 31/40 = 78% | 4/40 = 10% | 9/40 = 22% | 0 | 0 | 0.54 |
-| gemma4_12b_think | 120/120 = 100% | 40/40 = 100% | 40/40 = 100% | 40/40 = 100% | 1/116 = 1% | 1/40 = 2% | 0/40 = 0% | 0/36 = 0% | 4 | 0 | 22.49 |
-| gemini_decision | 111/120 = 92% | 40/40 = 100% | 31/40 = 78% | 40/40 = 100% | 7/120 = 6% | 2/40 = 5% | 0/40 = 0% | 5/40 = 12% | 0 | 0 | 0.32 |
+| gemma4_12b_think | 120/120 = 100% | 40/40 = 100% | 40/40 = 100% | 40/40 = 100% | 0/116 = 0% | 0/40 = 0% | 0/40 = 0% | 0/36 = 0% | 4 | 0 | 22.49 |
+| gemini_decision | 111/120 = 92% | 40/40 = 100% | 31/40 = 78% | 40/40 = 100% | 6/120 = 5% | 1/40 = 2% | 0/40 = 0% | 5/40 = 12% | 0 | 0 | 0.32 |
 
-Zero counts: baseline/neg_era_year: 0 of 40 (< 7.2%); baseline/neg_weekday: 0 of 40 (< 7.2%); baseline/neg_invoice: 0 of 40 (< 7.2%); claude_api_off/neg_weekday: 0 of 34 (< 8.4%); claude_api_think/neg_weekday: 0 of 40 (< 7.2%); claude_api_think/neg_invoice: 0 of 40 (< 7.2%); gemma4_12b_think/neg_weekday: 0 of 36 (< 8.0%); gemma4_12b_think/neg_invoice: 0 of 40 (< 7.2%); gemini_decision/neg_invoice: 0 of 40 (< 7.2%)
+Zero counts: baseline/neg_era_year: 0 of 40 (< 7.2%); baseline/neg_weekday: 0 of 40 (< 7.2%); baseline/neg_invoice: 0 of 40 (< 7.2%); claude_api_off/neg_weekday: 0 of 34 (< 8.4%); claude_api_think/neg_era_year: 0 of 40 (< 7.2%); claude_api_think/neg_weekday: 0 of 40 (< 7.2%); claude_api_think/neg_invoice: 0 of 40 (< 7.2%); gemma4_12b_think/neg_era_year: 0 of 40 (< 7.2%); gemma4_12b_think/neg_weekday: 0 of 36 (< 8.0%); gemma4_12b_think/neg_invoice: 0 of 40 (< 7.2%); gemini_decision/neg_invoice: 0 of 40 (< 7.2%)
 
 ## Appended sentence: verdict flipped by the appended sentence
 

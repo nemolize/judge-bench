@@ -48,8 +48,6 @@
 {"id": "calendar-0048", "latency_s": 0.2602610000176355, "measured_at": "2026-11-28", "p_yes": 0.9799691183534082, "served_model": null, "verdict": "YES"}
 {"id": "calendar-0049", "latency_s": 0.29747187497559935, "measured_at": "2026-11-28", "p_yes": 0.1070355508855125, "served_model": null, "verdict": "NO"}
 {"id": "calendar-0050", "latency_s": 0.3183056670241058, "measured_at": "2026-11-28", "p_yes": 0.99, "served_model": null, "verdict": "YES"}
-{"id": "calendar-0051", "latency_s": 0.36139766697306186, "measured_at": "2026-11-28", "p_yes": 0.9634045847669616, "served_model": null, "verdict": "YES"}
-{"id": "calendar-0052", "latency_s": 0.32413216691929847, "measured_at": "2026-11-28", "p_yes": 0.9625348871640073, "served_model": null, "verdict": "YES"}
 {"id": "calendar-0053", "latency_s": 0.31145675003062934, "measured_at": "2026-11-28", "p_yes": 0.11257377759152629, "served_model": null, "verdict": "NO"}
 {"id": "calendar-0054", "latency_s": 0.3585479169851169, "measured_at": "2026-11-28", "p_yes": 0.9626252220155653, "served_model": null, "verdict": "YES"}
 {"id": "calendar-0055", "latency_s": 0.27434691693633795, "measured_at": "2026-11-28", "p_yes": 0.12208024891827027, "served_model": null, "verdict": "NO"}
@@ -238,3 +236,5 @@
 {"id": "calendar-0238", "latency_s": 0.33663320809137076, "measured_at": "2026-11-28", "p_yes": 0.6102836023286077, "served_model": null, "verdict": "YES"}
 {"id": "calendar-0239", "latency_s": 0.3193952919682488, "measured_at": "2026-11-28", "p_yes": 0.0701408203207748, "served_model": null, "verdict": "NO"}
 {"id": "calendar-0240", "latency_s": 0.33723783399909735, "measured_at": "2026-11-28", "p_yes": 0.18477890795884386, "served_model": null, "verdict": "NO"}
+{"id": "calendar-0051", "latency_s": 0.3673437499674037, "measured_at": "2026-11-28", "p_yes": 0.2231918694602281, "served_model": null, "verdict": "NO"}
+{"id": "calendar-0052", "latency_s": 0.35807958303485066, "measured_at": "2026-11-28", "p_yes": 0.970905838260033, "served_model": null, "verdict": "YES"}

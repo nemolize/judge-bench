@@ -161,4 +161,6 @@ GEMINI_API_KEY=... python3 -m judgebench.run judge gemini_decision langid person
 python3 -m judgebench.followup_report          # results/followup_summary.json and .md
 ```
 
+Correction after review: the calendar pair `calendar-0051` / `calendar-0052` held a Meiji 4 date written as a Gregorian one; Japan used the lunisolar calendar until the end of 1872, so the item labelled consistent was not. The generator now draws dates from 1873 on (the replacement pair has its own random stream, no other item changed), and the pair was rerun on every judge. The pass bar's judge set and thresholds are unchanged.
+
 `tools/build_tatoeba_pool.py` rebuilds the Tatoeba pool from the per-language exports (needs `pykakasi` 2.3.0 for the romaji column; romaji is machine-made and sometimes unnatural). Limits: sentences are short and from one corpus; the romaji and mixed items are constructed, not found; the personal_data and calendar baselines restate the labelling rule.

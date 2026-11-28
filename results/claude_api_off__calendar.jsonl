@@ -48,8 +48,6 @@
 {"id": "calendar-0048", "latency_s": 0.5679179170401767, "measured_at": "2026-11-28", "output_tokens": 4, "p_yes": null, "served_model": "claude-haiku-5-5", "verdict": "NO"}
 {"id": "calendar-0049", "latency_s": 0.5120687920134515, "measured_at": "2026-11-28", "output_tokens": 4, "p_yes": null, "served_model": "claude-haiku-5-5", "verdict": "NO"}
 {"id": "calendar-0050", "latency_s": 0.9470512500265613, "measured_at": "2026-11-28", "output_tokens": 4, "p_yes": null, "served_model": "claude-haiku-5-5", "verdict": "NO"}
-{"id": "calendar-0051", "latency_s": 0.9662399999797344, "measured_at": "2026-11-28", "output_tokens": 4, "p_yes": null, "served_model": "claude-haiku-5-5", "verdict": "NO"}
-{"id": "calendar-0052", "latency_s": 0.5259901670506224, "measured_at": "2026-11-28", "output_tokens": 4, "p_yes": null, "served_model": "claude-haiku-5-5", "verdict": "NO"}
 {"id": "calendar-0053", "latency_s": 0.5579937080619857, "measured_at": "2026-11-28", "output_tokens": 4, "p_yes": null, "served_model": "claude-haiku-5-5", "verdict": "NO"}
 {"id": "calendar-0054", "latency_s": 0.9442615830339491, "measured_at": "2026-11-28", "output_tokens": 4, "p_yes": null, "served_model": "claude-haiku-5-5", "verdict": "NO"}
 {"id": "calendar-0055", "latency_s": 1.147656665998511, "measured_at": "2026-11-28", "output_tokens": 4, "p_yes": null, "served_model": "claude-haiku-5-5", "verdict": "NO"}
@@ -238,3 +236,5 @@
 {"id": "calendar-0238", "latency_s": 0.5892990420106798, "measured_at": "2026-11-28", "output_tokens": 4, "p_yes": null, "served_model": "claude-haiku-5-5", "verdict": "YES"}
 {"id": "calendar-0239", "latency_s": 0.5248817909741774, "measured_at": "2026-11-28", "output_tokens": 4, "p_yes": null, "served_model": "claude-haiku-5-5", "verdict": "NO"}
 {"id": "calendar-0240", "latency_s": 0.8242972500156611, "measured_at": "2026-11-28", "output_tokens": 4, "p_yes": null, "served_model": "claude-haiku-5-5", "verdict": "YES"}
+{"id": "calendar-0051", "latency_s": 0.5456745000556111, "measured_at": "2026-11-28", "output_tokens": 4, "p_yes": null, "served_model": "claude-haiku-5-5", "verdict": "NO"}
+{"id": "calendar-0052", "latency_s": 0.5814859580714256, "measured_at": "2026-11-28", "output_tokens": 4, "p_yes": null, "served_model": "claude-haiku-5-5", "verdict": "NO"}

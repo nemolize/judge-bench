@@ -48,8 +48,8 @@
 {"cls": "era_year", "id": "calendar-0048", "label": 1, "meta": {"era": "昭和", "era_year": 44, "pair_id": "era_year-23"}, "task": "calendar", "text": "昭和44年は西暦1966年です。"}
 {"cls": "neg_era_year", "id": "calendar-0049", "label": 0, "meta": {"era": "昭和", "era_year": 15, "pair_id": "era_year-24"}, "task": "calendar", "text": "この書類は昭和15年8月16日付で、西暦では1940年8月16日にあたります。"}
 {"cls": "era_year", "id": "calendar-0050", "label": 1, "meta": {"era": "昭和", "era_year": 15, "pair_id": "era_year-24"}, "task": "calendar", "text": "この書類は昭和15年8月16日付で、西暦では1943年8月16日にあたります。"}
-{"cls": "neg_era_year", "id": "calendar-0051", "label": 0, "meta": {"era": "明治", "era_year": 4, "pair_id": "era_year-25"}, "task": "calendar", "text": "この書類は明治4年11月7日付で、西暦では1871年11月7日にあたります。"}
-{"cls": "era_year", "id": "calendar-0052", "label": 1, "meta": {"era": "明治", "era_year": 4, "pair_id": "era_year-25"}, "task": "calendar", "text": "この書類は明治4年11月7日付で、西暦では1869年11月7日にあたります。"}
+{"cls": "neg_era_year", "id": "calendar-0051", "label": 0, "meta": {"era": "明治", "era_year": 32, "pair_id": "era_year-25"}, "task": "calendar", "text": "この書類は明治32年6月1日付で、西暦では1899年6月1日にあたります。"}
+{"cls": "era_year", "id": "calendar-0052", "label": 1, "meta": {"era": "明治", "era_year": 32, "pair_id": "era_year-25"}, "task": "calendar", "text": "この書類は明治32年6月1日付で、西暦では1902年6月1日にあたります。"}
 {"cls": "neg_era_year", "id": "calendar-0053", "label": 0, "meta": {"era": "昭和", "era_year": 35, "pair_id": "era_year-26"}, "task": "calendar", "text": "この書類は昭和35年9月30日付で、西暦では1960年9月30日にあたります。"}
 {"cls": "era_year", "id": "calendar-0054", "label": 1, "meta": {"era": "昭和", "era_year": 35, "pair_id": "era_year-26"}, "task": "calendar", "text": "この書類は昭和35年9月30日付で、西暦では1958年9月30日にあたります。"}
 {"cls": "neg_era_year", "id": "calendar-0055", "label": 0, "meta": {"era": "昭和", "era_year": 22, "pair_id": "era_year-27"}, "task": "calendar", "text": "この書類は昭和22年7月14日付で、西暦では1947年7月14日にあたります。"}

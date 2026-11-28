@@ -48,8 +48,6 @@
 {"id": "calendar-0048", "latency_s": 0.4002715420210734, "measured_at": "2026-11-28", "p_yes": 0.9987551566304635, "served_model": "gemma4:12b", "verdict": "YES"}
 {"id": "calendar-0049", "latency_s": 0.5448594590416178, "measured_at": "2026-11-28", "p_yes": 0.43782349911420193, "served_model": "gemma4:12b", "verdict": "NO"}
 {"id": "calendar-0050", "latency_s": 0.5271102499682456, "measured_at": "2026-11-28", "p_yes": 0.3345894478883556, "served_model": "gemma4:12b", "verdict": "NO"}
-{"id": "calendar-0051", "latency_s": 0.5601143339881673, "measured_at": "2026-11-28", "p_yes": 0.9919380082557427, "served_model": "gemma4:12b", "verdict": "YES"}
-{"id": "calendar-0052", "latency_s": 0.5237958750221878, "measured_at": "2026-11-28", "p_yes": 0.9980732657237424, "served_model": "gemma4:12b", "verdict": "YES"}
 {"id": "calendar-0053", "latency_s": 0.5521458749426529, "measured_at": "2026-11-28", "p_yes": 0.36296919173767833, "served_model": "gemma4:12b", "verdict": "NO"}
 {"id": "calendar-0054", "latency_s": 0.5420499170431867, "measured_at": "2026-11-28", "p_yes": 0.2689414213699951, "served_model": "gemma4:12b", "verdict": "NO"}
 {"id": "calendar-0055", "latency_s": 0.5579947500955313, "measured_at": "2026-11-28", "p_yes": 0.679178699175393, "served_model": "gemma4:12b", "verdict": "YES"}
@@ -238,3 +236,5 @@
 {"id": "calendar-0238", "latency_s": 0.5191422920906916, "measured_at": "2026-11-28", "p_yes": 0.9990889486507863, "served_model": "gemma4:12b", "verdict": "YES"}
 {"id": "calendar-0239", "latency_s": 0.829405750031583, "measured_at": "2026-11-28", "p_yes": 0.0004583129616181153, "served_model": "gemma4:12b", "verdict": "NO"}
 {"id": "calendar-0240", "latency_s": 0.3945875420467928, "measured_at": "2026-11-28", "p_yes": 0.0003799844871922425, "served_model": "gemma4:12b", "verdict": "NO"}
+{"id": "calendar-0051", "latency_s": 0.3573701250134036, "measured_at": "2026-11-28", "p_yes": 0.8807970873650403, "served_model": "gemma4:12b", "verdict": "YES"}
+{"id": "calendar-0052", "latency_s": 0.35310549999121577, "measured_at": "2026-11-28", "p_yes": 0.966914023279772, "served_model": "gemma4:12b", "verdict": "YES"}

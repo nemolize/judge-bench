@@ -90,6 +90,11 @@ class CalendarTests(unittest.TestCase):
     def test_tax_is_rounded_down(self):
         self.assertEqual(calendar_task.invoice_consistent([(1255, 1)]), (1255, 125, 1380))
 
+    def test_no_dated_statement_precedes_the_gregorian_calendar(self):
+        for it in self.items:
+            if it["cls"] in ("era_year", "neg_era_year"):
+                self.assertGreaterEqual(calendar_task.era_to_year(it["meta"]["era"], it["meta"]["era_year"]), calendar_task.GREGORIAN_FROM, it["id"])
+
     def test_no_era_year_sits_in_a_changeover_year(self):
         last = {e: n for e, _, n in calendar_task.ERAS}
         for it in self.items:
