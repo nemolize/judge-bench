@@ -9,6 +9,7 @@ import urllib.request
 
 from . import datasets
 from .common import ROOT, read_jsonl
+from .run import CLAUDE_WORKERS
 
 RESULTS = ROOT / "results"
 TASKS = ["langid", "personal_data", "calendar"]
@@ -80,7 +81,7 @@ def environment():
     tags = json.loads(urllib.request.urlopen("http://localhost:11434/api/tags", timeout=10).read())
     digest = next(m["digest"][:12] for m in tags["models"] if m["name"] == "gemma4:12b")
     return {"python": platform.python_version(), "ollama": ollama, "gemma4_12b_digest": digest,
-            "fasttext_numpy2_wheel": importlib.metadata.version("fasttext-numpy2-wheel")}
+            "fasttext_numpy2_wheel": importlib.metadata.version("fasttext-numpy2-wheel"), "hosted_parallel_calls": CLAUDE_WORKERS}
 
 
 def build():
