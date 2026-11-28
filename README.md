@@ -135,3 +135,32 @@ The first full run was reviewed before publication and several design problems w
     - The vendor's figure for a 32 GB M4 Mac mini is about 14 tokens/s for Q2_0; this Mac measured lower, and the pack and engine are not the only difference, so the two are not comparable. Other packs (IQ3_XXS, Gyro-S) were not run.
   - `inkling_2_mini` (Inkling-2-Mini SQ-20 on Strata 0.2.20, no logprobs) answered YES to 208 of 209 correct honorific sentences, to 57% of correct style passages and to 24 of 25 human sentences.
   - No committed Strata row carries `served_model` except the `qwen3.8_q2_0` rows: the check that a judge is not talking to another engine's model was added after the runs. Both servers answer with the loaded model's id unless the request names a configured alias (read in the Sync-Strata 0.1.4 and Strata 0.2.20 sources; the `qwen3.8_q2_0` rows were run after the check and carry it), so from now on a wrong engine is an error row. The `sync_m` rows also lack `output_tokens`; they were run with the same request (system message, `max_tokens` 8, `reasoning_effort` none). `run judge` keeps stored rows, so delete a judge's result files to regenerate them.
+
+## Follow-up tasks: language identification, personal data, calendar consistency
+
+Three tasks added for a second article, with their own bar (`pass_bar_followup.md`) and report:
+
+| Task | Data | Label 1 (flag) |
+|---|---|---|
+| `langid` | Tatoeba sentences (`data/tatoeba_pool.tsv`, export of 2026-11-28, CC BY 2.0 FR, https://tatoeba.org; each sentence id is in `meta`), plus derived mixed, romaji and appended-sentence items | the main language is not Japanese |
+| `personal_data` | generated dummy values (random digits; mobile numbers `0X0-0000-XXXX`; reserved `example.*` domains); no value is taken from a person | the text holds a valid My Number, a mobile number or a personal email address |
+| `calendar` | generated era-year, date-weekday and invoice statements, each with a consistent twin | the text contradicts itself |
+
+The phone-number shapes are generated, not checked against the numbering plan, so a value could coincide with an assigned number. Every mobile value is `0X0-0000-XXXX`; the `080` ones (`mobile_080` in the summary) read like toll-free `0800` numbers, and the landline negatives built from `011` and `052` carry 11 digits instead of 10.
+
+```sh
+python3 -m unittest discover -s tests          # generators, labels and baselines
+python3 -m judgebench.run baseline langid personal_data calendar
+python3 -m judgebench.run fasttext <lid.176.ftz>   # pip install fasttext-numpy2-wheel; the model is not committed
+python3 -m judgebench.run judge gemma4:12b langid personal_data calendar
+JUDGEBENCH_ONLY_CLS=control_ja,control_en,control_zh,appended_ja,appended_other python3 -m judgebench.run judge gemma4:12b+think langid
+python3 -m judgebench.run judge gemma4:12b+think calendar
+ANTHROPIC_API_KEY=... python3 -m judgebench.run judge claude_api_off langid personal_data calendar
+ANTHROPIC_API_KEY=... python3 -m judgebench.run judge claude_api_think langid personal_data calendar
+GEMINI_API_KEY=... python3 -m judgebench.run judge gemini_decision langid personal_data calendar
+python3 -m judgebench.followup_report          # results/followup_summary.json and .md
+```
+
+Correction after review: the calendar pair `calendar-0051` / `calendar-0052` held a Meiji 4 date written as a Gregorian one; Japan used the lunisolar calendar until the end of 1872, so the item labelled consistent was not. The generator now draws dates from 1873 on (the replacement pair has its own random stream, no other item changed), and the pair was rerun on every judge. The pass bar's judge set and thresholds are unchanged.
+
+`tools/build_tatoeba_pool.py` rebuilds the Tatoeba pool from the per-language exports (needs `pykakasi` 2.3.0 for the romaji column; romaji is machine-made and sometimes unnatural). Limits: sentences are short and from one corpus; the romaji and mixed items are constructed, not found; the personal_data and calendar baselines restate the labelling rule.

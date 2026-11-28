@@ -46,7 +46,7 @@ class OllamaJudge:
         dt = time.perf_counter() - t0
         first = res["logprobs"][0]
         lp = {c["token"]: c["logprob"] for c in first["top_logprobs"]}
-        return {**verdict_from(first["token"], lp), "latency_s": dt}
+        return {**verdict_from(first["token"], lp), "latency_s": dt, "served_model": res.get("model")}
 
     def loaded_bytes(self):
         for m in _post_get("/api/ps").get("models", []):
@@ -71,7 +71,7 @@ class OllamaThinkJudge:
         })
         match = re.match(r"^\W*(YES|NO)\b", (res["message"].get("content") or "").strip(), re.I)
         return {"verdict": match.group(1).upper() if match else None, "p_yes": None,
-                "latency_s": time.perf_counter() - t0, "output_tokens": res.get("eval_count")}
+                "latency_s": time.perf_counter() - t0, "output_tokens": res.get("eval_count"), "served_model": res.get("model")}
 
     def loaded_bytes(self):
         for m in _post_get("/api/ps").get("models", []):
@@ -122,7 +122,7 @@ class ClaudeApiJudge:
         lines = text.strip().splitlines()
         first = lines[0].strip() if lines else ""
         return {"verdict": first if first in ("YES", "NO") else None, "p_yes": None,
-                "latency_s": time.perf_counter() - t0, "output_tokens": res.usage.output_tokens}
+                "latency_s": time.perf_counter() - t0, "output_tokens": res.usage.output_tokens, "served_model": res.model}
 
     def loaded_bytes(self):
         return None
@@ -265,7 +265,7 @@ class DecisionsJudge:
         answers = res["answers"]
         ans = answers[0] if isinstance(answers, list) else answers["q"]
         p = ans.get("probability", ans.get("noul"))
-        return {"verdict": None if p is None else ("YES" if p >= 0.5 else "NO"), "p_yes": p, "latency_s": dt}
+        return {"verdict": None if p is None else ("YES" if p >= 0.5 else "NO"), "p_yes": p, "latency_s": dt, "served_model": res.get("model")}
 
     def loaded_bytes(self):
         if self.hosted:

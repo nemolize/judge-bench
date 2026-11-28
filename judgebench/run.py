@@ -4,7 +4,9 @@
   python -m judgebench.run baseline
   python -m judgebench.run judge <ollama-model | <ollama-model>+think | claude_haiku | claude_api_think | claude_api_off | gemini_flash | gemini_3_8_flash | gemini_4_hydrogen> [task ...]
 """
+import datetime
 import json
+import os
 import sys
 from concurrent.futures import ThreadPoolExecutor
 
@@ -16,22 +18,33 @@ CLAUDE_WORKERS = 6
 LATENCY_PROBE = 20
 
 
-def run_baseline():
-    meta = {}
-    for task in datasets.TASKS:
+def run_baseline(tasks=None):
+    """Baselines for the named tasks (all when none); the stored meta of the other tasks is kept."""
+    meta_path = RESULTS / "baseline__meta.json"
+    meta = json.loads(meta_path.read_text()) if meta_path.exists() else {}
+    for task in tasks or datasets.TASKS:
         items = datasets.load(task)
         flagged, stats = baselines.run(task, items)
         rows = [{"id": it["id"], "verdict": "YES" if flagged[it["id"]] else "NO", "p_yes": None} for it in items]
         write_jsonl(RESULTS / f"baseline__{task}.jsonl", rows)
         meta[task] = {**stats, "items": len(items)}
-    (RESULTS / "baseline__meta.json").write_text(json.dumps(meta, indent=2))
+    meta_path.write_text(json.dumps(meta, indent=2))
+
+
+def run_fasttext(model_path):
+    """The langid fastText baseline, written as its own judge `fasttext` (pip install fasttext-numpy2-wheel; model file path given)."""
+    items = datasets.load("langid")
+    flagged, stats = baselines.fasttext_not_japanese(items, model_path)
+    write_jsonl(RESULTS / "fasttext__langid.jsonl", [{"id": it["id"], "verdict": "YES" if flagged[it["id"]] else "NO", "p_yes": None} for it in items])
+    (RESULTS / "fasttext__meta.json").write_text(json.dumps({"langid": {**stats, "items": len(items)}}, indent=2))
 
 
 def _one(judge, task, it):
     try:
+        today = datetime.date.today().isoformat()
         if getattr(judge, "decisions", False):
-            return {"id": it["id"], **judge.decide(datasets.PROMPT_TASK.get(task, task), it["text"])}
-        return {"id": it["id"], **judge.ask(datasets.prompt_for(task, it["text"]))}
+            return {"id": it["id"], **judge.decide(datasets.PROMPT_TASK.get(task, task), it["text"]), "measured_at": today}
+        return {"id": it["id"], **judge.ask(datasets.prompt_for(task, it["text"])), "measured_at": today}
     except Exception as exc:
         return {"id": it["id"], "verdict": None, "p_yes": None, "latency_s": None, "error": str(exc)[:300]}
 
@@ -54,7 +67,8 @@ def run_judge(name, tasks):
     for task in tasks:
         out = RESULTS / f"{judge.name}__{task}.jsonl"
         done = {r["id"]: r for r in read_jsonl(out) if not r.get("error")} if out.exists() else {}
-        todo = [it for it in datasets.load(task) if it["id"] not in done]
+        only = os.environ.get("JUDGEBENCH_ONLY_CLS")  # comma-separated classes: a slow judge runs just those (the report skips unrun rows)
+        todo = [it for it in datasets.load(task) if it["id"] not in done and (not only or it["cls"] in only.split(","))]
         if getattr(judge, "hosted", False):
             with ThreadPoolExecutor(max_workers=CLAUDE_WORKERS) as pool:
                 new = list(pool.map(lambda it: _one(judge, task, it), todo))
@@ -104,7 +118,9 @@ if __name__ == "__main__":
     if cmd == "build":
         print(json.dumps(datasets.manifest(), indent=2))
     elif cmd == "baseline":
-        run_baseline()
+        run_baseline(sys.argv[2:])
+    elif cmd == "fasttext":
+        run_fasttext(sys.argv[2])
     elif cmd == "rederive":
         rederive(sys.argv[2])
     elif cmd == "judge":
